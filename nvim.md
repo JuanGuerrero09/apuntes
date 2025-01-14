@@ -15,8 +15,8 @@ seek -> Invocado con flash
 
 - Moverme en pantalla -> Ctrl+d/u (down / up)
 - Moverme aún más -> Ctrl+f/b (forward / backward)
-- Mover la pantalla -> Ctrl+y/e (arriba / abajo)
 
+- Mover la pantalla -> Ctrl+y/e (arriba / abajo)
 > [!TIP] Con un número antes se puede mover # veces lo que se necesite
 
 - To open the Neo-Tree -> leader+e
@@ -42,3 +42,8 @@ echo Hello world
 ```python
 print('Hola Mundo')
 ```
+
+## Chapter 4
+> ![TIP] Space + q + q -> exit from NVIM
+-  Salir de NVIM -> Space + q + q
+- Fuzzy find archivos -> Space + Space
