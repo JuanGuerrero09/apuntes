@@ -7,6 +7,31 @@ Buffer:
 Tab:
 Window:
 
+## Select / Change
+- :s/search/replace/ #
+- :start_line, end_line s/<search>/<replace>
+## Undo / Redo
+- u / C-r -> Undo / Redo
+
+## Copy (Yank) / Cut (Delete) / Put (Paste)
+### Copying
+- yy: Copy current line
+- #yy: Copy # lines
+- yiw: Copy current word
+- y$/^: Copy to the end/start of line
+
+### Cuting
+- dd: Cut current line
+- #dd: Cut # lines
+- d$/^: Cut to the end/start of line
+- diw: Cut current word
+### Pasting
+- dd: Paste current line
+- #dd: Paste # lines
+- d$/^: Paste to the end/start of line
+- diw: Paste current word
+
+
 - Encontrar texto -> _s_
 - Moverme mas rápido -> shift+w (W) o shift+b (B)
 - Eliminar resto de linea -> shift+d
