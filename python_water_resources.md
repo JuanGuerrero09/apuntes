@@ -68,8 +68,8 @@ d = st.norm(loc=0, scale=5) # scale change height of the distribution
 x = np.linspace(-50,50, 1000)
 y1 = d.pdf(x)
 ```
-![alt text](images/pdf.png)
-![alt text](images/cdf.png)
+![alt text](pdf.png)
+![alt text](cdf.png)
 
 ```python
 # Interpolate
