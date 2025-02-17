@@ -123,9 +123,10 @@ In pipes, flow remains laminar for $Re<2000$ and transitions to turbulence as $R
 Water has a relatively low viscosity and is practically incompressible and is found to behave like an ideal fluid. The study of ideal fluid motion is a valuable background information to encounter the problems of civil engineering hydraulics.
 
 Consider an elemental stream tube in motion along a stream line of an ideal fluid flow.
-![[{58625576-8843-4EE7-A9CB-0A6F128D93E0}.png|center|450]]
+![[eulers_equation_motion.png|center|450]]
 The forces responsible for its motion are the **pressure forces**, **gravity** and **accelerating force due to change in velocity** along the streamline. All frictional forces are assumed to be zero and the flow is **irrotational** (i.e. uniform velocity distribution across streamlines).
 By Newton’s second law of motion along the streamline (force = mass × acceleration),
+$$\sum{F_i} = m_ia_i$$
 $$p\,dA-(p+dp)dA-\rho g \, dA\,ds\, cos\theta=\, \rho\,dA\,ds\,\frac{dV}{dt}$$
 $$ -dp -\rho g\, ds\, cos\theta=\rho\,ds\,\frac{dV}{dt}$$
 Considering the [[Hydraulics Theory#Acceleration of fluid particles.|tangential acceleration]] for steady flow along streamline (meaning no change in time ($\frac{\partial{V}}{dt} = 0$)) 
@@ -161,6 +162,6 @@ If these air bubbles are carried by the fluid into a **high-pressure region**, t
 
 Cavitation can cause significant wear and tear on pipelines, pumps, and valves, reducing their lifespan and efficiency. Therefore, **proper hydraulic design** is essential to prevent the occurrence of separation and cavitation, ensuring the longevity and optimal performance of the system.
 
-![[{2F15BCF6-DC7A-451D-919D-7FCAD0B5876F}.png|center|450]]
+![[separation_fluid.png|center|450]]
 ### Impulse-momentum equation
 
