@@ -164,4 +164,20 @@ Cavitation can cause significant wear and tear on pipelines, pumps, and valves, 
 
 ![[separation_fluid.png|center|450]]
 ### Impulse-momentum equation
+Momentum of a body is the product of mass and velocity ($kg m/s$), and Newton’s second law of motion states that the resultant external force acting on any body in any direction is equal to the rate of change of momentum of the body in that direction.
+This can be stated as:
+$$F_x = \frac{d}{dt}(mv_x)$$
+The impulse-momentum equation can be written as
+$$F_xdt=mdv_x$$
+where $m$ is the mass of the body and d$v$ is the change in velocity in the direction considered. $Fdt$ is called the impulsed of applied force $F$. For a fluid the sum of external forces on a control volume is equal to the net change in the rate of momentum flow $\rho Qv$. 
+#### Momentum correction factor ($\beta$)
+In the case of non-uniform velocity distribution, particles move with different velocities across the flow section. The total momentum flow is the sum of the momentum flow of individual particles, expressed as:
 
+$$\int_A\rho dAvv=\beta \rho A\bar{V}\bar{V} \quad \text{or} \quad  \beta \rho Q \bar{V}$$
+
+
+where $\bar{V}$ is the average velocity at the section, and $\beta$ is the Boussinesq coefficient, calculated as:
+
+$$\beta = \frac{1}{A} \int_A \left( \frac{v}{\bar{V}} \right)^2 dA$$
+
+For turbulent flows, $\beta$ is typically less than 1.1, and for laminar flows, it is 1.33.
