@@ -5,6 +5,36 @@
 The plot() function is used to create line plots. It connects data points with lines in the order they appear in the input sequence. This is useful for visualizing trends and relationships between variables over a continuous range. 
 #### Scatter pp.set_index('Datetime')
 The scatter() function is used to create scatter plots. It plots individual data points without connecting them with lines. This is useful for visualizing the relationship between two variables, where each point represents an observation. Scatter plots are often used to identify patterns, correlations, or outliers in the data. Additionally, scatter() allows for varying the symbol, size, and color of the points, providing more flexibility in visual representation
+### Animation in plt
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+import matplotlib.animation as animation
+
+fig, ax = plt.subplots()
+ax.set_xlim([0, 10])
+
+scat = ax.scatter(1, 0)
+x = np.linspace(0, 10)
+
+
+def animate(i):
+    scat.set_offsets((x[i], 0))
+    return (scat,)
+
+
+ani = animation.FuncAnimation(fig, animate, repeat=True, frames=len(x) - 1, interval=50)
+
+# To save the animation using Pillow as a gif
+# writer = animation.PillowWriter(fps=15,
+#                                 metadata=dict(artist='Me'),
+#                                 bitrate=1800)
+# ani.save('scatter.gif', writer=writer)
+
+plt.show()
+```
 
 ## Pandas
 
