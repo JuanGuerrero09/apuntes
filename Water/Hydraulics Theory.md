@@ -1,5 +1,8 @@
 
-Guide book -> Nalluri And Featherstone’s Civil Engineering Hydraulics Essential Theory with Worked Examples (Martin Marriott) (Z-Library)
+Guide book 
+-> Nalluri And Featherstone’s Civil Engineering Hydraulics Essential Theory with Worked Examples (Martin Marriott) (Z-Library)
+-> Hydraulics in Civil and Environmental Engineering ( Andrew Chadwick, John Morfett, Martin Borthwick)
+
 ## Property of Fluids
 ### Viscosity of fluids
 
@@ -151,7 +154,7 @@ The sum of these terms, called the **total head**, remains constant along a stre
 
 For **real fluid flows** the Bernoulli's equation can be modified introducing a loss term due the energy expended in the frictional resistances caused by viscous and turbulent shear stresses and other resistances due to changes of section, valves, fittings and so on.
 Therefore, for real incompressible fluid flow, we can write
-$$z_1\:+\frac{p_1}{\rho g}+\:\frac{\alpha_1 V_1^2}{2g} = z_2\:+\frac{p_2}{\rho g}+\:\frac{\alpha_2 V_2^2}{2g} + \text{losses} \tag{Bernoulli's equation}$$where 𝛼 is the velocity (kinetic) energy correction factor. (For turbulent flows 𝛼 lies between 1.03 and 1.3, and for laminar flows it is 2.0.) 𝛼 is commonly referred to as the **Coriolis coefficient**.
+$$z_1\:+\frac{p_1}{\rho g}+\:\frac{\alpha_1 V_1^2}{2g} = z_2\:+\frac{p_2}{\rho g}+\:\frac{\alpha_2 V_2^2}{2g} + \text{losses} \tag{Bernoulli's equation}$$where 𝛼 is the velocity (kinetic) energy correction factor. (For turbulent flows 𝛼 lies between 1.03 and 1.3, and for laminar flows it is 2.0.) 𝛼 is commonly referred to as the **Coriolis coefficient**, it comes from .
 ### Separation and cavitation in fluid flow
 
 In a **rising main** with a uniform pipeline, Bernoulli’s equation states that the **total energy** of the fluid remains constant along the pipeline. Since the pipe has a uniform diameter, the velocity remains unchanged, simplifying Bernoulli’s equation to:
