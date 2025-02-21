@@ -184,3 +184,11 @@ where $\bar{V}$ is the average velocity at the section, and $\beta$ is the Bouss
 $$\beta = \frac{1}{A} \int_A \left( \frac{v}{\bar{V}} \right)^2 dA$$
 
 For turbulent flows, $\beta$ is typically less than 1.1, and for laminar flows, it is 1.33.
+### Energy Losses in sudden transitions
+It can be for sudden expansion $a)$  and sudden contraction $b)$.
+![[suddencontrandexp.png|center]]
+Given that
+$$\text{Momentum equation} = \text{Net force on the control volume between 1 and 2
+= rate of change of momentum}$$
+From the countinuity equation $A_1V_1 = A_2V_2 = Q$  the head or energy loss is:
+$$h_L= \frac{(V_c-V_2)^2}{2g}$$
