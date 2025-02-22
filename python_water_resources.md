@@ -1,9 +1,13 @@
 # Python in Water Resources
 
 ## Matplotlib
+
 #### Plot
-The plot() function is used to create line plots. It connects data points with lines in the order they appear in the input sequence. This is useful for visualizing trends and relationships between variables over a continuous range. 
+
+The plot() function is used to create line plots. It connects data points with lines in the order they appear in the input sequence. This is useful for visualizing trends and relationships between variables over a continuous range.
+
 #### Scatter pp.set_index('Datetime')
+
 The scatter() function is used to create scatter plots. It plots individual data points without connecting them with lines. This is useful for visualizing the relationship between two variables, where each point represents an observation. Scatter plots are often used to identify patterns, correlations, or outliers in the data. Additionally, scatter() allows for varying the symbol, size, and color of the points, providing more flexibility in visual representation
 ### Animation in plt
 
@@ -39,8 +43,9 @@ plt.show()
 ## Pandas
 
 ### Important to process
-In read_csv is important to select __skiprows=#__ for possible text before, __delimiter='\t'__ for delimiter in same line, can be __,__ or __.__ as well.
-With __index_col='name'__ select the  __parse_dates=True__, parse_dates starts with the index.
+
+In read_csv is important to select **skiprows=#** for possible text before, **delimiter='\t'** for delimiter in same line, can be **,** or **.** as well.
+With **index_col='name'** select the **parse_dates=True**, parse_dates starts with the index.
 
 ### Key Panda Functions
 
@@ -63,28 +68,30 @@ pp['Ppt'].describe()
 pp['Ppt'].loc['1950-01-01':'1959-12-31'].describe()
 ```
 
-
 ## Scipy
 
 ### Statistics
+
 Usage package scipy.stats, allows to have the whole process in statistical analysis.
 Linear regresion gives: Slope, Intercepts, Correlation Coefficient, Pvalue and Standard Error
 
 The best way to see precipitation data is as with distributions, having as a main property **mean** and **standard deviation** and with that the probability density function and cumulative desnity function can be calculated.
 
 ### Interpolation
+
 Using interpolate.interp1d returns a interpolation function for a serie of (x, y) values.
-Standard is Lineall but can be changed to queadratic 
+Standard is Lineall but can be changed to queadratic
 f = interp1d(x, y, 'quadratic')
 
 ### Correlations
+
 Correlation is a measure in statistics dependecy, can be monotonic or not monotonic. The three principal correlations are:
+
 - **Pearson's r** (Most used): Linear coefficient, measure the lienal association in two variables.
 - Spearman's p
 - Kendall tau t
 
 ### Missing Data
-
 
 ### Key Scipy Functions
 
@@ -98,8 +105,14 @@ d = st.norm(loc=0, scale=5) # scale change height of the distribution
 x = np.linspace(-50,50, 1000)
 y1 = d.pdf(x)
 ```
+<<<<<<< HEAD
 ![alt text](pdf.png)
 ![alt text](cdf.png)
+=======
+
+![alt text](images/pdf.png)
+![alt text](images/cdf.png)
+>>>>>>> 0c549d0 (old modify)
 
 ```python
 # Interpolate
@@ -136,10 +149,9 @@ plt.plot(ll, '--b', label='10%')
 
 ```
 
-
 ## Examples
 
-### 1. 
+### 1
 
 ```python
 ws = pd.read_excel('../Data/station2.xlsx',skiprows=2,index_col='FECHA',parse_dates=True)
@@ -150,7 +162,7 @@ desviacion = ws['VALOR'].std()
 # Determinaos regresiones probabilisticas
 tabulaciones = np.arange(ws['VALOR'].min(),ws['VALOR'].max(),0.1)
 
-distnormal = st.norm.pdf(tabulaciones, 
+distnormal = st.norm.pdf(tabulaciones,
                             loc=promedio, scale=desviacion)
 distlognormal = st.pearson3.pdf(tabulaciones,skew=1,
                                    loc=promedio, scale=desviacion)
@@ -169,7 +181,7 @@ plt.legend(loc='upper right')
 plt.rcParams['figure.figsize'] = 15, 4
 ```
 
-### 2 
+### 2
 
 ```python
 # generate some data
@@ -180,6 +192,7 @@ e = 10*np.random.randn(20,100)
 X_err = X+e
 
 plt.plot(X_err.T, 'k')
+
 plt.xlabel('Time')
 plt.ylabel('X')
 
@@ -200,3 +213,4 @@ plt.xlabel('Time')
 plt.ylabel('X')
 plt.legend(loc='best')
 ```
+
