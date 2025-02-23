@@ -68,6 +68,20 @@ pp['Ppt'].describe()
 pp['Ppt'].loc['1950-01-01':'1959-12-31'].describe()
 ```
 
+### Create Excel from df
+```python
+st1 = pd.read_csv('../Data/st1.txt',skiprows=28,delimiter='\t',index_col='datetime',parse_dates=True)[1:]
+st2 = pd.read_csv('../Data/st2.txt',skiprows=28,delimiter='\t',index_col='datetime',parse_dates=True)[1:]
+st1.columns = ['agency','site','pp1','code']
+st2.columns = ['agency','site','pp2','code']
+st1.pp1 = pd.to_numeric(st1.pp1, errors='coerce')
+st2.pp2 = pd.to_numeric(st2.pp2, errors='coerce')
+merged = pd.concat([st1.pp1, st2.pp2], axis=1)
+merged.index = pd.to_datetime(merged.index)
+merged.to_excel('merged.xlsx')
+```
+
+
 ## Scipy
 
 ### Statistics
