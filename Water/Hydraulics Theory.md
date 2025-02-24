@@ -184,3 +184,81 @@ where $\bar{V}$ is the average velocity at the section, and $\beta$ is the Bouss
 $$\beta = \frac{1}{A} \int_A \left( \frac{v}{\bar{V}} \right)^2 dA$$
 
 For turbulent flows, $\beta$ is typically less than 1.1, and for laminar flows, it is 1.33.
+### Energy Losses in sudden transitions
+It can be for sudden expansion $a)$  and sudden contraction $b)$.
+![[suddencontrandexp.png|center]]
+### Sudden Expansion (Figure a)
+
+When the flow moves from a smaller area $A_1$​ to a larger area $A_2$, a sudden expansion occurs.  
+This causes **energy loss** due to velocity dissipation in vortices and turbulence.
+
+The governing equations for this phenomenon are:
+
+#### **Energy Equation** (Bernoulli with an energy loss $h_L$):
+
+$$\frac{p_1}{\rho g} + \frac{V_1^2}{2g} = \frac{p_2}{\rho g} + \frac{V_2^2}{2g} + \text{loss}$$
+
+Here, the energy in section 1 is redistributed in section 2, plus the energy lost due to turbulence.
+
+#### **Momentum Equation**:
+$$
+p_1 A_1 + p_1 (A_2 - A_1) - p_2 A_2 = \rho Q (V_2 - V_1)$$
+
+This equation calculates the net force on the fluid due to pressure differences and how it affects velocity.
+
+#### **Continuity Equation** (mass conservation):
+
+$$A_1 V_1 = A_2 V_2 = Q$$
+
+The flow rate must remain constant in both sections.
+
+#### **Energy Loss in Expansion**:
+$$h_L = \frac{(V_1 - V_2)^2}{2g}$$​
+
+This loss occurs because the velocity suddenly decreases, creating turbulence and energy dissipation.
+### Sudden Contraction (Figure b)
+
+When the flow moves from a larger area $A_2$​ to a smaller area $A_c$​ (vena contracta), the fluid contracts and then expands again in section 2.
+
+#### **Energy Loss in Contraction**:
+
+$$h_L = \frac{(V_c - V_2)^2}{2g}$$​
+
+Where $V_c$​ is the velocity at the vena contracta.
+
+#### **Velocity at the Vena Contracta (Using Continuity)**:
+
+$$A_c V_c = A_2 V_2 = Q$$$$V_c = \left( \frac{A_2}{A_c} \right) V_2 = \frac{V_2}{C_c}$$​
+Here, $C_c$​ is the **contraction coefficient**, which indicates how much the jet contracts before expanding again.
+## Flow of Incompressible Fluids in Pipelines
+A fluid moving through a pipeline is subjected to energy losses from various sources. A continuous resistance is exerted by the pipe walls due to the formation of a boundary layer in which the velocity decreases from the centre of the pipe to zero at the boundary. 
+
+In steady flow in a uniform pipeline the **boundary shear stress** $\tau_0$ is constant along the pipe, since the boundary layer is of constant thickness, and this resistance results in a uniform rate of total energy or head degradation along the pipeline. For pipelines, the **head loss due friction** along the pipeline is $h_f$ and the rate of **energy lost** or **energy gradient** is $S_f = h_f/L$. 
+
+The hydraulic grade line shows the elevation of the pressure head along the pipe. In a uniform pipe the velocity head $𝛼V2∕2g$ is constant and the energy grade line is parallel to
+the hydraulic grade line.
+$$z_1\:+\frac{p_1}{\rho g}+\:\frac{V_1^2}{2g} = z_2\:+\frac{p_2}{\rho g}+\:\frac{V_2^2}{2g}+h_f \tag{EGL}$$
+And since $V_1=V_2$ 
+$$z_1\:+\frac{p_1}{\rho g} = z_2\:+\frac{p_2}{\rho g}+h_f\tag{HGL}$$
+![[head_energy_gradients.png|center|500]]
+Considering the forces equal to zero in a steady uniform flow, the motivating and drag forces are balanced by the following.
+$$(p_1-p_2)A+\rho g ALsin\theta-\tau_0P_wL=0$$
+Where $A$ is the area of cross section, $P$ is the wetted perimeter and $\tau_0$ the boundary shear stress. Since $Lsin\theta$ is equal to $z_2 - z_1$,
+$$\frac{p_1-p_2}{\rho g}+ z_2 - z_1=\frac{\tau_0P_wL}{\rho gA}$$
+From the HGL equation:
+$$h_f=\frac{\tau_0P_wL}{\rho gA}$$
+And since $R$ is the **hydraulic radius** $= A/P_w=D/4$ for a circular pipe of diameter D
+
+$$h_f=\frac{\tau_0L4}{\rho gD}=\frac{4\tau_0}{\rho} \frac{L}{ g D}*\frac{\rho \frac{V^2}{2 g}}{\rho \frac{V^2}{2 g}}$$
+$$h_f=\frac{4\tau_0}{\rho \frac{V^2}{2}} \frac{LV^2}{2 g D}$$
+The head loss due to friction in steady uniform flow is given by the Darcy-Weisbach equation.
+$$h_f=\frac{\lambda LV^2}{2gD}\:or\:f\frac{L}{D}\frac{V^2}{2g}$$
+Historically, there's been work by Prandtl and Nikuradse on smooth and artificially roughened pipes revealed three zones of turbulent flow.
+- a) a smooth turbulent zone in which the friction factor 𝜆 is a function of the Reynolds
+number only and expressed by
+$$\frac{1}{\sqrt{\lambda}}=2\text{log}\frac{Re\sqrt{\lambda}}{2.51}$$
+- b) a transitional turbulent zone in which 𝜆 is a function of both k∕D andRe
+- c) a rough turbulent zone in which 𝜆 is a function of k∕D only and expressed by
+$$\frac{1}{\sqrt{\lambda}}=2\text{log}\frac{3.7 D}{k}$$
+$$\frac{1}{\sqrt{\lambda}}=2\text{log}\frac{Re}{\sqrt{\lambda}}$$
+
