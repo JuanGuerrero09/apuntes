@@ -29,6 +29,7 @@ Memory space where I can edit, only when I save it impacts the file (Can split w
 
 It is Language Server Protocol, it standardizes the communication between language tooling and code editor. It provides tools such as completion, _hover_, _formatting_, _definitions_</em>, etc
 
+- <S+k> -> Have information about the function (hover like)
 #### Plugin Manager:
 
 Code or program to add to the editor to extend the program
@@ -38,6 +39,7 @@ Code or program to add to the editor to extend the program
 - :s/search/replace/ #
 - :%s/search/replace: Search and replace global
 - :start_line, end_line s/<search>/<replace>
+
 - / and ? : search and after enter move with n and S-n
 - #/\* + n/S-n: Search current word after and before
 - g+\*: Search part of word
@@ -72,14 +74,14 @@ Code or program to add to the editor to extend the program
 ### Copying
 
 - yy: Copy current line
-- #yy: Copy # lines
+- # yy: Copy # lines
 - yiw: Copy current word
 - y$/^: Copy to the end/start of line
 
 ### Cuting
 
 - dd: Cut current line
-- #dd: Cut # lines
+- # dd: Cut # lines
 - d$/^: Cut to the end/start of line
 - diw: Cut current word
 - shift+d -> Eliminar resto de linea
@@ -87,7 +89,7 @@ Code or program to add to the editor to extend the program
 ### Pasting
 
 - dd: Paste current line
-- #dd: Paste # lines
+- # dd: Paste # lines
 - d$/^: Paste to the end/start of line
 - diw: Paste current word
 

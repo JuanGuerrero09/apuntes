@@ -9,6 +9,7 @@ The plot() function is used to create line plots. It connects data points with l
 #### Scatter pp.set_index('Datetime')
 
 The scatter() function is used to create scatter plots. It plots individual data points without connecting them with lines. This is useful for visualizing the relationship between two variables, where each point represents an observation. Scatter plots are often used to identify patterns, correlations, or outliers in the data. Additionally, scatter() allows for varying the symbol, size, and color of the points, providing more flexibility in visual representation
+
 ### Animation in plt
 
 ```python

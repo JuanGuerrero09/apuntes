@@ -1,4 +1,4 @@
-
+#hydraulics/pipeline
 Guide book 
 -> Nalluri And Featherstone’s Civil Engineering Hydraulics Essential Theory with Worked Examples (Martin Marriott) (Z-Library)
 -> Hydraulics in Civil and Environmental Engineering ( Andrew Chadwick, John Morfett, Martin Borthwick)
@@ -231,34 +231,108 @@ Where $V_c$​ is the velocity at the vena contracta.
 $$A_c V_c = A_2 V_2 = Q$$$$V_c = \left( \frac{A_2}{A_c} \right) V_2 = \frac{V_2}{C_c}$$​
 Here, $C_c$​ is the **contraction coefficient**, which indicates how much the jet contracts before expanding again.
 ## Flow of Incompressible Fluids in Pipelines
-A fluid moving through a pipeline is subjected to energy losses from various sources. A continuous resistance is exerted by the pipe walls due to the formation of a boundary layer in which the velocity decreases from the centre of the pipe to zero at the boundary. 
+### Energy Loss in Fluid Flow Through Pipelines
+A fluid moving through a pipeline is subjected to energy losses from various sources. A continuous resistance is exerted by the pipe walls due to the formation of a boundary layer in which the velocity decreases from the centre of the pipe to zero at the boundary.
 
-In steady flow in a uniform pipeline the **boundary shear stress** $\tau_0$ is constant along the pipe, since the boundary layer is of constant thickness, and this resistance results in a uniform rate of total energy or head degradation along the pipeline. For pipelines, the **head loss due friction** along the pipeline is $h_f$ and the rate of **energy lost** or **energy gradient** is $S_f = h_f/L$. 
+### Boundary Shear Stress and Head Loss
 
-The hydraulic grade line shows the elevation of the pressure head along the pipe. In a uniform pipe the velocity head $𝛼V2∕2g$ is constant and the energy grade line is parallel to
-the hydraulic grade line.
+In steady flow in a uniform pipeline, the **boundary shear stress** $\tau_0$ is constant along the pipe, since the boundary layer is of constant thickness. This resistance results in a uniform rate of total energy or head degradation along the pipeline. For pipelines, the **head loss due to friction** along the pipeline is denoted as $h_f$, and the rate of **energy lost** or **energy gradient** is given by:
+$$S_f = h_f/L$$
+where $L$ is the length of the pipeline.
+
+### Hydraulic Grade Line and Energy Grade Line
+
+The **hydraulic grade line** shows the elevation of the pressure head along the pipe. In a uniform pipe, the velocity head $\frac{V^2}{2g}$ is constant, and the **energy grade line** (EGL) is parallel to the hydraulic grade line (HGL). The equation for the energy grade line is:
 $$z_1\:+\frac{p_1}{\rho g}+\:\frac{V_1^2}{2g} = z_2\:+\frac{p_2}{\rho g}+\:\frac{V_2^2}{2g}+h_f \tag{EGL}$$
 And since $V_1=V_2$ 
 $$z_1\:+\frac{p_1}{\rho g} = z_2\:+\frac{p_2}{\rho g}+h_f\tag{HGL}$$
 ![[head_energy_gradients.png|center|500]]
-Considering the forces equal to zero in a steady uniform flow, the motivating and drag forces are balanced by the following.
+### Steady Flow and Force Balance
+
+Considering forces equal to zero in a steady uniform flow, the motivating and drag forces are balanced by the following equation:
 $$(p_1-p_2)A+\rho g ALsin\theta-\tau_0P_wL=0$$
 Where $A$ is the area of cross section, $P$ is the wetted perimeter and $\tau_0$ the boundary shear stress. Since $Lsin\theta$ is equal to $z_2 - z_1$,
 $$\frac{p_1-p_2}{\rho g}+ z_2 - z_1=\frac{\tau_0P_wL}{\rho gA}$$
 From the HGL equation:
 $$h_f=\frac{\tau_0P_wL}{\rho gA}$$
-And since $R$ is the **hydraulic radius** $= A/P_w=D/4$ for a circular pipe of diameter D
+### Hydraulic Radius and Head Loss
+
+Since $R$ is the **hydraulic radius**, defined as $R = \frac{A}{P_w}$ and for a circular pipe, $R = \frac{D}{4}$, the head loss due to friction can be expressed as:
 
 $$h_f=\frac{\tau_0L4}{\rho gD}=\frac{4\tau_0}{\rho} \frac{L}{ g D}*\frac{\rho \frac{V^2}{2 g}}{\rho \frac{V^2}{2 g}}$$
+Simplifying further:
 $$h_f=\frac{4\tau_0}{\rho \frac{V^2}{2}} \frac{LV^2}{2 g D}$$
-The head loss due to friction in steady uniform flow is given by the Darcy-Weisbach equation.
+The head loss due to friction in steady uniform flow is given by the **Darcy-Weisbach equation**:
 $$h_f=\frac{\lambda LV^2}{2gD}\:or\:f\frac{L}{D}\frac{V^2}{2g}$$
-Historically, there's been work by Prandtl and Nikuradse on smooth and artificially roughened pipes revealed three zones of turbulent flow.
-- a) a smooth turbulent zone in which the friction factor 𝜆 is a function of the Reynolds
-number only and expressed by
-$$\frac{1}{\sqrt{\lambda}}=2\text{log}\frac{Re\sqrt{\lambda}}{2.51}$$
-- b) a transitional turbulent zone in which 𝜆 is a function of both k∕D andRe
-- c) a rough turbulent zone in which 𝜆 is a function of k∕D only and expressed by
-$$\frac{1}{\sqrt{\lambda}}=2\text{log}\frac{3.7 D}{k}$$
-$$\frac{1}{\sqrt{\lambda}}=2\text{log}\frac{Re}{\sqrt{\lambda}}$$
+### Turbulent Flow Zones and Friction Factor
 
+Historically, work by Prandtl and Nikuradse on smooth and artificially roughened pipes revealed three zones of turbulent flow:
+- **Smooth Turbulent Zone**: In this zone, the friction factor $\lambda$ is a function of the Reynolds number ($Re$) only and is expressed as:
+$$\frac{1}{\sqrt{\lambda}}=2\text{log}\frac{Re\sqrt{\lambda}}{2.51}$$
+- **Transitional Turbulent Zone**: In this zone, $\lambda$ is a function of both $k/D$ and $Re$.
+- **Rough Turbulent Zone**: In this zone, $\lambda$ is a function of $k/D$ only and is expressed as:
+$$\frac{1}{\sqrt{\lambda}}=2\text{log}\frac{3.7 D}{k}$$
+These are the **Kármán–Prandtl** equations. **Colebrook** and **White** extended this work and found that the function resulting from the addition of the rough and smooth equations takes the form:
+$$\frac{1}{\sqrt{\lambda}}=-2\text{log}(\frac{k}{3.7D}+\frac{2.51}{Re\sqrt{\lambda}}) \tag{Colebrook-White equation}$$
+
+### Moody Diagram
+
+The **Colebrook–White equation** was first plotted in the form of a $\lambda$–$Re$ diagram by **Moody (1944)** and is generally referred to as the '**Moody Diagram**'. Combining the **Darcy–Weisbach** and **Colebrook–White** equations yields an explicit expression for $V$:
+$$
+V = -2\sqrt{2gDS_f}\, log(\frac{k}{3.7D} + \frac{2.51v}{D\sqrt{2gDS_f}})
+$$
+Due to the implicit form of the **Colebrook-White equation** a number of approximations in explicit for in $\lambda$ have been proposed.
+
+![[moody_diagram.png|center|600]]
+
+Moody itself produced the following formulation:
+$$
+\lambda = 0.0055[1+ (20\,000\frac{k}{D}+\frac{10^6}{Re})]
+$$
+This is claimed to give values of 𝜆 within ±5% for Reynolds numbers between $4 × 10^3$ and $1 × 10^7$ and for $k∕D$ up to 0.01. 
+Barr (1975) proposed the following form based partly on an approximation to the logarithmic
+smooth turbulent element in the Colebrook–White function by White:
+$$\frac{1}{\sqrt{\lambda}}=-2\text{log}(\frac{k}{3.7D}+\frac{5.1286}{Re^{0.89}}) \tag{Barr approximationto C-W eq.}$$
+### Resistance to flow in non-circular sections
+In order to use the same form of resistance equations, such as the **Darcy** (Equation 4.4) and **Colebrook–White** (Equation 4.9), it is convenient to treat the non-circular section as an equivalent hypothetical circular section that yields the same hydraulic gradient at the same discharge.
+
+The _transformation_ is achieved by expressing the diameter **D** in terms of the hydraulic radius **R = A / P**, and since for circular pipes **R = D / 4**, become:
+
+#### Darcy Equation
+
+$$]h_f = \frac{\lambda L V^2}{8gR} $$
+
+#### Colebrook–White Equation
+
+$$\frac{1}{\sqrt{\lambda}} = -2 \log \left( \frac{k}{14.8R} + \frac{2.51 \nu}{4VR} \sqrt{\lambda} \right)$$
+
+Because in the actual non-circular section, the boundary shear stress is not constant around the wetted perimeter (whereas it is in the equivalent circular section), the _transformation_ is not exact. However, experiments have shown that the error is small.
+### Typical Values for Circular Pipelines
+
+The head loss at abrupt contraction is given by:
+
+$$ h_f = K_c \frac{V_2^2}{2g}$$
+
+where $V_2$ is the mean velocity in a downstream section of diameter $D_2$, and $D_1$ is the upstream diameter..
+
+|$\frac{D_2}{D_1}$|0|0.2|0.4|0.6|0.8|1.0|
+|---|---|---|---|---|---|---|
+|$K_c$|0.5|0.45|0.38|0.28|0.14|0|
+
+Note that the value of $K_c = 0.5$ relates to the abrupt entry from a tank into a circular pipeline.
+
+The head loss at abrupt enlargement is given by:
+
+$$h_f = \frac{V_2^2}{2g} \left( \frac{A_2}{A_1} - 1 \right)^2$$
+
+The head loss at a 90° elbow is:
+$$h_f = 1.0 \frac{V_2^2}{2g}$$
+
+The head loss at a 90° smooth bend is:
+
+$$h_f = \frac{V_2^2}{2g}$$
+
+The head loss at a valve is:
+$$h_f = K_v \frac{V_2^2}{2g}$$
+
+where $K_v$ depends on the type of valve and the percentage of closure.
