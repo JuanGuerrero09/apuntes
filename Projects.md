@@ -28,5 +28,7 @@ https://mobbin.com/browse/ios/apps
 - Cálculo de anclajes
 - Espesor de tubería
 - Calculo de cargas sobre tubería (GRP + CS)
+- Interpolar scipy curvas de bombas
+
 
  
