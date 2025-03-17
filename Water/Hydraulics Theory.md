@@ -336,3 +336,5 @@ The head loss at a valve is:
 $$h_f = K_v \frac{V_2^2}{2g}$$
 
 where $K_v$ depends on the type of valve and the percentage of closure.
+
+## Pipe Network Analysis
