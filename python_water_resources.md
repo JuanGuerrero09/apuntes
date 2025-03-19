@@ -1,5 +1,7 @@
 # Python in Water Resources
 
+## Numpy
+
 ## Matplotlib
 #### Plot
 The plot() function is used to create line plots. It connects data points with lines in the order they appear in the input sequence. This is useful for visualizing trends and relationships between variables over a continuous range. 
@@ -11,6 +13,7 @@ The scatter() function is used to create scatter plots. It plots individual data
 ### Important to process
 In read_csv is important to select __skiprows=#__ for possible text before, __delimiter='\t'__ for delimiter in same line, can be __,__ or __.__ as well.
 With __index_col='name'__ select the  __parse_dates=True__, parse_dates starts with the index.
+-> Coherce: Invalid parsing to NaN in .to_numeric()
 
 ### Key Panda Functions
 
