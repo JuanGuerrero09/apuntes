@@ -1,6 +1,7 @@
-# apuntes
-# apuntes
-# apuntes
-# apuntes
-# apuntes
-# apuntes
+# Carpeta para guardar los apuntes en:
+- Hidráulica
+- Programación
+	- React
+	- Golang
+	- Python
+
