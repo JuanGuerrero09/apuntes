@@ -1,5 +1,7 @@
 # Python in Water Resources
 
+## Numpy
+
 ## Matplotlib
 
 #### Plot
@@ -120,14 +122,9 @@ d = st.norm(loc=0, scale=5) # scale change height of the distribution
 x = np.linspace(-50,50, 1000)
 y1 = d.pdf(x)
 ```
-<<<<<<< HEAD
-![alt text](pdf.png)
-![alt text](cdf.png)
-=======
 
 ![alt text](images/pdf.png)
 ![alt text](images/cdf.png)
->>>>>>> 0c549d0 (old modify)
 
 ```python
 # Interpolate
@@ -228,4 +225,3 @@ plt.xlabel('Time')
 plt.ylabel('X')
 plt.legend(loc='best')
 ```
-
