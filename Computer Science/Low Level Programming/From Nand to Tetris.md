@@ -1,6 +1,5 @@
 # Syllabus
-Nothing is more important than seeing the sources of invention which are, in my
-opinion, more interesting than the inventions themselves. –Leibnitz (1646-1716)
+Nothing is more important than seeing the sources of invention which are, in my opinion, more interesting than the inventions themselves. –Leibnitz (1646-1716)
 The elementary logic gate Nand (or its close relative Nor) is the fundamental building block
 from which all hardware platforms are made. In this course we start from the humble Nand
 gate and work our way through the construction of a modern computer system – hardware
