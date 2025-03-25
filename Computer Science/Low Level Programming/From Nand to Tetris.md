@@ -2,10 +2,7 @@
 Nothing is more important than seeing the sources of invention which are, in my opinion, more interesting than the inventions themselves. –Leibnitz (1646-1716)
 The elementary logic gate Nand (or its close relative Nor) is the fundamental building block
 from which all hardware platforms are made. In this course we start from the humble Nand
-gate and work our way through the construction of a modern computer system – hardware
-and software – capable of running Tetris and any other program. In the process, we will
-
-learn how computers work, how they are constructed, and how to plan and execute large-
+gate and work our way through the construction of a modern computer system – hardware and software – capable of running Tetris and any other program. In the process, we will learn how computers work, how they are constructed, and how to plan and execute large-
 scale systems building projects.
 
 Prerequisite: The course is open to undergraduate and graduate students from all schools,
@@ -17,7 +14,6 @@ in one unified framework. This is done constructively, by building a general-pur
 computer system from the ground up. We’ll explore key ideas and techniques used in the
 design of modern hardware and software systems, and discuss major trade-offs and future
 trends. As we go through this journey, you will gain many cross-section views of the
-
 computing field, from the details of bare bone switching circuits to the compilation of high-
 level software abstractions. We will also provide a historical perspective, narrating the key
 

@@ -338,3 +338,14 @@ $$h_f = K_v \frac{V_2^2}{2g}$$
 where $K_v$ depends on the type of valve and the percentage of closure.
 
 ## Pipe Network Analysis
+The fundamental principles in pipeline network analysis consist of defining the flow and pressures that satisfy the **continuity** and **conservation of energy** equations. Pipe networks are composed of interconnected pipes, junctions, and external inflows or outflows, where any change in pipe diameter, demand, or network configuration affects the entire system. The **continuity equation** ensures mass conservation by stating that the algebraic sum of flow rates entering and leaving a junction, including any external inflows or outflows, must be zero. Mathematically, this is expressed as:
+
+$$\sum_{I=1}^{NP(J)} Q_{IJ} - F_J = 0, \quad J = 1, NJ$$
+
+where $Q_{IJ}$​ represents the flow rate in pipe **IJ** at junction **J**, $NP(J)$ is the number of pipes connected at **J**, $F_J$​ is the external demand or supply, and $NJ$ is the total number of junctions.
+
+The **energy conservation equation** states that for any closed loop in the network, the sum of head losses in the pipes must be equal to any head added by pumps. This is given by:
+
+$$\sum_{J=1}^{NP(I)} h_{L,IJ} - H_{m,IJ} = 0, \quad I = 1, NL$$
+
+where $h_{L,IJ}$ represents the head loss in pipe **IJ**, $H_{m,IJ}$​ is the manometric head added by pumps, and $NL$ is the number of loops in the system. By solving these equations simultaneously, the network's flow distribution and pressure heads can be determined, allowing for efficient design and operation of water distribution systems.
