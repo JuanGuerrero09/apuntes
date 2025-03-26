@@ -349,3 +349,8 @@ The **energy conservation equation** states that for any closed loop in the netw
 $$\sum_{J=1}^{NP(I)} h_{L,IJ} - H_{m,IJ} = 0, \quad I = 1, NL$$
 
 where $h_{L,IJ}$ represents the head loss in pipe **IJ**, $H_{m,IJ}$​ is the manometric head added by pumps, and $NL$ is the number of loops in the system. By solving these equations simultaneously, the network's flow distribution and pressure heads can be determined, allowing for efficient design and operation of water distribution systems.
+### Head Balance Method (Loop method)
+Head loss
+$$h = KQ^2$$
+### Quantity Balance Method (Nodal method)
+### Gradient Method 
