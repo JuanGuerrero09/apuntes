@@ -1,0 +1,32 @@
+<VRTDataset rasterXSize="289" rasterYSize="249">
+  <SRS dataAxisToSRSAxisMapping="1,2">PROJCS["WGS 84 / UTM zone 14N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-99],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32614"]]</SRS>
+  <GeoTransform>  6.1074569168185478e+05,  1.4908933445406197e+01,  0.0000000000000000e+00,  2.1372679913762310e+06,  0.0000000000000000e+00, -1.4908933445406197e+01</GeoTransform>
+  <VRTRasterBand dataType="Float32" band="1">
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">2627</MDI>
+      <MDI key="STATISTICS_MEAN">2509.3683262883</MDI>
+      <MDI key="STATISTICS_MINIMUM">2439</MDI>
+      <MDI key="STATISTICS_STDDEV">40.932324933915</MDI>
+    </Metadata>
+    <NoDataValue>-9999</NoDataValue>
+    <ColorInterp>Gray</ColorInterp>
+    <Histograms>
+      <HistItem>
+        <HistMin>2439</HistMin>
+        <HistMax>2627</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>97|320|272|0|121|238|618|0|148|142|140|0|138|127|153|0|137|142|0|179|239|285|0|359|371|452|0|593|731|468|0|447|410|0|423|421|425|0|426|473|464|0|456|474|892|0|1226|1086|0|891|1084|1108|0|1264|1813|2477|0|1586|616|558|0|536|511|0|474|489|474|0|484|460|470|0|477|486|544|0|511|566|612|0|714|1081|0|1210|789|612|0|532|513|474|0|477|424|439|0|413|438|0|407|437|437|0|455|476|490|0|519|628|873|0|1158|662|0|544|482|449|0|388|389|384|0|346|355|326|0|349|328|0|357|357|356|0|379|401|453|0|794|770|418|0|355|326|290|0|280|263|0|253|236|224|0|231|222|211|0|221|237|246|0|259|273|0|336|565|824|0|398|297|232|0|213|215|182|0|188|158|0|157|135|150|0|152|161|184|0|173|196|227|0|236|373|0|536|295|236|0|203|182|190|0|195|174|145|0|143|127|119|0|110|104|0|103|113|112|0|132|152|227|0|314|152|119|0|108|96|0|90|70|61|0|55|53|48|0|45|48|45|0|50|44|0|48|55|71|0|99|138|38|0|19|9|8|0|5|4|2</HistCounts>
+      </HistItem>
+    </Histograms>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="1">Terrain.huam_terrain14N.terrain_huam_14N_ok.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="289" RasterYSize="249" DataType="Float32" BlockXSize="256" BlockYSize="256" />
+      <SrcRect xOff="0" yOff="0" xSize="289" ySize="249" />
+      <DstRect xOff="0" yOff="0" xSize="289" ySize="249" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+</VRTDataset>
