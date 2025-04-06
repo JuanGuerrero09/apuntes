@@ -1,0 +1,56 @@
+<RASMapper>
+  <Version>2.0.0</Version>
+  <Features />
+  <Geometries>
+    <Layer Name="Geom2012" Type="RASGeometry" Filename=".\test01.g01.hdf" />
+  </Geometries>
+  <Results>
+    <Layer Name="plan_basic" Type="RASResults" Expanded="True" Filename=".\test01.p01.hdf">
+      <Layer Type="RASGeometry" Filename=".\test01.p01.hdf" />
+      <Layer Name="depth" Type="RASResultsMap">
+        <MapParameters MapType="depth" ProfileIndex="0" ProfileName="basic" />
+      </Layer>
+      <Layer Name="velocity" Type="RASResultsMap">
+        <MapParameters MapType="velocity" ProfileIndex="0" ProfileName="basic" />
+      </Layer>
+      <Layer Name="elevation" Type="RASResultsMap">
+        <MapParameters MapType="elevation" ProfileIndex="0" ProfileName="basic" />
+      </Layer>
+    </Layer>
+  </Results>
+  <MapLayers />
+  <Terrains />
+  <CurrentView>
+    <MaxX>482182,016485942</MaxX>
+    <MinX>475448,122785942</MinX>
+    <MaxY>427589,551160669</MaxY>
+    <MinY>414870,004460668</MinY>
+  </CurrentView>
+  <VelocitySettings>
+    <Density>1,5</Density>
+    <Lifetime>100</Lifetime>
+    <Radius>0,75</Radius>
+    <Method>2</Method>
+    <Timestep>1</Timestep>
+    <StaticColor>Black</StaticColor>
+  </VelocitySettings>
+  <AnimationSettings>
+    <DelayTimer>0</DelayTimer>
+  </AnimationSettings>
+  <Units>SI Units</Units>
+  <RenderMode>hybrid</RenderMode>
+  <MarksWarpMethod>False</MarksWarpMethod>
+  <CurrentSettings>
+    <ProjectSettings>
+      <RiverStationUnits>Feet</RiverStationUnits>
+      <RiverStationDecimalPlaces>0</RiverStationDecimalPlaces>
+      <HorizontalDecimalPlaces>1</HorizontalDecimalPlaces>
+      <VerticalDecimalPlaces>2</VerticalDecimalPlaces>
+      <XSMaxPoints>450</XSMaxPoints>
+      <LSMaxPoints>1000</LSMaxPoints>
+      <MeshTolerance_MinFaceLength>0,05</MeshTolerance_MinFaceLength>
+      <MeshTolerance_EnsureCellPoint>False</MeshTolerance_EnsureCellPoint>
+    </ProjectSettings>
+    <Folders />
+  </CurrentSettings>
+</RASMapper>
