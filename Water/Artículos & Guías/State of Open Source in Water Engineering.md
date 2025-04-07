@@ -2,3 +2,5 @@ _HEC-RAS is free, but not open-source_ – which means that an advanced user is
 Definition of Open Source
 
 modflow6 -> Fortran -> Python (Flopy)
+epanet -> wntr -> Python 
+swmm -> C -> Python
