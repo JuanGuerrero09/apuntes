@@ -1,5 +1,5 @@
 Message  | Plan: 'Plan 01' (s7.p01)
-Message  | Simulation started at: 05Mar2022 10:17:36 PM
+Message  | Simulation started at: 09Apr2025 09:19:55 AM
 Message  | PROCESS:RasGeomWriter
 Message  | 
 Message  | Writing Geometry
@@ -29,12 +29,12 @@ Progress | 0.07
 Progress | 0.098
 Progress | 0.126
 Progress | 0.165
-Progress | 0.186
-Progress | 0.214
-Progress | 0.242
-Progress | 0.27
-Progress | 0.298
-Progress | 0.326
+Progress | 0.2
+Progress | 0.228
+Progress | 0.256
+Progress | 0.284
+Progress | 0.312
+Progress | 0.337
 Progress | 0.365
 Progress | 0.4
 Progress | 0.428
@@ -57,7 +57,6 @@ Progress | 0.884
 Progress | 0.912
 Progress | 0.937
 Progress | 0.965
-Progress | 0.989
 Progress | 1
 Message  | 
 Message  | Finished Steady Flow Simulation
@@ -66,6 +65,6 @@ Message  |
 Message  | Computations Summary
 Message  | 
 Message  | Computation Task	Time(hh:mm:ss)
-Message  | Completing Geometry(64)	<1
+Message  | Completing Geometry(64)	       1
 Message  | Steady Flow Computations(64)	<1
 Message  | Complete Process	       1
