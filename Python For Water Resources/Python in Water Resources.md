@@ -1,8 +1,6 @@
-# Python in Water Resources
+# Numpy
 
-## Numpy
-
-## Matplotlib
+# Matplotlib
 
 #### Plot
 
@@ -85,7 +83,7 @@ merged.to_excel('merged.xlsx')
 ```
 
 
-## Scipy
+# Scipy
 
 ### Statistics
 
@@ -123,8 +121,8 @@ x = np.linspace(-50,50, 1000)
 y1 = d.pdf(x)
 ```
 
-![alt text](images/pdf.png)
-![alt text](images/cdf.png)
+![alt text](Apuntes/assets/pdf.png)
+![alt text](Apuntes/assets/cdf.png)
 
 ```python
 # Interpolate
