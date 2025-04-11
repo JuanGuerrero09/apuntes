@@ -15,18 +15,13 @@ Fiona es una librería para leer y escribir archivos geoespaciales (como `.shp`,
 ### ⚙️ Componentes Principales
 
 - **Collection**: Objeto que representa un archivo geoespacial.
-    
 - **Feature**: Cada registro del archivo (con geometría + atributos).
-    
 
 #### Principales Apuntes:
 
 - Compatible con `with` para manejo seguro de archivos.
-    
 - Lee archivos espaciales en formato vectorial.
-    
 - Muy útil para integrar con `GeoPandas`.
-    
 
 #### Ejemplo:
 
@@ -49,20 +44,14 @@ Plotly es una librería para crear gráficos interactivos de alta calidad, basad
 ### ⚙️ Componentes Principales
 
 - **go.Figure**: Estructura principal para componer un gráfico.
-    
 - **plotly.express (px)**: API de alto nivel para gráficos rápidos.
-    
 - **Traces**: Objetos visuales (líneas, barras, mapas, etc.).
-    
 
 #### Principales Apuntes:
 
 - Muy potente para notebooks y web.
-    
 - Existen dos APIs: `graph_objects` (más detallada) y `express` (más rápida).
-    
 - Soporta exportación a HTML y PNG.
-    
 
 #### Ejemplo:
 
@@ -85,16 +74,12 @@ Shapely es una librería para crear y manipular geometrías (puntos, líneas, po
 ### ⚙️ Componentes Principales
 
 - **Point, LineString, Polygon**: Objetos geométricos base.
-    
 - **Funciones espaciales**: `.intersects()`, `.union()`, `.distance()`, etc.
-    
 
 #### Principales Apuntes:
 
 - Muy útil para análisis geométrico puro (sin datos tabulares).
-    
 - Se usa junto a `GeoPandas`, `Fiona` y `Rasterio`.
-    
 
 #### Ejemplo:
 
@@ -117,18 +102,13 @@ Rasterio permite leer, escribir y manipular archivos raster (como `.tif`, DEMs, 
 ### ⚙️ Componentes Principales
 
 - **DatasetReader**: Objeto para abrir rásters.
-    
 - **Transform**: Información de georreferenciación.
-    
 - **read()**: Carga bandas individuales como arrays NumPy.
-    
 
 #### Principales Apuntes:
 
 - Permite acceder a metadatos y CRS.
-    
 - Compatible con NumPy para análisis.
-    
 - Ideal para trabajar con DEMs o imágenes remotas.
     
 
@@ -155,20 +135,14 @@ GeoPandas extiende `pandas` para soportar datos geoespaciales. Cada fila es una 
 ### ⚙️ Componentes Principales
 
 - **GeoDataFrame**: Pandas + geometría.
-    
 - **GeoSeries**: Columna geométrica con métodos espaciales.
-    
 - **plot()**: Muestra los datos directamente con Matplotlib.
-    
 
 #### Principales Apuntes:
 
 - Soporta operaciones espaciales (`.buffer()`, `.intersects()`).
-    
 - Trabaja con CRS y reproyecciones (`.to_crs()`).
-    
 - Se integra con `matplotlib`, `shapely`, `rasterio`.
-    
 
 #### Ejemplo:
 
@@ -190,20 +164,14 @@ Dash es un framework para construir dashboards web interactivos con Python. Est�
 ### ⚙️ Componentes Principales
 
 - **Dash App**: La aplicación web.
-    
 - **dcc.Graph**: Componente de visualización con Plotly.
-    
 - **dcc.Input / html.Div**: Elementos de UI.
-    
 
 #### Principales Apuntes:
 
 - Usa callbacks para enlazar interactividad.
-    
 - Ideal para mostrar resultados de modelos o visualización de datos.
-    
 - Se ejecuta como una app web local o en servidores.
-    
 
 #### Ejemplo:
 
@@ -221,5 +189,3 @@ if __name__ == '__main__':
 ```
 
 ---
-
-¿Quieres que los pase a Markdown listo para copiar o subirlo a algún repositorio o nota en Obsidian?
