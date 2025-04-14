@@ -30,5 +30,9 @@ https://mobbin.com/browse/ios/apps
 - Calculo de cargas sobre tubería (GRP + CS)
 - Interpolar scipy curvas de bombas
 
+# Ideas artículos
+- Uso de Landlab para observar erosión producida por flash floods
+- 
+
 
  
