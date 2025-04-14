@@ -110,7 +110,6 @@ Rasterio permite leer, escribir y manipular archivos raster (como `.tif`, DEMs, 
 - Permite acceder a metadatos y CRS.
 - Compatible con NumPy para análisis.
 - Ideal para trabajar con DEMs o imágenes remotas.
-    
 
 #### Ejemplo:
 
