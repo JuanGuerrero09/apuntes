@@ -1,5 +1,7 @@
 #gis #python #dem
 *Descripción:* Rasterio es una librería de *python* que permite leer, escribir y manipular archivos raster (como `.tif`, DEMs, imágenes satelitales). Está construido sobre GDAL, y es esencial para el análisis geoespacial en rásters.
+
+
 ### ⚙️ Componentes Principales
 
 - **DatasetReader**: Objeto para abrir rásters.
