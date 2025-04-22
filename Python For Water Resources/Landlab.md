@@ -26,23 +26,20 @@ fd.run_one_step()
 - **¿Cuándo usarlo?** Si tu objetivo es simular embalses o lagos, es más apropiado que `FillDepressions`.
     
 
-python
+```python
+from landlab.components import DepressionFinderAndRouter 
+dfr = DepressionFinderAndRouter(mg) 
+dfr.run_one_step()`
+```
 
-CopiarEditar
-
-`from landlab.components import DepressionFinderAndRouter dfr = DepressionFinderAndRouter(mg) dfr.run_one_step()`
 
 📌 _Para delinear cuencas, normalmente `FillDepressions` basta._ Usa `DepressionFinderAndRouter` si después vas a simular llenado de embalses o inundaciones.
 ## ¿Para qué sirve `FlowAccumulator`?
 
 - Calcula cómo fluye el agua en cada celda hacia abajo, y hacia qué nodo receptor fluye.
-    
 - Genera campos como:
-    
     - `"flow__receiver_node"` → hacia dónde fluye cada celda
-        
     - `"drainage_area"` → cuánta área drena hacia cada nodo
-        
 
 🔧 Es la base para **identificar cuencas y calcular acumulación de flujo**.
 
@@ -50,22 +47,39 @@ CopiarEditar
 
 Como tú bien dices, **puedes elegir un punto con coordenadas** (X, Y), y convertirlo a un nodo con esta función:
 
-python
 
-CopiarEditar
-
-`def get_node_from_coords(mg, x, y):     """Convierte coordenadas reales a un nodo de Landlab."""     return mg.node_at_point((x, y))`
+```python
+def get_node_from_coords(mg, x, y):
+"""Convierte coordenadas reales a un nodo de Landlab."""     return mg.node_at_point((x, y))`
+```
 
 ## Añadimos función `delineate_basin_from_coords`
 
 Aquí está el código que puedes incluir en tu script. Acepta coordenadas y te da la máscara de la cuenca:
 
-python
 
-CopiarEditar
+```python
 
-`def delineate_basin_from_coords(mg, x, y):     """Delinea la cuenca aguas arriba desde una coordenada (x, y)."""     from landlab.components import FlowAccumulator, FillDepressions      # Rellenar depresiones y calcular flujo     FillDepressions(mg).run_one_step()     FlowAccumulator(mg).run_one_step()      # Convertir coordenadas a nodo     outlet_node = mg.node_at_point((x, y))      # Delinear cuenca desde el nodo outlet     receivers = mg.at_node["flow__receiver_node"]     stack = [outlet_node]     visited = set()      while stack:         node = stack.pop()         if node not in visited:             visited.add(node)             donors = np.where(receivers == node)[0]             stack.extend(donors)      basin_nodes = np.array(list(visited))     mask = np.zeros(mg.number_of_nodes, dtype=bool)     mask[basin_nodes] = True     return mask`
-
+def delineate_basin_from_coords(mg, x, y):
+	"""Delinea la cuenca aguas arriba desde una coordenada (x, y)."""     
+	from landlab.components import FlowAccumulator, FillDepressions # Rellenar depresiones y calcular flujo
+    FillDepressions(mg).run_one_step()
+    FlowAccumulator(mg).run_one_step()      
+    # Convertir coordenadas a nodo     
+    outlet_node = mg.node_at_point((x, y))      
+    # Delinear cuenca desde el nodo outlet     
+    receivers = mg.at_node["flow__receiver_node"]     
+    stack = [outlet_node]     
+    visited = set()      
+	while stack:
+		node = stack.pop()         
+		if node not in visited:             
+			visited.add(node)             
+			donors = np.where(receivers == node)[0]
+			stack.extend(donors)      
+	basin_nodes = np.array(list(visited))     
+	mask = np.zeros(mg.number_of_nodes, dtype=bool)     mask[basin_nodes] = True     	return mask`
+```
 ## ¿Cómo visualizar esa cuenca?
 
 python
