@@ -15,7 +15,7 @@ El análisis de transitorios en tuberías se refiere al estudio de lo
 
 # Proceso para estudio de transitorios
 
-1. **Definición del Sistema**: Identificar y describir todos los componentes del sistema de tuberías, incluyendo bombas, válvulas, y tanques.
+1. **Definición del Sistema** : Identificar y describir todos los componentes del sistema de tuberías, incluyendo bombas, válvulas, y tanques.
 
 2. **Modelado del Sistema**: Crear un modelo matemático del sistema utilizando software especializado.
 
@@ -29,7 +29,7 @@ El análisis de transitorios en tuberías se refiere al estudio de lo
 
 La teoría de transitorios se basa en las ecuaciones de conservación de masa y momento aplicadas a un volumen de control dentro del sistema de tuberías. Estas ecuaciones se resuelven utilizando métodos numéricos como el método de las características para predecir el comportamiento del sistema durante un transitorio.
 
-# Software para Transitorios
+#  Software para Transitorios
 
 Existen varios programas de software que se utilizan para el análisis de transitorios en tuberías, entre ellos:
 
