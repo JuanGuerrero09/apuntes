@@ -358,9 +358,186 @@ ani.save("flujo_superficial.mp4", fps=10, dpi=150)
 # Introduction Model
 #dem 
 # Grid
+An example of grids can be the following
+```python
+import numpy as np
+
+from landlab import HexModelGrid, RasterModelGrid, VoronoiDelaunayGrid
+
+smg = RasterModelGrid(
+    (3, 4), 1.0
+)  # a square-cell raster, 3 rows x 4 columns, unit spacing
+rmg = RasterModelGrid((3, 4), xy_spacing=(1.0, 2.0))  # a rectangular-cell raster
+hmg = HexModelGrid(shape=(3, 4))
+# ^a hexagonal grid with 3 rows, 4 columns from the base row, & node spacing of 1.
+x = np.random.rand(100) * 100.0
+y = np.random.rand(100) * 100.0
+vmg = VoronoiDelaunayGrid(x, y)
+# ^a Voronoi-cell grid with 100 randomly positioned nodes within a 100.x100. square
+```
+## Topology of Grids
+All grids consist of two interlocked sets of _points_ joined by _lines_ outlining _areas_. If we define data on the points we call **nodes**, then they are joined by **links**, which outline **patches**. Each node within the interior of the grid lies at the geometric center of the area of a **cell**. The cell’s edges are **faces**, and the endpoints of the faces—which are also vertices of the cells—are **corners**.
+ Landlab assumes that the node set is primary, so there are always more nodes than corners; more links than faces; and more patches than cells.
+ 
+ Each of these sets of _“elements”_ has its own set of IDs. These IDs are what allow us to index the various Landlab fields, which store spatial data. Each feature is ordered by **x, then y**. The origin is always at the bottom left node, unless you choose to move it.
+ 
+ The final thing to know is that **links and faces have directions**. This lets us record fluxes on the grid by associating them with, and mapping them onto, the links (or, much less commonly, the faces). All lines point into the **upper right half-space**. So, on our raster, this means the horizontal links point east and the vertical links point north.
+ ![[Pasted image 20250427163354.png]]
+Landlab lets you record values at any element you want. In practice, the most useful places to store data is on the primary elements of *nodes*, *links*, and *patches*, with the nodes for scalar values (e.g, *elevations*) and the links for *fluxes* with direction to them (e.g., velocity or discharge).
+In order to maintain compatibility across data types, _all_ landlab data are stored in _number-of-elements_-long arrays. This includes both user-defined data and the properties of the nodes within the grid. This means that these arrays can be immediately indexed by their element ID. For example:
+
+```python
+# What are the y-coordinates of the pair of nodes in the middle of our 3-by-4 grid?
+# the IDs of these nodes are 5 and 6, so:
+smg.y_of_node[[5, 6]]
+# array([1., 1.])
+```
+If you’re working with a raster, you can always reshape the value arrays back into two dimensions so you can take Numpy-style slices through it:
+
+```python
+# what are the x-coordinates of nodes in the middle row?
+smg.x_of_node.reshape(smg.shape)[1, :]
+# array([0., 1., 2., 3.])
+```
+
+
+This same data storage pattern is what underlies the Landlab **data fields**, which are simply one dimensional, number-of-elements-long arrays that store user defined spatial data across the grid, attached to the grid itself.
+
+```python
+smg.add_zeros("elevation", at="node", clobber=True)
+# ^Creates a new field of zero data associated with nodes
+smg.at_node["elevation"]  # Note the use of dictionary syntax
+# array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+```
+Or, equivalently, at links:
+
+```python
+smg.add_ones("slope", at="link", clobber=True)
+# ^Creates a new array of data associated with links
+smg.at_link["slope"]
+# array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
+```
+
+The Landlab **components** use fields to share spatial information among themselves.
+## Getting information of grids
+It's possible to check the information of the grid as follows:
+```python
+smg.number_of_nodes
+# 12
+smg.number_of_links
+# 17
+```
+The grid contains its geometric information too. Let’s look at the _(x,y)_ coordinates of the nodes:
+```python
+for i in range(smg.number_of_nodes):
+    print(i, smg.x_of_node[i], smg.y_of_node[i])
+
+0 0.0 0.0
+1 1.0 0.0
+2 2.0 0.0
+3 3.0 0.0
+4 0.0 1.0
+5 1.0 1.0
+6 2.0 1.0
+7 3.0 1.0
+8 0.0 2.0
+9 1.0 2.0
+10 2.0 2.0
+11 3.0 2.0
+```
+Link connectivity and direction is described by specifying the starting (“tail”) and ending (“head”) node IDs for each link (to remember this, think of an arrow: TAIL ===> HEAD).
+
+```python
+for i in range(smg.number_of_links):
+    print(
+        "Link",
+        i,
+        ":  node",
+        smg.node_at_link_tail[i],
+        "===> node",
+        smg.node_at_link_head[i],
+    )
+
+Link 0 :  node 0 ===> node 1
+Link 1 :  node 1 ===> node 2
+Link 2 :  node 2 ===> node 3
+Link 3 :  node 0 ===> node 4
+Link 4 :  node 1 ===> node 5
+Link 5 :  node 2 ===> node 6
+Link 6 :  node 3 ===> node 7
+Link 7 :  node 4 ===> node 5
+Link 8 :  node 5 ===> node 6
+Link 9 :  node 6 ===> node 7
+Link 10 :  node 4 ===> node 8
+Link 11 :  node 5 ===> node 9
+Link 12 :  node 6 ===> node 10
+Link 13 :  node 7 ===> node 11
+Link 14 :  node 8 ===> node 9
+Link 15 :  node 9 ===> node 10
+Link 16 :  node 10 ===> node 11
+```
+
+Boundary conditions are likewise defined on these elements (see also the full boundary conditions tutorial). Landlab is clever enough to ensure that the boundary conditions recorded on, say, the links get updated when you redefine the conditions on, say, the nodes.
+
+Nodes can be _core_, _fixed value_, _fixed gradient_, or _closed_ (flux into or out of node is forbidden). Links can be _active_ (can carry flux), _fixed_ (always carries the same flux; joined to a fixed gradient node) or _inactive_ (forbidden from carrying flux).
+
+Boundary conditions are likewise defined on these elements (see also the [Boundary conditions](#boundary-conditions) section below). Landlab is clever enough to ensure that the boundary conditions recorded on, say, the links get updated when you redefine the conditions on, say, the nodes.
+
+Nodes can be _core_, _fixed value_, _fixed gradient_, or _closed_ (flux into or out of node is forbidden). Links can be _active_ (can carry flux), _fixed_ (always carries the same flux; joined to a fixed gradient node) or _inactive_ (forbidden from carrying flux).
+## Connectivity of Elements
+Importantly, we can also find out which elements are connected to which other elements. This allows us to do computationally vital operations involving mapping values defined at one element onto another, e.g., the net flux at a node; the mean slope at a patch; the node value at a cell.
+
+In cases where these relationships are one-to-many (e.g., `links_at_node`, `nodes_at_patch`), the shape of the resulting arrays is always (number_of_elements, max-number-of-connected-elements-across-grid). For example, on a raster, `links_at_node` is (nnodes, 4), because the cells are always square. On an irregular Voronoi-cell grid, `links_at_node` will be (nnodes, X) where X is the number of sides of the side-iest cell, and `nodes_at_patch` will be (npatches, 3) because all the patches are Delaunay triangles. And so on.
+
+Lets take a look. Remember, Landlab orders things **counterclockwise from east**, so for a raster the order will the EAST, NORTH, WEST, SOUTH. With undefined directions get recorded as `-1`.
+```python
+smg.links_at_node[5]
+# array([ 8, 11,  7,  4])
+smg.links_at_node.shape
+# (12, 4)
+
+smg.links_at_node[5]
+# array([14, -1, -1, 10])
+smg.patches_at_node
+array([[ 0, -1, -1, -1],
+       [ 1,  0, -1, -1],
+       [ 2,  1, -1, -1],
+       [-1,  2, -1, -1],
+       [ 3, -1, -1,  0],
+       [ 4,  3,  0,  1],
+       [ 5,  4,  1,  2],
+       [-1,  5,  2, -1],
+       [-1, -1, -1,  3],
+       [-1, -1,  3,  4],
+       [-1, -1,  4,  5],
+       [-1, -1,  5, -1]])
+
+smg.nodes_at_patch
+array([[ 5,  4,  0,  1],
+       [ 6,  5,  1,  2],
+       [ 7,  6,  2,  3],
+       [ 9,  8,  4,  5],
+       [10,  9,  5,  6],
+       [11, 10,  6,  7]])
+```
+
+Where element-to-element mapping is one-to-one, you get simple, one dimensional arrays:
+```python
+smg.node_at_cell  # shape is (n_cells, )
+
+array([5, 6])
+
+smg.cell_at_node  # shape is (n_nodes, ) with -1s as needed]
+
+array([-1, -1, -1, -1, -1,  0,  1, -1, -1, -1, -1, -1])`
+```
+
+# Data Fields
+
 # Components
 # Utilities
 
+# Boundary Conditions
 
 # Interesting
 - Check priority_flood_flow_router

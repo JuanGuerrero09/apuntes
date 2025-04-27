@@ -1,5 +1,8 @@
 # Carpeta para guardar los apuntes en:
-- Hidráulica
+- Aguas
+	-  [[Hidrology]]
+	- [[Hydraulics Theory]]
+	- [[Hydropower]]
 - Programación
 	- React
 	- Golang
