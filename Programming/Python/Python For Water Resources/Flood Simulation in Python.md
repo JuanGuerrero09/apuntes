@@ -14,3 +14,8 @@ https://github.com/landlab/landlab/blob/master/docs/source/teaching/geomorpholog
 https://tu-dresden.de/tu-dresden/newsportal/news/smarte-loesung-fuer-hochwasserschutz-forscher-innen-der-tu-dresden-entwickeln-eine-app-fuer-die-simulation-von-starkregenereignissen?set_language=en
 
 https://github.com/Critical-Infrastructure-Systems-Lab/InfeRes/tree/main
+
+# Pysheds
+https://uon.sdsu.edu/online_calc.php
+https://github.com/mdbartos/pysheds
+https://github.com/mdbartos/pysheds/blob/master/examples/laplacian.ipynb
