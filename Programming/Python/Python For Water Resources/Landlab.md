@@ -112,20 +112,12 @@ CopiarEditar
 
 - Los nodos pueden ser:
     
-    - `core`: interiores.
-        
+    - `core`: interiores.  
     - `fixed`: valor fijo.
-        
     - `closed`: no permite flujo.
-        
 - Links pueden ser activos, inactivos, o fijos.
-    
 
 Ejemplo para cerrar los nodos de borde inferior:
-
-python
-
-CopiarEditar
 
 `grid.status_at_node[grid.nodes_at_bottom_edge] = grid.BC_NODE_IS_CLOSED`
 
@@ -321,13 +313,9 @@ plt.show()
 Cuando corras el script:
 
 - Verás una **animación** con tres subgráficos:
-    
     - 💧 _Profundidad del agua superficial_
-        
     - 🌊 _Área de drenaje acumulada_
-        
     - 🌀 _Velocidad del flujo superficial_
-        
 
 ---
 
