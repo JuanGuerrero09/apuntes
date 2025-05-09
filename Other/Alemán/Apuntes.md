@@ -109,8 +109,12 @@
 		Ist das ein Mann? |  Is that a man? (Mann as subject of sentence)
 		Da drüben sehe ich einen Mann. |  I can see a man over there. (Mann as object of the sentence)
 	- *Adjectives*, words that describe the quality of a noun can have different endings when they are linked to a masculine noun (ein neu*er* Laptop), a feminine noun (eine intelligent*e* Frau) or a neuter noun (ein sch*ö*n*es* Haus)
-- Cases.
-	- 
+- Order of words.
+	- In most statements the verb is the *second element*
+		- Er *hat* zwei Brüder   | He has two brothers
+		- Mörgen *fahre* ich nach Paris    | Tomorrow I'm going to Paris
+	- In questions the verb is the *beggining* of the sentence
+		- 
 
 
 
