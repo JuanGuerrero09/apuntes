@@ -150,10 +150,81 @@ position of the verb. 6 No, there is only one tense.
 
 ## Notes
 A *Verb* is what a person or any other subject in a sentence is doing.
+Depending in the subject the ending is different., the formation follows this.
+
+| *Infinitive* | *Stem* (root) |         |
+| ------------ | ------------- | ------- |
+| kommen       | komm          | to come |
+| wohnen       | wohn          | to live |
+| hören        | hör           | to hear |
+### Verbs endings in a nutshell
+
+|                               | komm-en | hör-en<br> | *end* |
+| ----------------------------- | ------- | ---------- | ----- |
+| ich (_I_)                     | komme   | höre       | -e    |
+| du (_You_)                    | kommt   | hört       | -t    |
+| Sie (_you, formal_)           | kommen  | hörten     | -en   |
+| er / sie / es (_he, she, it_) | kommst  | hörst      | -st   |
+| wir (_we_)                    | kommen  | hören      | -en   |
+| ihr (_you, plural informal_)  | kommt   | hört       | -t    |
+| Sie (_you, plural, formal_)   | kommen  | hören      | -en   |
+| sie (_they_)                  | kommen  | hören      | -en   |
+
+### Exercise
+1 wohnen → Wo ____ du? – Ich ____ jetzt in Berlin.
+2 studieren → Und was ____ du? – Ich ____ Physik und Chemie.
+3 hören → Welche Musik ____ du? – Ich ____ gern klassische Musik.
+4 lernen → Welche Sprache ____ – Ich ____ im Moment Spanisch.
+du im Moment?
+5 trinken → Was ____ du gern? – Ich ____ gern Kaffee.
+6 jobben → Und ____ du? – Ja, ich ____ als Kellner in einer Bar.
+7 machen → Was ____ du nicht gern? – Ich ____ nicht gern Sport.
+As you have probably noticed, Alex was addressed informally. Rewrite the
+questions in the formal mode (using the Sie form).
+Example: kommen → Woher kommen Sie?
 
 
+Supply the missing endings.
+Example: Anna komm__ aus Wien.
+→ Anna kommt aus Wien.
+1 Ich heiß__ Ulrike.
+2 Komm__ du wirklich aus London?
+3 Peter wohn__ im Stadtzentrum.
+4 Das ist Pia. Sie geh__ sehr gern ins Fitnessstudio.
+5 Was mach__ dein Bruder?
+6 Er studier__ Medizin.
+7 Wie heiß__ Sie?
+8 Ich heiß__ Petra Schmidt.
+9 Und was mach__ Sie beruflich?
+10 Ich studier__ Physik.
+11 Und woher komm__ ihr?
+12 Was mach__ ihr hier?
+13 Und wo wohn__ ihr?
+14 Wir komm__ aus Süddeutschland.
+15 Wir geh__ zu einem Fußballspiel.
+16 Wir bleib__ drei Tage.
+17 Timo und Sabrina lern__ zusammen Englisch.
+18 Basel lieg__ in der Schweiz.
+19 Versteh__ ihr Deutsch?
+20 Und shopp__ du oft?
+21 Jobb__ Ihre Freundin auch?
 
+Translate the following sentences.
+1 I live in Berlin.
+2 He drinks coffee.
+3 She plays tennis.
+4 We are learning German.
+5 Carla and Sophia are playing football.
+6 Where do you come from? (Use (a) the du and (b) the Sie form.)
+7 Where do you live? (Use (a) the du, (b) the Sie and (c) the ihr form.)
+8 Do you skype? (Use (a) the du and (b) the Sie form.)
 
+### Checklist
+1 What is the stem of a German verb?
+2 Can you name all the verb endings in the singular?
+3 Do you know the endings in the plural?
+4 How many tenses are there in German for the present?
+5 Can you explain what a finite verb is?
 
 # Vocabulario
 
