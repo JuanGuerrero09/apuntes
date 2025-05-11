@@ -170,35 +170,43 @@ Depending in the subject the ending is different., the formation follows this.
 | Sie (_you, plural, formal_)   | kommen  | hören      | -en   |
 | sie (_they_)                  | kommen  | hören      | -en   |
 
-### Exercise
-1 wohnen → Wo ____ du? – Ich ____ jetzt in Berlin.
-2 studieren → Und was ____ du? – Ich ____ Physik und Chemie.
-3 hören → Welche Musik ____ du? – Ich ____ gern klassische Musik.
-4 lernen → Welche Sprache ____ – Ich ____ im Moment Spanisch.
-du im Moment?
-5 trinken → Was ____ du gern? – Ich ____ gern Kaffee.
-6 jobben → Und ____ du? – Ja, ich ____ als Kellner in einer Bar.
-7 machen → Was ____ du nicht gern? – Ich ____ nicht gern Sport.
-As you have probably noticed, Alex was addressed informally. Rewrite the
-questions in the formal mode (using the Sie form).
+### Exercises
+1 wohnen → Wo wohnt du? – Ich wohne jetzt in Berlin.
+2 studieren → Und was studierst du? – Ich studiere Physik und Chemie.
+3 hören → Welche Musik hörst du? – Ich höre gern klassische Musik.
+4 lernen → Welche Sprache lernst du im Moment? – Ich lerne im Moment Spanisch.
+5 trinken → Was trinkst du gern? – Ich  gern Kaffee.
+6 jobben → Und jobbst du? – Ja, ich jobbe als Kellner in einer Bar.
+7 machen → Was macht du nicht gern? – Ich mache nicht gern Sport.
+
+ was addressed informally. Rewrite the questions in the formal mode (using the Sie form).
 Example: kommen → Woher kommen Sie?
 
+1. Wo wohnen Sie?
+2. Und was studieren Sie?
+3. Welche Musik hören Sie?
+4. Welche Sprache lernen Sie?
+5. Was trinken Sie gern?
+6. Und jobben Sie?
+7. Was machen Sie nicht gern?
+
+Kellner -> Waiter
+Gern -> 
 
 Supply the missing endings.
-Example: Anna komm__ aus Wien.
-→ Anna kommt aus Wien.
-1 Ich heiß__ Ulrike.
-2 Komm__ du wirklich aus London?
-3 Peter wohn__ im Stadtzentrum.
-4 Das ist Pia. Sie geh__ sehr gern ins Fitnessstudio.
-5 Was mach__ dein Bruder?
-6 Er studier__ Medizin.
-7 Wie heiß__ Sie?
-8 Ich heiß__ Petra Schmidt.
-9 Und was mach__ Sie beruflich?
-10 Ich studier__ Physik.
-11 Und woher komm__ ihr?
-12 Was mach__ ihr hier?
+Example: Anna komm__ aus Wien. → Anna kommt aus Wien.
+1 Ich heiße Ulrike.
+2 Kommst du wirklich aus London?
+3 Peter wohnt im Stadtzentrum.
+4 Das ist Pia. Sie gehen sehr gern ins Fitnessstudio.
+5 Was macht dein Bruder?
+6 Er studiert Medizin.
+7 Wie heißen Sie?
+8 Ich heiße Petra Schmidt.
+9 Und was machen Sie beruflich?
+10 Ich studiere Physik.
+11 Und woher kommt ihr?
+12 Was macht ihr hier?
 13 Und wo wohn__ ihr?
 14 Wir komm__ aus Süddeutschland.
 15 Wir geh__ zu einem Fußballspiel.
