@@ -1,4 +1,5 @@
 Libro: CS229 Lecture Notes
+MIT Introduction to Deep Learning | 6.S191 https://www.youtube.com/watch?v=alfdI7S6wCY
 [A Gentle Introduction to Graph Neural Networks](https://distill.pub/2021/gnn-intro/)
 [Deep-ML](https://www.deep-ml.com/)
 

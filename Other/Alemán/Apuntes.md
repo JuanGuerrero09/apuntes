@@ -136,16 +136,14 @@
 4 What is the difference between the use of gender in German and English?
 - German has three genders, masculine, feminine and neutral
 5 What is one of the most important principles affecting German word order?
-- If is a question or an order 
+- The position of the verb.
 6 Is there a difference between ‘I am working’ and ‘I work’ in German?
-- No, both are *arbeite*
-- 
+- No, there is only one tense., both are *arbeite*
+
  3 Umlauts are important because they change the pronunciation
 and the meaning of words. 4 English gender is biological (persons are
 masculine or feminine, and things, concepts and ideas are neuter). German
-gender is grammatical (things can be masculine, feminine or neuter). 5 The
-position of the verb. 6 No, there is only one tense.
-
+gender is grammatical (things can be masculine, feminine or neuter). 
 # 2. Verbs in present tense
 
 ## Notes
