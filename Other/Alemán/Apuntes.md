@@ -169,23 +169,25 @@ Depending in the subject the ending is different., the formation follows this.
 | ihr (_you, plural informal_)  | kommt   | hört       | -t    |
 | Sie (_you, plural, formal_)   | kommen  | hören      | -en   |
 | sie (_they_)                  | kommen  | hören      | -en   |
-
+### Exceptions
+- Irregular forms like Sie and Haben ("to be" or "to have")
+- Modal verbs or some that have slight spelling variations (Unit 3)
 ### Exercises
-1 wohnen → Wo wohnt du? – Ich wohne jetzt in Berlin.
+1 wohnen → Wo wohnst du? – Ich wohne jetzt in Berlin.
 2 studieren → Und was studierst du? – Ich studiere Physik und Chemie.
 3 hören → Welche Musik hörst du? – Ich höre gern klassische Musik.
 4 lernen → Welche Sprache lernst du im Moment? – Ich lerne im Moment Spanisch.
-5 trinken → Was trinkst du gern? – Ich  gern Kaffee.
+5 trinken → Was trinkst du gern? – Ich trinke gern Kaffee.
 6 jobben → Und jobbst du? – Ja, ich jobbe als Kellner in einer Bar.
-7 machen → Was macht du nicht gern? – Ich mache nicht gern Sport.
+7 machen → Was machst du nicht gern? – Ich mache nicht gern Sport.
 
- was addressed informally. Rewrite the questions in the formal mode (using the Sie form).
+ Rewrite the questions in the formal mode (using the Sie form).
 Example: kommen → Woher kommen Sie?
 
 1. Wo wohnen Sie?
 2. Und was studieren Sie?
 3. Welche Musik hören Sie?
-4. Welche Sprache lernen Sie?
+4. Welche Sprache lernen Sie im Moment?
 5. Was trinken Sie gern?
 6. Und jobben Sie?
 7. Was machen Sie nicht gern?
@@ -198,7 +200,7 @@ Example: Anna komm__ aus Wien. → Anna kommt aus Wien.
 1 Ich heiße Ulrike.
 2 Kommst du wirklich aus London?
 3 Peter wohnt im Stadtzentrum.
-4 Das ist Pia. Sie gehen sehr gern ins Fitnessstudio.
+4 Das ist Pia. Sie geht sehr gern ins Fitnessstudio.
 5 Was macht dein Bruder?
 6 Er studiert Medizin.
 7 Wie heißen Sie?
@@ -207,33 +209,54 @@ Example: Anna komm__ aus Wien. → Anna kommt aus Wien.
 10 Ich studiere Physik.
 11 Und woher kommt ihr?
 12 Was macht ihr hier?
-13 Und wo wohn__ ihr?
-14 Wir komm__ aus Süddeutschland.
-15 Wir geh__ zu einem Fußballspiel.
-16 Wir bleib__ drei Tage.
-17 Timo und Sabrina lern__ zusammen Englisch.
-18 Basel lieg__ in der Schweiz.
-19 Versteh__ ihr Deutsch?
-20 Und shopp__ du oft?
-21 Jobb__ Ihre Freundin auch?
+13 Und wo wohnt ihr?
+14 Wir kommen aus Süddeutschland.
+15 Wir gehen zu einem Fußballspiel.
+16 Wir bleiben drei Tage.
+17 Timo und Sabrina lernen zusammen Englisch.
+18 Basel liegt in der Schweiz.
+19 Versteht ihr Deutsch?
+20 Und shoppst du oft?
+21 Jobbt Ihre Freundin auch?
 
 Translate the following sentences.
-1 I live in Berlin.
-2 He drinks coffee.
-3 She plays tennis.
-4 We are learning German.
-5 Carla and Sophia are playing football.
-6 Where do you come from? (Use (a) the du and (b) the Sie form.)
-7 Where do you live? (Use (a) the du, (b) the Sie and (c) the ihr form.)
-8 Do you skype? (Use (a) the du and (b) the Sie form.)
+1 I live in Berlin. -> Ich lebe in Berlin
+2 He drinks coffee. -> Er trinkt Kaffe
+3 She plays tennis. -> Sie spielt Tennis
+4 We are learning German. -> Wir lernen Deutsch
+5 Carla and Sophia are playing football. -> Carla und Sophia spielen Fussball
+6 Where do you come from? (Use (a) the du and (b) the Sie form.) -> Woher kommst du? Woher kommen Sie?
+7 Where do you live? (Use (a) the du, (b) the Sie and (c) the ihr form.) -> Wo wohnst du? Wo wohnen Sie? Wo wohnt ihr?
+8 Do you skype? (Use (a) the du and (b) the Sie form.) Skypst du? Skypen Sie?
+
+!NOTA Woher -> De dónde, Wo -> Dónde, Wohin -> A dónde
 
 ### Checklist
 1 What is the stem of a German verb?
+The root of the verb, the form of the infinitive without -en or -n
 2 Can you name all the verb endings in the singular?
+-e -st -t -en
 3 Do you know the endings in the plural?
+-en -t -en -en
 4 How many tenses are there in German for the present?
+Only one
 5 Can you explain what a finite verb is?
+A finite verb is a verb with "a" personal ending (libe)
+# 3. Verb variations and irregular verbs
+There are a group of irregular verbs where the spelling is different and other with changes in stem of the verb.
+## Spelling variations - an overview
+#### Stems ending in *-d* or *-t*
+Since verbs where the stem ends in -d or -t would be diffucult to have the *-st* ending for _du_ and the *-t* for _es/sie/es/ihr_ an e is put before those endings.
 
+| *Infinitive* | *Stem* (root) | finite verb  |         |
+| ------------ | ------------- | ------------ | ------- |
+| arbeiten     | arbeit        | du arbeitest | to come |
+| kosten       | kost          | es kostet    | to live |
+| reden        | red           | ihr redet    | to hear |
+Verbs similar as *atmen* and *regnen* where the stem ends in a consonant + _m_ or _n_ also need the additional _e_.
+
+a*tm*en --- a*tm* --- du atm*est* --- to breathe
+re*gn*en --- re*gn* --- es reg*net* --- to rain
 # Vocabulario
 
 | First name | Last name |
