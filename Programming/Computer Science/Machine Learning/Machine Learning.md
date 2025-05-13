@@ -2,6 +2,8 @@ Libro: CS229 Lecture Notes
 MIT Introduction to Deep Learning | 6.S191 https://www.youtube.com/watch?v=alfdI7S6wCY
 [A Gentle Introduction to Graph Neural Networks](https://distill.pub/2021/gnn-intro/)
 [Deep-ML](https://www.deep-ml.com/)
+[Machine Learning with Python and Scikit-Learn – Full Course](https://www.youtube.com/watch?v=hDKCxebp88A)
+
 
 - Data Analysis Methods: Exploratory and Confirmatory, Big Data Essentials, Hydroinformatics and Hydroanalytics.
 - Introduction to Statistical and Machine Learning (ML): Fundamentals
