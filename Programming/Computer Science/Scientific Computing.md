@@ -1,3 +1,4 @@
+[Scientific Computing with Python](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
 - References:
 	- https://aaltoscicomp.github.io/python-for-scicomp/
 	- https://primer-computational-mathematics.github.io/book/intro.html

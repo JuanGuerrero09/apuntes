@@ -3,6 +3,7 @@ MIT Introduction to Deep Learning | 6.S191 https://www.youtube.com/watch?v=alfdI
 [A Gentle Introduction to Graph Neural Networks](https://distill.pub/2021/gnn-intro/)
 [Deep-ML](https://www.deep-ml.com/)
 [Machine Learning with Python and Scikit-Learn – Full Course](https://www.youtube.com/watch?v=hDKCxebp88A)
+[Machine Learning Freecodecamp](https://www.freecodecamp.org/learn/machine-learning-with-python/)
 
 
 - Data Analysis Methods: Exploratory and Confirmatory, Big Data Essentials, Hydroinformatics and Hydroanalytics.
