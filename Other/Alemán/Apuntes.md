@@ -255,12 +255,151 @@ Verbs similar as *atmen* and *regnen* where the stem ends in a consonant + _m_ o
 
 a*tm*en --- a*tm* --- du atm*est* --- to breathe
 re*gn*en --- re*gn* --- es reg*net* --- to rain
+
+Only the forms *er/sie/es ihr* are affected.
+
+ich arbeite 
+wir arbeiten
+du arbeitest 
+ihr arbeitet
+Sie arbeiten 
+Sie arbeiten
+er/sie/es arbeitet 
+sie arbeiten
+
+### Stems ending in -s -ss -ß, -x or -z
+For *du* the ending only add an *-t*
+
+reisen - reis - du reist -> to travel
+küssen - küss - du küst -> to kiss
+heißen - heiß - du heißt -> to be called
+mixen - mix - du mixt -> to mix
+tanzen - tanz - du tanzt -> to dace
+
+### Verbs such as wandern and googeln
+Verbs that have an infinitive that doesn't end in -en but in -ern, -eln. They only add an *-n* to the stem of the word instead of an _-en_ for Sie, sie or wir. 
+
+ich google
+ich bügle
+
+==wandern -> wander - du wanderst -> to hike==
+==Ich wandere, Sie wandern==
+==bügeln -> bügelst ->== 
+
+### Irregular verb with vowel changes
+There is a group of German verbs where the vowel of the stem changes in the present tense. These changes only apply to the *du* and *er/sie/es* forms. The other verb forms are not affected.
+schlafen -> du schläfst -> to sleep
+essen -> du isst -> to eat
+sprechen -> du spricht -> to speak
+lesen -> du liest -> to read
+sehen -> du sieht -> to see
+
+#### Look for patterns
+These vowel changes apply only to a limited number of verbs. It is best to learn these verbs by heart. There are also certain patterns which can help you predict how a verb changes.
+
+a -> ä / e -> i / e -> ie
+
+- Changes from a to *ä*
+	- fahren -> du fährst, es fährt -> to drive
+	- fallen -> du fällst, es fällt -> to fall
+	- tragen -> du trägst, es trägt -> to carry or wear
+	- waschen -> du wäschst, es wäscht -> to wash
+- Changes from e to *i* 
+	- geben -> du gibst, es gibt -> to give
+	- helfen -> du hilfst, es hilft -> to help
+	- treffen -> du triffst, es trifft -> to meet
+	- werfen  -> du wirfst, es wirft, to to throw
+	- Bonus: *nehmen* "to take" has it but more
+		- ich nehme, du nimmst, es nimmt, Sie nehmen, ihr nehmt
+		- ex: Nimmst du die U-Bahn? "Are you taking the subway?"
+- Changes from e to *ie*
+	- sehen -> du siehst, es sieht -> to see
+	- lesen -> du liest, es liest -> to read
+	- empfehlen -> du empfiehlst, es empfiehlt -> to recommend
+### Where to look? and other irregular verbs
+All verbs with a vowel change are irregular. Those irregula or *strong* verbas, not all irregular verbs change their spelling in the present tense.
+Also, two other group of verbs for, which do not conform the regular patter in present tense
+- the verbs *sein* 'to be' and *haben* "to have"
+- the modal verbs (unit 21)
+Also, in switzerland the ß has been abandoned and replaced with ss, Straße became Strasse.
+
+## Exercises
+Write out the full present tense of the following verbs (for all persons: ich, du,
+Sie, er/sie/es, wir, ihr, Sie, sie):
+1 arbeiten
+2 tanzen
+3 heißen
+4 reisen
+5 googeln
+
+| Infinitive | Ich     | du        | er/sie/es | ihr      | Sie / sie (plural) / Wir |
+| ---------- | ------- | --------- | --------- | -------- | ------------------------ |
+| Arbeiten   | arbeite | arbeitest | arbeitet  | arbeitet | arbeiten                 |
+| Tanzen     | Tanze   | Tanst     | tanzt     |          | tanzen                   |
+| Heißen     | heiße   | heißt     | heißt     |          | heißen                   |
+| Reisen     | reise   | reist     | reist     |          | reisen                   |
+| Googeln    | google  | googlest  | googelt   |          | googeln                  |
+1 Ich heiße Hans Homann. → Er heißt Hans Homann.
+2 Ich komme aus Wien. -> Er kommt aus Wien
+3 Ich arbeite bei Radio Ö24. -> Er arbeitet bei Radio Ö24
+4 Ich esse zu Mittag meistens Sushi. -> Er isst zu Mittag meistens Sushi
+5 Ich spreche natürlich Deutsch, aber auch Englisch und Spanisch. -> Er spricht natürlich Deutsch, aber auch Englisch un Spanisch
+6 Ich lese gern Kriminalromane. -> Er liest gern Kriminalromane
+7 Ich fahre auch gern Ski und schwimme viel. -> Er fährt auch gern Ski und schwimmt viel
+8 Ich sehe gern Filme mit Michael Keaton. -> Er sieht gern Filme mit Michael Keaton
+9 Ich schlafe oft lange. -> Er schläft oft lange
+
+Translate sentences
+1 She reads a book. -> Sie liest ein Büch
+2 Peter speaks German and English. -> Peter spricht Deutsch und Englisch
+3 We speak German and Spanish. -> Wir sprechen Deutsch und Spanisch
+4 Magda likes eating pizza. -> Magda isst gern Pizza
+5 I am meeting Nadine. -> Ich treffe Nadine
+6 She is taking the underground. -> Sie nimmt der U-Bahn
+7 He is wearing a T-shirt. -> Er trägt ein T-Shirt
+8 It is raining. -> Es regnet
+
+## Checklist
+1 Do you know what happens to a verb when its stem ends in a -d or -t?
+- An *e* is added in _du_ and _er/sie/es_ in the endings
+2 What do you have to be aware of with verbs such as googeln and bügeln?
+- These verbs only add -n to the stem for the Sie, wir and plural sie forms.
+- Also the *-eln* end also drop the letter _e_ when used with ich (Ich goog)
+3 Which verb forms are affected by a stem vowel change?
+- The du and er/sie/es forms.
+4 Can you name three frequently used verbs that change their stem vowel from e to i?
+- Geben to gibt, Essen to isst and 
+- geben, helfen, treffen, essen, sprechen, nehmen (werfen).
+
+# 4. Irregular Verbs: *Haben* and *Sein*
+Haben *to have* and sein *to be* are both irregular in both languages. In german they change in almost all versions
+
+ich (I) habe bin
+du (you, informal) hast bist
+Sie (you, formal) haben sind
+er/sie/es (he/she/it) hat ist
+wir (we) haben sind
+ihr (you, plural, informal) habt seid
+Sie (you, plural, formal) haben sind
+sie (they)
+
+|                             | *Haben* | *Sein* |
+| --------------------------- | ------- | ------ |
+| Ich (I)                     |         |        |
+| du (informal)               |         |        |
+| er/sie/es                   |         |        |
+| Sie (formal)                |         |        |
+| wir (we)                    |         |        |
+| ihr (you, plural, informal) |         |        |
+| Sie (you, plural, formal)   |         |        |
+| sie (they)                  |         |        |
+
 # Vocabulario
 
-| First name | Last name |
-| ---------- | --------- |
-| Max        | Planck    |
-| Marie      | Curie     |
+|     |     |
+| --- | --- |
+|     |     |
+|     |     |
 
 # Pronunciación
 
