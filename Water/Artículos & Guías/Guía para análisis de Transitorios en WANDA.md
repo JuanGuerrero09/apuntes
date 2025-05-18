@@ -12,13 +12,13 @@ El análisis de transitorios en tuberías se refiere al estudio de lo
 
 # Proceso para estudio de transitorios
 
-1. **Definición del Sistema** : Identificar y describir todos los componentes del sistema de tuberías, incluyendo bombas, válvulas, y tanques.
+1. **Definición del Sistema** Identificar y describir todos los componentes del sistema de tuberías, incluyendo bombas, válvulas, y tanques.
 
-2. **Modelado del Sistema**: Crear un modelo matemático del sistema utilizando software especializado.
+2. **Modelado del Sistema**Crear un modelo matemático del sistema utilizando software especializado.
 
-3. **Simulación de Escenarios**: Ejecutar simulaciones para diferentes escenarios de operación y fallos.
+3. **Simulación de Escenarios** Ejecutar simulaciones para diferentes escenarios de operación y fallos.
 
-4. **Análisis de Resultados**: Evaluar los resultados de las simulaciones para identificar posibles problemas y soluciones.
+4. **Análisis de Resultados**Evaluar los resultados de las simulaciones para identificar posibles problemas y soluciones.
 
 5. **Implementación de Medidas**: Aplicar las medidas necesarias para mitigar los efectos negativos de los transitorios.
 
@@ -31,10 +31,13 @@ La teoría de transitorios se basa en las ecuaciones de conservación�
 Existen varios programas de software que se utilizan para el análisis de transitorios en tuberías, entre ellos:
 
 - **WANDA**: Un software especializado en la simulación de transitorios hidráulicos.
-
 - **HAMMER**: Utilizado para el análisis de golpe de ariete y otros fenómenos transitorios.
+- **TSNet**: Algoritmo libre adaptado de Epanet para cálculo de transitorios hidrálicos
 
-#  Uso de WANDA
+# Alcance de guía
+La presente guía busca establecer las bases para un análisis de transitorios simple realizado en el software WANDA, los análisis específicos se pueden extrapolar a otros programas pero se hará énfasis en el desarrollo en el software de Deltares.
+
+#  Modelado en WANDA
 
 WANDA es una herramienta poderosa para el análisis de transitorios en sistemas de tuberías. Permite modelar y simular diferentes escenarios de operación y fallos, proporcionando información detallada sobre las variaciones de presión y flujo en el sistema. Para utilizar WANDA:
 
@@ -44,11 +47,19 @@ WANDA es una herramienta poderosa para el análisis de transitorios en
 4. **Interpretar Resultados**: Utilizar los resultados para identificar problemas y diseñar soluciones.
 
 ## ¿Para qué es WANDA?
-Se recomienda encarecidamente el uso de WANDA para redes de transporte y distribución dónde se manejen tuberías largas sin una alta complejidad topológica. Como se mencionó previamente, WANDA usa componentes unidos por Nodos, estas uniones buscan juntar elementos de tuberías, válvulas, etc., teniendo una longitud nula y una altura. El hacer esto con los elementos permite que dentro de un solo componente se tenga toda la información que pueda tener la tubería, desde sus propiedades hasta sus características de longitud cuyos único requerimiento es la tubería, ya que son los cambios de altura y los accesorios lo que afectan a las presiones de la tubería.
+Se recomienda encarecidamente el uso de WANDA para redes de transporte y distribución dónde se manejen tuberías largas (en relación con sus ramales) sin una alta complejidad topológica. 
+
+Como se mencionó previamente, WANDA usa componentes unidos por Nodos, estas uniones buscan juntar elementos de tuberías, válvulas, etc., teniendo una longitud nula y una altura. El hacer esto con los elementos permite que dentro de un solo componente se tenga toda la información que requiera de una tubería, desde sus propiedades hasta sus características de longitud cuyos único requerimiento es el perfil o las coordenadas de la tubería, ya que son los cambios de altura y los accesorios lo que afectan a las presiones de la tubería.
 
 Es por esto, que en caso de tener redes de distribución dónde las tuberías tengan ramales o muchas bifurcaciones con longitudes pequeñas dejen de ser ideales debido a que puede dar a lugar a modelos complejos y mas difíciles de mantener, como el que se observa en la imagen.
+
 ![[Pasted image 20250505145034.png]]
-## Uso de WANDA
+
+Esto también fuerza a que si hay una gran variación entre los tamaños de las tuberías a que las pequeñas tengan que definirse del tipo *Rigid Column* (es decir, asumiendo que la la tubería y el fluido son incompresibles) en lugar de *Waterhammer*, cuya diferencia es que esta última si tiene en cuenta la elasticidad del agua.
+
+
+
+## Desarrollo de Modelo
 ### Condiciones de Frontera
 ![[Pasted image 20250505095342.png]]
 
