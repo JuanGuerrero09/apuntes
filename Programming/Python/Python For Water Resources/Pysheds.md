@@ -1,4 +1,5 @@
 https://github.com/mdbartos/pysheds
+https://pythongis.org/part3/chapter-12/nb/00-watershed-analysis-with-pysheds.html
 ### 🔍 ¿Qué es pysheds?
 
 `pysheds` es una biblioteca orientada al **análisis de cuencas hidrográficas y redes de drenaje** a partir de datos raster, especialmente DEMs. Su objetivo es facilitar tareas típicas de hidrología computacional como:

@@ -1,4 +1,7 @@
 
+https://openfreemap.org/quick_start/
+https://github.com/w3cj/openfreemap-examples/blob/main/vanilla-example/styles/dark.json
+https://www.youtube.com/watch?v=MOhRT6DReKQ
 ---
 
 # 🗺️ ¿Cómo funcionan las bibliotecas de mapas en la web?
