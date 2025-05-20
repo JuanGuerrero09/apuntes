@@ -1,4 +1,6 @@
-Libro: Pressure transients in water engineering
+Libro: Pressure transients in water engineering -> John Elis
+Applied Hydraulic Transients -> Chaudry
+Fluid Transients -> Wylie Streeter
 
 https://github.com/USEPA/WNTR
 
