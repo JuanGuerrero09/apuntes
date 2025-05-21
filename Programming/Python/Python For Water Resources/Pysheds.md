@@ -5,16 +5,11 @@ https://pythongis.org/part3/chapter-12/nb/00-watershed-analysis-with-pysheds.htm
 `pysheds` es una biblioteca orientada al **análisis de cuencas hidrográficas y redes de drenaje** a partir de datos raster, especialmente DEMs. Su objetivo es facilitar tareas típicas de hidrología computacional como:
 
 - Delimitación de cuencas.
-    
 - Cálculo de redes de flujo (flow direction, flow accumulation).
-    
 - Corrección de DEMs (filling sinks).
-    
 - Rastreo de redes de drenaje.
-    
 - Generación de mapas de contribución de flujo (contributing area).
 ## Funciones Principales
-
 ### ⚙️ Funcionalidades clave
 
 | Función              | Descripción                                              |
