@@ -1,6 +1,6 @@
 # Carpeta para guardar los apuntes en:
 - Aguas
-	-  [[Hidrology]]
+	- [[Hidrology]]
 	- [[Hydraulics Theory]]
 	- [[Hydropower]]
 - Programación

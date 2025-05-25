@@ -7,22 +7,15 @@
 ### 🧭 Barra lateral / Menú desplegable
 
 - **Nombre de usuario**
-    
 - **Nivel y puntos actuales**
-    
 - **Lista de logros (ej. “Explorador del Retiro”)**
-    
 - **Filtros (mostrar solo museos/parques/monumentos/etc)**
-    
 
 ### 🗺️ Mapa más atractivo
 
 - Añadir **marcadores personalizados** con íconos (🏛️, 🌳, 🖼️, ⚔️)
-    
 - Usar un estilo de mapa temático con colores suaves (tipo Carto, Mapbox light)
-    
 - Mostrar rutas turísticas destacadas
-    
 
 ### 📌 Puntos turísticos destacados
 

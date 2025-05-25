@@ -17,21 +17,15 @@ Perfecto, este proyecto está buenísimo y tiene un montón de potencial. Te dej
 
 #### Python
 
--  Saber trabajar con **rasterio**, **landlab**, **numpy** para DEMs
-    
+-  Saber trabajar con **rasterio**, **landlab**, **numpy** para DEMs  
 -  Aprender **FastAPI** (rutas, respuestas con archivos, async, CORS)
-    
 -  Exportar datos como **GeoTIFF**, **GeoJSON**, o arrays JSON
-    
 
 #### JavaScript
 
 -  Dominar lo básico de **Three.js** (escena, cámara, geometrías, texturas)
-    
 -  Aprender cómo cargar un **heightmap** (DEM) como **malla 3D**
-    
 -  Usar controles de cámara, luces, animaciones
-    
 
 ---
 
@@ -40,28 +34,18 @@ Perfecto, este proyecto está buenísimo y tiene un montón de potencial. Te dej
 #### 📁 API Estructura
 
 - `/upload-dem` → subir un raster (DEM)
-    
 - `/get-basin` → devolver GeoJSON de la cuenca desde un punto
-    
 - `/simulate-flood` → inundar una cuenca hasta cierta altura (con o sin presa)
-    
 - `/calculate-volume` → devolver volumen de agua según altura o presa
-    
 
 #### 🧠 Lógica del Backend
 
 - Usa **Landlab** para:
-    
     - Leer el DEM y convertirlo en malla
-        
     - Delinear cuencas (desde coordenadas o nodos)
-        
     - Inundar cuenca con `depression_finder` o simulaciones
-        
     - Calcular volumen con numpy (área por altura)
-        
 - Exporta todo como JSON o formatos visualizables
-    
 
 ---
 
@@ -70,11 +54,8 @@ Perfecto, este proyecto está buenísimo y tiene un montón de potencial. Te dej
 #### DEM como terreno 3D
 
 - Convierte DEM en una textura (grayscale) o malla (PlaneGeometry con vértices deformados)
-    
 - Aplica colormap (e.g. `terrain`, `viridis`)
-    
 - Ilumina con luz direccional y ambient
-    
 
 #### Cuencas e inundaciones
 
