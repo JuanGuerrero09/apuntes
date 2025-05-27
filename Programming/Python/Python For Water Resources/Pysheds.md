@@ -170,6 +170,7 @@ catch_view = grid.view(catch)
 
 `pysheds` uses the [[Rasterio]] module to read raster images.
 
+
 #### Instantiating a grid from a raster
 
 ```
