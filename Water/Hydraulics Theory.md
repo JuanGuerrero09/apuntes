@@ -25,19 +25,31 @@ The saturated vapour pressure for water at 20◦C is $2.45×10^3 N/m2$.
 
 ## Fluid Statics
 By [[Pascal Law]] the pressure in a fluid is the same in all directions. Considering an elementary cylindrical volume of fluid, the equilibre of forces is the following: 
+#### Fluid Equations from equilibre of forces
+All start from the equilibrium of forces, and if the fluid is not accelerating
 
-$$ 
-p dA - (p+dp)dA - \rho g\:dA\:L\:\sin(theta) = 0 
 $$
+\begin{matrix} 
+\sum F_x = m \cdot a \\
+\sum F_x = 0 \\ 
+
+\end{matrix}
+$$
+
+![[pressure-variation.png| center]]
+$$ 
+\begin{matrix} 
+p dA - (p+dp)dA - \rho g\:dA\:L\:\sin(\theta)= 0 
+\end{matrix}
+$$
+
 with 
 $$ dp = -\rho\:g\:dy \qquad (since\:  \sin\theta = \frac{dy}{L}) $$
 and $\rho$ constant 
 $$
+
  \rho\:g\:dy = \rho\: g\:dy 
 $$
-
-![[pressure-variation.png| center]]
-
 
 $\rho$ being constant for incompressible fluids, we can write
 $$\int dp = \int \rho g \:dy
