@@ -29,7 +29,7 @@ Esta ecuación representa la forma inicial de una ecuación para explicar las p�
 De una relación de fuerzas inerciales y fuerzas viscosas se puede obtener el valor de la viscosidad cinemática del fluido )su resistencia al movimiento debvido a su propia naturalza) y la ecuación de *Reynolds*, que son los siguientes.
 $$\nu = \frac{\mu}{\rho}$$
 $$Re = \frac{u D}{\nu} =\frac{\rho u D}{\mu}$$
-
+Esfuerzo cortsnte turbulento
 
 # 2. Diseño de Tuberías Simples
 
