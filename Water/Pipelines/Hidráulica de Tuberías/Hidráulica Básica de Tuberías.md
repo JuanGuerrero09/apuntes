@@ -29,8 +29,19 @@ Esta ecuación representa la forma inicial de una ecuación para explicar las p�
 De una relación de fuerzas inerciales y fuerzas viscosas se puede obtener el valor de la viscosidad cinemática del fluido )su resistencia al movimiento debvido a su propia naturalza) y la ecuación de *Reynolds*, que son los siguientes.
 $$\nu = \frac{\mu}{\rho}$$
 $$Re = \frac{u D}{\nu} =\frac{\rho u D}{\mu}$$
-Esfuerzo cortsnte turbulento
 
+#### Campos de Flujo
+Las fuerzas importantes para producir el movimiento de las partículas son:
+- Fuerzas de presión $F_p$
+- Fuerzas viscosas $F_v$
+- Fuerzas Inerciales $F_I$
+La fuerzas de tensión superficial $F_ts$  no existen por no haber superficies de contacto gas-líquido o líquido-liquído y las fuerzas de compresibilidad $F_c$ son muy pequeñas por ser la velocidad menor a la del sonido
+!NOTA PENDIENTE
+### Fricción de tuberías
+La siguiente ecuación se dedujo mediante análisis dimensional a partir de la fisica clásica, siendo la ecuación de resistencia fluida más general que existe. Otra ecuación debe ser un caso paerti cular de esta.
+$$
+h_f = \frac{l}{d}\frac{v^2}{2g}F''(\frac{k_s}{d}, Re)
+$$
 # 2. Diseño de Tuberías Simples
 
 # 3. Ecuaciones y Metodologías Alternas de Tuberías Simples
