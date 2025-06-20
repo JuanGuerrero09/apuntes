@@ -37,6 +37,8 @@ Las fuerzas importantes para producir el movimiento de las partículas son:
 - Fuerzas Inerciales $F_I$
 La fuerzas de tensión superficial $F_ts$  no existen por no haber superficies de contacto gas-líquido o líquido-liquído y las fuerzas de compresibilidad $F_c$ son muy pequeñas por ser la velocidad menor a la del sonido
 !NOTA PENDIENTE
+#### Flujo Laminar
+
 ### Fricción de tuberías
 La siguiente ecuación se dedujo mediante análisis dimensional a partir de la fisica clásica, siendo la ecuación de resistencia fluida más general que existe. Otra ecuación debe ser un caso paerti cular de esta.
 $$
