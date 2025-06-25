@@ -1,5 +1,3 @@
-Perfecto. Dado tu nivel avanzado en Python, puedo diseñarte una guía para aprender C y C++ enfocada en proyectos prácticos y comparaciones cuando sea útil (por ejemplo, gestión de memoria, punteros, compilación, etc.).
-
 ### 🎯 Objetivo de la guía
 
 Aprender C y C++ mediante ejercicios prácticos que puedas relacionar con tu experiencia en Python, orientados a rendimiento, sistemas, y estructuras de datos. Estará dividida por niveles (de conceptos clave a proyectos) y tendrá enfoque _hands-on_.
@@ -23,35 +21,25 @@ Aprender C y C++ mediante ejercicios prácticos que puedas relacionar con tu exp
 #### Proyectos prácticos
 
 1. **Conversor de unidades**: CLI básica con entrada por `scanf`.
-    
 2. **Gestor de memoria**: Simula un "memory pool" simple con arrays y `malloc`.
-    
 3. **Lectura de archivos binarios y texto**: Comparar con `open()`/`read()` en Python.
-    
 
 ---
 
 ### 🔹 Semana 3–4: Estructuras, algoritmos y manipulación de datos
 
 **Objetivo**: Construir estructuras y funciones complejas.
-
 #### Temas clave
 
 - Listas enlazadas, pilas, colas (implementadas a mano)
-    
 - Archivos y estructuras serializadas (`fread`, `fwrite`)
-    
 - Errores comunes: segmentation fault, memory leak
-    
 
 #### Proyectos prácticos
 
 1. **Agenda de contactos**: Con `struct` y archivos binarios.
-    
 2. **Simulador de pila** (tipo intérprete de RPN).
-    
 3. **Buscador de palabras en archivos grandes**: En C, para comparar con `re` en Python.
-    
 
 ---
 
@@ -62,22 +50,15 @@ Aprender C y C++ mediante ejercicios prácticos que puedas relacionar con tu exp
 #### Temas clave
 
 - `std::vector`, `std::string`, `std::map`
-    
 - Clases y objetos
-    
 - Constructores, destructores y RAII
-    
 - Sobrecarga y plantillas simples
-    
 
 #### Proyectos prácticos
 
 1. **Simulador de partículas**: con `class Particle`, posición y velocidad.
-    
 2. **Mini base de datos en memoria**: usando `std::map` y ficheros.
-    
 3. **Reimplementa proyectos en C++ usando STL**.
-    
 
 ---
 
@@ -88,49 +69,30 @@ Aprender C y C++ mediante ejercicios prácticos que puedas relacionar con tu exp
 #### Ideas de proyectos
 
 - **Analizador de logs** (tipo `grep`, pero escrito en C++)
-    
 - **Bindings Python–C usando `ctypes` o `pybind11`**
-    
 - **Simulador de flujo en malla** (útil si haces modelos hidráulicos)
-    
 - **Benchmark: Python vs C/C++** en procesamiento de arrays
-    
 
 ---
 
 ## 🛠️ Herramientas recomendadas
 
 - **Compiladores**: `gcc`, `g++`, `clang`
-    
 - **Editor**: Neovim (como usas LazyVim), VS Code (con `ccls` o `clangd`)
-    
 - **Depuración**: `gdb`, `valgrind`
-    
 - **CMake** (para proyectos más grandes en C++)
-    
 
 ---
 
 ## 📚 Recursos opcionales
 
 - **C**:
-    
     - _The C Programming Language_ – Kernighan & Ritchie
-        
     - [Learn-C.org](https://www.learn-c.org/)
-        
 - **C++**:
-    
     - _A Tour of C++_ – Bjarne Stroustrup
-        
     - [cppreference.com](https://en.cppreference.com/)
-        
 - **Ejercicios prácticos**: [Project-Based Learning GitHub - C/C++](https://github.com/practical-tutorials/project-based-learning)
-    
-
----
-
-¿Te gustaría que te prepare esta guía en formato PDF y/o Markdown compatible con Obsidian? ¿Quieres que esté estructurada por semanas o por módulos independientes según tus tiempos?
 
 ---
 
@@ -157,24 +119,17 @@ Aprender C y C++ mediante ejercicios prácticos que puedas relacionar con tu exp
 ### 🧠 Qué aprenderás
 
 - Compilación manual con `gcc`
-    
 - Sintaxis básica y control de flujo
-    
 - Tipos primitivos y funciones
-    
 - Introducción a `struct` y `stdio.h`
-    
 
 ### 🛠 Proyecto 1: "Conversor técnico de unidades"
 
 **Aplicación**: Conversión de caudales, alturas, presiones
 
 - **Inicio**: CLI que recibe parámetros por línea de comandos
-    
 - **Herramientas**: `stdio.h`, `math.h`
-    
 - **Objetivo**: Crear un ejecutable `.out` que convierta entre l/s, m³/s, etc.
-    
 
 ---
 
@@ -183,22 +138,16 @@ Aprender C y C++ mediante ejercicios prácticos que puedas relacionar con tu exp
 ### 🧠 Qué aprenderás
 
 - Punteros y `malloc`, `free`
-    
 - Aritmética de punteros
-    
 - `struct` complejas
     
-
 ### 🛠 Proyecto 2: "Gestión dinámica de presas"
 
 **Aplicación**: Registrar parámetros de varias presas (altura, volumen, caudal)
 
 - **Inicio**: Usar `struct` para representar presas
-    
 - **Herramientas**: `malloc`, `scanf`, arrays dinámicos
-    
 - **Objetivo**: Guardar N presas, mostrar estadísticas (media, max, min)
-    
 
 ---
 
@@ -207,22 +156,17 @@ Aprender C y C++ mediante ejercicios prácticos que puedas relacionar con tu exp
 ### 🧠 Qué aprenderás
 
 - Lectura y escritura con `fopen`, `fread`, `fwrite`
-    
 - Serialización en binario
-    
 - Formato CSV/TSV
-    
 
 ### 🛠 Proyecto 3: "Registro de lluvias"
 
 **Aplicación**: Leer y escribir datos pluviométricos a disco
 
 - **Inicio**: CSV de entrada con `fecha, mm`
-    
 - **Herramientas**: `fopen`, `fgets`, `fscanf`
-    
 - **Objetivo**: Generar un resumen de lluvias por mes
-    
+
 
 ---
 
