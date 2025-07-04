@@ -1,3 +1,7 @@
+https://www.learncpp.com/cpp-tutorial/introduction-to-these-tutorials/
+https://craftinginterpreters.com/contents.html !!!!!!!!!!!!!!!!!
+https://learnopengl.com/Introduction
+https://gameprogrammingpatterns.com/contents.html
 ### 🎯 Objetivo de la guía
 
 Aprender C y C++ mediante ejercicios prácticos que puedas relacionar con tu experiencia en Python, orientados a rendimiento, sistemas, y estructuras de datos. Estará dividida por niveles (de conceptos clave a proyectos) y tendrá enfoque _hands-on_.

@@ -4,7 +4,7 @@ https://www.sciencedirect.com/science/article/pii/S1364815216307186?via%3Dihub
 
 [[Pysheds]]
 
-[[Geog-312]]
+[[Introduction to GIS Programming (Geog-312)]]
 
 [[Maps]]
 
