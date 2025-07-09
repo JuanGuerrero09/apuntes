@@ -78,7 +78,63 @@ Vamos a organizar el contenido en **etapas progresivas**, ideal para una ruta de
 
 ---
 
-# Core Components
+# Components
+
+## Core Components
+The most important Core Components are the next, for more detail visit [[Core Components]]
+### View
+The most fundamental component for building a UI, `View` is a container that supports layout with [flexbox](https://reactnative.dev/docs/flexbox), [style](https://reactnative.dev/docs/style), [some touch handling](https://reactnative.dev/docs/handling-touches), and [accessibility](https://reactnative.dev/docs/accessibility) controls. `View` maps directly to the native view equivalent on whatever platform React Native is running on, whether that is a `UIView`, `<div>`, `android.view`, etc.
+
+`View` is designed to be nested inside other views and can have 0 to many children of any type.
+
+### Text
+
+### TextInput
+
+### ScrollView
+
+
+### Flatlist
+
+A performant interface for rendering basic, flat lists, supporting the most handy features:
+
+- Fully cross-platform.
+- Optional horizontal mode.
+- Configurable viewability callbacks.
+- Header support.
+- Footer support.
+- Separator support.
+- Pull to Refresh.
+- Scroll loading.
+- ScrollToIndex support.
+- Multiple column support.
+
+### SectionList
+### Image (and expo-image)
+A React component for displaying different types of images, including network images, static resources, temporary local images, and images from local disk, such as the camera roll.
+
+Note that for network and data images, you will need to manually specify the dimensions of your image!
+
+### ImageBackground
+
+KeyboardAvoidingView 
+Modal 
+RefreshControl 
+SafeAreaView
+StatusBar
+Switch
+TouchableHighlight
+TouchableOpacity
+TouchableWithoutFeedback
+Pressable
+Button
+VirtualizedList
+DrawerLayoutAndroid
+TouchableNativeFeedback
+InputAccessoryView
+
+
+## Expo Components
 
 ### Stack
 A stack navigator is the foundation for navigating between different screens in an app. On Android, a stacked route animates on top of the current screen. On iOS, a stacked route animates from the right. Expo Router provides a `Stack` component to create a navigation stack to add new routes.
@@ -89,10 +145,25 @@ React Native includes a few different components for handling touch events, but�
 
 ImageSourcePropType?
 
-### Flatlist
+### Touchable
+
+
+### ScrollView
+
+
+
+If you need section support, use [`<SectionList>`](https://reactnative.dev/docs/sectionlist).
 Flash list y victory native
 Uri Imagenes
 
+### SafeArea
+
+---
+# Reanimated
+
+### useAnimatedStyle
+
+### usedSharedValue
 ---
 # Props
 
@@ -194,21 +265,26 @@ Uri Imagenes
 ### 📚 Qué estudiar:
 
 - Qué es React Native y Expo
+React Native is an open-source UI software framework developed by Meta Platforms (formerly Facebook Inc.). It is used to develop applications for Android, Android TV, iOS1 macOS, tvOS,Web, Windows and UWP by enabling developers to use the React framework along with native platform capabilities.[12] It is used to develop Android and iOS applications at Facebook, Microsoft, and Shopify.
+
+Expo is an open-source project that gives developers powerful tools to assist in building and maintaining React Native apps at any scale. For example, Expo CLI, Expo Router, and Expo SDK packages. All Expo open-source tools are entirely free to use and carry the MIT license.
+Expo Application Services (EAS) is a suite of hosted services that you can use with Expo and React Native projects to:
+- Build, submit, and update your app
+- Set up automation around all of these processes
+- Collaborate with your team
+
+EAS solves a set of problems that require physical resources, such as application servers and CDNs for serving over-the-air updates and physical servers for running builds. EAS has a generous [free plan](https://expo.dev/pricing#get-started) that will work for many student and hobby projects.
+
 - Cómo funciona Expo (`npx create-expo-app`, `expo start`)
 
+
 - Componentes esenciales de React Native:
-    
     - `View`, `Text`, `Image`, `TextInput`, `Button`, `TouchableOpacity`, `ScrollView`, `FlatList`, `Pressable`
-        
 - JSX y estilos con `StyleSheet.create`
-    
 - Hooks: `useState`, `useEffect`
-    
 - Flexbox en React Native (dirección, alineación, espaciado)
-    
 - Sistema de navegación: `expo-router` o `@react-navigation/native`
    - Uso de fuentes personalizadas con `expo-font`
-
 - `SafeAreaView`, `StatusBar` 
 
 ### 🛠️ Qué construir:

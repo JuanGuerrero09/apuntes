@@ -121,8 +121,8 @@ x = np.linspace(-50,50, 1000)
 y1 = d.pdf(x)
 ```
 
-![alt text](Apuntes/assets/pdf.png)
-![alt text](Apuntes/assets/cdf.png)
+![alt text](pdf.png)
+![alt text](cdf.png)
 
 ```python
 # Interpolate
