@@ -1,4 +1,4 @@
-![[Pasted image 20250512235909.png]]
+![[Pasted image 20250512235909.png|center|150]]
 Geospatial data analysis is essential for various applications, including environmental monitoring, urban planning, and mapping. Python’s ecosystem offers a robust set of libraries for handling both vector and raster data, performing spatial analysis, and creating interactive maps. Some of the core libraries we will work with include:
 
 - **[GeoPandas](https://geopandas.org/):** For handling vector data such as shapefiles, GeoJSON, and performing spatial operations.
@@ -12,3 +12,39 @@ Geospatial data analysis is essential for various applications, including enviro
 - **[HyperCoast](https://hypercoast.org/):** Used for coastal data modeling and analysis.
 - **[DuckDB](https://duckdb.org/):** A fast, embeddable analytical database with powerful spatial query capabilities.
 - **[GDAL](https://gdal.org/):** One of the most widely used libraries for raster and vector data processing.
+
+# Before start
+
+## Setting up the environment
+
+### UV (Package manager)
+
+![[UV - Python#What is UV?]]
+
+### Geospatial (package with the geo libaries)
+```python
+uv venv
+
+# macOS and Linux:
+source .venv/bin/activate
+
+# Windows:
+.venv\Scripts\activate
+
+uv pip install geospatial
+uv pip install --find-links https://girder.github.io/large_image_wheels gdal pyproj
+```
+
+## Confirm it works
+
+```python
+# Import the `leafmap` library:
+import leafmap.foliumap as leafmap
+# Create an interactive map using leafmap.Map() and display it:   
+m = leafmap.Map()
+m
+```
+
+![[Pasted image 20250726122335.png]]
+
+![[Pasted image 20250727215424.png]]

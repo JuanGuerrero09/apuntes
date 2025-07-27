@@ -1,7 +1,7 @@
 
 #  ¿Qué es el análisis de transitorios?
 
-El análisis de transitorios en tuberías se refiere al estudio de los cambios temporales en el flujo y la presión dentro de un sistema de tuberías. Estos cambios pueden ser causados por eventos como el arranque y paro de bombas, la apertura y cierre de válvulas, o fallos en el suministro de energía. El objetivo del análisis es entender y mitigar los efectos de estos cambios para evitar daños en el sistema y asegurar su funcionamiento eficiente.
+El análisis de transitorios en tuberías se refiere al estudio de los cambios temporales en el flujo y la presión dentro de un sistema de tuberías. Estos cambios pueden ser causados por eventos como el arranque y paro de bombas, la apertura y cierre de válvulas, o fallos en el suministro de energía. El objetivo del análisis es entender y mitigar los efectos de estos cambios para evitar daños en el sistema y asegurar su funcionamiento eficiente.^37066d
 
 #  Parámetros Clave para Transitorios
 
@@ -64,3 +64,8 @@ Esto también fuerza a que si hay una gran variación entre los tamaños de las 
 ![[Pasted image 20250505095342.png]]
 
 Las condiciones de frontera pueden ser e tres tipos, de altura piezométrica, en metros, de caudal, metros cúbicos hora y 
+
+# Troubleshooting con WANDA
+Para los principales problemas al usar wanda se debería partir en dos categorías, los pre instalación correcta y los post instalación.
+## Preinstalación
+Hay algunos detalles que en la instalación deben realizarse correctamente para el funcionamiento del programa, algunos son.

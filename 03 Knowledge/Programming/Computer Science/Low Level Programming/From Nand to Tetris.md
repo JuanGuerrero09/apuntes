@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=LqirVc5SlW0&list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI
+https://www.nand2tetris.org/course
 # Syllabus
 
 Textbook: Nisan and Schocken, The Elements of Computing Systems, MIT Press
