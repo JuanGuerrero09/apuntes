@@ -25,13 +25,13 @@
 
 ### 📙 **Adjetivos y adverbios**
 
-|Alemán|Español|
-|---|---|
-|**wirklich**|realmente / de verdad|
-|**sehr gern**|con mucho gusto / mucho|
-|**oft**|a menudo / frecuentemente|
-|**beruflich**|profesionalmente|
-|**zusammen**|juntos|
+| Alemán        | Español                   |
+| ------------- | ------------------------- |
+| **wirklich**  | realmente / de verdad     |
+| **sehr gern** | con mucho gusto / mucho   |
+| **oft**       | a menudo / frecuentemente |
+| **beruflich** | profesionalmente          |
+| **zusammen**  | juntos                    |
 
 ---
 

@@ -338,45 +338,54 @@ In Swiss German, _ß_ is replaced with _ss_. For example: _Straße_ becomes _Str
 4. reisen
 5. googeln
 
-|            |     |     |           |     |     |         |
-| ---------- | --- | --- | --------- | --- | --- | ------- |
-| Infinitive | ich | du  | er/sie/es | wir | ihr | Sie/sie |
-| arbeiten   | __  | __  | __        | __  | __  | __      |
-| tanzen     | __  | __  | __        | __  | __  | __      |
-| heißen     | __  | __  | __        | __  | __  | __      |
-| reisen     | __  | __  | __        | __  | __  | __      |
-| googeln    | __  | __  | __        | __  | __  | __      |
+|            |         |           |           |          |          |          |             |
+| ---------- | ------- | --------- | --------- | -------- | -------- | -------- | ----------- |
+| Infinitive | ich     | du        | er/sie/es | wir      | ihr      | Sie/sie  | *Meaning*   |
+| arbeiten   | arbeite | arbeitest | arbeitet  | arbeiten | arbeitet | arbeiten | to work     |
+| tanzen     | tanze   | tanzt     | tanzt     | tanzen   | tanzt    | tanzen   | to dance    |
+| heißen     | heiße   | heißt     | heißt     | heißen   | heißt    | heißen   | to be named |
+| reisen     | reise   | reist     | reist     | reisen   | reist    | reisen   | to travel   |
+| googeln    | google  | googelst  | googelt   | googeln  | googelt  | googeln  | to google   |
+
 
 ### B. Rewrite each sentence in the third person singular:
 
 
 - Ich heiße Hans Homann. → Er heißt Hans Homann.
 - Ich komme aus Wien. → 
+	- Er kommt aus Wien
 - Ich arbeite bei Radio Ö24. → 
+	- Sie *arbeitet* bei Radio Ö24
 - Ich esse zu Mittag meistens Sushi. → 
+	- Er isst zu Mittag *meistens* Sushi
 - Ich spreche Deutsch, Englisch und Spanisch. →
+	- Er *spricht* Deutsch, Englisch und Spanisch
 - Ich lese gern Kriminalromane. →
+	- Sie liest gern Kriminalromane
 - Ich fahre gern Ski und schwimme viel. →
+	- Er fährt gern Ski und schwimmt viel.
 - Ich sehe gern Filme mit Michael Keaton. → 
+	- Er sieht gern Filme mit Michael Keaton.
 - Ich schlafe oft lange. → 
+	- Er schläft *oft lange*
 
 ### C. Translate the following:
 
 1. She reads a book. → Sie liest ein Buch.
 2. Peter speaks German and English. →
-    
+		Peter sprecht Deutsch und Englisch
 3. We speak German and Spanish. → 
-    
+	    Wir sprechen Deutsch und Englisch
 4. Magda likes eating pizza. → 
-    
+	    Magda isst gern pizza
 5. I am meeting Nadine. → 
-    
+	    Ich bin mit Nadine
 6. She is taking the underground. → 
-    
+	    Sie fährt die U-Bahn
 7. He is wearing a T-shirt. → 
-    
+	    Er trägt und T-shirt
 8. It is raining. →
-    
+	    Es ist rengen
 
 ---
 
