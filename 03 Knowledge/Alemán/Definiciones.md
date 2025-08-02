@@ -19,6 +19,7 @@
 | **Schweiz**      | Suiza               |
 | **Freundin**     | amiga / novia       |
 | **Fußballspiel** | partido de fútbol   |
+| Müde             | Tired               |
 
 
 ---

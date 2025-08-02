@@ -432,38 +432,215 @@ In Swiss German, _ß_ is replaced with _ss_. For example: _Straße_ becomes _Str
 	- Geben to gibt, Essen to isst and 
 	- geben, helfen, treffen, essen, sprechen, nehmen (werfen).
 
-# 4. Irregular Verbs: *Haben* and *Sein*
-Haben *to have* and sein *to be* are both irregular in both languages. In german they change in almost all versions
+# 4. Irregular Verbs: *haben* and *sein*
 
-ich (I) habe bin
-du (you, informal) hast bist
-Sie (you, formal) haben sind
-er/sie/es (he/she/it) hat ist
-wir (we) haben sind
-ihr (you, plural, informal) habt seid
-Sie (you, plural, formal) haben sind
-sie (they)
+The verbs **haben** (*to have*) and **sein** (*to be*) are **irregular** in almost all forms.
 
-|                             | *Haben* | *Sein* |
-| --------------------------- | ------- | ------ |
-| Ich (I)                     |         |        |
-| du (informal)               |         |        |
-| er/sie/es                   |         |        |
-| Sie (formal)                |         |        |
-| wir (we)                    |         |        |
-| ihr (you, plural, informal) |         |        |
-| Sie (you, plural, formal)   |         |        |
-| sie (they)                  |         |        |
+## Conjugation Table
 
-# Vocabulario
+| Pronoun                    | *haben* | *sein* |
+|---------------------------|---------|--------|
+| ich (I)                   | habe    | bin    |
+| du (you, informal)        | hast    | bist   |
+| er / sie / es (he/she/it) | hat     | ist    |
+| Sie (you, formal)         | haben   | sind   |
+| wir (we)                  | haben   | sind   |
+| ihr (you, plural informal)| habt    | seid   |
+| Sie (you, plural formal)  | haben   | sind   |
+| sie (they)                | haben   | sind   |
 
-|     |     |
-| --- | --- |
-|     |     |
-|     |     |
+---
 
-# Pronunciación
+## *Haben* in More Detail
+
+### Key Irregularities
+
+- In the forms **du** and **er/sie/es**, the **"b"** is dropped:
+  - **du hast**, **er hat** instead of regular *habst*, *habt*.
+
+- Other forms follow a regular pattern:
+  - **ich habe**, **wir haben**, **ihr habt**, **Sie haben**, **sie haben**.
+
+### Common Uses of *haben*
+
+It is used:
+- on its own (to express possession or conditions),
+- or as an **auxiliary verb**, e.g. in the **present perfect tense**.
+
+#### Examples
+
+- Ich habe viel zu tun. → *I have a lot to do.*
+- Hast du Wechselgeld? → *Do you have any change?*
+- Claus hat eine Schwester. → *Claus has a sister.*
+- Sie haben ein neues Auto. → *They have a new car.*
+- Ich habe viel gesungen. → *I have sung a lot.* (present perfect)
+
+#### Useful Expressions
+
+| Expression                 | Meaning            | Example                        |
+|---------------------------|--------------------|--------------------------------|
+| Hunger haben              | to be hungry       | Ich habe Hunger.              |
+| Durst haben               | to be thirsty      | Er hat Durst.                 |
+| Zeit haben                | to have time       | Du hast Zeit.                 |
+| Glück haben               | to be lucky        | Sie haben Glück.              |
+| Langeweile haben          | to be bored        | Wir haben Langeweile.         |
+| Kopfschmerzen haben       | to have a headache | Sie hat Kopfschmerzen.        |
+
+---
+
+## *Sein* in More Detail
+
+### Irregular in All Forms
+
+The verb **sein** is completely irregular and must be memorized.
+
+#### Examples
+
+- Ich bin aus Deutschland. → *I’m from Germany.*
+- Du bist sehr schön. → *You’re very beautiful.*
+- Sind Sie Herr Diez? → *Are you Mr. Diez?*
+- Er ist Amerikaner. → *He is an American.*
+- Sie ist Lehrerin. → *She is a teacher.*
+- Es ist schwer. → *It’s difficult.*
+- Wir sind beide 20 Jahre alt. → *We are both 20 years old.*
+- Seid ihr verheiratet? → *Are you married?*
+- Wir sind aus Großbritannien. → *We’re from Great Britain.*
+
+### Use as Auxiliary Verb
+
+Like *haben*, *sein* is also used to build **compound tenses**, such as the **present perfect**:
+
+- Example: *Ich bin gegangen.* → *I have gone.*
+
+> See more in: _Unit 22 - Present Perfect_
+
+### ✅ **Exercise 4.1**
+
+**Complete the following sentences with the correct form of _haben_ (to have).**  
+🧠 _Example:_ Ich __ eine Schwester. → Ich **habe** eine Schwester.
+
+1. __ du heute Abend Zeit?
+	    Hast du *heute* Abend Zeit? -> Have you free time today?
+2. Wir __ neue Nachbarn.
+	    Wir haben neue Nachbarn -> We are new neightbors
+3. Er __ eine Schwester und einen Bruder.
+	    Er hat eine Schwester un einen bruder -> He has a sister and a brother
+4. __ ihr etwas Geld?
+	    *Habt* ihr *etwas* Geld? -> Do you have some money?
+5. Nadine __ ein neues Tablet.
+	    Nadine hat ein neues Tablet -> She has a new tablet
+6. __ Sie ein Zimmer frei?
+	    Haben Sie ein Zimmer frei? -> Do you have a free room? 
+7. Ich __ Hunger.
+	    Ich habe Hunger -> I'm hungry
+8. Susanne und Frank __ eine neue Wohnung.
+	    Susanne und Frank *haben* eine neue Wohnung -> Susanne and Frank have a new apartment.
+
+---
+
+### ✅ **Exercise 4.2**
+
+**Complete the following dialogues using the correct form of _sein_ (to be).**  
+🧠 _Example:_ Was __ Carsten von Beruf? – Er __ Student. → Was **ist** Carsten von Beruf? – Er **ist** Student.
+
+1. __ Sie Engländer? – Nein, ich __ aus Australien.
+	    Sind Sie Engländer? - Nein, ich bin aus Australien
+2. __ du aus Deutschland? – Ja, ich komme aus der Nähe von Bonn.
+	    Bist du aus Deutschland - Ja, ich komme aus der Nähe von Bonn
+3. __ ihr aus München? – Nein, wir __ aus Nürnberg.
+	    Seid ihr aus München? - Nein, wir sind aus Nürnberg
+4. Was __ Nele von Beruf? – Sie __ Designerin.
+	    Was ist Nele von Beruf? -> Sie ist Designerin
+5. Was machen Katrin und Jan? – Beide __ Studenten.
+	    Was machen Katrin und Jan? -> Beide sind Studenten
+6. Was __ deine Hobbys? – Meine Hobbys __ Musik und Computerspiele.
+	    Was sind deine Hobbys? Meine Hobbyst sind Musik und Computerspiele
+7. Wo __ du geboren? – Ich __ in Düsseldorf geboren.
+	    Wo bist du geboren? -> Ich bin in Düsseldorf geboren
+8. Wo __ ihr geboren? – Wir __ beide in den USA geboren.
+		Wo seid ihr geboren? Wir sind beide in den USA geboren
+
+---
+
+### ✅ **Exercise 4.3**
+
+**Write out the full present tense conjugation for:**
+
+**(1) _haben_**  
+ich __  habe
+du __  hast
+Sie (formal) __ haben  
+er/sie/es __  hat
+wir __  haben
+ihr __   habt
+sie/Sie __ haben
+
+**(2) _sein_**  
+ich __  bin
+du __  bist
+Sie (formal) __ sind  
+er/sie/es __  ist
+wir __  sind
+ihr __  *seid*
+sie/Sie __ sind
+
+---
+
+### ✅ **Exercise 4.4**
+
+**Translate the following into German.**
+
+1. We are from New York.
+    Wir sind aus New York.
+2. They are from Australia.
+    Sie sind aus Australien
+3. Mario is from Munich.
+    Mario ist aus München
+4. Are you Mr Becker? (Use the **Sie** form.)
+	    Sind Sie Herr Becker?
+5. He has a sister.
+	    Er hat eine Schwester
+6. Do you have time?  
+     a) informal (du)
+		Hast du Zeit?
+     b) formal (Sie)
+	    Haben Sie Zeit?
+7. They are students.
+	    Sie sind Studenten
+8. I have a tablet.
+	    Ich habe ein Tablet
+9. It’s difficult.
+	    Es ist *schwer*
+10. Bonn is in Germany and Salzburg is in Austria.
+	1. Bonn ist in Deutschland und Salzburg in Österreich
 
 
+> Note: **aus** is only used with the verb _Kommen_ for origin (“aus Spanien”) and **in** only with _wohnen_ for location (“in Deutschland”)
 
-# Gramática
+# 5. Separable verbs in the present tense
+## What is this?
+These are verbs which are made up of two parts: a prefix and a main verb. For
+example _auf_ + _stehen_ → **aufstehen** ‘to get up’. It's similar to the english _phrasal verbs_, some of the most importants are 
+
+abfahren to leave, to depart
+abholen to pick up, to collect
+abwaschen to do the washing up
+anfangen to start
+ankommen to arrive
+anrufen to phone
+aufhören to stop
+aufräumen to tidy up
+aufstehen to get up
+ausgehen to go out
+ausschalten to switch off
+einkaufen to go shopping
+einladen to invite
+einschlafen to fall asleep
+fernsehen to watch television
+mitbringen to bring along
+mitkommen to come along
+mitmachen to join in
+stattfinden to take place
+vorbereiten to prepare
+sich vorstellen to introduce oneself
+zumachen to close
