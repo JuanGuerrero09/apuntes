@@ -617,30 +617,87 @@ sie/Sie __ sind
 
 > Note: **aus** is only used with the verb _Kommen_ for origin (“aus Spanien”) and **in** only with _wohnen_ for location (“in Deutschland”)
 
-# 5. Separable verbs in the present tense
-## What is this?
-These are verbs which are made up of two parts: a prefix and a main verb. For
-example _auf_ + _stehen_ → **aufstehen** ‘to get up’. It's similar to the english _phrasal verbs_, some of the most importants are 
+# 5. Separable Verbs in the Present Tense
 
-abfahren to leave, to depart
-abholen to pick up, to collect
-abwaschen to do the washing up
-anfangen to start
-ankommen to arrive
-anrufen to phone
-aufhören to stop
-aufräumen to tidy up
-aufstehen to get up
-ausgehen to go out
-ausschalten to switch off
-einkaufen to go shopping
-einladen to invite
-einschlafen to fall asleep
-fernsehen to watch television
-mitbringen to bring along
-mitkommen to come along
-mitmachen to join in
-stattfinden to take place
-vorbereiten to prepare
-sich vorstellen to introduce oneself
-zumachen to close
+## What are separable verbs?
+
+Separable verbs are made up of two parts:
+- a **prefix** (usually short and unstressed)
+- a **main verb**
+
+📌 Example:  
+_auf_ + _stehen_ → **aufstehen** = *to get up*
+
+They are similar to **phrasal verbs** in English (like *pick up*, *go out*, *turn on*).
+
+---
+
+## Common separable verbs
+
+| Verb                | Meaning                          |
+| ------------------- | -------------------------------- |
+| abfahren            | to leave, to depart              |
+| abholen             | to pick up                       |
+| abwaschen           | to do the washing up             |
+| anfangen            | to start                         |
+| ankommen            | to arrive                        |
+| anrufen             | to phone                         |
+| aufhören            | to stop                          |
+| aufräumen           | to tidy up                       |
+| aufstehen           | to get up                        |
+| ausgehen            | to go out                        |
+| ausschalten         | to switch off                    |
+| einkaufen           | to go shopping                   |
+| einladen            | to invite                        |
+| einschlafen         | to fall asleep                   |
+| fernsehen           | to watch TV                      |
+| mitbringen          | to bring along                   |
+| mitkommen           | to come along                    |
+| mitmachen           | to join in                       |
+| stattfinden         | to take place                    |
+| vorbereiten         | to prepare                       |
+| **sich vorstellen** | to introduce oneself (reflexive) |
+| zumachen            | to close                         |
+
+---
+
+## Rule: The prefix goes at the end
+
+In the **present tense**, the verb is split:
+- The **main verb** goes in second position.
+- The **prefix** goes at the **end of the clause**.
+
+📌 Examples:
+- Herr Lobo **ruft** seine Frau **an**. → He calls his wife.  
+- Nico **steht** um fünf Uhr **auf**. → Nico gets up at 5.  
+- Yasmin **geht** jeden Tag **aus**. → Yasmin goes out every day.  
+- Die Kinder **sehen** nicht viel **fern**. → The kids don't watch much TV.  
+- Er **kauft** im Supermarkt **ein**. → He shops in the supermarket.  
+- Das Meeting **findet** am Montag **statt**. → The meeting takes place on Monday.
+
+---
+
+## What is a **clause**?
+
+A **clause** is a grammatical unit with its own subject and verb.  
+In German, when you have **two main clauses** joined by a connector (*und, aber, denn, oder...*), each clause behaves **like its own sentence**.
+
+### Rule with separable verbs and clauses:
+The **prefix goes at the end of its own clause**, not the whole sentence.
+
+📌 Examples:
+
+| Clause 1                          | Clause 2                            |
+|----------------------------------|-------------------------------------|
+| Ich **stehe** um 7 Uhr **auf**, | und dann **frühstücke** ich.        |
+| Herr Carlsen **sieht** **fern**, | aber seine Kinder **lesen**.        |
+| Er **schläft** um Mitternacht **ein**, | aber er **steht** um 5 Uhr **auf**. |
+
+Even if the sentence continues, the prefix stays at the **end of its clause**, not after the full sentence.
+
+---
+
+## Tip
+
+If you're not sure where the prefix goes, identify the **subject + verb** of each clause, and put the prefix at the **end of that part**.
+
