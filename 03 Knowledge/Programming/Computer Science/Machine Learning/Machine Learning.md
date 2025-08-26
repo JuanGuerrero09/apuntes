@@ -5,6 +5,22 @@ MIT Introduction to Deep Learning | 6.S191 https://www.youtube.com/watch?v=alfdI
 [Machine Learning with Python and Scikit-Learn – Full Course](https://www.youtube.com/watch?v=hDKCxebp88A)
 [Machine Learning Freecodecamp](https://www.freecodecamp.org/learn/machine-learning-with-python/)
 
+[Educación sobre aprendizaje automático  |  TensorFlow](https://www.tensorflow.org/resources/learn-ml?hl=es-419)
+
+[Learn Intro to Machine Learning | Kaggle](https://www.kaggle.com/learn/intro-to-machine-learning)
+
+[Intro — mlcourse.ai](https://mlcourse.ai/book/index.html)
+
+[Machine Learning with Python | freeCodeCamp.org](https://www.freecodecamp.org/learn/machine-learning-with-python/#tensorflow)
+
+[Practical Deep Learning for Coders - Practical Deep Learning](https://course.fast.ai/)
+
+[Requisitos y trabajo previos  |  Machine Learning  |  Google for Developers](https://developers.google.com/machine-learning/crash-course/prereqs-and-prework?hl=es-419)
+
+[¿Qué es el aprendizaje automático?  |  Machine Learning  |  Google for Developers](https://developers.google.com/machine-learning/intro-to-ml/what-is-ml?hl=es-419)
+
+[CS231n Deep Learning for Computer Vision](https://cs231n.github.io/)
+
 
 - Data Analysis Methods: Exploratory and Confirmatory, Big Data Essentials, Hydroinformatics and Hydroanalytics.
 - Introduction to Statistical and Machine Learning (ML): Fundamentals
