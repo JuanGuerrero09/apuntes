@@ -661,6 +661,13 @@ They are similar to **phrasal verbs** in English (like *pick up*, *go out*, *tur
 
 ---
 
+*abfahren* → partir o salir → Der Zug fährt um 8 Uhr ab. → The train leaves at 8 AM
+*abholen* → recoger → Ich hole dich morgen vom Bahnhof ab. → I'll pick you from the station tomorrow
+*anfagen* → empezar → Wir fangen jetzt mit der Arbeit an → Now we start with the work
+*mitkommen* → venir → Meine Freunde kommen heute Abend mit.
+*aufräumen* → ordenar → Er räumt sein Zimmer nicht gern auf.
+*ausschalten* → switch off -> Kannst du bitte das Licht ausschalten?
+
 ## Rule: The prefix goes at the end
 
 In the **present tense**, the verb is split:

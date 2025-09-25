@@ -185,5 +185,5 @@ Si estás construyendo una app en Astro y quieres usar mapas:
 
 # Related
 [[DEM + Three js]]
-[[QGIS]]
+[[Apuntes/03 Knowledge/GIS/QGIS]]
 [[Madrid.js]]
