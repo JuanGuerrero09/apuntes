@@ -1,7 +1,7 @@
 ---
 created: 2025-09-25 18:54
 ---
-[[Apuntes/02 Master/S1 TU Dresden/Flood Risk Management/Definitions|Definitions]]
+[[Definitions|Definitions]]
 ![[pdf.png]]
 
 tags: [[+Daily Notes]]

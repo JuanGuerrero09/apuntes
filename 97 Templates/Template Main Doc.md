@@ -1,23 +1,21 @@
 ---
 Class: "[[<% tp.file.folder() %>]]"
-Professor:
 Date: <% tp.date.now("YYYY-MM-DD") %>
 Last Modified: <% tp.file.last_modified_date("dddd Do MMMM YYYY HH:mm") %>
+Professor:
+email:
+tags:
 ---
-# <% tp.date.now("dddd Do MMMM YYYY") %>
-
-# 📒Class Summary
+# 👨🏽‍🏫Professor
 
 
-# 🕸️Resources
+# 📖Summary
 
 
+# 🕸️Resources and Relevant Links
 
-# 📝 Notes
 
-
-# 🐢 Definitions
-# 📅 Homework
+# 📚Notes
 
 
 

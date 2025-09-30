@@ -1,2 +1,6 @@
 master.md
 threejs-journey/
+*.pdf
+node_modules/
+
+

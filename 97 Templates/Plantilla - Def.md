@@ -1,5 +1,5 @@
 ---
-tipo: definicion
+Type: Definition
 fecha: <% tp.date.now("YYYY-MM-DD") %>
 ---
 # <% this.app.workspace.getActiveFile().basename %>
