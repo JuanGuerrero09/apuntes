@@ -168,9 +168,13 @@ Coordinates are more practical, use **EPSG** codes to standardise projections wi
 - MAGNA-SIRGAS EPSG:3118
 For check[[https://spatialreference.org/ | EPSG]]
 
+>For example, EPSG:4326 means that the projection is in latitude-longitude
 ### On-the-fly reprojection (OTF)
-All layers visualised in a GIS application need to be in the same projection, so, instead of reprojection all layes to the same projection, JIS applications use On-the-fly reprohection. Beware! OTF reprojection does _not_ change the projection of layers
+All layers visualised in a GIS application need to be in the same projection, so, instead of reprojection all layes to the same projection, JIS applications use On-the-fly reprohection. Beware! 
+> OTF reprojection does _not_ change the projection of layers but makes possible to visualize layers of different projections in the map canvas together.
+
 **The projection of the project**
+
 
 ### 3 Cases with projections
 1. Projection is known AND projection is assigned -> No action needed
@@ -228,9 +232,17 @@ Efficient online visualization of maps sinece the layers are divided in many til
 
 ---
 ## Lesson 1: Preparing Data from Hardcopy Maps
+![[Pasted image 20250930135654.png]]
 
 ### Georeferencer
-To add GCP's
+In order to use hardcopy maps in a GIS, they need to be scanned and georeferenced. Georeferencing is also needed for raw remote sensing images, such as aerial photographs and satellite images.  
+  
+For the best result, choose a map sheet that is clean and does not have too many folds. Use a scanner that is large enough to scan the whole map. The resolution of the scanner should be large enough (e.g. 1200 dpi) to have sufficient detail in the resulting raster maps.  
+  
+For georeferencing we need to link locations on the scanned image to coordinates. There are two ways:  
+
+- Collect ground control points (GCPs) at locations that are clearly visible in the image, such as bridges and  junctions.
+- If the hardcopy map contains a coordinate grid, you can use the printed grid as a reference. Make sure that you know  the projection of this grid, which is usually stated on the map.
 ### Adding Ground Control Points (GCPs)
 GCP are known coordinates points that can coordinate with real world coordinates. The easiest way to use it on a scanned map if is available is in a known projection.
 ## Reduce Erros and Perform the Transformation
