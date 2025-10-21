@@ -40,6 +40,8 @@ The learning objectives of the course are the following:
 [[https://www.qgistutorials.com/en/ | QGIS Interesting Tutorials]]
 [[https://anitagraser.com/pyqgis-101-introduction-to-qgis-python-programming-for-non-programmers/ | Introduction to QGIS Programming]]
 [[https://osgeo.org | OSGeo - Open Source Geospatial Foundation]]
+[[https://30daymapchallenge.com/resources/ | Resources from 30day map challenge]]
+
 
 
 

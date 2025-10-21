@@ -22,7 +22,7 @@ Made some corrections for the accuracy
 - GDAL
 - SAGA
 - ILWIS
-
+### Web Resources
 [[https://thetruesize.com/ | The true size web]]
 [[https://spatialreference.org/ | Spatial Reference List]]
 [[https://epsg.io/ | EPSG Codes for Countries]]
@@ -31,279 +31,364 @@ Made some corrections for the accuracy
 
 # 📝 Notes
 
-## Introducing GIS
+## 🗺️ Introducing GIS
 
-GIS (*Geographic Information System*) is about **Spatial Data** connected with *Attribute* data and *Metadata*
-- **Geographic** -> Spatially-referenced data
-- Information System: Software, hardware and databases
-- GIS Appliaction -> Create queries
-### GIS for urban water systems
+A **Geographic Information System (GIS)** integrates **spatial data**, **attribute data**, and **metadata**.
+- **Geographic** → Spatially referenced data
+- **Information System** → Combination of software, hardware, and databases
+- **GIS Application** → Enables queries, analysis, and visualization
+#### GIS in Urban Water Systems
+Applications in hydraulic networks, drainage, and urban infrastructure.
+### GIS in Hydrological Modelling
+Used for modeling, visualization, and spatial data management.
 
-### GIS and hydrological modelling
-Modeling and Visualisation
+### Data Processing Workflow
 
-### Processing data to use in tools
-
-Import/Convert -> Coordinates information (Projection and Datum) -> Subsetting and resampling -> Recondition correction -> Geoprocess -> Interpolation
-### Application of GIS
-
-- Map Production
+`Import/Convert → Coordinate information (Projection & Datum) → Subsetting & Resampling → Reconditioning → Geoprocessing → Interpolation`
+### Main Applications of GIS
+- Map production
 - Visualization (2D, 2.5D, 3D, animation, web)
-- Geoprocessing (for use in tools)
-- Geospatial Analysis
-### GIS Desktop
-Applications with a GUI
+- Geoprocessing
+- Geospatial analysis
+ ---
+
+### 🖥️ GIS Desktop
+
+Graphical applications typically include:
+
 - Menus
 - Toolbars
 - Map layers
 - Map canvas
 - Print layout view
-Usual order for the Map layers 
-- Point
-- Lines
-- Polygons
-- Rasters
-### GIS Command line apps
-*Command line applications* useful for testing and customizing GIS operations.
-*Scripts* useful for batch processing and dynamic modelling
 
-### GDAL
-Library to convert _raster_ and _vector_ formats. Is a geodata abstracion data that supports GeoTIFF, ERSI Shapefile, HDF, KML that supports most language interfaces: C++/Java/Python.
+**Layer order (top to bottom):**
 
-## PYQIS
+1. Points
+2. Lines
+3. Polygons
+4. Rasters
 
-## Data components
-Features -> Geometry and Attributes
-## Vector Data
-2 Common data model to represent reality in a GIS, _Vector_ and _Raster_.
-_Vector data_ represents real world features in a GIS enviroment
-### Points 
-(1, X, Y) Location, No area, no length, display with markers
-- Applies to:
-	- No area
-	- To small to be displayed at current scale
-- Geometry of only 1 _vertex_ or node
-- Point atributes: *Id, Name, Description*
-### Lines or Polylines
-Series of X, Y points, No area, have length, Connectivity, Direction
-Applies to features:
-	- Without area but with length
-	- Small but representative
-- Geometry of 2 or more vertex
-### Polygons
-Enclosed region, Area, display with fill patter or colour
-Apples to:
-- Countries
-- Provinces
-- Catchments
-Geometry of 3 or more vertices and the last vertex is the same as the first
-### What can be done with vector data?
-- Spatial queries
-### Problems with vector data
-- Accuracy depends on scale
-- Slivers: when two figures can have a gap because of the lack of snapping
-- Overshoots and undershoots: the lines not connect or pass throught where it should connects
+### 💻 GIS Command-Line Tools
 
-### Vector analysis
-- Joints
-- Geoprocessing
-!Mover todo dentro de introducción
+- Useful for **testing** and **customizing** GIS operations
+- **Scripts** allow batch processing and dynamic modeling
+
 ---
 
-## Projections and Coordinated Reference Systems (CRS)
+### 🧩 GDAL
 
-- Explain why we use projections
-- Advantages and disadvantages of projections
-- Choose the right projection
-- Use EPSG codes
-- Explain difference between on-the-fly projection and the projection layers
+**GDAL (Geospatial Data Abstraction Library)** — Core library for converting **raster and vector** formats.  
+Supports formats like GeoTIFF, ESRI Shapefile, HDF, and KML, and has interfaces in **C++, Java, and Python**.
 
-**Why projections?** Because the 3D globe need to be projected in a 2D plain map.
-Latitude and longitude in degrees -> Geographic Coordinate Reference Systems 
-WGS-84
+---
+## 🧠 Data Models
 
-Converting DMS to decimal degrees
-```python
-DEGREES + MINUTES / 60 + SECONDS / 3600 = Decimal Degrees
-ej.
-4ª21'16'' -> 4.3544444
-```
+### Components
+
+**Features = Geometry + Attributes**
+
+### Vector Data
+
+Represents real-world features using:
+
+- **Points**
+- **Lines (Polylines)**
+- **Polygons**
+#### Points
+Defined by X, Y coordinates; no area or length.  
+Used for features too small to represent as polygons.
+#### Lines / Polylines
+Series of connected vertices; represent features with length (e.g., rivers, roads).
+#### Polygons
+Closed shapes with area; represent regions (e.g., lakes, catchments, countries).
+#### Common Issues
+
+- **Scale-dependent accuracy**
+- **Slivers:** Small gaps due to lack of snapping
+- **Overshoots/Undershoots:** Lines extending too far or not meeting properly
+
+#### Vector Analysis
+
+- Spatial joins
+- Geoprocessing (buffer, dissolve, intersect, etc.)
+
+---
+
+## 🌍 Projections and Coordinate Reference Systems (CRS)
+
+### Why Projections?
+We need to project the **3D globe** onto a **2D map**.
+- **Latitude & Longitude** in degrees → Geographic CRS
+- Example: **WGS-84**
+
+**Convert DMS → Decimal Degrees:**
+
+`DEGREES + MINUTES/60 + SECONDS/3600 = Decimal Degrees # Example: 4°21'16" = 4.3544444`
 
 ### Map Projections
 
-Passing a 3D world to a 2D map gets Distorsion in the following properties of geographic objects:
+Transforming a 3D surface to 2D introduces distortions in:
+
 - Area
 - Scale
 - Shape
 - Direction
-#### Projection types
 
-- Cylindrical projections -> Preserve distances or areas
-- Conical projection -> Preserve angles
-- Planar projections -> Preserve distances
+#### Projection Types
 
-Interesting projections:
-- Mercator projection
-- Equal Area Projection (Alber's equal area)
+- **Cylindrical:** Preserves distance or area
+- **Conical:** Preserves angles
+- **Planar:** Preserves distances
+
+**Examples:**
+
+- Mercator Projection
+- Albers Equal Area Projection
 
 #### Universal Transverse Mercator (UTM)
-Is a global map projection, divided in 60 equal zones, 6 degrees wide fom east to west. N and S divide the projection-
 
-#### Terminology
-Datum: Localised approximation of eath's ellipsoid. Global: e.g. WGS84
-Spheroid:
-Geoid:
-False Northing and False Easting
+Global projection divided into 60 zones, each 6° wide (east–west).
 
-#### Which Projection to use?
+#### Key Terms
+
+- **Datum:** Approximation of Earth’s shape (e.g., WGS84)
+- **Spheroid:** Mathematical surface representing Earth’s shape
+- **Geoid:** Representation of mean sea level
+- **False Northing/Easting:** Offsets to avoid negative coordinates
+
+#### Choosing the Right Projection
+
 Depends on:
-- Regional extent
+
+- Spatial extent
 - Type of analysis
-- Availability of Data
-### GIS and Projections
-Decide on the projection of the model data **before** you start preprocessing. 
-Coordinates are more practical, use **EPSG** codes to standardise projections with a project. EPSG codes examples:
-- Amersfoort RD/New: 28992 (The one in the netherlands)
-- Google Earth EPSG:4326
-- MAGNA-SIRGAS EPSG:3118
-For check[[https://spatialreference.org/ | EPSG]]
+- Data availability
 
->For example, EPSG:4326 means that the projection is in latitude-longitude
-### On-the-fly reprojection (OTF)
-All layers visualised in a GIS application need to be in the same projection, so, instead of reprojection all layes to the same projection, JIS applications use On-the-fly reprohection. Beware! 
-> OTF reprojection does _not_ change the projection of layers but makes possible to visualize layers of different projections in the map canvas together.
+Use **EPSG codes** to standardize projections:
 
-**The projection of the project**
+- Amersfoort / RD New: `EPSG:28992`
+- Google Earth: `EPSG:4326`
+- MAGNA-SIRGAS: `EPSG:3118`
+### On-the-Fly Reprojection (OTF)
+Allows visualization of layers in different projections simultaneously.
 
+> ⚠️ OTF does _not_ modify layer projection — it only adjusts visualization.
 
-### 3 Cases with projections
-1. Projection is known AND projection is assigned -> No action needed
-2. Projection is known BUT projection is NOT assigned -> Assign projection to layer
-3. Projection is unknown -> Search and assign projection 
 ---
-## GIS File Formats
-The GIS File formats are a standard of enconding geographical information into a file, they are created by agencies and developers.
-### GIS File format conversions
-- **Raster** GDAL
-- **Vector** 
-### Common vector formats
-- ESRI Shapefile
-	- Mandatory files
-		- .shp shape format, the feature geometry itself
-		- .shx shape index format
-		- .dbf attribute format (database like)
-	- Other important files
-		- .prj. Projection format
-		- .csv 
-qgz only zoom styling y otf
-### Common raster formats
-- TIFF = Tagged Image File Format, for strong raster graphics images
-- GeoTIFF 
-	- Public doman metadata standard which allows georefering information to be embedded within a TIFF file, such as
-		- map projection
-		- coordinate systems
-		- ellipsoids
-		- datums
-- Arc/Info ASCII Grid
-### Spatial databases
-- Don't store things in files but in a real database
-- provides a _spatial index_ that answer queries
-- Examples:
-	- PostGIS
-	- Oracle Spatial
-	- ESRI Geodatabase
-	- GeoPackage -> default QGIS format and saves to *.gpkg* 
+
+## 📂 GIS File Formats
+### Vector Formats
+- **ESRI Shapefile**
+    - `.shp` → geometry
+    - `.shx` → shape index
+    - `.dbf` → attribute table
+    - `.prj` → projection info
+- **GeoPackage (.gpkg):** SQLite-based, supports multiple layers in one file (default in QGIS)
+
+### Raster Formats
+
+- **TIFF / GeoTIFF:** Stores raster data + embedded metadata
+- **Arc/Info ASCII Grid**
+
+### Spatial Databases
+
+Provide spatial indexing for faster queries:
+
+- PostGIS
+- Oracle Spatial
+- ESRI Geodatabase
+- GeoPackage
 
 ### OGC Web Services
 
-- Data
-	- Web Mapping Services (WMS)
-	- Web Feature Services (WFS)
-	- Web Coverage Services (WCS)
-
-### Tiled web map
-Efficient online visualization of maps sinece the layers are divided in many tiles, google maps and open street map uses it.
-
+- **WMS** → Web Map Service
+- **WFS** → Web Feature Service
+- **WCS** → Web Coverage Service
+### Tiled Web Maps
+Efficient online visualization (used by Google Maps, OpenStreetMap).
 ### File Conversions
-- Raster to raster (translate)
-- Vector to vector (save as)
-- Rasterize (raster to vector)
-- Poligonize (vector to raster)
+- Raster ↔ Raster → _translate_
+- Vector ↔ Vector → _save as_
+- Raster → Vector → _polygonize_
+- Vector → Raster → _rasterize_
 
 ---
-## Lesson 1: Preparing Data from Hardcopy Maps
+
+## 🧾 Lesson 1: Preparing Data from Hardcopy Maps
+
 ![[Pasted image 20250930135654.png]]
 
-### Georeferencer
-In order to use hardcopy maps in a GIS, they need to be scanned and georeferenced. Georeferencing is also needed for raw remote sensing images, such as aerial photographs and satellite images.  
-  
-For the best result, choose a map sheet that is clean and does not have too many folds. Use a scanner that is large enough to scan the whole map. The resolution of the scanner should be large enough (e.g. 1200 dpi) to have sufficient detail in the resulting raster maps.  
-  
-For georeferencing we need to link locations on the scanned image to coordinates. There are two ways:  
+### 🗺️ Georeferencing
 
-- Collect ground control points (GCPs) at locations that are clearly visible in the image, such as bridges and  junctions.
-- If the hardcopy map contains a coordinate grid, you can use the printed grid as a reference. Make sure that you know  the projection of this grid, which is usually stated on the map.
-### Adding Ground Control Points (GCPs)
-GCP are known coordinates points that can coordinate with real world coordinates. The easiest way to use it on a scanned map if is available is in a known projection.
-## Reduce Erros and Perform the Transformation
-In QGIS you can see the estimated mean error (around 40 pixels in this case). There are two ways to reduce the error.
-- Move the GCPs with the red button to zoom into the right pixel
-- Change the transformation type so the error values are recalculated
-Since the grid is well-placed the second option is used changing to a first order polynomial 1 instead of the linear transformation in *Settings | Transformation Settings*. In this case an error of >1 is obtained so it's accepted. The decision to accept a certain accuracy depends on the purpose of the map.
-After then press *Start Georeferencing* and the map now appears in the QGIS map canvas, closing the Georeferencing window.
-## Verify the Georeferenced Map
-With a MAP CRS is possible to see the coordinates in the projection of the project and the coordinates in the Geographic Coordinate System, with coordinates in decimal degrees of longitude and latitude.
+To use hardcopy maps in a GIS, they must be **scanned** and **georeferenced**.  
+Georeferencing is also necessary for **raw remote sensing images**, such as **aerial photographs** and **satellite imagery**.
+
+For best results:
+- Choose a **clean map sheet** without folds or distortions.
+- Use a **large-format scanner** capable of scanning the entire map at once.
+- Select a **high resolution** (e.g. **1200 dpi**) to ensure that all details are preserved in the resulting raster file.
+
+During **georeferencing**, we link specific locations on the scanned image to **real-world coordinates**.  
+There are two main approaches:
+1. **Ground Control Points (GCPs):**  
+    Select locations that are clearly visible on the image — such as **bridges**, **road intersections**, or **building corners** — and assign their known geographic coordinates.
+2. **Coordinate Grid on Map:**  
+    If the map already contains a printed coordinate grid, you can use it as a reference.  
+    Make sure you know the **projection** of that grid, which is usually stated in the map legend or margins.
+### 📍 Adding Ground Control Points (GCPs)
+
+**Ground Control Points (GCPs)** are known locations with precise coordinates that link the image to a real-world coordinate system.  
+When georeferencing a scanned map, it is ideal to use GCPs **in a known projection** to ensure accuracy.
+
+Each GCP should correspond to a recognizable feature both on the scanned map and in the reference coordinate system.  
+Once several GCPs are added, QGIS calculates the **transformation error** based on their spatial relationship.
+## ⚙️ Reducing Errors and Performing the Transformation
+
+In QGIS, after adding the GCPs, you can check the **Estimated Mean Error (EME)** in pixels — for example, around _40 pixels_ in this case.
+
+There are two main strategies to reduce this error:
+
+1. **Move GCPs:**  
+    Use the **red adjustment button** to zoom in and reposition GCPs more precisely on the correct pixel.
+2. **Change the transformation type:**  
+    Modify the transformation method to recalculate the fitting error.  
+    In this example, switching from a **Linear** to a **First Order Polynomial (1)** transformation (via _Settings → Transformation Settings_) significantly improves the accuracy.
+    
+If the resulting error is **below 1 pixel**, it is considered acceptable.  
+The decision to accept a certain level of accuracy depends on the **map’s purpose**.
+
+Once satisfied, press **Start Georeferencing**.  
+The map will now appear in the QGIS Map Canvas, and you can **close the Georeferencing window**.
+## 🔍 Verify the Georeferenced Map
+
+With the map’s CRS properly set, you can now visualize both:
+
+- **Projected coordinates** (in meters or map units), and
+- **Geographic coordinates** (in decimal degrees for latitude and longitude).
 ![[Pasted image 20250929145049.png]]
 
-#### Add backdrop to verify the result
-With the QuickMapServices plugin provides easy access to Google Satellite and OpenStreetMap, it can be installed from **Plugins | Manage and Install Plugins** and check if it fits, once done the transparency can be adjusted to check the results.
+#### 🛰️ Add a backdrop to verify alignment
+Use the **QuickMapServices plugin** to compare your georeferenced map against a base map such as **Google Satellite** or **OpenStreetMap**.
+To install it:
 
-### Digitizing Vector Layers from a Georeferenced Backdrop
-The georeferenced scanned map can be used as backdrop to digitize vector layers. Vectors can be points (like mountain tops), (poly)lines (rivers) or polygons (lakes). 
-The vector layers are created in a *GeoPackage* spatial database so all the layers are together instead of in just one file. This can be done selecting **Layer |  Create Layer | New GeoPackage Layer**
-#### Digitize Peaks (Points)
+- Go to **Plugins → Manage and Install Plugins**
+- Search for _QuickMapServices_ and install it.
 
-Then select Geometry and create fields, select Toggle Editing in icon or in right-click and then Add Point Feature button, there type the fields information (like the elevation value and name). Finally with right-click Open Attribute Table.
+Then, add a base map layer and adjust its **transparency** to visually check if the scanned map aligns correctly with the background imagery.
+
+### ✏️ Digitizing Vector Layers from a Georeferenced Backdrop
+
+Once the scanned map is properly georeferenced, it can serve as a **backdrop** for **digitizing vector data**.  
+Vectors can represent:
+
+- **Points** (e.g., mountain peaks)
+- **Lines or Polylines** (e.g., rivers)
+- **Polygons** (e.g., lakes, catchments)
+
+All vector layers should be stored together in a **GeoPackage (.gpkg)** database.  
+This allows multiple layers to be organized within a single file.
+
+To create one:
+
+1. Go to **Layer → Create Layer → New GeoPackage Layer**
+2. Define:
+    - The **database name**
+    - The **geometry type** (Point, Line, or Polygon)
+    - The **fields** (attributes)
+    - The **coordinate reference system (CRS)**
+### 🏔️ Digitizing Peaks (Points)
+
+After creating the point layer:
+
+1. Select **Toggle Editing** from the toolbar or via right-click on the layer.
+2. Click the **Add Point Feature** tool and place points on the map.
+3. Fill in the attribute values (e.g., _Name_, _Elevation_).
+4. When finished, **right-click the layer → Open Attribute Table** to review the data.
 ![[Pasted image 20250929154424.png]]
 
-#### Digitize Rivers (Poly-Lines)
-Same process with _New GeoPackage Layer_ and selecting the existing _Database_ from the previous process. After adding the Field List select to add a new layer to the database.
+#### 🌊 Digitizing Rivers (Polylines)
+Repeat the process using **New GeoPackage Layer**, but this time select the **Line** geometry type.  
+Add the new layer to the existing GeoPackage database so that all data remains grouped.
 
-If there's a river with a tributary is possible to enable snapping in **View | Toolbars | Snapping Toolbar** and then after digitize the tributary to where it joins the high order river if you want to all tributaries to be the one single feature you need to *dissolve* the feature. By having the first name and use **Vector | Geoprocessing Tools | Dissolve**, choosing the Name as _Dissolve field_ and save the result to the GeoPackage layer and Run is possible to see the results before and after dissolving.
+After defining the field list, start digitizing:
+- Use the **Snapping Toolbar** (_View → Toolbars → Snapping Toolbar_) to ensure river segments connect accurately.
+- When digitizing tributaries, make sure they **join the main river** at the correct location.
+
+If you want all tributaries of the same river to be a single feature, use the **Dissolve** tool:
+
+1. Go to **Vector → Geoprocessing Tools → Dissolve**
+2. Choose _Name_ as the **Dissolve field**
+3. Save the output to the GeoPackage
+4. Click **Run** to process
+
+You will be able to visually compare the results before and after dissolving.
 ![[Pasted image 20250929162044.png]]
-### Digitize Lakes (Polygons)
-Same thing with the polygon vector layer for some lakes. The only difference is that the first node should be the same as the last node in order to close the polygon. If there's an island or similar inside the polygon and you prefer to not have it is possible to enable **Advanced Digitizing Toolbar** similar to Snapping Toolbar done earlier.
+### 🪣 Digitizing Lakes (Polygons)
 
-> _The general order of layers is: points, lines, polygons, rasters._
+For lakes and other areal features, create a **Polygon** layer in the same GeoPackage.
 
-### Styling
-#### Style and labelling the peaks (points)
-Open _Layer Styling panel_ from the following button
+When digitizing polygons:
+- Ensure that the **first vertex** and **last vertex** are the same to close the shape.
+- If the polygon contains holes (e.g., islands inside a lake), use the **Advanced Digitizing Toolbar**, similar to the Snapping Toolbar used earlier.
+
+> 💡 _General layer order recommendation:_  
+> Points → Lines → Polygons → Rasters
+
+### 🎨 Styling
+
+#### Style and Label the Peaks (Points)
+
+Open the **Layer Styling Panel** by clicking:
 ![[Pasted image 20250929165012.png]]
-And adjust Anchor point if is necessary for the annotations for the markers. To create the labels use the following. Using the _Single Labels_ options and setting it to Name will display the name of the peak.
+You can adjust the **Anchor point** for labels and markers to improve placement.
+To create labels:
+1. Enable **Single Labels** in the _Labels_ section
+2. Set the label field to _Name_
 ![[Pasted image 20250929165109.png]]
-To concatenate multiple fields is possible to use an expression in the **ε** button, when concatenating values is necessary to have _||_ between them. Also to format and select the decimals the correct expression should be `"Name" || '\n' || format_number ("Elevation", 0) || "meters"`.
+To **concatenate multiple fields**, click the **ε (Expression)** button and use an expression like:
 
-Finally is possible to click _Automated placement settings_ to uncheck _Allow truncated labels on edges of map_ option. This will prevent labels from being cut off.
+`"Name" || '\n' || format_number("Elevation", 0) || ' meters'`
 
-#### Styling Mountains, Rivers, and lakes
+This will display both the name and the elevation value (rounded to zero decimals).
 
-In this lesson you have learned to:
+Finally, go to **Automated Placement Settings** and uncheck
 
-- find the projection and _EPSG_ code of a map
-- install plugins
-- _georeference_ a scanned map using _GCPs_ from a grid
-- use the _coordinate capture tool_
-- use online layers from the _QuickMapServices_ plugin
-- digitize points, lines, and polygons and add attributes
-- use the _snapping toolbar_
-- _dissolve_ features
-- store data in a _GeoPackage_
-- style and label vectors
+> “Allow truncated labels on edges of map.”  
+> This prevents labels from being cut off at the map boundaries.
 
-### Workflow
+#### #### Styling Mountains, Rivers, and Lakes
 
-> To do the workflow
+You can apply similar styling principles to line and polygon layers:
+
+- Adjust **color**, **line width**, and **fill patterns**
+- Create **labels** for rivers and lakes if desired
+- Apply **transparency** to improve visibility of the base map
+
+### ✅ In this Lesson, You Learned How To:
+
+- Find the **projection** and **EPSG code** of a map
+- Install and use **plugins**
+- **Georeference** a scanned map using **GCPs** from a coordinate grid
+- Use the **Coordinate Capture Tool**
+- Add **online base maps** from the **QuickMapServices plugin**
+- Digitize **points, lines, and polygons**, and add **attribute data**
+- Use the **Snapping Toolbar** for accurate feature connections
+- **Dissolve** vector features by attribute
+- Store multiple layers in a **GeoPackage** database
+- **Style** and **label** vector layers for clear map visualization
+
+### ### 🔁 Workflow Summary
+
+> **Typical GIS data preparation workflow:**
+> 
+> 1. Scan the hardcopy map
+> 2. Georeference the raster using GCPs
+> 3. Verify the projection and accuracy
+> 4. Digitize vector layers (points, lines, polygons)
+> 5. Store data in a GeoPackage
+> 6. Apply styling and labeling for presentation
+>
 
 # 🐢 Definitions
 

@@ -7,191 +7,263 @@ Last Modified: Tuesday 30th September 2025 09:11
 # Tuesday 30th September 2025
 
 # 📒Class Summary
+In this session, we explored the **Raster data model** and how it differs from the **Vector model** in GIS.  
+We studied the main raster data types — _boolean_, _discrete_, and _continuous_ — and their use in spatial analysis and visualization.  
+We also introduced **raster operations** (local, focal, zonal, and global) and discussed how these operations are used for map algebra.  
+Finally, we applied this knowledge to **importing tabular data**, joining attribute tables, and performing **interpolation** to generate raster datasets.
 
+During the practical part, we learned how to:
+
+- Import spreadsheets into QGIS.
+- Convert tabular data into vector layers.
+- Join and edit attribute tables.
+- Perform interpolation (Nearest Neighbor and IDW).
+- Style and visualize raster results.
+- Use **map algebra** to analyze spatial data and identify suitable locations based on multiple criteria.
 
 # 🕸️Resources
 
-
+- **QGIS Documentation:** https://docs.qgis.org
+- **GDAL Documentation:** [https://gdal.org](https://gdal.org)
+- **Raster vs Vector overview:** ESRI ArcGIS resources
+- **Plugins used:**
+    - _Spreadsheet Layers_ (for importing Excel/ODS files)
+    - _Point Sampling Tool_ (for extracting raster values to points)
+- **Raster analysis tools used:**
+    - _Raster Calculator_
+    - _Proximity (Raster Distance)_
+    - _Reclassify by Table_
+    - _Grid (Nearest Neighbor / IDW)_
 
 # 📝 Notes
 
 ## Raster 🌎
 
-The two data models to represent data in reality in a *GIS*
-- Vectors
-- Rasters
-The Raster data is formed by a *matrix* of *pixels* or *Cells*, ordered in rows and columns and with _resolution_ based on the size of the _height_ and _width_ of the cell. The data types for the raster can be the following:
-- Integer - for discrete or boolean data
-- Float - for continuous data
-- NODATA, mv, nan - for no data or missing values
-Why is important to define the data type
-- How to visualize or style it
-- The type of analysis and calculations available
+In GIS, there are two main data models to represent real-world information:
+
+- **Vectors**
+- **Rasters**
+
+The **Raster model** represents data as a _matrix_ of _pixels_ (or _cells_) arranged in rows and columns, each with a defined _resolution_ based on its height and width.
+
+Raster data types include:
+
+- **Integer:** for discrete or boolean data.
+- **Float:** for continuous data.
+- **NODATA / mv / NaN:** for missing or undefined values.
+
+### Why defining the data type is important
+
+- It determines how the dataset can be **visualized or styled**.
+- It affects what kind of **analysis and calculations** can be performed.
+
 ### Types of Raster
-- Boolean - Only bool 0/1 true and false ex. Flooded or not Flooded, Residential or not Residential = Flooded Residential
-- Continuous -real values  representing features without sharp borders, It can have gradients = DEM, temperature map, runoff map
-- Discrete - to classify by using integer values repressenting classes = Land-use map, soil maps
-### Bands in rasters
 
-It can be single band or multiple bands, being single bands in discrete, continuous and boolean rasters by using gradient colors when needed. Or multiple band rasters for *remote sensing* 
+- **Boolean:** Only 0/1 (True/False).
+    - Example: Flooded vs. Not Flooded, Residential vs. Non-Residential.
+- **Continuous:** Real values representing features without sharp boundaries.
+    - Example: DEM, temperature maps, runoff models.
+- **Discrete:** Integer values representing classes.
+    - Example: Land-use map, soil map.
 
-Elevation is continuous and single band false color
-Boolean and discrete palette unit values
-Precipitation uses interpolation to have the continuous data from gauges
+### Bands in Rasters
+
+Rasters can be **single-band** or **multi-band**.
+
+- **Single-band** rasters can represent continuous, discrete, or boolean data, often using gradient colors.
+- **Multi-band** rasters are typically used in **remote sensing**, e.g., multispectral or RGB imagery.
+
+**Examples:**
+
+- Elevation → continuous, single-band.
+- Boolean and discrete → unit values with a defined color palette.
+- Precipitation → continuous, often derived via interpolation from gauges.
+
 ### Vector vs Raster
 
-| *Raster*                                  | *Vector*                             |
-| ----------------------------------------- | ------------------------------------ |
-| Difficult to make overlays                | Easy to make overlays                |
-| Difficult to register, scale or reproject | Easy to register, scale or reproject |
-| Generally large files                     | Generally smaller files              |
-| Difficult to update                       | Easier to update                     |
-| Map Algebra                               | Network analysis                     |
-| Continuous features                       | Discrete features                    |
+|**Raster**|**Vector**|
+|---|---|
+|Difficult to overlay multiple layers|Easier to overlay layers|
+|Harder to reproject or rescale|Easy to reproject and rescale|
+|Generally large file sizes|Generally smaller files|
+|Difficult to update|Easier to edit and update|
+|Used for map algebra|Used for network and topology analysis|
+|Represents continuous phenomena|Represents discrete features|
+
+---
 
 ## GIS Raster Processing
 
-After this course the learning objective is:
-- describe different raster data types
-- use map algebra for geoprocessing
-### Syntax for operators
-### Types of operations
+After completing this section, you should be able to:
 
-#### Local operations
+- Describe different raster data types.
+- Use **map algebra** for geoprocessing.
+### Syntax for Operators
 
-Independent of the property of neighbouring cells (i.e. no relations in lateral direction), a new map is generated on a cell-by-cell basis
+Raster operations can be performed using mathematical and logical operators, similar to algebraic expressions.
+### Types of Operations
+
+#### Local Operations
+
+Performed on a **cell-by-cell** basis, independent of neighboring cells.  
 Examples:
-	Newmap = MapA + MapB
-	DepthToGroundwater = Elevation - GWLevel
-	PrecTot = 12 * (Precip_jan + Precip_jul)/2
-#### Focal or neighbourhood operations
 
-Relates cells to its neighbouts. It can be:
-1. Window operations
-2. Flow direction operations
-3. Friction path operations
-4. Transport of material over flow direction map
-5. Visibility analysis
+`Newmap = MapA + MapB 
+`DepthToGroundwater = Elevation - GWLevel 
+`PrecTot = 12 * (Precip_jan + Precip_jul) / 2`
+
+#### Focal (Neighborhood) Operations
+
+Relate each cell to its neighbors, often within a moving window.  
 Examples:
-	AverageElevation = windowdiversity(Habitats, 5000)
-	Diversity = windowdiversity(Habitats, 5000)
-	Slopemap = slope(DEM)
-	RunoffMapp = accuflux(LddMap, 1000 * RainMm)
 
-#### Zonal or area operations
+`AverageElevation = windowaverage(DEM, 5000) 
+`SlopeMap = slope(DEM) 
+`RunoffMap = accuflux(LddMap, 1000 * RainMm)`
 
-Cell value is determined on basis of values of cell that are in the same area under consideration
+#### Zonal (Area-Based) Operations
+
+Compute values for cells within defined zones or categories.  
 Examples:
-	ClassAverage =aareaaverage(tempreature, landuse)
-	AverageKsat = aareaaverage(ksat, soilmap)
 
-#### Global function or map operations
-Computes one non-spatial value as a function of existing cell values associated with a map
+`ClassAverage = aareaaverage(Temperature, Landuse) 
+`AverageKsat = aareaaverage(Ksat, Soilmap)`
 
-Examples: 
-	averagePrecipitation
-	TotalPopulation
+#### Global Operations
 
-### Boolean oprations
+Compute a **single non-spatial value** based on all raster cells.  
+Examples:
 
-AND = 1-1 = 1 1-0 = 0 0-0 = 0
-OR = 1-1 = 1 1-0 = 1 0-0 = 0
-XOR = 1-1 = 0 1-0 = 1 0-0 = 0 if missing value it's always missing value, with 0 or 1
-NOT = 1 = 0 0 = 1
+`averagePrecipitation TotalPopulation`
+
+### Boolean Operations
+
+|Operation|Description|Example|
+|---|---|---|
+|AND|True only if both inputs are 1|1-1=1, 1-0=0|
+|OR|True if either input is 1|1-1=1, 1-0=1|
+|XOR|True if inputs differ|1-1=0, 1-0=1|
+|NOT|Inverts the value|1→0, 0→1|
+
+Missing values (NaN, NODATA) always propagate through Boolean operations.
+
+---
 
 ## Interpolation 🛸
 
-Thyssen is more realistic to interpolate when there's no a lot of density points for the model, mean IDW works for a lot of points.
+Interpolation is the process of estimating values at unsampled locations based on known data points.
+
+- **Thiessen Polygons (Nearest Neighbor)** are more realistic when few data points exist.
+- **Inverse Distance Weighting (IDW)** is more appropriate when many data points are available and values vary smoothly across space.
 
 ---
+
 ## Lesson 2: Importing Tabular Data into QGIS
 
- Firstly, it's a good practice to do a exploratory analysis to the content of speadsheets or csv before importing them to any software.
+Before importing data, always conduct an **exploratory analysis** of the spreadsheet or CSV file.
 ![[Pasted image 20250930135618.png]]
-### Working with Spreadsheets
-There are different ways in QGIS to import tabular data:  
-- **Layer | Add Layer | Add delimited text layer**. This is the standard importer that allows us to import delimited text files.
-- **Layer | Add Layer | Add spreadsheet layer**. This tool can load spreadsheet files (`*.ods`, `*.xls`, `*.xlsx`) as a layer with options to use the first line as a header, ignore rows, and load geometry from x and y fields. 
-For the second (and easiest option) the plugin _Spreadsheet Layers_ is needed. When the layer is created toggle the Geometry, add a projection and change the data type when needed. Also if the points don't appear is possible to zoom to layer by right clicking in the layer.
+### ### Working with Spreadsheets
+
+Different methods exist in QGIS for importing tabular data:
+
+- **Layer → Add Layer → Add Delimited Text Layer:**  
+    Standard importer for delimited text files (e.g., CSV).
+- **Layer → Add Layer → Add Spreadsheet Layer:**  
+    Loads spreadsheet files (`.ods`, `.xls`, `.xlsx`) with options to:
+    - Use the first line as a header.
+    - Ignore specific rows.
+    - Load geometry from X and Y fields.
+
+This second (and easiest) option requires the **Spreadsheet Layers plugin**.  
+Once imported, enable **Geometry**, assign a **projection**, and adjust **data types** as needed.  
+If points are not visible, right-click the layer and select **Zoom to Layer**.
 ![[Pasted image 20250930104824.png]]
 ![[Pasted image 20250930105257.png]]
 
-For the extra table with the temperature data since there is no geometry (coordinates) in the table, we should uncheck the box.
+If a table (e.g., temperature data) lacks coordinate fields, **uncheck the Geometry box**.
 ### Convert Spreadsheet to Vector Layer
-Since when Adding the spreadsheet is saved as a temporary virtual layer it's necessary to convert it to a GIS vector format, in this case, into a shapefile. *GeoPackages* like the used in the previous lesson are better, but _shapefiles_, however, are still very much used and therefore we also use them in this course.
-Right-click on the station layer and choose **Export | Save features as...**, then in the _Save Vector Layer as..._ select the format, *ESRI Shapefile* in this case, add the CRS, since it's from the Netherlands is used _EPSG:28992 - Amersfoort / RD New_, selected by filtering with the number. When added remove the previous temporary layer.
 
-_The advantage of using EPSG codes: they provide standard codes for each projection. It is useful to determine the EPSG code of the projection you want to use for your project._
+Imported spreadsheets are initially **temporary virtual layers**.  
+Convert them to a GIS vector format (e.g., Shapefile or GeoPackage):
+- Right-click → **Export | Save Features As...**
+- Choose **ESRI Shapefile**.
+- Select CRS (for the Netherlands: `EPSG:28992 – Amersfoort / RD New`).
 
 
 ![[Pasted image 20250930110728.png]]
-Although the `knmi_stations.shp` layer is in the EPSG:28992 projection (Amersfoort / RD New), the QGIS Map Canvas still uses the EPSG:4326 projection (lat/lon WGS 84) and has reprojected `knmi_stations.shp` *on-the-fly* for visualization. In order to visualize all layers in EPSG 28992 we have to change the QGIS Project properties by in the menu choosing  **Project | Properties** and then the _Coordinate Reference System (CRS)_ tab.
+> EPSG codes provide standardized identifiers for coordinate systems, making CRS selection consistent and efficient.
+
+Although the shapefile uses EPSG:28992, the QGIS canvas might still display layers in EPSG:4326 (WGS84) with the OTF projection.  
+To fix this, go to **Project → Properties → CRS tab** and set the project CRS to 28992.
 
 ### Join Attribute Tables
-To combine different tables a _join_ must be done. Firstly in the Attribute Table of the data the join parameter should be confirmed to be in both tables. After it, right click in the layer and select properties, then go to join and push *+*, and in the _Add Vector Join_ add the fields that want to be join (only Temperature in this case).
+
+To merge two tables, perform a **Join**:
+1. Ensure both tables have a common key field.
+2. Right-click the layer → **Properties → Joins → +**
+3. Choose the fields to join (e.g., Temperature).
 
 ![[Pasted image 20250930112526.png]]
-
 ### Edit the Joined Attribute Table
-For editing the current Attribute table the missing date will be removed and the temperature will be converted to the right units, select the missing values and remove it from the table.
-For the calculations press the _field calculator_ button and _Create a new field_ for the result of the calculation done with the _Expression_, then proceed with OK.
+
+- Remove missing values (e.g., null dates).
+- Use **Field Calculator** to create a new field and apply expressions to compute or convert values.
 ![[Pasted image 20250930113445.png]]
-Then remove the origin table from the table list and the Temp column used to do the calculation is also removed from the attribute table of the .shp created file.
+After editing, remove the original temporary tables to keep only the processed shapefile and the new fields.
 >- What columns do you see now? r: Only the ones created with the .shp and the added with the Field Calculator
 >-  What can you conclude about the join function? r: Works for center the data around less tables by joining with coincident parameters.
 
 ![[Pasted image 20250930114157.png]]
->Note that you could have saved the entire attribute table by saving _KNMI_stations_ to a new shapefile using the previously used **Export | Save Features As** function.
+>You can also save the entire attribute table to a new shapefile using **Export → Save Features As**.
 
 ### Interpolate Point Features to Raster
 
-The final task of the lesson is to _interpolate the temperature values to a raster_. 
-1. In the main menu choose **Raster | Analysis | Grid (Nearest Neighbor)**.
-![[Pasted image 20250930114848.png]]
-2. In the _Advanced Parameters_ section, select `T(C)` as _Z value from field_. This is the field that we will interpolate to so-called _Thiessen polygons_.
+To interpolate temperature values to raster:
+1. **Raster → Analysis → Grid (Nearest Neighbor)**  
+    ![[Pasted image 20250930114848.png]]
+2. Select the temperature field (`T(C)`) as _Z value from field_.
+3. Define output file (`tday_NN.tif`) and enable _Open output after running_.
+4. Keep default settings.
 
-3. Specify the output file: `tday_NN.tif` by using the browse window and specifying the `.tif` format.  
-
-4. Check the _Open output file after running algorithm_ checkbox.  
-  
-For the rest of the dialog keep the defaults. The dialogue should now look like figure the figure below.
 ![[Pasted image 20250930115223.png]]
-Note that the dialog generates a GDAL command. The tool is essentially a GUI for the [gdal_grid](https://www.gdal.org/gdal_grid.html) command line tool. Same process can be done with **Raster | Analysis | Grid (Inverse Distance to a Power)** (IDW) algorithm.
+This tool uses the `gdal_grid` function behind the scenes.  
+IDW interpolation is available under **Raster → Analysis → Grid (Inverse Distance to a Power)**.
 
-_With these interpolation tools from the main menu, you can’t control the extent and spatial resolution of the output raster. In the Processing Toolbox there are interpolation tools where you can define the output extent and resolution—for example with the IDW Interpolation tool. The Processing Toolbox is out of scope for this course._
+> The main menu interpolation tools do not allow control over extent and resolution — use the **Processing Toolbox** for advanced control.
 
-### Style raster results
+### Style Raster Results
 
-If labels are being cut off at the map boundary, review the previous exercise to remember how to use the _Automated placement settings_ to prevent it.
-##### Recipe to this part 1 NN
+If labels overlap map edges, review the automated label placement settings from the previous lesson.
+#### Recipe – Part 1: Nearest Neighbor (NN)
+
 ![[Pasted image 20250930133217.png]]
-14. Change the renderer from the default _Singleband gray_ to _Singleband pseudocolor_.
 
-For continuous rasters we use the _Singleband pseudocolor_ renderer. Although Thiessen polygons in the _T_NN_ layer look discrete, the pixels have real numbers, which is not possible for discrete rasters.  
+1. Change renderer to **Singleband Pseudocolor**.
+2. Choose the **Spectral** color ramp and click _Classify_.
+3. Invert the color ramp to match temperature logic (warm = red, cold = blue).
+4. Set **Blending mode → Multiply** for better basemap visibility.
 
-15. For the _Color ramp_ choose _Spectral_. Click _Classify_ if it doesn't automatically show the result.
-By default this color ramp is setup to make the lower values red and the larger numbers blue. This is counter-intuitive. These values represent temperature so the higher values should be represented with warmer/red colors and the lower values with colder/blue colors.  
+#### Recipe – Part 2: IDW
 
-16. To accomplish this, right-click on the color ramp and choose _Invert Color Ramp_ from the context menu. In order to see the basemap you will apply a _Blending mode_. In the _Layer rendering_ section choose _Multiply_ for the _Blending mode_.
-
-##### Recipe to this part 2 IDW
 ![[Pasted image 20250930133334.png]]
-Use the _Layer Styling Panel_ to style this using the _Singleband pseudocolor_ renderer with the same inverted color ramp. This time switch the _Mode_ to _Quantile_. Also apply a _Multiply_ _Blending mode_ to this raster.
+
+Use the **Singleband Pseudocolor** renderer again with:
+
+- Mode: **Quantile**
+- Inverted Spectral color ramp
+- Blending mode: **Multiply**
+
 ![[Pasted image 20250930133348.png]]
-In this lesson you have learned to:
 
-- _import tabular data_ into a GIS
-- save tables with geometry to GIS format
-- _join attribute tables_
-- _edit attribute tables_
-- _interpolate_ point data to raster
-- style and label point vectors
-- style continuous rasters
+### Lesson 2 Summary
 
-To submit:
-1. Zoom in to a nice extent on your map canvas where you can see the results of Lesson 1 (points, lines and polygons, styled and with a label).
+You have learned how to:
 
-2. In the main menu go to **Project | Import/Export | Export Map to PDF...**
+- Import tabular data into QGIS
+- Save geometries as GIS formats
+- Join and edit attribute tables
+- Perform raster interpolation
+- Style and label point and raster layers
 
 ---
 ## Lesson 3: Spatial Analysis with Map Algebra
@@ -211,151 +283,276 @@ After this lesson you will be able to:
 - _convert_ raster to vector points
 - _sample_ raster values with vector points
 
-### Case of study
-In this lesson we'll address the following case.
+## Lesson 3: Spatial Analysis with Map Algebra
 
-The municipality of the (imaginary) oasis Aïn Kju Dzjis has hired you to analyse ==which wells are unsuitable for its inhabitants== based on the following conditions:  
-  
-Condition 1:  
-    The wells should be within 150 meters of houses or roads.  
-  
-Condition 2:  
-    No industry, mine, or landfill within 300 meters of the wells.  
-  
-Condition 3:  
-    The wells should be less than 40 meters deep.  
-  
-You will use map algebra to perform the required analysis.
-![[Pasted image 20250930135600.png]]
+With **map algebra**, we can perform calculations using raster layers. This is fundamental for spatial analysis, especially when evaluating multiple criteria to determine suitable or unsuitable areas.
 
-### Preparation
+After completing this lesson, you will be able to:
 
-#### Adding Raster Attributes Tables
-After dragging and adding the Raster layers to the map canvas is possible to check the type of raster information on each layer.
-- gwlevel = Vector
-- roads = vector / discrete raster
-- buildg = vector / discrete raster
-- dtm = continuous raster
-
-Raster layers, in general, have no attribute table. Each layer is one theme, represented by the values of the cells. The main raster data types are:  
-
-- Boolean rasters: cell values are zero or one, meaning True or False. An example is flooded versus non-flooded areas. They are styled using the _Paletted/Unique values_ renderer.
-- Discrete rasters: cell values are integers (whole numbers) representing classes. An example is a land cover map. They are also styled with the _Paletted/Unique values_ renderer.
-- Continuous rasters: cell values are real numbers (decimals) representing gradients in the landscape. Elevation en precipitation rasters are examples. They are styled with the _Singleband pseudocolor_ renderer.
-
->The GIS analyst has to determine the data type, because that is normally not stored in the raster layer. Knowledge of the data type is needed for applying the correct analysis tools and for presenting raster data with the correct styling.
-
-QGIS has the possibility to add _Raster Attribute Tables_ or RAT’s to the raster layers, to add multiple attribute fields to a single raster layer and choose a field for styling.
-  
-To add a RAT to a layer the first step is to apply a renderer to this discrete raster layer with land-use classes. To add unique values go to the style layer in the styling panel, slect _Paletted/Unique values_ and press _Classify_. Also without the RAT in that part is possible to edit the labels of the cell values to create a legend.
-
-_Layers_ panel, right-click on the layer and choose _Create Raster Attribute Table_. In the _New Raster Attribute Table_ dialog, keep the default _Managed by the data provider._ This will use a _GDAL auxiliary XML_ as the format. Click _OK_.
-
-Then, to change the colors and add the Land Use in the _Raster Attribute Table_ select the _Edit Attribute Table_, add a new column of Land Use to add the information missing, and change the original Classification in Class for *Land Use*, after change colors the results should be like this. Press _Classify_ to confirm and save the changes.
-
-![[Pasted image 20250930145041.png]]
-
->_You can also create RATs from rasters styled with the Singleband Pseudocolor renderer. Then you need to change the Interpolation setting to Discrete so it uses class ranges._
-
-#### Using the Processing Toolbox
-The _Processing Toolbox_ in QGIS provides a lot of tools for processing GIS data. Besides QGIS tools, it also has third-party processing tools that are very useful.  Examples are GDAL, GRASS, SAGA, PCRaster Tools, R and WhiteboxTools. It can be activated by choosing **Processing | Toolbox** from the main menu.
-
-### Condition 1: Wells within 150 meters of houses or roads
-
-Goals:
-- Create a *boolean layer* with True for houses and False for other buildings
-- Create zones of 150 meters around the houses
-#### Create the boolean layers
-To create a Boolean layer with True (1) for houses and False (0) for the other classes go to **Raster | Raster Calculator**. There, in the _Raster Calculator Expression_ use `buildg@1 = 1` and `roads@1 > 1` where `@1` mean the _band 1_, since in the excercise there's only one is obvious but this come handy where working with multiple bands in remote sensing.
-
-![[Pasted image 20250930151320.png]]
-![[Pasted image 20250930151458.png]]
-
-#### Create the zones around the booleans
-In the main menu go to **Raster | Analysis | Proximity (Raster Distance)**. Use the desired layer as input, use _Georeferenced coordinates_ in the distance units and add the maximum distance to be generated and enter `1` for _Value to be applied to all pixels that are within the -maxdist of target pixels_. Set the _Output data type_ to _Byte_ (because we use only 0 and 1) and call the output _Proximity map_ `houses150m.tif`. Leave the other settings at default.
-![[Pasted image 20250930152512.png]]
-![[Pasted image 20250930153206.png]]
-
-
-### Condition 2: No industry, mine, or landfill within 300 meters from wells
-For this condition is necessary to reclassify the layer to get a boolean map for (and only) the required classes, and then calculate the distance to the True pixels and finally calculate the pixels that are further than 300 m from industry, mine, and landfill.
-
-#### Creating a mask for industry, mine or landfill
-
-From the _Processing Toolbox_ menu choose **Raster analysis | Reclassify by table** and reclassify the raster using a _lookup table_ and fill in the dialog exactly as in the figure below.
-
-![[Pasted image 20250930153555.png]]
-![[Pasted image 20250930153658.png]]
-- Which expression would you have used for this in the _Raster Calculator_?
-It can be created as well with *Raster Calculation*, so the following two conditions are equivalent.
-![[Pasted image 20250930155151.png]]
-![[Pasted image 20250930155104.png]]
-
-#### Creating the zone
-
-To have a new way to create the 300m zone around the relevant points without the same **| Raster Analysis - Proximity (Raster Distance) |** done before another roundabout can be the following.
-![[Pasted image 20250930160044.png]]
-And instead of selecting the maximum distance as before the values stay in 0 and select 32 bit, the results of byte and 32bits are the following, showing that for having a continuous raster only the 32 bit keeps enough information (more than 256) for it.
-
-- Is the _inddist_ layer a boolean, discrete, or continuous raster? -> Continuous The values are changing progressively without any sharp border
-![[Pasted image 20250930161017.png]]
-
-
-![[Pasted image 20250930162248.png]]
-
-And finally use the _Raster Calculator_ to calculate `inddist@1 >= 300`. Call the output layer `ind300m.tif`.
-- Is the _ind300m_ layer a boolean, discrete, or continuous raster? -> Boolean, could be discrete if there were more than 2 values (let's say, other range between 300 and 450 meters) but since there's only two it's boolean
-![[Pasted image 20250930162811.png]]
-
-
-### Condition 3: Wells less than 40 meters deep
-
-The _gwlevel_ layer gives the absolute elevation of the groundwater level in the well in meters above sea level. In order to calculate the depth to the groundwater, we need to subtract this from the surface elevation given in the digital terrain model (DTM).
-
-Opening the _Raster Calculator_ subtract the absolute well depth from the DTM using this calculation: `dtm@1 - gwlevel@1`. Call the output layer `welldepth.tif`.
-
-- Is the _welldepth_ layer a boolean, discrete, or continuous raster?  
-	    Discrete raster
-
-Style the _welldepth_ layer with the appropriate renderer for this raster type.  After it, calculate in the _Raster Calculator_ a boolean map with wells less than 40 m deep. Call the output layer `notdeep.tif`.  Style the _notdeep_ layer.
-
-
-### Combining conditions and reporting results
-
-Again with raster calculations write `"houses150m@1" AND "ind300m@1" AND "roads150m@1" AND ( "isdeeperthan40@1" == 0)` to get the bool with the combination of conditions.
-
-Then to convert raster cells of the wells to point vectors, for a better visualization, and then - Sample raster values to add attributes from the calculated layers
-#### Convert Raster Cells to Point Vectors
-
-To present the end result, we can style the _accessiblewells_ layer. However, it is nicer to present the wells as point features on the map. Therefore, we need to convert the well pixels to point vectors.  
-  
-In the _Processing Toolbox_ go to **Vector creation | Raster pixels to points**. Then add a field name (like accessible)
- ![[Pasted image 20251001113409.png]]
-
-The point vector layer _wells_ now only contains the field _Accessible_. It is however, more informative to also include other data in the attribute table. With the **_Point sampling tool_ plugin** we can sample the raster layers in this project and add that information to the point attribute table.
-
-In this lesson you have learned to:
-
-- use _raster attribute tables_  
-    
-- apply _map algebra_ for raster analysis
-- distinguish _Boolean_, _discrete_, and _continuous_ rasters
-- make legends for Boolean, discrete, and continuous maps
-- understand the use of _Nodata_
-- use _logical operators_
-- calculate _distances_ from rasters
-- _reclassify_ rasters
-- _convert_ raster to vector points
-- _sample_ raster values with vector points
+- Use **Raster Attribute Tables (RATs)**
+- Apply **map algebra** for raster-based analysis
+- Distinguish **Boolean**, **discrete**, and **continuous** rasters
+- Create legends for Boolean, discrete, and continuous maps
+- Understand the use of **NoData** values
+- Use **logical operators**
+- Calculate **distances** from raster features
+- **Reclassify** rasters
+- **Convert** rasters to vector points
+- **Sample** raster values using vector points
 
 ---
 
-# 🐢 Definitions
+### 🏜️ Case Study: Oasis Aïn Kju Dzjis
 
-Remote sensing: 
-RAT (Raster Attribute Tables):
-# 📅 Homework
+The municipality of the **imaginary oasis Aïn Kju Dzjis** has hired you to determine **which wells are unsuitable** for its inhabitants, based on the following spatial conditions:
 
-Video of lesson 3 
-Two videos of lesson 4
+**Condition 1:**  
+Wells must be **within 150 meters** of houses or roads.
+
+**Condition 2:**  
+There must be **no industry, mine, or landfill within 300 meters** of the wells.
+
+**Condition 3:**  
+Wells must be **less than 40 meters deep**.
+
+You will use **map algebra** in QGIS to perform these analyses.
+
+![[Pasted image 20250930135600.png]]
+
+---
+
+### 🧭 Preparation
+
+#### Adding Raster Attribute Tables (RATs)
+
+After adding your raster layers to the map canvas, inspect each one to determine its data type:
+
+- `gwlevel` → **Vector**
+- `roads` → **Vector / Discrete raster**
+- `buildg` → **Vector / Discrete raster**
+- `dtm` → **Continuous raster**
+
+In general, raster layers do not have attribute tables. Each raster cell represents a value for a single theme, and its type determines how it can be analyzed and visualized:
+
+- **Boolean rasters**: values are `0` or `1` (True/False).  
+    _Example:_ flooded vs. non-flooded areas.  
+    → Use **Paletted/Unique values** renderer.
+    
+- **Discrete rasters**: integer values representing classes (e.g., land cover types).  
+    → Use **Paletted/Unique values** renderer.
+    
+- **Continuous rasters**: floating-point values representing gradients (e.g., elevation, precipitation).  
+    → Use **Singleband pseudocolor** renderer.
+    
+
+> The GIS analyst must determine the raster type, since it’s often not stored in the file metadata. Knowing the data type ensures correct analysis and styling.
+
+QGIS allows the creation of **Raster Attribute Tables (RATs)**, enabling multiple fields per raster and the ability to select fields for styling.
+
+To create a RAT:
+
+1. Apply a **Paletted/Unique values** renderer to your discrete raster (e.g., land use).
+2. In the _Layer Styling_ panel, select **Classify** to list unique values.
+3. Right-click the layer → **Create Raster Attribute Table**.
+4. In the dialog, choose **Managed by the data provider** (uses a GDAL auxiliary XML).
+5. Edit the attribute table, add a _Land Use_ column, rename the _Class_ field to _Land Use_, and customize colors.
+
+![[Pasted image 20250930145041.png]]
+
+> You can also create RATs from rasters styled with _Singleband Pseudocolor_. Set **Interpolation** to _Discrete_ so it uses class ranges.
+
+---
+
+#### Using the Processing Toolbox
+
+The **Processing Toolbox** in QGIS provides a wide set of geoprocessing tools — not only from QGIS itself but also from libraries such as **GDAL**, **GRASS**, **SAGA**, **PCRaster**, **R**, and **WhiteboxTools**.  
+Activate it via **Processing → Toolbox** from the main menu.
+
+---
+
+## ⚙️ Condition 1: Wells within 150 meters of houses or roads
+
+**Objective:**
+
+- Create a **Boolean layer** (True for houses, False otherwise)
+- Generate **150-meter buffer zones** around houses and roads
+
+### 🏠 Creating Boolean Layers
+
+Open **Raster → Raster Calculator**.  
+Use the following expressions to define Boolean rasters:
+
+- For houses:
+    
+    `"buildg@1" = 1`
+    
+- For roads:
+    
+    `"roads@1" > 1`
+    
+
+Here, `@1` refers to **band 1** — helpful when working with multi-band rasters (e.g., remote sensing).
+
+![[Pasted image 20250930151320.png]]  
+![[Pasted image 20250930151458.png]]
+
+---
+
+### 🧩 Creating 150m Zones
+
+Go to **Raster → Analysis → Proximity (Raster Distance)**.  
+Use the Boolean layer as input and set:
+
+- **Distance units:** Georeferenced coordinates
+- **Max distance:** 150
+- **Value within range:** 1
+- **Output data type:** Byte
+- **Output name:** `houses150m.tif`
+
+Leave all other parameters at default.
+
+![[Pasted image 20250930152512.png]]  
+![[Pasted image 20250930153206.png]]
+
+---
+
+## ⚙️ Condition 2: No industry, mine, or landfill within 300 meters
+
+We will reclassify the raster to isolate industries, mines, and landfills, compute distances to those features, and then keep only wells located **300 m or more away**.
+
+### 🏭 Creating a Mask for Industry, Mine, or Landfill
+
+From the **Processing Toolbox**, open  
+**Raster analysis → Reclassify by table**.  
+Create a **lookup table** specifying the classes corresponding to _industry_, _mine_, and _landfill_, as shown below:
+
+![[Pasted image 20250930153555.png]]  
+![[Pasted image 20250930153658.png]]
+
+Alternatively, this can also be done with the **Raster Calculator**:
+
+![[Pasted image 20250930155151.png]]  
+![[Pasted image 20250930155104.png]]
+
+Both approaches produce equivalent Boolean rasters.
+
+---
+
+### 🗺️ Creating the 300m Zone
+
+To compute distance zones without using the same tool as before, you can explore an alternative method:
+
+![[Pasted image 20250930160044.png]]
+
+Here, choosing a **32-bit output** instead of Byte allows for continuous values beyond 256.
+
+- The **`inddist`** layer is **continuous**, since pixel values change progressively without discrete boundaries.
+    
+
+![[Pasted image 20250930161017.png]]  
+![[Pasted image 20250930162248.png]]
+
+Finally, use the Raster Calculator to generate a Boolean map of safe zones:
+
+`"inddist@1" >= 300`
+
+Output name: `ind300m.tif`
+
+- The **`ind300m`** layer is **Boolean**, since it contains only two values (True/False).
+    
+
+![[Pasted image 20250930162811.png]]
+
+---
+
+## ⚙️ Condition 3: Wells less than 40 meters deep
+
+The `gwlevel` layer represents the **groundwater level elevation** (in meters above sea level).  
+To calculate **well depth**, subtract groundwater level from the **surface elevation (DTM)**:
+
+`"dtm@1" - "gwlevel@1"`
+
+Output: `welldepth.tif`
+
+- The **`welldepth`** layer is **continuous**, representing varying depth values.
+    
+
+Style it using a **Singleband pseudocolor** renderer.
+
+Next, create a Boolean layer for wells **less than 40 m deep**:
+
+`"welldepth@1" < 40`
+
+Output: `notdeep.tif`
+
+Style accordingly.
+
+---
+
+## 🧮 Combining All Conditions
+
+Use **Raster Calculator** to combine all conditions:
+
+`"houses150m@1" AND "ind300m@1" AND "roads150m@1" AND ("notdeep@1" = 1)`
+
+This final raster identifies **suitable wells** meeting all criteria.
+
+---
+
+### 💧 Converting Raster Cells to Point Vectors
+
+To better visualize results, convert raster pixels (True cells) to points:
+
+**Processing Toolbox → Vector creation → Raster pixels to points**
+
+Add a field name such as `Accessible`.
+
+![[Pasted image 20251001113409.png]]
+
+Now, to enrich the attribute table with contextual information, use the **Point Sampling Tool** plugin to sample values from all relevant raster layers and append them as new attributes.
+
+---
+
+### ✅ Lesson Summary
+
+In this lesson, you have learned how to:
+
+- Use **Raster Attribute Tables (RATs)**
+    
+- Apply **map algebra** for raster analysis
+    
+- Distinguish **Boolean**, **discrete**, and **continuous** rasters
+    
+- Style and create legends for raster data
+    
+- Use **NoData** appropriately
+    
+- Apply **logical operators**
+    
+- Compute **distances** from raster features
+    
+- **Reclassify** rasters
+    
+- **Convert** rasters to vector points
+    
+- **Sample** raster values using vector points
+    
+
+---
+
+### 🐢 Definitions
+
+**Remote Sensing:**  
+The science of acquiring information about the Earth's surface using sensors on satellites or aircraft without direct contact.
+
+**RAT (Raster Attribute Table):**  
+A table linked to a raster dataset that stores additional attributes (e.g., land use names, colors, or categories) for each cell value.
+
+---
+
+### 📅 Homework
+
+- Watch the **video of Lesson 3**
+    
+- Watch **two videos from Lesson 4**
 

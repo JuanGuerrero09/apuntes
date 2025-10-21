@@ -5,6 +5,7 @@ Last Modified: Wednesday 9th July 2025 00:00
 Professor: Dr.-Ing. Muhammad Adnan Khan
 tags:
 Credits: "5"
+email: muhammad_adnan.khan@tu-dresden.de
 ---
 # 👨🏽‍🏫Professor
 
@@ -92,11 +93,20 @@ Friday, 4th DP, 13:00 - 14:30
 only in odd weeks  
 room: [hydraulic labratory (S7A E20)](https://navigator.tu-dresden.de/etplan/s7a/00/raum/147900.0100)
 
+Exam: 90 min open book
 
 # 🕸️Resources and Relevant Links
 
+Getting started:
+- Hydraulics in Civil and Environmental Engineering - Chadwick
+- The Hydraulics of Open Channel Flow - Chanson
 
 # 📚Notes
 
 
 
+1. Introduction to River Engineering
+2. Hydraulic Structures
+3. Introduction to Waterways Engineering
+
+In coastal and ocean engineering, water depth is classified as **deep water** or **shallow water** based on the ratio of the **water depth (h)** to the **wavelength (L)** of surface waves. When the depth is greater than half the wavelength (h/L > 1/2), the water is considered **deep**, meaning the waves do not feel the seabed and their motion is confined near the surface. When the depth is much smaller than the wavelength (h/L < 1/20), the water is classified as **shallow**, where waves are strongly influenced by the seabed. The region between these two limits (1/20 < h/L < 1/2) is known as **intermediate water**, where wave characteristics gradually transition between deep and shallow conditions.

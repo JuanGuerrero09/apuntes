@@ -1,1 +1,0 @@
-Libro: CS 224w: Machine Learning with Graphs
