@@ -3,4 +3,6 @@ scikit-learn
 #widely used dataframe library
 pandas
 #widely used visualisation library
-seaborn 
+seaborn
+#some downstream users of numpy are not yet conforming to numpy 2+ API
+numpy<2
