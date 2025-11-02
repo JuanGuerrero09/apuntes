@@ -239,7 +239,7 @@ Remove _corine2018_repr_ from the _Layers Panel_ and style the _corine2018_
 
 ![[Pasted image 20251002141836.png]]
 
-If there's error solve it doing the process of this[[Class 3#Clipping layers to the catchment boundary | Solving geometry proccess]] and run again the intersection
+If there's error solve it doing the process of this[[Apuntes/02 Master/S1 TU Dresden/00 Preparatory Courses/QGIS for Water Resources/Class 3#Clipping layers to the catchment boundary| Solving geometry proccess]] and run again the intersection
 ![[Pasted image 20251002142530.png]]
 
 ### Calculate Land Cover Class Area per Subcatchment
