@@ -285,7 +285,7 @@ where P: precipitation, L: evapotranspiration, G: infiltration/groundwater, R: r
 
 **Link between energy and water balance:**
 
-$LE = L_v E$
+$\lambda E = L_v E$
 
 where LE: latent heat flux, E: evapotranspiration rate.
 

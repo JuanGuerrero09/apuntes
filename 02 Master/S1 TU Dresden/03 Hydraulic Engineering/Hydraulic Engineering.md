@@ -595,6 +595,7 @@ Where:
 
 The **bed shear stress ($\tau_0$)** represents the **tangential force per unit area** exerted by the flow on the channel bed.  
 It controls sediment motion, erosion, and channel stability.
+
 $$\begin{gather}
 \tau_0 \cdot p \cdot \Delta x = \rho_w \cdot g \cdot A \cdot \sin\alpha \cdot \Delta x \\
 \tau_0 = \rho_w \cdot g \cdot \frac{A}{p} \cdot \sin\alpha = \rho_w \cdot g \cdot r_{hy} \cdot S_E

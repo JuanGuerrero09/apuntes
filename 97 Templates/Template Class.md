@@ -9,13 +9,16 @@ Last Modified: <% tp.file.last_modified_date("dddd Do MMMM YYYY HH:mm") %>
 
 
 ---
-# 🕸️Resources
-
+# 📝 Notes
 
 
 ---
-# 📝 Notes
+# 💡 Key Takeaways
 
+
+---
+
+# 💭 Questions
 
 ---
 # 🐢 Definitions

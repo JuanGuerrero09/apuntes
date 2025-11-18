@@ -356,13 +356,694 @@ Three main stages:
 3. **Flood propagation:** movement of water through the river channel system.
 
 ---
-### Hydrological Modelling
+## Hydrological Modelling
 
-Hydrological models simulate the interaction between **precipitation, evapotranspiration, infiltration, and runoff** to estimate how a catchment responds to rainfall or snowmelt.  
-They can range from **conceptual** to **physically based**, depending on the desired level of realism and data availability.
+Hydrological modelling aims to describe how **precipitation (P)** is transformed into **runoff (R)** through a system of interacting processes such as infiltration, evapotranspiration, and storage. These models are key tools to **analyze**, **simulate**, and **forecast** hydrological behavior at multiple spatial and temporal scales.
+
+Runoff generation involves three main stages:
+
+- **Runoff formation** – precipitation reaching the surface and producing excess water.
+- **Runoff concentration** – the routing of that water through the catchment.
+- **Flood propagation** – movement through river channels toward the outlet.
+---
+### Model Scales
+
+Models range from local field plots to continental basins, following the rule:
+
+They follow the principle:
+
+> “As simple as possible, as complex as necessary.”
+
+|Scale|Typical Size|Focus / Examples|
+|---|---|---|
+|**Microscale**|1 m² – 1 ha|Field or lysimeter experiments; local infiltration; preferential flow.|
+|**Mesoscale**|1 ha – 10² km²|Catchments and aquifers; spatial heterogeneity and hydrological connectivity.|
+|**Macroscale**|10² km² – 10⁶ km²|River basins, large watersheds, continental hydrology; links with GCMs.|
+
+> **Watershed vs River Basin:**  
+> A _watershed_ drains into a local outlet (stream or wetland), while a _river basin_ aggregates multiple watersheds draining into a major river or sea.
+
+Models at different scales must capture scale-dependent relationships and account for sub-scale effects.
+#### Examples
+
+- **Flood forecasting:** basin or catchment scale.
+- **Self-cleaning mechanisms in rivers:** river reach scale.
+- **Crop productivity and irrigation:** field or soil column scale.
+
+---
+### Modelling concepts
+
+Hydrological models are abstractions — they focus on the dominant processes relevant to the research question.
+
+> “All models are wrong, but some are useful.” – G. Box (1978)
+
+![[Pasted image 20251103124616.png]]
+They quantify **specific parts of the water cycle**, particularly rainfall–runoff relationships, by linking **inputs** (precipitation, ET, radiation, temperature) to **outputs** (runoff, infiltration, storage).
+
+![[Pasted image 20251103174605.png]]
+
+---
+#### General structure of (hydrological) models
+
+Hydrological models describe how **inputs** (precipitation, evapotranspiration, temperature, etc.) are transformed into **outputs** (runoff, infiltration, storage, etc.) through a system of **governing equations**:
+
+$$\frac{\partial \theta}{\partial t} = \frac{\partial}{\partial z} \left(K \left(\frac{\partial h}{\partial z} + 1\right)\right) - S$$
+
+Where:
+- $\theta$ = soil water content
+- $K$ = hydraulic conductivity
+- $h$ = hydraulic head
+- $S$ = sink term (e.g., root water uptake)
+
+System description includes:
+- Parameters and parameter models
+- Submodules or process representations
+- Spatial discretization (model grid)
+- Equation solvers (analytical or numerical)
+Models can be **analytical** or **numerical**, **lumped** or **distributed**, and always subject to simplification.
+
+---
+#### ⚙️ Model Inputs and Outputs
+
+- **Inputs:** precipitation ($P$), potential evapotranspiration (ETP), temperature ($T$), radiation, soil data.
+- **Outputs:** runoff, infiltration, evapotranspiration, storage, travel times.
+
+Hydrological models transform these inputs using **physical laws** (mass and energy conservation) and **empirical relationships**.
+
+---
+
+#### Model Errors and Uncertainty
+
+Uncertainties arise from:
+
+- Data quality and measurement errors
+- Spatial/temporal resolution limits
+- Structural simplifications
+- Parameter calibration error
+
+Uncertainty is typically analyzed using **sensitivity analysis** or **Monte Carlo simulations** to quantify prediction reliability.
+
+---
+#### 🧭 The Modelling Process — Good Modelling Practice (GMP)
+
+1. **Research question → Hypothesis**
+2. **Conceptualization:** Identify key processes, spatial/temporal resolution, and required data.
+3. **Model selection and development:** Choose model structure (conceptual, empirical, or physically based) according to data and objectives.
+4. **Parameter estimation (calibration):** Define objective function, select optimization method (manual, local, global, or stochastic).
+5. **Model evaluation (testing):** Validate using independent datasets.
+6. **Uncertainty assessment:** Quantify the effect of parameter and input variability.
+7. **Model application:** Use for forecasting, scenario analysis, or management.
+---
+#### Model types: Overview
+
+#### 🟤 Black-box (Empirical) Models
+
+Relate inputs and outputs statistically without describing internal processes.  
+**Pros:** simple, fast, reproduces observed behavior.  
+**Cons:** poor transferability, no process understanding.
+
+---
+#### 🟠 Grey-box (Conceptual) Models
+
+Combine empirical and physical components.
+
+**Example – Linear Storage Model:**  
+Storage–outflow relationship:  
+$q = \frac{1}{K} S$
+Continuity equation:  
+$p = q + \frac{\partial S}{\partial t}$
+
+By substitution:  
+$p = q + K\frac{\partial q}{\partial t}$
+
+**Analytical solution:**  
+For constant input $p(t)$, the outflow $q(t)$ follows an **exponential response**:  
+$q(t) = q_0 e^{-t/K} + p(1 - e^{-t/K})$
+
+where $K$ is the **storage constant**, representing the **time scale of catchment response** (larger $K$ → slower drainage).
+
+![[Pasted image 20251103175619.png]]
+
+**Pros:** efficient and interpretable, flexible for catchments.  
+**Cons:** requires calibration; validity limited to data range.
+
+---
+
+#### White-box (Physically Based) Models
+
+Derived from fundamental conservation laws for mass, energy, and momentum (e.g., Richards or Saint-Venant equations).
+
+**Example:** PDE-based flow and transport models (e.g. Richards or Saint-Venant equations).
+
+**Pros:** physically interpretable, transferable, spatially explicit.  
+**Cons:** high data and computational demands, sensitive to sub-grid variability.
+
+---
+
+#### Stochastic Models
+
+Incorporate randomness in inputs or parameters to estimate **probability distributions** of outcomes (e.g. *Monte Carlo* methods).
+
+**Applications:**
+
+- Reservoir design using stochastic rainfall series.
+- Contaminant plume arrival time in random $K$-fields.
+
+**Pros:** explicit uncertainty quantification.  
+**Cons:** requires many simulations (high CPU time).
+
+##### Monte Carlo Methods
+
+Monte Carlo simulation is the most common stochastic technique. It runs the model many times with random input samples to produce a **distribution of outputs**.
+
+1. Randomly sampling input variables (e.g. precipitation, hydraulic conductivity, or parameters).
+2. Running the model repeatedly — often **thousands of times** — with these samples.
+3. Analyzing the resulting distribution of outputs (e.g. runoff, water table depth).
+
+This produces probabilistic estimates such as confidence intervals, exceedance probabilities, or risk levels.
+
+---
+
+#### Machine Learning Models
+
+Modern data-driven models capable of capturing nonlinear relations between hydrological variables.  
+They include **Random Forests (RF)**, **Multi-Layer Perceptrons (MLP)**, and **Long Short-Term Memory (LSTM)** networks.
+
+- **RF:** ensemble of decision trees; robust and fast.
+- **MLP:** feedforward neural network; captures nonlinear mappings.
+- **LSTM:** recurrent model; retains temporal dependencies, ideal for streamflow or groundwater forecasting.
+
+**Pros:** high predictive performance, scalable.  
+**Cons:** require large datasets; limited interpretability.
+
+![[Pasted image 20251103180326.png]]
+
+---
+#### Conceptual Models vs Physically based models
+
+| Conceptual Models               | Physically Based Models                    |
+| :------------------------------ | :----------------------------------------- |
+| Rainfall–runoff                 | Groundwater–surface water interactions     |
+| Catchment water balance         | Soil–plant–atmosphere systems              |
+| Reservoir operations and design | Contaminant transport, saltwater intrusion |
+| Estimation of design values     | Climate change and WRM studies             |
+| Operational forecasting         | Mechanistic process simulation             |
+
+---
+### Model Calibration
+
+Calibration adjusts model parameters to match observed data. It is part of steps 2–5 in GMP.
+#### Parameter Types
+
+- **Empirical:** statistical or fitting parameters with no physical meaning.
+- **Physical:** measurable parameters (e.g. $K_s$, porosity), may be transferred across sites.
+- **Hyperparameters:** govern the calibration process itself (e.g. learning rate, step size).
+
+Parameters may be **lumped** (catchment-average) or **distributed** (spatially variable).
+#### Classical parameter estimation in hydrosystem modelling
+![[Pasted image 20251103180914.png]]
+
+Model calibration is formulated as an **optimization problem**:  
+$p_{opt} = \min f(p)$
+where $f(p)$ is an **objective function** measuring model performance.
+
+A common criterion is the **Nash–Sutcliffe Efficiency (NSE):**  
+$NSE = 1 - \frac{\sum (Q_{obs} - Q_{sim})^2}{\sum (Q_{obs} - \bar{Q}_{obs})^2}$
+Values close to 1 indicate a good fit.
+
+![[Pasted image 20251103181021.png]]
+
+#### Optimization Methods
+
+- **Manual calibration** – iterative visual adjustment.
+- **Automatic methods:**
+	- _Gradient-based:_
+	    - **Gauss–Newton** – fast near optimum.
+	    - **Levenberg–Marquardt** – stable hybrid approach.
+	    - **Steepest Descent** – moves along the negative gradient, robust but slow.
+	- _Global search:_ Genetic Algorithms, Monte Carlo, Simulated Annealing.
+There is a **trade-off** between **robustness** (finding the global optimum) and **efficiency** (computational cost).
+---
+#### Model Complexity
+
+- **Too simple:** oversimplifies processes → poor realism.
+- **Too complex:** overfits → poor predictive performance.
+
+Hence, models should always be “**as simple as possible but as complex as necessary**.”
+
+# 6. Precipitation
 
 
-## 6. Precipitation
+Precipitation is the **primary input** to the hydrological cycle and determines the **water balance** of any basin.  
+It occurs in various forms:
+- Rain
+- Fog
+- Snow, sleet
+- Hailstones
+- Freezing rain
+Every precipitation event is characterized by:
+- **Volume or depth** (mm)
+- **Duration** (minutes to days)
+- **Intensity** (mm/hr)
+- **Return period** (statistical recurrence)
+
+---
+### 6.1 Formation of precipitation
+
+The formation of precipitation depends on three major processes: **cooling**, **condensation**, and **droplet growth**.
+
+#### 1) Cooling of moist air to dew-point temperature
+Air must be cooled until it reaches saturation. Cooling can occur through:
+- **Radiation:** heat loss to the atmosphere, especially during nighttime
+- **Conduction:** transfer of heat to a colder surface
+- **Mixing:** warm moist air mixing with cold dry air
+- **Adiabatic cooling:** temperature drop caused by vertical uplift and expansion of air
+Of all these mechanisms, **adiabatic cooling is the most significant**, because strong cooling rates occur mainly when air rises in the atmosphere.
+
+#### 2) Condensation
+Once air reaches dew point, water vapor condenses into small droplets.
+- Droplet diameter: $\phi = 0.001–0.2\ \text{mm}$
+- Fall velocity: $v < 0.7\ \text{m/s}$
+- Requires **condensation nuclei** (dust, salt, smoke, pollen)
+    - Typical diameter: $> 10^{-4}\ \text{mm}$
+Condensation nuclei are essential because water vapor alone cannot easily form droplets; the nuclei reduce the energy barrier required for condensation.
+
+#### 3) Droplet growth
+For precipitation to occur, droplets must grow large enough to fall.
+- Droplet diameter: $\phi = 0.4–4\ \text{mm}$
+- Fall velocity: $v > 1\ \text{m/s}$
+- Growth mechanisms include:
+    - Collision and coalescence
+    - Ice-crystal processes
+    - Continued condensation
+
+![[Pasted image 20251111112019.png]]
+
+---
+
+### Meteorological uplift situations
+
+Uplift mechanisms force air to rise, cool, and ultimately condense.
+
+#### Convective lifting
+
+- Warm moist air rises due to surface heating    
+- Air expands and cools adiabatically
+- Forms cumulonimbus clouds
+- Generates short-duration, high-intensity rainfall
+- Spatially limited
+- Produces showers, intense rainfall, and hail
+#### Orographic lifting
+
+- Occurs when moist air encounters a mountain barrier
+- Air rises up the slope → cools → condenses → precipitation
+- Influenced by:
+    - Wind speed
+    - Acclivity (steepness)
+    - Elevation
+- Can produce large intensity and long-duration rainfall
+- Leeward side becomes dry due to **rain shadow**
+#### Frontal lifting
+
+Precipitation associated with atmospheric fronts and cyclonic systems.
+- **Warm front:**
+    - Warm moist air glides over cold dense air
+    - Produces uniform, widespread rainfall of moderate intensity
+- **Cold front:**
+    - Cold air pushes under warm moist air, forcing rapid uplift
+    - Produces intense, short-lived precipitation events
+
+#### Convergence
+
+- Occurs when air flows together into a low-pressure region
+- Air is forced upward
+- Common in tropical storms and cyclones
+
+![[Pasted image 20251111112719.png]]
+
+---
+### 6.2 Precipitation measurements
+
+#### Precipitation regimes
+
+The table classifies global precipitation regimes and their seasonal patterns.
+Interpretation of abbreviations:
+- **Wi** = Winter
+- **Su** = Summer
+- **max** = Maximum precipitation in that season
+- **dry / wet** = Seasonal dryness or wetness
+
+| --- | Climate                | Precipitation                   |
+| --- | ---------------------- | ------------------------------- |
+| A   | Equatorial             | All year, max 2 seasons         |
+| B1  | Tropical (inner, 10º)  | Wi dry, Su wet, 2 summer max    |
+| B2  | Tropical (outer, 23º)  | 1 summer max, longer dry season |
+| C   | Monsoon                | high Su max, long dry season    |
+| D   | Subtropical (23-30º)   | dry (desert) very little rain   |
+| E   | Mediterranean (30-40º) | Wi rain, Su dry                 |
+| F   | Mid-latitudes          | all seasons                     |
+| G   | Polar                  | all seasons, small amounts      |
+Clarification:  
+"Summer max" means **summer has the highest rainfall of the year**.  
+"Wi dry" means **winter is dry**, "Su wet" means **summer is wet**, etc.
+
+---
+#### Point measurements
+
+##### Rainfall depth
+Total accumulated precipitation during an event or time interval (mm).
+##### Rainfall intensity
+Rate of precipitation:
+- $[\text{mm/min}]$
+- $[\text{mm/hr}]$
+Intensity is especially important for stormwater design and runoff modeling.
+##### Rainfall duration
+Total time over which precipitation occurs.
+##### Rain yield factor
+Units: $\text{mm·s}^{-1}\text{·ha}^{-1}$  
+Used to estimate the volume of stormwater generated from rainfall over a catchment.  
+Less common today but still appears in older hydrological references.
+
+#### Rainfall depth, intensity, duration, rain yield factor
+
+- **Rainfall depth [mm]**  
+    Observed accumulated precipitation during a specific event or period (daily, monthly, annual).
+- **Rainfall intensity**  
+    Precipitation depth per unit time:
+    - $[\text{mm}/\Delta t]$
+    - $[\text{mm/min}]$, $[\text{mm/hr}]$        
+- **Rainfall duration**  
+    Total time interval over which rainfall is recorded.
+- **Rain yield factor** $[\text{mm·s}^{-1}\text{·ha}^{-1}]$  
+    Used in stormwater engineering to calculate runoff volumes; less common today but still referenced in older hydrological practice.
+
+---
+
+#### Rain gauge installation — Resolution
+
+Real measurements are aggregated into fixed time intervals:
+$$P(t) = \frac{1}{\Delta t}\sum P_{\Delta t}(t)$$    Example intervals: 1h, 3h, 6h, 12h…
+![[Pasted image 20251110113800.png]]
+
+---
+#### Gauge types
+
+##### Non-recording storage gauges
+- Funnel + collecting vessel
+- Provide only summation/averages over long periods
+- Common in mountains and remote sites
+- Incomplete for extreme intensities → cannot measure short bursts
+---
+
+##### Conventional recording gauges
+
+###### Float recorder (Hellmann)
+
+- Receiving area: 200 cm²    
+- Measuring range: 0–10 mm
+- Drum rotates daily or weekly
+- Collecting vessel: ~70 mm
+- Provides continuous recording of rainfall depth over time
+
+![[Pasted image 20251110114145.png]]
+
+###### Example: Float recorder graph
+
+Questions usually involve:
+1. Rainfall amount in a given period
+2. Maximum intensity based on curve slope
+
+![[Pasted image 20251110114215.png]]
+Example: Franz Josef, NZ (extreme rainfall)
+
+- Annual mean: 5500 mm
+- Daily max: 400 mm
+- Over 90 years of record
+
+![[Pasted image 20251110114248.png]]
+
+---
+
+###### Tipping-bucket gauge
+- Mechanical/electronic
+- Each “tip” = fixed rainfall volume
+- Good accuracy for ΔP > 0.1 mm
+- Low maintenance
+
+![[Pasted image 20251110114304.png]]
+
+---
+###### Weighing gauge (pluviometer)
+- Measures weight of collected rain
+- Works for liquid and solid precipitation (snow/hail)
+- Can include heating ring
+- No moving parts → high reliability
+- Higher cost
+
+![[Pasted image 20251110114327.png]]
+
+---
+
+##### Unconventional recording gauges
+
+###### Capacitance rain sensor
+- Detects precipitation through changes in electrical capacitance or vibration/sound
+- Distinguishes “precipitation vs. no precipitation”
+###### Disdrometers
+Measure **drop size distribution**.
+- **Acoustic disdrometer:** sound of drops hitting a surface (hydrophones)
+- **Displacement disdrometer:** measures drop impact displacement
+    - Indirect measurement → subject to inaccuracies during heavy rain
+###### Optical disdrometer
+- Uses infrared/laser beams
+- Measures drop size, velocity, type of precipitation
+- Highly accurate (0.001 mm resolution, ~5%)
+- Autonomous and low-maintenance
+- High cost
+
+---
+### DWD – German Weather Service
+
+~1897 stations measuring daily precipitation → ~1 station per 184 km².
+
+---
+### Point measurements (summary)
+
+- Represent **small samples** of a continuous rainfall field
+- Used to **validate indirect measurements** like radar and satellites (TRMM)
+- No global standards for gauges
+- DWD standard:
+    - Hellmann gauge
+    - Height = 1 m
+    - Area = 200 cm²
+    - Daily measurement at 7am
+- WMO provides guidelines but not uniformly adopted
+
+---
+#### Measurement errors (~5–15% typical)
+
+##### Systematic errors
+
+- Evaporation
+- Splashing / wetting
+- Wind-induced errors
+- Snow undercatch
+
+##### Random errors
+
+- Reading mistakes
+- Data transcription errors
+
+Wind-induced undercatch is often the **largest source of error**, especially for snow.
+
+---
+
+### 6.3 Analysis and Correction of Precipitation Data
+
+![[Pasted image 20251110115702.png]]
+
+#### Consistency
+
+Tasks:
+- Remove non-plausible values (outliers)
+- Fill missing data gaps
+
+![[Pasted image 20251110115748.png]]
+
+##### Outliers come from:
+
+- Human data entry errors
+- Instrument malfunction
+- Dummy placeholder values
+- Natural extreme events
+
+Outliers are not always “bad”; hydrology must keep genuine extremes.
+
+---
+#### Detection Methods
+
+- **Extreme value analysis**, e.g.
+    $$z_i = \frac{x_i - \mu}{\sigma}$$
+- **Probabilistic models**
+- **Clustering techniques**
+- **Distance or density-based methods**
+
+---
+#### Methods for data supplementation
+
+##### Single station
+- Replace gaps with historical averages
+    - Only reasonable for _monthly or annual_ values
+##### Multiple stations
+- **Station average** − simple mean of nearby stations
+- **Regression method** − weights based on correlation
+- **Normal-ratio method** − weights based on long-term annual averages
+- **Inverse Distance Weighting (IDW)** − weights based on distance
+- **Kriging / external drift kriging** − uses spatial variance and auxiliary variables
+
+---
+
+#### Homogeneity tests
+
+##### Absolute tests (single time series)
+- Pettitt break-point test
+- Mann–Whitney U-test
+- Abbe test
+##### Relative tests (multiple series)
+- Craddock test (cumulative ratios)
+- Double mass curve
+- Autocorrelation method
+
+---
+
+#### Double Mass Curve
+
+Used to detect **inhomogeneities** across long-term rainfall records.
+
+Guidelines:
+- Significant change requires ≥ 5-year trend
+- Must test statistical significance (t-test or Mann–Kendall)
+- If possible, discard data before the breakpoint
+- Otherwise, multiply past values by a correction factor $K$
+
+---
+
+#### Systematic measurement errors
+
+Example: Hellmann gauge
+
+- Wetting error: +5–10%
+- Evaporation: +1–3%
+- Wind undercatch:
+    - Rain: +2–15%
+    - Snow: +15–55%
+- Total errors can exceed 50%
+
+---
+
+#### The Richter (1995) Correction Method
+
+Richter proposed empirical correction factors to compensate for **wind-induced undercatch**.
+
+General form:
+$$P_c = P_m \cdot K(W, T)$$
+Where:
+
+- $P_c$: corrected precipitation
+- $P_m$: measured precipitation
+- $K$: correction factor ( >1 )
+- $W$: wind speed near gauge
+- $T$: air temperature (rain vs. snow)
+
+Corrections are larger for snow (can be ×2.0+) and smaller for heavy rainfall.
+
+---
+### 6.4 Spatial Interpolation Methods
+
+Rainfall varies in space and time. Point data must be converted into **catchment-wide averages**.
+
+Spatial variability depends on:
+
+- Precipitation type
+- Topography
+- Wind direction
+- Time interval length
+
+Accuracy depends on:
+
+- Station density
+- Measurement error
+- Selected interpolation method
+
+---
+
+#### Methods Overview
+
+- **Spatial measurements**: radar, TRMM, IMERG
+- **Interpolation from point measurements**: deterministic and statistical
+
+Choice depends on:
+
+- Accuracy requirements
+- Time scale
+- Station distribution
+- Physical factors
+
+---
+
+#### Deterministic methods
+
+##### Arithmetic Mean
+
+Example:
+
+|Station|Rainfall (mm)|
+|---|---|
+|P2|20|
+|P3|30|
+|P4|40|
+|P5|50|
+
+Average = 35 mm
+
+---
+
+##### Thiessen Polygons
+
+$$P = \frac{1}{A}\sum a_i p_i$$
+- $a_i$: polygon area
+- $p_i$: rainfall at station $i$
+
+> CHECK EXERCISE 2 OPAL
+
+---
+##### Isohyetal Method
+
+![[Pasted image 20251111115153.png]]
+
+---
+
+##### Inverse Distance Weighting (IDW)
+
+General form:
+
+$$P_x = \frac{\sum p_i d_{xi}^{-1}}{\sum d_{xi}^{-1}}$$
+
+---
+
+#### Statistical methods
+
+##### Kriging
+
+- Ordinary kriging: accounts for spatial autocorrelation
+- Produces best linear unbiased estimate
+- External drift kriging uses auxiliary variables (elevation, etc.)
+
+#### Classification of spatial estimation methods from point observations
+
+![[Pasted image 20251111115404.png]]
+
+
 
 # 7. Runoff
 
