@@ -48,7 +48,7 @@ $$Q_G = a_G \frac{\partial T}{\partial z} = C_G v_T \frac{\partial T}{\partial z
 - $v_T$: molecular thermal diffusivity [m² s⁻¹]
 
 ➡️ The **flux is always directed toward lower temperature** (down the gradient).  
-➡️ **Mode of transport:** Conduction.
+➡️ **Mode of transport:** **Conduction**.
 
 During **daytime**, the soil surface warms and heat flows **downward**;  
 at **night**, the surface cools and heat flows **upward** — see the inversion and lapse profiles.
@@ -82,7 +82,7 @@ and the second term represents the **storage change** in the upper soil layer.
 
 The change of soil temperature with time can be expressed as:
 
-$\frac{\partial T}{\partial t} = \frac{1}{C_G} \frac{\partial Q_G}{\partial z} = v_T \frac{\partial^2 T}{\partial z^2}$
+$$\frac{\partial T}{\partial t} = \frac{1}{C_G} \frac{\partial Q_G}{\partial z} = v_T \frac{\partial^2 T}{\partial z^2}$$
 
 - $T$: temperature [K]
 - $t$: time [s]
@@ -150,25 +150,32 @@ Overall:
 Three main fluxes describe energy and mass transport near the surface:
 
 1. **Sensible heat flux:**
-$$H = \rho c_p v_a \frac{\partial T}{\partial z}$$
+$$H = -\rho c_p K_a \frac{\partial T}{\partial z}$$
 2. **Latent heat flux:**
-    $$\lambda E = v_v \frac{\partial p_v}{\partial z}$$
-3. **Momentum flux:**
-    $$\tau = \rho v_m \frac{\partial u}{\partial z}$$
+$$\lambda E = -K_v \frac{\partial p_v}{\partial z}$$
+3. **Shear Stress:**
+$$\tau = -\rho K_m \frac{\partial u}{\partial z}$$
 
 where:
 
 - $H$: sensible heat flux [W m⁻²]
 - $\lambda E$: latent heat flux [W m⁻²]
-- $\tau$: momentum flux [m² s⁻²]
+- $\tau$: Shear stress flux [m² s⁻²]
 - $\rho$: air density [kg m⁻³]
 - $c_p$: specific heat at constant pressure [J kg⁻¹ K⁻¹]
-- $v_a, v_v, v_m$: molecular diffusion coefficients [m² s⁻¹]
+- $K_a, K_v, K_m$: molecular diffusion coefficients [m² s⁻¹]
+	- $K_a$ : Turbulent thermal diffusivity of heat in air ($m^2s^{-1}$)
+	- $K_v$ : Turbulent diffusion coefficient of water vapor in air ($m^2s^{-1}$)
+	- $K_m$ : Turbulent diffusion coefficient of momentum in air ($m^2s^{-1}$)
 - $T$: temperature [K]
 - $p_v$: vapor pressure [Pa]
 - $u$: wind speed [m s⁻¹]
 
 ➡️ These fluxes represent **transport by molecular diffusion** in the laminar layer.
+
+And any other flux (e.g. $x = CO_2$)
+$$F_x = -K_x\frac{\partial \rho_x}{\partial z}
+$$
 
 ---
 
@@ -208,7 +215,7 @@ $$R = \frac{e}{E} \cdot 100\%$$
 
 - **$a$:** Absolute humidity [kg m⁻³]$$a = 0.21667 \frac{e}{T}$$
 - **$q$:** Specific humidity [kg kg⁻¹]$$q = 0.62198 \frac{e}{p - 0.378e}$$- **$m$:** Mixing ratio [kg kg⁻¹]
-    $$m = 0.62198 \frac{e}{p - e}$$
+$$m = 0.62198 \frac{e}{p - e}$$
 
 where:
 
@@ -259,6 +266,10 @@ where:
 ---
 # 🐢 Definitions
 
+- **Flux**: Ability to transport X along a gradient of the relevant characteristic
+- **Sensible Heat Flux**: The **turbulent vertical transport of heat** between the surface and the atmosphere caused by temperature gradients. Represents how much **thermal energy** is being moved from warmer air parcels to cooler ones (or vice versa).
+- **Water Vapour (Latent Heat) Flux**: The **turbulent vertical transport of water vapour**, driven by the gradient of water vapour density. Represents **evaporation or condensation processes**, because moving water vapour also transfers latent heat.
+- **Shear Stress / Momentum Flux** The **turbulent transport of horizontal momentum** due to vertical wind shear. Describes how turbulence transfers **wind momentum**, creating drag on the surface and shaping wind profiles.
 - **Ground Heat Flux** — Rate of heat transfer between the Earth’s surface and subsurface layers; part of the surface energy balance.
 - **Flux–Gradient Relationship** — Principle stating that any flux (heat, water, momentum) occurs in proportion to the gradient of a driving variable (temperature, potential, etc.).
 - **Thermal Conductivity** — Ability of a material to conduct heat; higher in moist soils due to better particle contact.
@@ -293,7 +304,7 @@ where:
 
 ---
 
-# ❓ Review Questions
+# 💭 Questions
 
 - Why is **ground heat flux ($Q_G$)** directed toward lower temperatures?
 - How can we estimate **$Q_G(0)$** if it cannot be measured directly at the surface?

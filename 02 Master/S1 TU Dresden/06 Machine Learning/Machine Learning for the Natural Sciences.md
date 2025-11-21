@@ -23,7 +23,9 @@ No exams, note based on capstone project.
 # 🕸️Resources and Relevant Links
 
 Further resources:
+https://udlbook.github.io/udlbook/ -> https://github.com/udlbook/udlbook/tree/main
 
+https://sebastianraschka.com/blog/2021/ml-course.html -> https://github.com/rasbt/stat451-machine-learning-fs20/tree/master
 https://d2l.ai/index.html
 https://github.com/dibgerge/ml-coursera-python-assignments
 
