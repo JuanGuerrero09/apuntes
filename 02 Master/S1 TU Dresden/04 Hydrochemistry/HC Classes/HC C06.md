@@ -96,6 +96,7 @@ Typical disturbances:
     - increasing total pressure favours the side with fewer gas moles.
 - **Temperature:**
     - for an **exothermic** reaction (releases heat), raising $T$ favours the reactants.
+	    - "increasing $T$ adds “heat” → equilibrium shifts to the side with less dissolved gas → solubility decreases"
     - for an **endothermic** reaction, raising $T$ favours the products.
 
 > **What is Le Chatelier's principle?**  

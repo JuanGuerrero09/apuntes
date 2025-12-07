@@ -924,7 +924,7 @@ This introduces **new unknowns** (covariances), but no new equations → “clos
 
 ---
 
-## Closure Approaches
+### Closure Approaches
 
 **Closure** means expressing turbulent terms (e.g., $\overline{u'w'}$) using known quantities.
 
@@ -1041,6 +1041,113 @@ $$q(z)-q(z_0) = \frac{q_*}{\kappa}\ln\left(\frac{z}{z_0}\right)$$
 These equations are used in **eddy-covariance**, **boundary-layer modelling**, and **surface flux estimation**.
 
 ---
+## Basic Equations of Atmospheric Turbulence II
+
+### Fundamental Conservation Equations
+
+#### Conservation of Momentum (Navier-Stokes)
+Represents the balance of forces acting on an air parcel (Newton's second law applied to fluids).
+* **Momentum Flux ($Q_J$):** Transfer of momentum across a fluid boundary: $Q_J = \rho u \mathbf{u} dA$.
+* **The Equation (x-component):** Includes local change, convective transport, pressure gradient, viscous stress, and external forces ($f_x$).
+$$
+\underbrace{\frac{\partial u}{\partial t}}_{\text{local change}} + \underbrace{u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} + w \frac{\partial u}{\partial z}}_{\text{convective transport}} = \underbrace{-\frac{1}{\rho} \frac{\partial p}{\partial x}}_{\text{pressure}} + \underbrace{\nu_f \nabla^2 u}_{\text{viscous stress}} + \underbrace{f_x}_{\text{external forces}}
+$$
+
+#### Conservation of Mass (Continuity)
+States that mass is conserved (neither created nor destroyed).
+* **Mass Flux ($Q_m$):** $Q_m = \rho \mathbf{u} dA$.
+* **General Equation:** The sum of local density change and convective transport equals zero.
+$$
+\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{u}) = 0
+$$
+* **Incompressible Flow ($\rho = \text{const}$):** Simplifies to $\nabla \cdot \mathbf{u} = 0$.
+
+#### Transport in 1D (Scalar)
+Describes the movement and dispersion of a scalar quantity ($c$, e.g., concentration).
+* **Advection-Diffusion Equation:** Describes how convection shifts the distribution and diffusion spreads it.
+$$
+\frac{\partial c}{\partial t} + \frac{\partial (c \cdot u)}{\partial x} = \frac{\partial}{\partial x} \left( D_s \frac{\partial c}{\partial x} \right) + Q/S
+$$
+* **Advection:** Movement by bulk flow ($\frac{\partial (c \cdot u)}{\partial x}$).
+* **Diffusion:** Spreading by molecular/turbulent motion ($\frac{\partial}{\partial x} \left( D_s \frac{\partial c}{\partial x} \right)$).
+
+---
+### Flux-Gradient Similarity – Monin-Obukhov Similarity Theory (MOST)
+
+#### Flux-Gradient Similarity
+* **Principle:** Equations were previously only valid in the **dynamic sublayer** (neutral boundary layers) where thermal stratification is negligible. MOST extends these equations to **non-neutral cases**.
+* **Methodology:** Application of dimensional analysis following **Buckingham's Pi-theorem**.
+
+#### Buckingham's Pi-theorem
+* **Function:** A dimensional analysis technique used to reduce the number of variables in a physical problem by grouping them into **dimensionless parameters**.
+* **Idea:** The process can be characterized by a small number of universal, dimensionless parameters, simplifying the necessary dataset.
+
+#### Application of BP theorem near ground air layer
+* **Dependent parameters ($n+1=4$):** Height ($z$), Friction velocity ($u_*$), Sensible heat flux ($\overline{w'T'}$), and Buoyancy parameter ($g/\theta_v$).
+* **Independent dimensions ($k=3$):** Length ($\text{L}$), Time ($\text{T}$), Temperature ($\text{K}$).
+* **Result:** The process is governed by a single dimensionless parameter ($\zeta$).
+
+#### Key Stability Definitions
+* **Obukhov Length ($L$):** The height at which **buoyancy (thermal) effects** become equally important as **mechanical (wind shear) effects** on turbulence. It is the scaling length for the surface layer.
+    $$L = - \frac{u_*^3}{\kappa \frac{g}{T} \overline{w'T'}}$$
+* **Obukhov Stability Parameter ($\zeta$):** The **dimensionless stability measure** at a specific height $z$.
+    $$\zeta = z/L$$
+
+#### Scaling & Universal Functions
+The **universal functions** ($\varphi$) are empirical relations dependent only on $\zeta$ used to correct the flux profiles for stability effects.
+* **Turbulent Diffusion Coefficient ($K_m$):**
+    $$K_m = \frac{\kappa \cdot z \cdot u_*}{\varphi_m(\zeta)}$$
+* **Dimensionless Profile (Momentum):** The universal function is derived from the velocity gradient:
+    $$\phi_m(\zeta) = \frac{\kappa\cdot z}{u_*} \left(\frac{\partial u}{\partial z}\right)$$
+    * **Effect:** In unstable cases ($\zeta < 0$), mixing is stronger, causing a **decrease of the gradient** and an **increase of the flux**. In stable cases ($\zeta > 0$), mixing is suppressed, causing the opposite. 
+![[Pasted image 20251128094050.png]]
+
+* **Resulting Fluxes (Kinematic Units):**
+    * **Momentum ($u_*$):**
+        $$u_* = \frac{\kappa \cdot z}{\varphi_m(\zeta)} \frac{\partial u}{\partial z}$$
+    * **Sensible Heat Flux ($\overline{w'T'}$):**
+        $$\overline{w'T'} = - \frac{\alpha_0 \cdot \kappa \cdot z \cdot u_*}{\varphi_H(\zeta)} \frac{\partial T}{\partial z}$$
+    * **Latent Heat Flux ($\overline{w'q'}$):**
+        $$\overline{w'q'} = - \frac{\alpha_{0E} \cdot \kappa \cdot z \cdot u_*}{\varphi_E(\zeta)} \frac{\partial q}{\partial z}$$
+* **Variables:** $\kappa$ is the **Von Kármán constant** ($\approx 0.4$); $u_*$ is **Friction velocity**; $\theta_v$ is **Virtual potential temperature**; $q$ is **Specific humidity**.
+
+### Integrated Profile Equation
+Integrating the dimensionless function $\phi_m(\zeta)$ gives the velocity profile corrected for stability:
+$$
+u(z) = \frac{u_*}{\kappa} \left[ \ln \frac{z}{z_0} - \psi_m(\zeta) \right]
+$$
+
+### Measures of Atmospheric Stability
+
+#### Stability Ranges (General)
+| Stratification | Temperature Profile | Richardson ($Ri$) | Obukhov Length ($L$) | Stability ($\zeta = z/L$) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Unstable** | $T(0\text{m}) > T(z)$ | $< 0$ | $< 0$ | $< 0$ |
+| **Neutral** | $T(0\text{m}) \sim T(z)$ | $\sim 0$ | $\pm \infty$ | $\sim 0$ |
+| **Stable** | $T(0\text{m}) < T(z)$ | $0 < Ri < 0.2$ | $> 0$ | $0 < \zeta < \sim 1$ |
+
+#### Virtual Potential Temperature ($\theta_v$)
+* **Purpose:** Replaces $T$ in stability equations ($L$, $Ri$) to correctly account for **buoyancy**, which is determined by both temperature and water vapor content (moist air is lighter than dry air).
+
+#### The Richardson Number ($Ri$)
+The **Richardson Number** ($Ri$) is a dimensionless ratio of **buoyancy (stability) forces** to **shear (mechanical) forces**.
+* **Gradient Richardson Number:** $Ri = -\frac{g}{T} \cdot \frac{\partial T / \partial z}{(\partial u / \partial z)^2}$.
+* **Critical Value:** Turbulent flow transitions to quasi-laminar flow under stable stratification when $Ri$ reaches the **critical value $Ri_c = 0.2$**.
+
+### Convection Types & Flux Ratios
+
+#### Convection Regimes
+* **Forced Convection:** Turbulence generated primarily by **wind shear** ($u_*$). Occurs when stability effects are weak ($\zeta > -1$, weakly unstable or stable).
+* **Free Convection:** Turbulence generated solely by **vertical air density differences** (buoyancy). Scales with the convective velocity scale ($w_*$) and occurs when $\zeta < -1$ (strongly unstable).
+* **z-less Scaling:** Occurs under very **strongly stable conditions** ($\zeta > 1$) where scaling does not depend on height $z$.
+
+#### Bowen Ratio Similarity
+* **Bowen Ratio ($Bo$):** The ratio of **Sensible Heat Flux ($H$)** to **Latent Heat Flux ($\lambda E$)**: $Bo = \frac{H}{\lambda E}$.
+* **Formula (Assuming equal exchange coefficients $\varphi_E = \varphi_H$):**
+    $$Bo = \frac{c_p}{\lambda} \frac{\partial T}{\partial q} = \gamma \cdot \frac{\partial T}{\partial e}$$
+    
+---
+
 
 # 4. Specifics of near-surface turbulence 
 # 5. Experimental determination of energy and mass exchange 

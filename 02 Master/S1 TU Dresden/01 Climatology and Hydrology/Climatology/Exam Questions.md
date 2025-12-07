@@ -50,3 +50,23 @@
 	- Flux / Diffusivity / Concentration -> Flux (Slide 33 chapter 2)
 - What is a measure of the partitioning of available energy into sensible and latent heat fluxes?
 	- Bowen ratio $\beta$ 
+- Which force is not considered in the Navier Stokes equations?
+	- Centrifugal force
+- Under which circumstances can the pressure gradient force be neglected?
+	- in the center of a high/low pressure area
+- Which part of a time series contributes to turbulent fluxes?
+	- fluctuation
+- Which one is a local 1st order closure approach?
+	- K-approach
+- Which term of the TKE equation can be neglected under steady state conditions within the surface layer over a homogeneous surface?
+	- Pressure something
+- In which units do we need the sensible and latent heat fluxes to calculate the Bowen ratio?
+	- Energetic units
+- Which one is not a measure of atmospheric stability?
+	- Bowen ratio (check what is Obukhov number and richarlison number)
+- z/L < 0 indicates
+	- Unstable stratification
+- Free convection scales with
+	- w*
+- Turbulent energy is produced in the
+	- macro range
