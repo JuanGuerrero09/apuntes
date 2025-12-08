@@ -244,10 +244,8 @@ The $\text{pH}$ change is calculated by accounting for the **stoichiometric neut
 
 - **Addition of Acid ($c(\text{H}^+)$):** The added acid is neutralized by the buffer base ($\text{A}^-$), consuming $\text{A}^-$ and creating more $\text{HA}$.
 $$ \text{pH} = \text{pK}_\text{a} + \lg \left(\frac{c(\text{A}^-) - c(\text{H}^+)_{\text{added}}}{c(\text{HA}) + c(\text{H}^+)_{\text{added}}}\right)$$
-    
 - **Addition of Base ($c(\text{OH}^-)$):** The added base is neutralized by the buffer acid ($\text{HA}$), consuming $\text{HA}$ and creating more $\text{A}^-$.
 $$ \text{pH} = \text{pK}_\text{a} + \lg \left(\frac{c(\text{A}^-) + c(\text{OH}^-)_{\text{added}}}{c(\text{HA}) - c(\text{OH}^-)_{\text{added}}}\right)$$
-    
 ###### Exercise 8: 
 Calculate the $\text{pH}$ of a $\text{HAc}/\text{Ac}^-$ buffer solution with $c(\text{HAc}) = 0.4\text{ M}$ and $c(\text{NaAc}) = 0.4\text{ M}$ ($\text{pK}_\text{a} = 4.75$)
 
@@ -273,6 +271,8 @@ $$\text{pH} = - \lg(0.1) = 1.0$$
 Calculate the pH of a $0.05\text{ M}$ solution of Ammonium Acetate ($\text{CH}_3\text{COONH}_4$).
 
 Given: $\text{pK}_\text{a}(\text{Acetic Acid}) = 4.75$ and $\text{pK}_\text{a}(\text{Ammonium Ion}) = 9.25$.
+
+![[Pasted image 20251208102802.png]]
 
 ---
 # 💡 Key Takeaways
