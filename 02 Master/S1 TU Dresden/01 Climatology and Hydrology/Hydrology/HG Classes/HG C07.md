@@ -40,7 +40,7 @@ These elements combine to produce a complete representation of flood behaviour f
 
 ![[Pasted image 20251117112103.png]]
 
-Using **DIN 19700**, two design floods are required:
+Using **DIN 19700** (German Technical norms), two design floods are required:
 - **BHQ1:** overflow and spillway design
 - **BHQ2:** global dam stability (extreme safety verification)
 
@@ -305,24 +305,26 @@ This curve is used in:
 # 💭 Questions
 
 - What is the functional difference between BHQ1 and BHQ2?
-    
+    **BHQ1** ensures the spillway can handle a standard design flood, while **BHQ2** ensures the dam won't collapse during a "worst-case" catastrophic event.
 - Why is PMP not the main tool for most hydrological design tasks?
-    
+    Because is not necessary the design scenario desired for construction, instead, a scenario of a probably of occurrence of 80% or similar for the PMP could be used.
 - Why do DDF curves flatten at long durations?
-    
+    Because the rainfall duration tend to have a time of maximum precipitation, after it the rainfall ends and so the depth of rain obtained flatten
 - How does the return period relate to exceedance and non-exceedance probability?
-    
+    The relation is that the exceedance is inverselly proportional by the relation F = 1 - 1/R
 - Why is it necessary to fit a theoretical distribution instead of using only the empirical values?
-    
+    Because it allows the model to be generalized for other scenarios to predict a behavior instead of just sticking to existing values,
 - What is the physical interpretation of the Gumbel parameters $u$ and $\alpha$?
-    
+    - **$u$ (Location):** This is the **mode** (most frequent value) of the annual maxima. It represents the "typical" extreme event. 3
+    - **$\alpha$ (Scale):** This represents the **variability** or spread of the extremes. A higher $\alpha$ means the difference between a 10-year storm and a 100-year storm is very large. 4
 - How does record length affect the reliability of extreme rainfall estimates?
-    
+    Because the estimate is obtained by the measurements, that for extremely short scenarios can be inaccurate
 - Why is IDF more useful than DDF in urban stormwater design?
-    
+    In the urban stormwater design is more needed the peak discharge than the accumulated, since the structures needs to be design to not pass the design flows when doing the drainage.
 - How does the choice of distribution (Gumbel, lognormal, Weibull) influence extreme rainfall estimation?
-    
+    Different distributions (Gumbel vs. GEV) change the "tail" of the curve. Some are more conservative and predict much higher values for long return periods ($R=1000$). 6
 - What assumptions underlie the use of annual maxima?
+	This method assumes that each year's maximum is **independent** and that the climate is **stationary** (the probability of an extreme event doesn't change over time).
 
 ---
 # 🐢 Definitions

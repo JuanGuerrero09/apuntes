@@ -155,23 +155,42 @@ Less common today but still appears in older hydrological references.
 ---
 # 💭 Questions
 
-### Conceptual Understanding
+
+- Which forms of precipitation are mention 4?
+Snow, hail, rainfall, Fog
+
+- Which parameters characterize the precipitation events?
+Volume, Intensity (vol / time), duration and frecuency.
 
 - What atmospheric processes determine whether condensation results in cloud formation but not precipitation?
-- Why does air cool as it rises? How does this relate to the adiabatic lapse rate?
-- How does the presence or absence of condensation nuclei affect the threshold for cloud formation?
-- Why do cold fronts typically produce more intense rainfall than warm fronts?
-- How does orographic uplift influence the long-term water availability in mountainous regions?
-### Applied Hydrology
-- How would precipitation intensity and duration influence the shape of a hydrograph for a small basin?
-- Which uplift mechanism is most relevant for designing hydraulic structures in coastal regions?
-- How does the return period concept influence stormwater infrastructure design?
-- How can knowledge of precipitation regimes help estimate seasonal water availability?
+Condensation results in clouds, but **precipitation** only happens when **droplet growth** occurs. If droplets don't reach a diameter of $\approx 0.4$–$4\text{ mm}$, their fall velocity is too low to overcome atmospheric updrafts, and they stay suspended as clouds.
 
-### Climate and Spatial Distribution
+- Why does air cool as it rises? How does this relate to the adiabatic lapse rate?
+It’s not actually about heat exchange with the surrounding air. In **adiabatic cooling**, no heat is exchanged. As an air parcel rises, atmospheric pressure **decreases**. The air parcel **expands** to equalize pressure. Expanding requires work, and that energy comes from the internal heat of the air, causing the temperature to drop.
+
+
+- How does the presence or absence of condensation nuclei affect the threshold for cloud formation?
+Is the particle that gather the water particles around it so it can create water droplets, without it the water particles couldn't form droplets
+
+- Why do cold fronts typically produce more intense rainfall than warm fronts?
+Because it forces rapidly the warm air near the terrain to move upwards, condensating it quickly. While the warm front is slowly doing that process.
+
+
+- How does orographic uplift influence the long-term water availability in mountainous regions?
+The mountain region creates a natural uplift path for moving air, but at the same time creates a natural barrier that facilitates keeping the clouds in one side of the mountain and stop it to move for the other side. It ends up making that one side stays humid having water in the long term while the other part is dry due the lack of clouds passing the natural barrier.
+
+
+- How does the return period concept influence stormwater infrastructure design?
+By reviewing statistical how probable is the chance to surprase the infrastructure design condition, constructing it by a large return period that allows it economically
+
+- How can knowledge of precipitation regimes help estimate seasonal water availability?
+By knowing the dry and wet season is possible to plan in advance and store the excess during rainfall seasons while being able to consume in moderation during dry season
+
+
 - Why do equatorial regions often show two annual rainfall maxima?
-- How does the Mediterranean climate produce winter rainfall while summers remain dry?
-- What role do Hadley cells play in creating subtropical deserts (Zone D)?
+This is due to the **Zenithal rains**. The sun is directly overhead at the equator twice a year (equinoxes), creating the strongest convective heating and thus two peaks of heavy rainfall.
+
+
 
 ---
 # 🐢 Definitions

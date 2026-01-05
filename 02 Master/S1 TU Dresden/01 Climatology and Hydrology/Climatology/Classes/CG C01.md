@@ -22,9 +22,9 @@ Lecture slides and diagrams on **boundary layer**, **radiation laws**, and **ene
 ## Intro Boundary-layer meteorology
 **Boundary-layer meteorology** is a subdiscipline of meteorology that studies the **lowest part of the atmosphere** — the air layer directly influenced by the Earth's surface (about 1 km thick).
 ![[Pasted image 20251017093845.png]]
-This air layer, about 1 km in thickness and is the **interface** between the free atmosphere (troposphere to be exact) and the Earth’s surface.
+This air layer, about 1 km in thickness and is the **interface** between the free atmosphere (troposphere to be exact) and the Earth’s surface. Crucially, this height **varies daily**: it can be as low as 100m at night (stable) and up to 3km on a very hot summer day (convective).
 
-The changes in the _bounday-layer_ state are controlled by processes that transfer *momentum*, *energy* and *materials* within the layers up and below. **Flux Variables** are used to quantify the rate of these *transfer processes*.
+The changes in the _boundary-layer_ state are controlled by processes that transfer *momentum*, *energy* and *materials* within the layers up and below. **Flux Variables** are used to quantify the rate of these *transfer processes*.
 
 **Radiation energy exchange** is a central process: solar radiation provides energy for heating and evapotranspiration, which drive atmospheric motion and weather.
 
@@ -46,7 +46,7 @@ The changes in the _bounday-layer_ state are controlled by processes that transf
 	- Carbon sink by land biomass 
 - Studying the **dispersion of pollutants**, pollen, spores, and seeds.
 - Optimizing **irrigation** and understanding **urban air quality**.
-## Surface energy and mass balances
+## 1. Surface energy and mass balances
 
 ### Energy Balance Concept
 
@@ -70,17 +70,17 @@ Transport occurs via:
 
 ---
 
-## ☀️ Radiation
+### ☀️ Radiation
 Radiation is **energy transmitted by electromagnetic waves**.  
 It follows three key physical laws that describe emission and wavelength behavior for an ideal **black body** (perfect absorber and emitter):
 
-**### Planck’s Law
+#### Planck’s Law
 Describes how much radiation is emitted at each wavelength for a given temperature.
 
 ![[Pasted image 20251017095804.png]]
 
 ---
-### Stefan–Boltzmann Law
+#### Stefan–Boltzmann Law
 
 Defines the **total emitted radiation** per unit area as a function of surface temperature:
 
@@ -95,13 +95,13 @@ Where:
 - $T_0$: Surface temperature in kelvin
 ---
 
-### Wien’s Displacement Law
+#### Wien’s Displacement Law
 
 Relates temperature and the wavelength of maximum emission:
 
 $$\lambda_{max} = \frac{b}{T_0}$$
 Where $b = 2.897 \times 10^{-3}\ m \cdot K$.  
-Thus, **hotter bodies emit radiation at shorter wavelengths**.
+Thus, **hotter bodies emit radiation at shorter wavelengths**. Ensure you use the exact constant $b \approx 2897 \mu m \cdot K$ if you want your output in micrometers ($\mu m$). 4
 
 For instance:
 
@@ -109,7 +109,7 @@ For instance:
 - **Earth (≈300 K)** → peak at 10 µm (infrared range)
 
 ---
-### Atmospheric Interaction with Radiation
+#### Atmospheric Interaction with Radiation
 
 Radiation passing through the atmosphere is **absorbed**, **scattered**, and **transmitted** by gases and particles.
 
@@ -119,7 +119,7 @@ Radiation passing through the atmosphere is **absorbed**, **scattered**, and **t
 Water vapor is the **largest single contributor** to the greenhouse effect due to its strong absorption bands in infrared wavelengths.
 ---
 
-### Radiation interaction with matter
+#### Radiation interaction with matter
 
 Radiation incident on a surface can be **transmitted**, **reflected**, or **absorbed** — the sum of these three fractions equals 1.
 $$
@@ -144,7 +144,7 @@ $$\zeta_\lambda = \epsilon_\lambda \quad \text{""epsilon"" emissivity at wavelen
 - **Transparent/translucent media (e.g., water, atmosphere):** absorb, reflect, **and transmit** radiation, depending on wavelength.
 
 ---
-### Albedo and emissivity
+#### Albedo and emissivity
 
 ![[Pasted image 20251017101152.png]]
 
@@ -154,17 +154,17 @@ $$\zeta_\lambda = \epsilon_\lambda \quad \text{""epsilon"" emissivity at wavelen
 **Lambert’s Cosine Law:**  
 The flux density of direct-beam radiation at the surface depends on the solar angle:
 $$S = S_i cos\theta$$
-where θ\thetaθ is the angle between the beam and the surface normal.
+where θ is the angle between the beam and the surface normal.
 
 ---
 A portion of solar radiation is **scattered** by clouds, aerosols, and air molecules — the scattered part that reaches the surface is called **diffuse solar radiation** ($R_{SW,in}$).
 ![[Pasted image 20251017101700.png]]
 
-## 🌍 Energy Balance of the Earth–Atmosphere System
+### 🌍 Energy Balance of the Earth–Atmosphere System
 
 > **Radiation** is the only mechanism for energy exchange between Earth and space.
  
-- **Solar constant**: $S_0 = 1367 +- 2 W m^-2$ 
+- **Solar constant**: $S_0 = 1367 \pm 2 \; W m^-2$ 
 	(varies ~3 % annually due to Earth’s orbital eccentricity)
 
 ![[Pasted image 20251017101929.png]]
@@ -173,7 +173,7 @@ The **globally averaged incoming flux** is one quarter of $S_0$: $$𝑆_0 / 4 = 
 
 ---
 
-### Earth’s Radiative Equilibrium
+#### Earth’s Radiative Equilibrium
 
 At equilibrium, **absorbed solar energy** equals **emitted terrestrial energy**:
 
@@ -211,7 +211,7 @@ The **observed average temperature** is about **+15°C**, higher than this equil
 
 ---
 
-### Radiation Budget of the Earth System
+#### Radiation Budget of the Earth System
 
 Radiation exchanges occur across three system boundaries:
 
@@ -222,14 +222,14 @@ Radiation exchanges occur across three system boundaries:
 ![[Pasted image 20251017103008.png]]
 
 ---
-## 🌾 Energy Balance at an “Ideal Site”
+### 🌾 Energy Balance at an “Ideal Site”
 
 An **ideal site** is flat, horizontal, homogeneous, and infinite — no advection occurs.
-### Components:
+#### Components:
 - **Shortwave balance:**
     $K^* = K↓ - K↑ = K↓(1 - \alpha)$
 - **Longwave balance:**
-    $L^* = L↓ - L↑L$
+    $L^* = L↓ - L↑$
     with a **grey emitter**:
     $L↑ = \epsilon_0 \sigma T_0^4 + (1 - \epsilon_0)L↓$
 - **Net radiation:**
@@ -244,7 +244,7 @@ Typically, $\epsilon_0 ≈ 1$; thus, **albedo** (α) and **surface temperature**
 Low albedo cools surface, that's the negative feedback mechanism that dampens heating!
 Ideal site = Flat, horizontal, homogeneous and infinite.
 
-### Common abbreviations
+#### Common abbreviations
 
 | Previous slides | More common   | Meaning                               |
 | --------------- | ------------- | ------------------------------------- |
@@ -268,7 +268,7 @@ Ideal site = Flat, horizontal, homogeneous and infinite.
 
 ---
 
-## 💧 Water Balance
+### 💧 Water Balance
 
 Water has **high heat capacity** ($4.18 \times 10^6\ J/m^3K$), meaning it stores and releases large amounts of heat with little temperature change.
 
@@ -296,6 +296,7 @@ where LE: latent heat flux, E: evapotranspiration rate.
 The **carbon balance** connects biological and physical processes (photosynthesis, respiration, and gas exchange).  
 It defines how much $\mathrm{CO_2}$ is absorbed or emitted by ecosystems, linking directly to energy and water cycles.
 
+
 ---
 
 # 🐢 Definitions
@@ -313,49 +314,91 @@ It defines how much $\mathrm{CO_2}$ is absorbed or emitted by ecosystems, linkin
 ### 🌬️ Boundary Layer Meteorology
 
 - What defines the **atmospheric boundary layer**, and why is it limited to roughly 1 km in height?
+It is the interface between the surface and the free atmosphere. 
+
 - How do **convective** and **stable** boundary layers differ in turbulence and energy transfer?
+The convective (in the day) main driver is the energy transfer, since is getting the radiation from the outer space, while the stable (in the night) lack of energy transfer by radiation generated turbulence
+
 - Why does **wind shear** dominate turbulence generation at night?
-- How do boundary-layer processes influence **air pollution dispersion** or **urban climates**?
+Since solar heating is absent, mechanical "rubbing" of wind is the only source of turbulence.
 
 ---
 
 ### ☀️ Radiation and Energy Exchange
 
 - According to **Planck’s Law**, how does temperature affect the spectrum of emitted radiation?
+According to Planck's Law the higher the temperature the shorter wave of emitted radiation . So, for a hotter body as the sun more radiation of short wave is emitted, while for a colder as the earth the radiation is emitted in longer wave.
+
 - How does the **Stefan–Boltzmann law** explain the difference between Earth’s and the Sun’s emitted energy?
+The Sun's much higher temperature (6000K vs 288K) leads to vastly more energy because of that $T^4$ relationship.
+
 - What does **Wien’s displacement law** tell us about the wavelength of maximum emission?
+The wavelength of maximum emission is inversely proportional to the temperature of the body.
+
 - Why does the **Earth’s atmosphere** behave differently for shortwave and longwave radiation?
-- What is the **optical window**, and why is it essential for Earth’s energy balance?
+Because the shortwave radiation is the one that comes from outside, it can pass through the atmosphere and be reflected to go out too, while the longwave is the emitted from the earth, that can be trapped by the atmosphere.
+
+Atmosphere is mostly transparent to solar (shortwave) but opaque to terrestrial (longwave)
+
 - How does the **greenhouse effect** maintain the actual global average temperature higher than the theoretical black-body temperature?
+Because it traps the long wave radiation emitted by the earth in the atmosphere making the surface hotter.
+
 
 ---
 
 ### 🌍 Earth–Atmosphere System
 
 - Why is the globally averaged incoming solar flux equal to **$S_0/4$** and not simply **$S_0$**?
+Because the solar flux goes in form of a circle, while it reaches the earth in contact to the surface of half a sphere, making the contact area 4 times higher than the incoming cross area.
+
 - How does **albedo** influence the global temperature balance?
+Higher albedo is higher reflection of the incoming radiation, and more reflection means less absortion, which creates lower temperatures 
+
 - What would happen if Earth’s **average albedo** increased from 0.30 to 0.40?
+The temperature of the earth will decrease, since is reflecting more radiation.
+
 - In the radiative equilibrium equation, what assumptions are made about Earth’s emissivity and energy distribution?
+It assumes Earth absorbs **$(1 - \alpha)$** of radiation (accounting for reflection) and then _emits_ like a black body ($\epsilon = 1$).
+
 - How do **clouds** and **aerosols** affect the shortwave and longwave components of the radiation budget?
+It affects the shortwave by blocking the radiation to the earth, and the longwave by capturing the earth emission to trap it.
 
 ---
 
 ### 🌾 Surface and Site Energy Balances
 
 - Why is **radiation** the only form of energy exchange between Earth and space?
+Because the other of the form of energy exchange only electromagnetic waves reach constatnly from the space to earth, there is not conduction due lack of energy transfer by molecules and there's no convection due the lack of fluid energy transfer.
+
 - What are the **main components** of the surface energy balance ($Q^* = G + H + LE$), and what physical processes do they represent?
+The main components are: G (Ground heat flux) and it represent the energy that goes through the ground, H (sensible heat flux) is the part of energy that goes to the heating of the air and LE is the latent heat, the part of energy that goes to heating of water molecules
+
 - How do **surface albedo** and **emissivity** affect local temperature variations?
+Higher albedo means higher reflection of the radiation, keeping less to absorb and increase the temperature, emissivity idk
+
 - Why is $R_{net}$ positive during the day and negative at night?
+Because during the day there's incoming radiation from the sun, while in the night the only radiation is the one coming out from the earth
+
 - How does a **homogeneous ideal site** simplify the energy balance analysis?
+By removing things that would affect the balance such as the clouds (removing the incoming radiation), large vegetation (blocking and removing ground heat flux), big water bodies (increasing the LE), between others.
+
 
 ---
 
 ### 💧 Water and 🌿 Carbon Balance
 
 - Why does water’s **high heat capacity** make it crucial for climate regulation?
+
+
 - How are the **energy** and **water** balances linked through **latent heat flux ($LE$)**?
+
+
 - What is the significance of the **latent heat of vaporization ($L_v$)** in the hydrological cycle?
+
+
 - How does the **carbon balance** connect with the energy and water cycles in the Earth system?
+
+
 - In what way do **photosynthesis** and **respiration** influence atmospheric $\mathrm{CO_2}$ levels?
 
 ---

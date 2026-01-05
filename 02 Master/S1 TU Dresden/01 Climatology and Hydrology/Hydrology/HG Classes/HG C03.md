@@ -11,11 +11,6 @@ The lecture covered how **surface** and **groundwater catchments** are defined, 
 It also discussed **estimation of long-term precipitation and evapotranspiration**, **runoff generation**, and how **hydrological modeling** represents spatial variability using different levels of complexity (from lumped to distributed).
 
 ---
-# 🕸️Resources
-
-
-
----
 # 📝 Notes
 
 ## The (River) Catchment
@@ -61,7 +56,7 @@ A basic estimation can be made using the **water balance**:
 $$
 P = R + ETR
 $$
-Given data for runoff RRR and precipitation PPP, evapotranspiration (ETR) can be estimated as the residual.
+Given data for runoff R and precipitation P, evapotranspiration (ETR) can be estimated as the residual.
 
 Example:
 $$
@@ -191,20 +186,28 @@ They can range from **conceptual** to **physically based**, depending on the des
 ---
 # 💭 Questions
 
-1. **Conceptual:**
-    - Why are surface and groundwater catchments often misaligned?
-    - How does geology influence the shape and behavior of groundwater catchments?
-2. **Analytical:**
-    - Using the water balance $P = R + ETR$, what does it imply if $R$ increases over time in a region with stable $P$?
-    - How does a low infiltration capacity modify the partitioning between $R$, $ETR$, and $\Delta S$?
-3. **Applied:**
-    - How would you delineate a catchment using a DEM and GIS tools?
-    - In which cases would you prefer a lumped vs. a distributed hydrological model?
+
+- Why are surface and groundwater catchments often misaligned?
+Surface divides are dictated by **topography**, whereas groundwater divides are controlled by **piezometric heads** and the geometry of **impermeable bedrock**.
+
+- How does geology influence the shape and behavior of groundwater catchments?
+The geology can create hydrological divides that delimite the groundwater catchments.
+
+- Using the water balance $P = R + ETR$, what does it imply if $R$ increases over time in a region with stable $P$?
+That the ETR decreases (meaining changes in the vegetation) or that the storage is draining (snow melting for example)
+
+- How does a low infiltration capacity modify the partitioning between $R$, $ETR$, and $\Delta S$?
+Low infiltration increases the Runoff and decreases the ETR and the storage, since the water is not staying for storage terms (in the moisture of the soil for example) or in the vegetation for the transpiration or evaporation
+
+- How would you delineate a catchment using a DEM and GIS tools?
+	By defining the highest parts and using it to separate the catchments, divides must be drawn **perpendicular to the contour lines** (flow paths follow the steepest gradient).
+
+- In which cases would you prefer a lumped vs. a distributed hydrological model?
+Where the DEM information in raster is missing but the rest of the information (runoff measurements for example) are available
 
 ---
 # 📅 Homework
 
 - [ ] Tutorial on **catchment delineation** (using DEMs).
-- [ ] Exercise: **Define boundaries and compute** basic water balance for a selected basin.
 - [ ] **Study Project:** Calculate the **annual mean water balance** for a catchment in your region.
 

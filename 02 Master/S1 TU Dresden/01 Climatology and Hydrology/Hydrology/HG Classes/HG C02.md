@@ -12,10 +12,6 @@ Introduction to the **water balance equation** derived from the **law of conserv
 The lecture covered the **main hydrological components** — precipitation ($P$), evapotranspiration ($ETR$), runoff ($R$), and storage ($\Delta S$) — across **different spatial and temporal scales**.  
 It also introduced the **link between water and heat balance**, emphasizing that **energy drives phase changes** and thus connects both hydrological and thermal processes.
 
----
-# 🕸️Resources
-
-
 
 ---
 # 📝 Notes
@@ -58,9 +54,9 @@ Water can be stored in:
 
 Phases:
 
-- **Water surplus**
-- **Water deficit** (soil & groundwater depletion)
-- **Subsurface recharge**
+- **Water surplus** (P > ETR)
+- **Water deficit** (soil & groundwater depletion) (ETR > P)
+- **Subsurface recharge** (P > ETR)
 
 Hydrological year in Central Europe: **1.11 – 31.10**
 
@@ -104,7 +100,7 @@ Where:
 - **Rn** – Net radiation
 - **G** – Ground heat flux
 - **H** – Sensible heat flux
-- **LE** – Latent heat flux = λ·E
+- **LE** – Latent heat flux = λ·E (where E is the evaporation rate)
 - $\lambda \approx 2448 \, \text{kJ/m}^2$ to vaporize 1 mm of water
 
 ---
@@ -138,23 +134,32 @@ $$LE = \lambda \cdot E$$
 
 # 💭 Questions
 
-1. **Conceptual Understanding:**
-    - Why is the water balance equation considered an application of the conservation of mass?
-    - How does the water balance differ between humid and arid regions?
-        
-2. **Applied Reasoning:**
-    - What happens to $\Delta S$ if $P < ETR + R$ over a hydrological year?
-    - How does increasing vegetation cover influence $ETR$ and $R$?
-        
-3. **Analytical:**
-    
-    - Using the general form $P = ETR + \Delta S + SW_{out} - SW_{in} + GW_{out} - GW_{in}$,  
-        how would you identify whether a basin is a **net exporter or importer of water**?
-        
-    - In the energy balance $R_n = G + H + LE$, what physical process links $LE$ with the water balance term $ETR$?
+- What is the latent heat of vaporization?
+ Is the energy needed to vaporize 1 mm of water (around 2448 $kJ/m^2$)
+ 
+- Why is the water balance equation considered an application of the conservation of mass?
+Because it accounts for every unit of water entering (input), leaving (output), or staying (storage) within a defined boundary, ensuring no mass is 'lost' or 'created' without explanation.
+
+- How does the water balance differ between humid and arid regions?
+In humid regions, energy (radiation) often limits $ETR$ because water is abundant. In arid regions, water availability limits $ETR$, and $P$ is often much lower than potential evaporation, leading to high water deficits.
+
+- What happens to $\Delta S$ if $P < ETR + R$ over a hydrological year?
+The water stored in the system (in form of GW, snow, etc) decreases due a water shortage
+
+- How does increasing vegetation cover influence $ETR$ and $R$?
+More vegetation increases the plants transpiration, and decreases the runoff (for same precipitation scenario)
+
+- Using the general form $P = ETR + \Delta S + SW_{out} - SW_{in} + GW_{out} - GW_{in}$,  
+	how would you identify whether a basin is a **net exporter or importer of water**?
+A basin is a **net exporter** if the sum of $(SW_{out} + GW_{out}) > (SW_{in} + GW_{in})$. It is an **importer** if the inflow terms are greater than the outflow terms.
+
+- In the energy balance $R_n = G + H + LE$, what physical process links $LE$ with the water balance term $ETR$?
+The ETR consist in both E + TR, and the Latent heat flux (LE) is obtained by the product of the latent heat of vaporization and the evaporation E ->  $LE = \lambda E$
 
 ---
 # 📅 Homework
 
+_Calculation Check_: If a catchment receives $800\,\text{mm}$ of rain per year, has an $ETR$ of $500\,\text{mm}$, and the storage decreases by $50\,\text{mm}$, what is the total Runoff ($R$)?
 
+- _Logic_: $\Delta S = P - ETR - R \Rightarrow -50 = 800 - 500 - R \Rightarrow R = 350\,\text{mm}$.
 

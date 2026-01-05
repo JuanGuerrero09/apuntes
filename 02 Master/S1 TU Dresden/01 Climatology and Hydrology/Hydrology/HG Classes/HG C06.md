@@ -129,6 +129,8 @@ Measure **drop size distribution**.
     - Height = 1 m
     - Area = 200 cm²
     - Daily measurement at 7am
+why we don't put gauges higher, the answer is that **wind speed increases with height**, which drastically increases the **systematic undercatch error**
+
 - WMO provides guidelines but not uniformly adopted
 
 ---
@@ -218,6 +220,8 @@ Guidelines:
 - If possible, discard data before the breakpoint
 - Otherwise, multiply past values by a correction factor $K$
 
+A crucial technical point: If the slope of a DMC changes, it indicates a **non-climatic** change (e.g., the gauge was moved, or a tall building was built nearby), not a change in climate
+
 ---
 
 #### Systematic measurement errors
@@ -266,6 +270,8 @@ Accuracy depends on:
 - Station density
 - Measurement error
 - Selected interpolation method
+
+Note that for **short-duration convective storms** (high spatial variability), simple methods like the Arithmetic Mean are very poor; you need Radar or IDW/Kriging
 
 ---
 
@@ -351,12 +357,7 @@ $$P_x = \frac{\sum p_i d_{xi}^{-1}}{\sum d_{xi}^{-1}}$$
 
 # 💭 Questions
 
-- Why do tipping-bucket gauges underestimate high-intensity rainfall?
-- How does wind speed differently affect rain and snow measurements?
-- Why are homogeneity tests necessary before climate trend analysis?
-- What advantages does kriging offer over IDW?
-- When is the isohyetal method preferable to Thiessen polygons?
-- Why can measurement errors exceed 50% for snowfall?
+
 
 ---
 # 🐢 Definitions

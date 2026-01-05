@@ -227,7 +227,9 @@ where $f(p)$ is an **objective function** measuring model performance.
 
 A common criterion is the **Nash–Sutcliffe Efficiency (NSE):**  
 $NSE = 1 - \frac{\sum (Q_{obs} - Q_{sim})^2}{\sum (Q_{obs} - \bar{Q}_{obs})^2}$
-Values close to 1 indicate a good fit.
+- $NSE = 1$: Perfect fit.
+- $NSE = 0$: The model is only as good as using the mean of the observed data.
+- $NSE < 0$: The model is worse than just using the mean.
 
 ![[Pasted image 20251103181021.png]]
 
@@ -261,11 +263,21 @@ Hence, models should always be “**as simple as possible but as complex as nece
 
 ---
 # 💭 Questions
+
+- Which are the three main stages of runoff generation?
+The three stages are **Runoff Formation**, **Runoff Concentration**, and **Flood Propagation**.
+
 - Why are models simplified representations and not exact replications of reality?
+Because of the complexity of the representation, by the many parameters and difficult to run the models.
+
 - How does the storage constant $K$ influence hydrograph shape?
+$K$ represents the **time scale** of the catchment response. A **small $K$** means a "flashy" response (water drains quickly, steep hydrograph). A **large $K$** means a "buffered" response (water drains slowly, flat/extended hydrograph).
+
 - Why is the Monte Carlo method important in hydrological modelling?
+Because allows the randomness of the many input parameters that generate confidence intervals
+
 - What are the main differences between conceptual and physically based models?
-- Which advantages and drawbacks do ML methods introduce compared to traditional approaches?
+Conceptual models use simplified "storage buckets" and empirical relations (grey-box). Physically based models use **Partial Differential Equations (PDEs)** like Richards or Saint-Venant equations to represent fundamental physics (white-box).
 
 ---
 # 🐢 Definitions

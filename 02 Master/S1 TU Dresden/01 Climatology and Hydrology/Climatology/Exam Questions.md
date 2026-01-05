@@ -70,3 +70,14 @@
 	- w*
 - Turbulent energy is produced in the
 	- macro range
+
+Graswang and Fendt
+
+![[Pasted image 20251212103317.png]]
+
+1. The heat fluxes?
+2. Interpret differences between three days -> mostrly clear sky days(?)
+3. Interpret differences between energy and CO2 fluxes - 
+4. Guess the land cover type and give two reasons -> negative CO2 indicate vegetation, Ground heat flux is quite large for the balance, a lot of radiation reaches the surface a hint it cannot be a super dense canopy, it can't be a forest
+
+![[Pasted image 20251212105617.png]]

@@ -24,9 +24,8 @@ Albedo values
 
 # 📚Notes
 
-# 0. Boundary-layer meteorology
+## 0. Intro Boundary-layer meteorology
 
-## Intro Boundary-layer meteorology
 **Boundary-layer meteorology** is a subdiscipline of meteorology that studies the **lowest part of the atmosphere** — the air layer directly influenced by the Earth's surface (about 1 km thick).
 ![[Pasted image 20251017093845.png]]
 This air layer, about 1 km in thickness and is the **interface** between the free atmosphere (troposphere to be exact) and the Earth’s surface.
@@ -53,9 +52,7 @@ The changes in the _bounday-layer_ state are controlled by processes that transf
 	- Carbon sink by land biomass 
 - Studying the **dispersion of pollutants**, pollen, spores, and seeds.
 - Optimizing **irrigation** and understanding **urban air quality**.
-# 1. Surface energy and mass balances
-
-## Surface energy and mass balances
+## 1. Surface energy and mass balances
 
 ### Energy Balance Concept
 
@@ -79,17 +76,17 @@ Transport occurs via:
 
 ---
 
-## ☀️ Radiation
+### ☀️ Radiation
 Radiation is **energy transmitted by electromagnetic waves**.  
 It follows three key physical laws that describe emission and wavelength behavior for an ideal **black body** (perfect absorber and emitter):
 
-**### Planck’s Law
+#### Planck’s Law
 Describes how much radiation is emitted at each wavelength for a given temperature.
 
 ![[Pasted image 20251017095804.png]]
 
 ---
-### Stefan–Boltzmann Law
+#### Stefan–Boltzmann Law
 
 Defines the **total emitted radiation** per unit area as a function of surface temperature:
 
@@ -104,7 +101,7 @@ Where:
 - $T_0$: Surface temperature in kelvin
 ---
 
-### Wien’s Displacement Law
+#### Wien’s Displacement Law
 
 Relates temperature and the wavelength of maximum emission:
 
@@ -118,7 +115,7 @@ For instance:
 - **Earth (≈300 K)** → peak at 10 µm (infrared range)
 
 ---
-### Atmospheric Interaction with Radiation
+#### Atmospheric Interaction with Radiation
 
 Radiation passing through the atmosphere is **absorbed**, **scattered**, and **transmitted** by gases and particles.
 
@@ -128,7 +125,7 @@ Radiation passing through the atmosphere is **absorbed**, **scattered**, and **t
 Water vapor is the **largest single contributor** to the greenhouse effect due to its strong absorption bands in infrared wavelengths.
 ---
 
-### Radiation interaction with matter
+#### Radiation interaction with matter
 
 Radiation incident on a surface can be **transmitted**, **reflected**, or **absorbed** — the sum of these three fractions equals 1.
 $$
@@ -153,7 +150,7 @@ $$\zeta_\lambda = \epsilon_\lambda \quad \text{""epsilon"" emissivity at wavelen
 - **Transparent/translucent media (e.g., water, atmosphere):** absorb, reflect, **and transmit** radiation, depending on wavelength.
 
 ---
-### Albedo and emissivity
+#### Albedo and emissivity
 
 ![[Pasted image 20251017101152.png]]
 
@@ -169,7 +166,7 @@ where θ\thetaθ is the angle between the beam and the surface normal.
 A portion of solar radiation is **scattered** by clouds, aerosols, and air molecules — the scattered part that reaches the surface is called **diffuse solar radiation** ($R_{SW,in}$).
 ![[Pasted image 20251017101700.png]]
 
-## 🌍 Energy Balance of the Earth–Atmosphere System
+### 🌍 Energy Balance of the Earth–Atmosphere System
 
 > **Radiation** is the only mechanism for energy exchange between Earth and space.
  
@@ -182,7 +179,7 @@ The **globally averaged incoming flux** is one quarter of $S_0$: $$𝑆_0 / 4 = 
 
 ---
 
-### Earth’s Radiative Equilibrium
+#### Earth’s Radiative Equilibrium
 
 At equilibrium, **absorbed solar energy** equals **emitted terrestrial energy**:
 
@@ -220,7 +217,7 @@ The **observed average temperature** is about **+15°C**, higher than this equil
 
 ---
 
-### Radiation Budget of the Earth System
+#### Radiation Budget of the Earth System
 
 Radiation exchanges occur across three system boundaries:
 
@@ -231,7 +228,7 @@ Radiation exchanges occur across three system boundaries:
 ![[Pasted image 20251017103008.png]]
 
 ---
-## 🌾 Energy Balance at an “Ideal Site”
+### 🌾 Energy Balance at an “Ideal Site”
 
 An **ideal site** is flat, horizontal, homogeneous, and infinite — no advection occurs.
 ### Components:
@@ -253,7 +250,7 @@ Typically, $\epsilon_0 ≈ 1$; thus, **albedo** (α) and **surface temperature**
 Low albedo cools surface, that's the negative feedback mechanism that dampens heating!
 Ideal site = Flat, horizontal, homogeneous and infinite.
 
-### Common abbreviations
+#### Common abbreviations
 
 | Previous slides | More common   | Meaning                               |
 | --------------- | ------------- | ------------------------------------- |
@@ -277,7 +274,7 @@ Ideal site = Flat, horizontal, homogeneous and infinite.
 
 ---
 
-## 💧 Water Balance
+### 💧 Water Balance
 
 Water has **high heat capacity** ($4.18 \times 10^6\ J/m^3K$), meaning it stores and releases large amounts of heat with little temperature change.
 
@@ -300,7 +297,7 @@ where LE: latent heat flux, E: evapotranspiration rate.
 
 ---
 
-## 🌿 Carbon Balance
+### 🌿 Carbon Balance
 
 The **carbon balance** connects biological and physical processes (photosynthesis, respiration, and gas exchange).  
 It defines how much $\mathrm{CO_2}$ is absorbed or emitted by ecosystems, linking directly to energy and water cycles.

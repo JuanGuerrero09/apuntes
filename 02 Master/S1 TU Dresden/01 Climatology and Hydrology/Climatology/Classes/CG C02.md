@@ -307,7 +307,9 @@ where:
 # 💭 Questions
 
 - Why is **ground heat flux ($Q_G$)** directed toward lower temperatures?
+Because it looks for the gradient of temperature.
 - How can we estimate **$Q_G(0)$** if it cannot be measured directly at the surface?
+By using the values at certain depth.
 - What causes the **phase shift** of the temperature wave with depth in the soil?
 - Why does **thermal diffusivity ($v_T$)** decrease again at very high soil moisture levels?
 - Under what conditions does **liquid water flux ($J_l$)** dominate over **vapor flux ($J_v$)**?

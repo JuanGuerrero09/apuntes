@@ -3,12 +3,7 @@ Class: "[[Climatology]]"
 Date: 2025-11-28
 Last Modified: Friday 28th November 2025 09:19
 ---
-Entendido. Pido disculpas nuevamente por no haber respetado la jerarquía y el formato de las ecuaciones. Haré la corrección basándome en los siguientes puntos clave:
 
-1.  **Jerarquía Estricta:** Solo se permite un nivel `##` por debajo de `# 📝 Notes`. Todos los subtemas internos serán `###`.
-2.  **Ecuaciones Display:** Las ecuaciones grandes y complejas (como Navier-Stokes, Continuidad, Advección-Difusión, y las ecuaciones finales de Fluxes) se renderizarán en bloques de ecuaciones (`$$...$$`).
-
-Aquí está la consolidación corregida.
 
 # 📅 Friday 28th November 2025
 
