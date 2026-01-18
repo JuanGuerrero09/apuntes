@@ -24,11 +24,9 @@ Analyzing two August days (2003 and 2005) at the same site in Central Europe:
 1. **Name the quantities that are shown in each subplot:**
     
     - **Top Subplot:** Energy fluxes including $R_{net}$ (Net Radiation), $G$ (Ground heat flux), $H$ (Sensible heat flux), and $\lambda E$ (Latent heat flux).
-        
     - **Middle Subplot:** NEE (Net Ecosystem Exchange) of $CO_2$ flux.
-        
     - **Bottom Subplot:** $m_{soil}$ (%) representing Soil moisture.
-        
+
 2. **Guess the land cover, give two arguments:**
     
     - **Response:** Grassland or Crop.

@@ -26,6 +26,15 @@ $$
 \alpha = \frac{1}{10^{(pKa-pH)}+1}
 $$
 
+### Precipitation and Dissolution
+
+#### Expected outcome
+
+▪ You can name two examples for precipitation/dissolution processes in  the hydrosphere and during water treatment. 
+▪ By applying rules of thumb you can estimate if certain salts are rather   well-soluble or not soluble in water (underlined examples). 
+▪ By using the Law of mass action you can derive the equations to  calculate the solubility of solids with the stoichiometry CA and CA2. 
+▪ You can describe qualitatively and quantitatively the influence on   solubility of solids if other ions are present. 
+▪ You can describe qualitatively and quantitatively the influence of side  reaction on the solubility of solids. 
 
 
 

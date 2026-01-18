@@ -307,20 +307,32 @@ where:
 # 💭 Questions
 
 - Why is **ground heat flux ($Q_G$)** directed toward lower temperatures?
-Because it looks for the gradient of temperature.
+Flux follows the **Second Law of Thermodynamics**, moving from high to low energy states to increase entropy.
 - How can we estimate **$Q_G(0)$** if it cannot be measured directly at the surface?
 By using the values at certain depth.
 - What causes the **phase shift** of the temperature wave with depth in the soil?
+The day and night cycle
 - Why does **thermal diffusivity ($v_T$)** decrease again at very high soil moisture levels?
+Because of the heat storage at large water levels.
 - Under what conditions does **liquid water flux ($J_l$)** dominate over **vapor flux ($J_v$)**?
+In a saturated soil?
 - Explain how **soil water content** affects both conductivity and heat storage.
+Soil water content affects the thermal conductivity by increasing it as soil moisture increase it, and also increases the heat storage at large values of moistures (since water can store heat). The reason is that while water improves contact (increasing conductivity $a_G$), its high specific heat increases the volumetric heat capacity ($C_G$) even more. Since $v_T = a_G / C_G$, the denominator eventually "wins," slowing down the temperature wave
 - What are the main components of **energy fluxes in the laminar boundary layer**?
+Sensible heat flux, latent heat flux and ground heat flux
 - What does **virtual temperature ($T_v$)** represent physically?
+Physically, it accounts for the fact that **moist air is less dense than dry air** at the same temperature and pressure. $T_v$ is the temperature dry air would need to reach that same low density
 - Write Magnus’ formula for **saturation vapor pressure over water** and explain its meaning.
+$E_w = 6.11 \, e^{\frac{17.62t}{243.12+t}}$ and it means that at higher temperatures the saturation vapor pressure increases, needing a bigger pressure to reach it
 - What is the difference between **specific humidity ($q$)** and **mixing ratio ($m$)**?
+	- **$q$**: Mass of water vapor divided by the **total mass** of the air parcel (dry air + vapor).
+    - **$m$**: Mass of water vapor divided only by the **mass of dry air**.
 - Why is the **potential temperature ($\theta$)** used to compare air temperatures at different altitudes?
+Is the temperature that an air parcel would have if is compressed under 1000 hPa of pressure. 
 - How does the **barometric equation** describe the vertical variation of pressure with height?
+It describes an **exponential decay**. Because air is compressible, gravity pulls more molecules toward the surface, meaning pressure drops much faster near the ground than it does high in the atmosphere.
 - During which part of the day is $Q_G$ **positive**, and why?
+During the day since the gradient goes in the direction of the depth of the soil. This is caused by **thermal inertia**. Soil is a poor conductor compared to air; it takes time for the thermal energy to "travel" through the soil particles, resulting in the maximum temperature at depth occurring hours after the maximum temperature at the surface.
 ---
 # 💡 Key Takeaways
 

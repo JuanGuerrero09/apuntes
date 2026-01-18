@@ -25,35 +25,34 @@ These equations form the foundation of **boundary-layer meteorology**, weather p
 
 The Navier–Stokes equations describe how wind components evolve:
 
-$$\begin{align}
-\frac{\partial u}{\partial t} = - u \frac{\partial u}{\partial x} - v \frac{\partial u}{\partial y} - w \frac{\partial u}{\partial z} - \frac{1}{\rho} \frac{\partial p}{\partial x} + f v + \nu \nabla^2  \\
+### Navier–Stokes Equations: The Force Balance
 
-\frac{\partial v}{\partial t} = - u \frac{\partial v}{\partial x} - v \frac{\partial v}{\partial y} - w \frac{\partial v}{\partial z} - \frac{1}{\rho} \frac{\partial p}{\partial y} + f u + \nu \nabla^2 \\
-\frac{\partial w}{\partial t} = - u \frac{\partial w}{\partial x} - v \frac{\partial w}{\partial y} - w \frac{\partial w}{\partial z} - \frac{1}{\rho} \frac{\partial p}{\partial z} + g + \nu \nabla^2 
-\end{align}$$
-#### Meaning of each term
+In the rotating frame of the Earth, the acceleration of an air parcel is determined by the sum of specific forces.
 
-Each term corresponds to a physical process:
+$$\begin{align} \underbrace{\frac{\partial u}{\partial t}}_{\text{Tendency}} &= \underbrace{- \left( u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} + w \frac{\partial u}{\partial z} \right)}_{\text{Advection}} \underbrace{- \frac{1}{\rho} \frac{\partial p}{\partial x}}_{\text{PGF}} + \underbrace{f v}_{\text{Coriolis}} + \underbrace{\nu \nabla^2 u}_{\text{Viscosity}} \\ \underbrace{\frac{\partial w}{\partial t}}_{\text{Tendency}} &= - \left( u \frac{\partial w}{\partial x} + v \frac{\partial w}{\partial y} + w \frac{\partial w}{\partial z} \right) - \frac{1}{\rho} \frac{\partial p}{\partial z} + \underbrace{g}_{\text{Gravity}} + \nu \nabla^2 w \end{align}$$
 
-- **Tendency** $\frac{\partial u}{\partial t}$:  Local acceleration — describes how wind at a fixed point changes with time.
-- **Advection** $u\frac{\partial u}{\partial x} +  v\frac{\partial u}{\partial y} +  w\frac{\partial u}{\partial z}$ : Transport of momentum by the flow itself.
-- **Pressure gradient force**  $-\frac{1}{\rho} \frac{\partial p}{\partial x}$ Air accelerates from high to low pressure.
-- **Coriolis force** $f v$:  Apparent force due to Earth's rotation.
-- **Turbulent (molecular) stress term** (viscous diffusion) $\nu \nabla^2 u$ Momentum diffusion due to viscosity — negligible compared to turbulence in the atmosphere.
+#### Detailed Term Analysis
+
+-  **Tendency** $\frac{\partial u}{\partial t}$:  Local acceleration — describes how wind at a fixed point changes with time. In steady-state modeling, we often assume this is zero.
+
+- **Advection (Non-linear)**:  $u\frac{\partial u}{\partial x} +  v\frac{\partial u}{\partial y} +  w\frac{\partial u}{\partial z}$ : Transport of momentum by the flow itself. The "Inertial" term. It represents the transport of momentum. Because it involves the product of velocities ($u_i \cdot u_j$), it is the source of chaotic turbulence.
+    
+- **PGF**: **Pressure gradient force**  $-\frac{1}{\rho} \frac{\partial p}{\partial x}$ Air accelerates from high to low pressure. Air is "pushed" from high to low pressure.
+    
+- **Coriolis ($f v$)**: Apparent force due to Earth's rotation. Negligible in the surface layer but shapes the Ekman layer.
+    
+- **Turbulent (molecular) stress term** (viscous diffusion) $\nu \nabla^2 u$ Momentum diffusion due to viscosity. Negligible for large-scale flow but acts as the ultimate energy sink at the **Kolmogorov scale**.
 
 ---
 
 #### Assumptions Before Turbulence Treatment
 
-For atmospheric applications we adopt:
+- **Density fluctuations small**: $|\rho'/\bar{\rho}| \ll 1$.
+- **Pressure fluctuations small**.
+- **Boussinesq approximation**: Density is treated as constant everywhere _except_ when multiplied by gravity (the buoyancy term).
+- **Incompressible flow**: $\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}=0$.
 
-1. Density fluctuations small  
-    $|\rho'/\bar{\rho}| \ll 1$
-2. Pressure fluctuations small
-3. Boussinesq approximation (density constant except in buoyancy term)
-4. Incompressible flow:
-$$\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}=0
-$$
+---
 #### Why Navier–Stokes Cannot Be Solved Directly
 
 Atmospheric flow is **turbulent**, meaning all variables contain a fast-fluctuating component.  
@@ -68,9 +67,9 @@ This is **Reynolds decomposition**.
 
 ---
 
-### Reynolds Postulates
+### Reynolds Decomposition & Postulates
 
-Rules for averaging turbulent quantities:
+Since turbulence is too fast to solve directly, we use **Reynolds decomposition**: $x = \bar{x} + x'$ (Mean + Fluctuation).
 
 1. $\overline{x'} = 0$  
     Mean of fluctuations is zero.
@@ -100,11 +99,7 @@ This is the **Reynolds stress tensor**:
 
 $$\tau_{ij} = -\rho \overline{u_i'u_j'}​​$$
 
-It represents:
-
-- turbulent transport of momentum
-- dominant process in the atmospheric boundary layer
-- the main new unknown that causes the **closure problem**
+This is the **Reynolds Stress Tensor**. It represents the turbulent transport of momentum.
 
 ---
 
@@ -133,15 +128,11 @@ $$
 \overline{u'_i u'_j}
 $$
 
-is the **Reynolds stress tensor** — represents turbulent transport of momentum.
-
-#### Why this is a problem
-
-This introduces **new unknowns** (covariances), but no new equations → “closure problem”.
+**The Closure Problem**: The term $\overline{u'_i u'_j}$ introduces new unknowns (covariances). We have 3 equations but 6+ unknowns. We must "close" the system by approximating these terms.
 
 ---
 
-## Closure Approaches
+### Closure Approaches
 
 **Closure** means expressing turbulent terms (e.g., $\overline{u'w'}$) using known quantities.
 
@@ -164,7 +155,7 @@ $$
 
 where $K_m$ is the **eddy diffusivity for momentum**.
 
-This is analogous to Fick’s law or Fourier’s law.
+**First-order closure (K-approach)**: Assumes $\overline{u'_i u'_j} = -K_m \frac{\partial \bar{u}_i}{\partial x_j}$. Turbulent transport is modeled like molecular diffusion but with a much larger coefficient ($K_m$). This is analogous to Fick’s law or Fourier’s law.
 
 ---
 
@@ -274,15 +265,17 @@ These equations are used in **eddy-covariance**, **boundary-layer modelling**, a
 # 💭 Questions
 
 1. Why does the Reynolds decomposition cause a closure problem?
+Because it introduces new terms (the covariances) without adding the necessary equations to be able to solve it
 2. When does buoyancy produce turbulence, and when does it destroy it?
-3. Why is the logarithmic wind profile only valid under neutral stratification?
-4. What physical meaning does friction velocity $u_*$ have?
-5. Why is dissipation $\varepsilon$ always positive?
-6. Why does Reynolds decomposition create additional unknowns?
-7. Under what situations do the Navier–Stokes terms simplify?
-8. What distinguishes local from non-local closure?
-9. Why is flux–gradient similarity valid only under neutral conditions?
-10. How does buoyancy modify the TKE budget?
+Buoyancy **produces** turbulence during the day when the surface is warmer than the air (unstable conditions), causing air to rise. It **destroys (consumes)** turbulence at night when the surface is colder than the air (stable conditions), as the energy is used to lift heavy, cold air against gravity.
+3. What physical meaning does friction velocity $u_*$ have?
+Is the velocity in which is possible to take into account the friction in the wind effects
+4. Why is dissipation $\varepsilon$ always positive?
+Because it represents the conversion of kinetic energy into **heat** via molecular friction. According to the Second Law of Thermodynamics, this energy transfer is irreversible and always acts to reduce the kinetic energy of the system.
+5. Under what situations do the Navier–Stokes terms simplify?
+They simplify under **steady-state** (tendency = 0), **homogeneous** (horizontal advection = 0), and **neutral** (buoyancy = 0) conditions.
+6. How does buoyancy modify the TKE budget?
+It acts as either a **source** (positive term in the equation during the day) or a **sink** (negative term at night). It is the term that accounts for "thermal" turbulence as opposed to "mechanical" (shear) turbulence.
 
 ---
 

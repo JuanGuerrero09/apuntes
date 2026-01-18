@@ -19,7 +19,7 @@ This lecture focused on the advanced modeling of atmospheric flow, specifically 
 
 #### Conservation of Momentum (Navier-Stokes)
 Represents the balance of forces acting on an air parcel (Newton's second law applied to fluids).
-* **Momentum Flux ($Q_J$):** Transfer of momentum across a fluid boundary: $Q_J = \rho u \mathbf{u} dA$.
+* **Momentum Flux ($Q_J$):** Transfer of momentum across a fluid boundary: $Q_J = \rho \mathbf{u} dA$.
 * **The Equation (x-component):** Includes local change, convective transport, pressure gradient, viscous stress, and external forces ($f_x$).
 $$
 \underbrace{\frac{\partial u}{\partial t}}_{\text{local change}} + \underbrace{u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} + w \frac{\partial u}{\partial z}}_{\text{convective transport}} = \underbrace{-\frac{1}{\rho} \frac{\partial p}{\partial x}}_{\text{pressure}} + \underbrace{\nu_f \nabla^2 u}_{\text{viscous stress}} + \underbrace{f_x}_{\text{external forces}}
@@ -61,14 +61,15 @@ $$
 
 #### Key Stability Definitions
 * **Obukhov Length ($L$):** The height at which **buoyancy (thermal) effects** become equally important as **mechanical (wind shear) effects** on turbulence. It is the scaling length for the surface layer.
-    $$L = - \frac{u_*^3}{\kappa \frac{g}{T} \overline{w'T'}}$$
+	* $L$ is **constant** for a given surface and time, while $\zeta$ ($z/L$) **varies with height**. This means as you go higher ($z$ increases), stability effects ($\zeta$) become stronger.
+$$L = - \frac{u_*^3}{\kappa \frac{g}{T} \overline{w'T'}}$$
 * **Obukhov Stability Parameter ($\zeta$):** The **dimensionless stability measure** at a specific height $z$.
-    $$\zeta = z/L$$
+$$\zeta = z/L$$
 
 #### Scaling & Universal Functions
 The **universal functions** ($\varphi$) are empirical relations dependent only on $\zeta$ used to correct the flux profiles for stability effects.
 * **Turbulent Diffusion Coefficient ($K_m$):**
-    $$K_m = \frac{\kappa \cdot z \cdot u_*}{\varphi_m(\zeta)}$$
+$$K_m = \frac{\kappa \cdot z \cdot u_*}{\varphi_m(\zeta)}$$
 * **Dimensionless Profile (Momentum):** The universal function is derived from the velocity gradient:
     $$\phi_m(\zeta) = \frac{\kappa\cdot z}{u_*} \left(\frac{\partial u}{\partial z}\right)$$
     * **Effect:** In unstable cases ($\zeta < 0$), mixing is stronger, causing a **decrease of the gradient** and an **increase of the flux**. In stable cases ($\zeta > 0$), mixing is suppressed, causing the opposite. 
@@ -76,11 +77,11 @@ The **universal functions** ($\varphi$) are empirical relations dependent only o
 
 * **Resulting Fluxes (Kinematic Units):**
     * **Momentum ($u_*$):**
-        $$u_* = \frac{\kappa \cdot z}{\varphi_m(\zeta)} \frac{\partial u}{\partial z}$$
+    $$u_* = \frac{\kappa \cdot z}{\varphi_m(\zeta)} \frac{\partial u}{\partial z}$$
     * **Sensible Heat Flux ($\overline{w'T'}$):**
-        $$\overline{w'T'} = - \frac{\alpha_0 \cdot \kappa \cdot z \cdot u_*}{\varphi_H(\zeta)} \frac{\partial T}{\partial z}$$
+    $$\overline{w'T'} = - \frac{\alpha_0 \cdot \kappa \cdot z \cdot u_*}{\varphi_H(\zeta)} \frac{\partial T}{\partial z}$$
     * **Latent Heat Flux ($\overline{w'q'}$):**
-        $$\overline{w'q'} = - \frac{\alpha_{0E} \cdot \kappa \cdot z \cdot u_*}{\varphi_E(\zeta)} \frac{\partial q}{\partial z}$$
+    $$\overline{w'q'} = - \frac{\alpha_{0E} \cdot \kappa \cdot z \cdot u_*}{\varphi_E(\zeta)} \frac{\partial q}{\partial z}$$
 * **Variables:** $\kappa$ is the **Von Kármán constant** ($\approx 0.4$); $u_*$ is **Friction velocity**; $\theta_v$ is **Virtual potential temperature**; $q$ is **Specific humidity**.
 
 ### Integrated Profile Equation
@@ -105,6 +106,7 @@ $$
 The **Richardson Number** ($Ri$) is a dimensionless ratio of **buoyancy (stability) forces** to **shear (mechanical) forces**.
 * **Gradient Richardson Number:** $Ri = -\frac{g}{T} \cdot \frac{\partial T / \partial z}{(\partial u / \partial z)^2}$.
 * **Critical Value:** Turbulent flow transitions to quasi-laminar flow under stable stratification when $Ri$ reaches the **critical value $Ri_c = 0.2$**.
+Note that $Ri$ is a **local** measure of stability (calculated from gradients at a specific point), whereas $L$ is a **flux-based** measure (calculated from the overall surface exchange).
 
 ### Convection Types & Flux Ratios
 
@@ -132,11 +134,23 @@ The **Richardson Number** ($Ri$) is a dimensionless ratio of **buoyancy (stabili
 
 # 💭 Questions
 * Why must the simplified flux equations (valid only for the dynamic sublayer) be extended using MOST for non-neutral cases?
+Simplified equations (like the basic log-law) only account for **mechanical shear**. In the real atmosphere, **buoyancy** (thermal stratification) either enhances (unstable) or suppresses (stable) turbulent mixing. MOST provides the mathematical "correction factors" ($\varphi$) to account for this non-neutral behavior.
+
 * Explain the physical significance of the **Obukhov Length ($L$)** and how its sign (positive/negative) indicates stable or unstable conditions.
+Is the length where the thermal effects (buoyancy and density related behaviour) equals the mechanical effects (wind shear). When the length is negative the Obukhov Stability Parameter is also negative, so the conditions are unstable, the same for the stable positive parameter.
+
 * How does the **Conservation of Momentum** equation differ conceptually from the **Conservation of Mass** equation in fluid dynamics?
+**Conservation of Mass** (Continuity) is a "bookkeeping" equation; it ensures that the amount of air entering a volume equals the amount leaving (plus changes in density). **Conservation of Momentum** (Navier-Stokes) is a "force balance" equation; it describes _why_ the air moves (PGF, Coriolis, Friction).
+
 * What is the physical significance of the **Critical Richardson Number ($Ri_c = 0.2$)**?
+$Ri$ is $\text{Buoyancy} / \text{Shear}$. If $Ri = 0.2$, it means buoyancy (stability) is strong enough to **quench** or kill the turbulence generated by shear. Above $0.2$, the air becomes so stable that turbulent mixing stops and the flow becomes laminar.
+
 * Why is the **Virtual Potential Temperature ($\theta_v$)** used instead of the actual temperature ($T$) when calculating the Buoyancy parameter in $L$ and $Ri$?
+Moist air is lighter than dry air at the same temperature. $\theta_v$ combines both temperature and moisture into a single variable that represents the **true buoyancy** of the air parcel.
+
+
 * Under which of the three convection regimes (Forced, Free, or z-less) is the **uncertainty of the universal functions** the highest, and why?
+Uncertainty is highest in **Strongly Stable conditions (z-less scaling)**. In very stable air, turbulence becomes intermittent (it starts and stops) and "decouples" from the surface, making the empirical $\varphi$ functions very unreliable.
 
 ---
 # 🐢 Definitions

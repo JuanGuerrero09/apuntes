@@ -11,16 +11,9 @@ Last Modified: Monday 13th October 2025 09:29
 Foundations of **hydrochemistry**: structure of water, polarity and hydrogen bonding; how **speciation**, **buffering**, and **redox** control water quality and processes (scaling, precipitation, metal hydroxides).
 
 ---
-# 🕸️Resources
-
-
-
----
 # 📝 Notes
 
-## 📘 **Water Chemistry (Hydrochemistry)**
-
----
+## 📘 Introduction to Water Chemistry (Hydrochemistry)
 
 ## 🧪 Definition
 
@@ -89,6 +82,13 @@ By the end of this unit, you should be able to:
 - The resulting **bond angle** is **104.5°**, forming a **bent molecule**.
 - This geometry creates a **dipole** — a separation of partial charges (δ⁺ on H, δ⁻ on O).
 
+The **104.5°** angle is the key to life. Because the molecule is "bent" rather than linear (like $CO_2$, which is $180^\circ$ and non-polar), the dipoles do not cancel out.
+
+- **The Dipole Moment:** The oxygen atom "hogs" the electrons, becoming partially negative ($\delta^-$), while the hydrogens are partially positive ($\delta^+$).
+- **Lone Pairs:** Oxygen has **two lone pairs** of electrons. These occupy space and "push" the H-O-H bonds downward, which is why the angle is 104.5° instead of a perfect tetrahedral 109.5°.
+
+
+
 > “Similia similibus solvuntur” — _Like dissolves like_: polar solvents dissolve polar solutes.
 Lone electrons pairs of oxygen?
 
@@ -106,10 +106,11 @@ Lone electrons pairs of oxygen?
 Perfect tetrahedron: 109.5 degrees, water (liquid): 104.5
 
 ![[Pasted image 20251013102930.png]]
-**### Crystal Structure of Ice
+### Crystal Structure of Ice
 
 - Forms a **tetrahedral lattice** with both **covalent** and **hydrogen bonds** (bond angle ≈ 109.5°).
 - Creates open spaces → **ice is less dense than water**, allowing it to float.
+- **Density Anomaly:** In liquid water, molecules are close but disorganized. As water cools toward **4 °C**, they pack tighter. Below 4 °C, H-bonds begin to force the molecules into a **rigid hexagonal lattice (Ice)**. This lattice contains a lot of "empty space," making ice ~9% less dense than liquid water.
 
 ---
 
@@ -158,13 +159,19 @@ Where there are seasons exist the stratification of the lakes (eutrophication). 
 ### 💡 Questions
 
 - Why does the **104.5°** bond angle make water **polar**?
+	- Because it allows the geometric sum of the charges to generate a moment 
 - Explain how **H-bonds** cause **density maximum at 4 °C**.
+	- By the union of packs of molecules without that much empty spaces, at lower temperatures the ice has empty spaces and at higher temperatures the water molecules are dispersed in smaller chunks
 - For the **ammonia system**, which species dominates at **high pH**: $\mathrm{NH_3}$ or $\mathrm{NH_4^+}$? Why?
+	- idk
 - Order the dominant inorganic carbon species at **pH 6**, **8.3**, **10** ($\mathrm{CO_2}$, $\mathrm{HCO_3^-}$, $\mathrm{CO_3^{2-}}$).
+	- HCO, CO2 and CO3, based on the negativity (more H+ less pH)
 - One method to estimate **alkalinity** and what it measures chemically.
-- Under what **Eh–pH** do you expect **$\mathrm{Fe^{2+}}$ (aq)** vs **$\mathrm{Fe(OH)_3}$ (s)**?
+	- idk
 - How would you check if an ion analysis is **plausible** (mention neutrality and typical ranges)?
+	- By accomplishing the matematic neutrality
 - Distinguish **scaling** vs **corrosion** with one operational consequence each.
+	- Scaling generates CaCo deposits that decrease the usable size of the pipes or tools, while the corrosion oxidates the material of the pipe or tool by damaging the material and eroding it
 ---
 # 📅 Homework
 

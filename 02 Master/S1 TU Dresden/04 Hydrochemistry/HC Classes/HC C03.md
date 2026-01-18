@@ -8,10 +8,6 @@ Last Modified: Monday 27th October 2025 08:16
 # 📒Class Summary
 A comprehensive lecture on **properties of aqueous solutions**, covering key concentration measures (mass, molar, molal, and mole fractions), **electrical neutrality**, and the **hardness of water**.
 
----
-# 🕸️Resources
-
-
 
 ---
 # 📝 Notes
@@ -89,7 +85,7 @@ Where:
 - **c(x)** → molar concentration (mol/L).
 - **z** → ionic charge (e.g., +1 for Na⁺, +2 for Ca²⁺, –1 for Cl⁻).
 
-This allows comparing solutions based on their **electrical equivalence** rather than their molecular count.
+This allows us to compare ions based on their "combining power." While 1 mole of $Na^+$ and 1 mole of $Ca^{2+}$ have the same number of particles, the $Ca^{2+}$ provides twice the electrical charge. In hydrochemistry, we balance charges, not just particles.
 
 The **condition of electrical neutrality** must always hold:
 $$\sum_i c_iz_i=0$$
@@ -134,7 +130,7 @@ _Examples:_
 Similar to mass fraction, but based on **moles** of the solute in the solution instead of mass:
 
 $$
-w(x) = \frac{m(x)}{\sum m}
+x(x) = \frac{n(x)}{\sum n}
 $$
 Dimensionless; when multiplied by 100%, gives **mole percent**.
 
@@ -222,7 +218,7 @@ c(Ca^{2+}+Mg^{2+})_{CH}=\frac{1}{2}c(HCO^{-}_3)
 $$
 This relationship arises from **charge balance** in the bicarbonate system.
 
-Each **calcium ion** (Ca^{2+}) or **magnesium ion** (Mg2+Mg^{2+}Mg2+) carries **two positive charges**, while each **bicarbonate ion** (HCO3−HCO_3^-HCO3−​) carries **one negative charge**.  
+Each **calcium ion** ($Ca^{2+}$) or **magnesium ion** ($Mg^{2+}$) carries **two positive charges**, while each **bicarbonate ion** ($HCO_3^-$​) carries **one negative charge**.  
 Therefore, to maintain electrical neutrality, **two bicarbonate ions** are required for every **one divalent cation**:
 
 $$Ca^{2+} + 2HCO_3^- \rightarrow Ca(HCO_3)_2$$
@@ -316,19 +312,45 @@ Interpretation: 0.9 mmol/L of the Ca²⁺+Mg²⁺ are associated with other anio
 ---
 # 💡 Questions
 
+- How to calculate:
+	- Mass concentrations: Mass / Vol
+	- Molar concentrations: Mol / Vol
+	- Concentrations of equivalents: Mol / Vol * (1/Charge)
+	- Molal concentrations: Mol / Mass
+	- Mass and mole fractions: Mass element / Mass total, Mol element / Mol total
+	- Partial pressure: Pressure due substance / Total pressure
+- What is the difference of total, carbonate and non-carbonate hardness?
+	- Total hardness is the sum of the ions Mg^2+ and Ca^2+ in the solution, carbonate hardness is the part that is combined with bicarbonate (HCO_3^-) and non-carbonate hardness is the one that is combined with other ions 
+- Name two problems that come with increased hardness and explain those in terms of chemistry
+	- The scaling in pipelines, that is generated when the hard water is heated and create CaCo that precipitates in the pipeline, reducing the effective size, and the reaction with the soap generating scum
+- How to evaluate the plausibility of water analysis based on the condition of electrical neutrality and balance?
+	- The water should be neutral, so, if the sum of the charges in the concentrations of equivalents is different of the neutral condition it says that is not correct.
+- How to calculate activity coefficients for mono and multivalent ions of aqueous solutions with different ionic strengths or conductivities?
+	- idk
 - Convert **40 mg/L** of $\mathrm{NO_3^-}$ to **mmol/L** and to **mg/L as N**.
+	- 22.26% -> 8.904 mmol/L -> 0.0089 mol/L
 - A sample has $\mathrm{Ca^{2+}}=1.2,\mathrm{mmol/L}$, $\mathrm{Mg^{2+}}=0.6,\mathrm{mmol/L}$, $\mathrm{HCO_3^-}=3.8,\mathrm{mmol/L}$. Compute **TH**, **CH**, **NCH**.
+	- TH = 1.8 ch = 1.6, NCH = 0.2
 - Explain why **carbonate hardness** is **temporary**. Write the heating reaction:  
     ${Ca(HCO_3)_2 \rightarrow CaCO_3\downarrow + CO_2\uparrow + H_2O}$
+	    Because with the heating it can get removed by precipitating the CaCo
 - State the **electrical neutrality condition** and how it’s used to check a water analysis:  
     $\sum_i c_i z_i = 0$
+	    The sum of all the concentrations plus the charge number (2 if 2+, 1 if -) should be zero
 - Compare **molarity** vs **molality** regarding **temperature dependence**.
+	- Molarity is temperature dependent as with it the volume of the solvent can change while the molality keeps the mass of the element fix
 - Define **equivalent concentration** and give the **meq/L** for $5,\mathrm{mmol/L}$ of $\mathrm{SO_4^{2-}}$.
+	- idk
 - A solution has $\beta = 0.50,\mathrm{g/L}$ glucose ($M=180.16,\mathrm{g/mol}$). Estimate **molarity**, **molality** (assume $\rho\approx1,\mathrm{kg/L}$), and **mole fraction** (aprox.).
-- Use **Dalton**: compute partial pressure of $\mathrm{CO_2}$ at **415 ppm** in **1 atm**.
-- Explain why **CH can never exceed TH**. What means if $\tfrac12,c(\mathrm{HCO_3^-})> \mathrm{TH}$?
-	- List **3 impacts** of **high hardness** and **2 mitigations**.
-
+	- Molarity: 2.775 mmol/L
+	- Molality: 0.00277 mmol/g
+	- Mole fraction: 0.50 g/L / 1000 g/L = 0.0005 -> 0.5%
+- Use **Dalton**: compute partial pressure of $\mathrm{CO_2}$ at **415 ppm** in **1 atm**.:
+	- idk is there enough info?
+- Explain why **CH can never exceed TH**. What means if $\tfrac12,c(\mathrm{HCO_3^-})> \mathrm{TH}$?:
+	- Because total hardness is the sum of the positive ions Mg and Ca, in the case CH is equal to TH it means all those ions are in pair with Bicarbonate ions, meaning there is no room for more bonds. If the equation is fullfiled there are more negative ions than positive, that would mean the solvent is not neutral
+- List **3 impacts** of **high hardness** and **2 mitigations**.
+	- Scaling in pipeline, scum generation in soap and corrosion in pipelines, the mitigations could be adding Na+ and lime softening 
 ---
 # 📅 Homework
 - Review how to convert between **mass**, **molar**, and **equivalent** concentrations.

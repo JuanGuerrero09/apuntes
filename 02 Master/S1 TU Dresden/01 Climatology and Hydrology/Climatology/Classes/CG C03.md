@@ -7,14 +7,16 @@ Last Modified: Monday 3rd November 2025 11:03
 
 # 📒Class Summary
 
-Overview of turbulence generation, turbulent fluxes in the surface and outer layers, turbulent diffusivity, atmospheric stability, momentum and scalar transport, sensible and latent heat fluxes, Bowen ratio, and convective exchange mechanisms within the atmospheric boundary layer.
+This lecture explores the **physical mechanics of the Atmospheric Boundary Layer (ABL)**. We move from the theoretical Navier–Stokes equations to the practical application of how turbulence moves heat, water, and momentum. Key focus: how atmospheric stability (ELR vs. ALR) dictates the vertical structure of our climate.
 
 ---
 # 📝 Notes
 
 ## Physical basics of boundary layer meteorology
 
-### Turbulence
+### Turbulence: The Engine of the ABL
+
+Turbulence is the primary mechanism for vertical transport. Without it, the "Free Atmosphere" would be almost entirely disconnected from surface conditions.
 #### Characteristics of Turbulent Flow
 
 Turbulence is a complex, chaotic flow regime that emerges when inertial forces dominate over viscous forces.
@@ -284,14 +286,34 @@ Analogy with Ohm’s law:
 # 💭 Questions
 
 - What influences the friction to determine the wind profile in the boundary layer?
+The **Roughness Length ($z_0$)** and **Atmospheric Stability** are the two primary factors.
+
 - In what depends the Atmospheric stability?
+Stability depends on the **Vertical Temperature Gradient** (ELR vs ALR). Turbulence is a _result_ of stability (convective) or wind speed (mechanical).
+
 - At what time does the boundary layer reach it's maximum height
+Occurs in the **late afternoon** (around 4–5 PM), not exactly at midday. Even though solar radiation peaks at noon, the ground continues to heat the air for several hours after, allowing the boundary layer to keep growing.
+
 - How does atmospheric stability modify the shape of the wind profile?
+In **stable conditions**, the wind profile is **stretched and steep** because vertical mixing is suppressed. In **unstable conditions**, the profile is **more uniform (vertical)** because strong turbulence effectively mixes fast-moving air from higher up down to the surface.
+
 - Why is turbulent diffusivity far more effective than molecular diffusivity?
+Because is several orders of magnitude higher than molecular diffusivity
+
 - Under what conditions is the flux–gradient relationship $F_x = -K_x \partial_x / \partial z$ invalid?
+It fails in the **Roughness Sublayer** (very close to buildings/trees where flow is too complex) and during **Counter-gradient flow** (where large eddies move heat from cold to warm areas, which happens sometimes in very convective conditions).
+
 - Why does the moist adiabatic lapse rate vary between 0.4 and 0.9 K/(100 m)?
+It depends on **Temperature**. Warmer air holds more water vapor; when it condenses, it releases **more latent heat**, which offsets the cooling more significantly, resulting in a smaller lapse rate ($0.4\text{ K}/100\text{ m}$).
+
 - How do roughness elements influence mechanical turbulence generation?
+Generate friction to the wind
+
 - What meteorological conditions lead to strong nocturnal inversions?
+Strong surface cooling
+
+- What are the key characteristics of turbulence (name 3)?
+Motion, irregularity, dissipation.
 
 ---
 # 🐢 Definitions

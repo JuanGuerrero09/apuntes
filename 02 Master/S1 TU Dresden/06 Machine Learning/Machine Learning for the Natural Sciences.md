@@ -30,6 +30,7 @@ https://scikit-learn.org/stable/index.html
 https://sebastianraschka.com/blog/2021/ml-course.html -> https://github.com/rasbt/stat451-machine-learning-fs20/tree/master
 https://d2l.ai/index.html
 https://github.com/dibgerge/ml-coursera-python-assignments
+http://neuralnetworksanddeeplearning.com/about.html
 
 # Pendientes
 

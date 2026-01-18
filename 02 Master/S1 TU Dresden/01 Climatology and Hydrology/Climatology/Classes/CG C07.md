@@ -12,7 +12,9 @@ The lecture focused on the **surface energy and water balances of vegetated surf
 ---
 # 📝 Notes
 
-## Surface Energy and Water Balances
+## Specifics of near-surface turbulence - Climates over different surface types
+
+Surface Energy and Water Balances
 
 ### Vegetated Surfaces (General)
 
@@ -81,12 +83,10 @@ Forests differ from crops due to their immense biomass and complex architecture.
 ---
 # 💭 Questions
 
-- Which types of special characteristic of different land-cover are?
-- What effects do those characteristics have on local climate?
-- How to identify the land-cover based on measurements?
 - **Why is $Q^*$ in a forest closer to $K\downarrow$ compared to a sandy desert?**
-- **How does the "Trade Wind Inversion" affect cloud formation over oceans?** (Review from previous lecture)
+The forest has a **much lower albedo** due to radiation trapping, so less $K\uparrow$ is lost. Second, forests are efficient evaporators ($ET$); this keeps the canopy cool, which **reduces the longwave loss ($L\uparrow$)**. In a desert, the surface gets extremely hot, losing a massive amount of energy through $L\uparrow$, which further reduces the net radiation $Q^*$.
 - **What physically causes the temperature stratification inside a forest to be opposite to the atmosphere above it at night?**
+This is caused by the **location of the radiative surface**. At night, the "active surface" is the **top of the canopy (crown space)**, which loses longwave radiation to the sky and cools rapidly. The air _inside_ the forest (stem space) is sheltered by the biomass above it, which acts as an insulating blanket, trapping warmer air near the ground. This creates a temperature inversion at the canopy top, while the air below remains relatively warmer for longer.
 
 ---
 # 🐢 Definitions

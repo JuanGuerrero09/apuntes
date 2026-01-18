@@ -125,7 +125,7 @@ Characterized by convection and advection below the surface and high transparenc
 
 #### Momentum sink within the canopy:
 
-- **Active Surface Concept**: The exchange surface is lifted to the **zero plane displacement height ($d$)**.
+- **Active Surface Concept**: The exchange surface is lifted to the **zero plane displacement height ($d$)** where wind velocity is estimated zero.
 
 - **Rules of Thumb**:
     - $d \approx 2/3 h$
@@ -164,21 +164,21 @@ being z = variable of heigh
 # 💭 Questions
 
 - Which types of special characteristic of different land-cover are?
-    
+    **Albedo** (reflectivity), **Transparency** (volume vs. surface absorption), **Thermal Capacity** (ability to store heat), **Moisture Availability** (for latent heat), and **Aerodynamic Roughness** (how they "trip" the wind).
 - What effects do those characteristics have on local climate?
-    
+	The land-cover effects vary the local climate by cooling the surface (with more water available in form of latent heat or having vegetation cover), changing net incoming radiation by having different albedo, and even the water equilibrium, since it increases or decreases the evapotranspiration and runoff depending on the system.
 - How to identify the land-cover based on measurements?
-    
+    By considering the values of ground heat flux (can show if the lack of it could be by having vegetation or by volume heating as per beer laws), the latent heat (can show the amount of water or moisture) and the carbon measurements to determine the kind of vegetation.
 - **How does the vertical location of the temperature maximum differ between a sandy desert and a snowpack during mid-day?**
-    
+    In a **desert**, the max temperature is at the **skin surface ($z=0$)** because sand is opaque. In **snow**, the max is **sub-surface (approx. 5-10 cm deep)**. This is because snow is translucent; sunlight penetrates the volume (Beer’s Law) and heats it from within, while the surface is cooled by the air.
 - **Why is the longwave radiation emission ($L\uparrow$) almost constant over a deep lake compared to the extreme diurnal variation over bare soil?**
-    
+    Because the water is really good in storing heat, that means that the emission of it is not only during the day but during the night by that stored heat
 - **Explain the role of the "Trade Wind Inversion" in decoupling the mixed layer from the free atmosphere over tropical oceans.**
-    
+    It acts as a **stable lid** (inversion) that prevents moisture from the ocean from mixing into the free atmosphere. It traps water vapor in the "Mixed Layer," allowing for shallow clouds but suppressing large storms.
 - **In a forest canopy, why is the albedo typically lower than that of the individual leaves if measured from a satellite? (Hint: Radiation trapping).**
-    
+    Due to **Radiation Trapping**. Light reflects off one leaf only to hit another leaf deeper in the 3D structure. Each bounce allows for more absorption, lowering the total reflected energy (Albedo) compared to a flat, single leaf.
 - **What happens to the partitioning of $Q^*$ in a vegetation stand during a severe drought period?**
-    
+    The latent heat decreases over time while the sensible heat increases. Plants close stomata, stopping transpiration ($Q_e$) and forcing energy into sensible heat ($Q_H$).
 
 ---
 

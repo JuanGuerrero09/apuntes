@@ -39,6 +39,7 @@
 - Are the following statements true or false?
 	- The entire atmospheric boundary layer is turbulent. (F) (Little laminar part)
 	- The boundary layer height changes throughout the day. (T)
+
 - Name some characteristics of turbulence.
 	- Irregular, dissipative, mixing, difussive
 - Which number can tell you if a flow is turbulent?
@@ -71,6 +72,9 @@
 - Turbulent energy is produced in the
 	- macro range
 
+
+
+
 Graswang and Fendt
 
 ![[Pasted image 20251212103317.png]]
@@ -81,3 +85,26 @@ Graswang and Fendt
 4. Guess the land cover type and give two reasons -> negative CO2 indicate vegetation, Ground heat flux is quite large for the balance, a lot of radiation reaches the surface a hint it cannot be a super dense canopy, it can't be a forest
 
 ![[Pasted image 20251212105617.png]]
+
+More questions:
+
+- Land-sea breeze and mountain-valley winds are both thermally induced T/F
+	- True
+- Atmospheric heat flux measurements show a latent heat flux of 0 W m-2. What kind of surface could this be? (multiple)
+	- Desert, ice or forest => desert and ice
+- Where can counter gradient fluxes ocurr?
+	- oasis, forest or glacier -> in a forest (because inside forest everything is different than outside)
+- Where is the temperature maximum in a crop field?
+	- At the top of the canopy, Inside the canopy, At the ground -> inside the canopy
+- Negative daytime net ecosystem exchange indicates...
+	- bare soil, vegetation -> vegetation
+- Ground heat flux is nearly zero in case of (multiple)
+	- 1 m snow pack, shallow water body, dense forest, crops, grasslands -> 1m snow pack and forest
+- Short wave radiation is absorbed across a volume in case of (multiple)
+	- bare soil, ice, forest, crops, desert -> ice, forest, crops
+- The surface temperature amplitude of water is greater than of land. T/F
+	- False
+- Atmospheric flux measurements always consider the same source area. T/f
+	- False
+- The amount of direct beam solar radiation absorbed by a surface is determined by
+	- Lambert's law /  Beer's law -> Lambert's law

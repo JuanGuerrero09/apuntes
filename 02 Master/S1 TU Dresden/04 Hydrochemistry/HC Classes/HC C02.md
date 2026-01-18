@@ -9,10 +9,6 @@ Last Modified: Monday 20th October 2025 09:31
 # 📒Class Summary
 Microscopic–macroscopic link of water: **H-bond network**, **clusters**, and how they control **boiling point**, **heat capacity**, **surface tension**; thermodynamic view via **enthalpy**, **entropy**, and **Gibbs energy**; curvature effect on vapor pressure (**Kelvin**).
 
----
-# 🕸️Resources
-
-
 
 ---
 # 📝 Notes
@@ -22,6 +18,7 @@ Microscopic–macroscopic link of water: **H-bond network**, **clusters**, and h
 
 Hydrogen bonds in the **cluster model of liquid water** form almost perfect **tetrahedrons**.  
 In liquid water, there is a dynamic equilibrium between **clusters** (molecules connected by hydrogen bonds) and **free molecules**.  
+
 Temperature affects this equilibrium — higher temperatures break hydrogen bonds, increasing the number of free molecules.
 
 ![[Pasted image 20251020093923.png]]
@@ -37,6 +34,11 @@ Electrons in smaller atoms are held more tightly to the nucleus. As atom size in
 
 Hydrogen bonds are responsible.  
 Elements like **F, O, and N** are highly **electronegative**, creating strong polar bonds. The stronger the polarity, the stronger the hydrogen bonding — increasing boiling and melting points.
+
+**The Boiling Point "Anomaly":**
+
+- **HF** has the strongest H-bonds, but **$H_2O$** has the higher boiling point.
+- **Why? Water is "balanced." Each molecule has 2 hydrogens (donors) and 2 lone pairs (acceptors), allowing a 3D network of 4 bonds per molecule. HF has only 1 donor, and $NH_3$ has only 1 acceptor, limiting their networks.
 
 ![[Pasted image 20251020095355.png]]
 
@@ -79,6 +81,8 @@ Liquids tend to assume shapes with the **least surface area per volume** — suc
 - **Adhesion:** Attraction between different substances (e.g., water–glass).
 
 ![[Pasted image 20251020101803.png]]
+
+- **Surface tension $(\gamma)$ acts like a stretched rubber membrane. In a narrow tube (small $r$), the adhesion to the walls pulls the liquid up, while cohesion keeps the column together. The smaller the radius, the higher the water climbs.**
 
 ---
 #### Vapor Pressure of Small Droplets
@@ -146,14 +150,23 @@ A **dissolution process** runs spontaneously when the total Gibbs energy change 
 ### 💡 Questions
 
 - Why is the **boiling point of water** much higher than expected from its molecular mass?
+	- Because of the hydrogen bonds being strong and making bonds with up to 4 molecules, making it hard to break.
 - Using the **Kelvin equation**, explain why **smaller droplets** evaporate faster than larger ones.
+	- Because the radius is inversibely proportional to the pressure needed to evaporate
 - How do **cohesion** and **adhesion** together explain **capillary rise**?
+	- Cohesion is the preference of being in contact between diference surfaces, this make the contact between the liquid and a glass favorable and generate the capilary rise, while the adhesion favors the contact between the same sustance, avoiding the contact with the other surface, in this case, the glass going gainst the capillary rise
 - Differentiate **enthalpy of fusion** vs **enthalpy of vaporization**; why is the latter much larger for water?
+	- Is the work needed to generate change between state
 - For a process with $\Delta H>0$ and $\Delta S>0$, when is $\Delta G=\Delta H - T\Delta S < 0$?
+	- When the change in temperature is higher to the change in entalphy
 - Provide two natural examples where **surface tension** is critical.
+	- For the bugs that uses the surface tension to move above the water.
 - How does **pressure** alter the ice structure and the melting behavior?
+	- Higher pressure more temperature is needed to melt the ice
 - Explain how water’s **high heat capacity** stabilizes **climate** and **aquatic environments**.
+	- Since the water is able to storage a lot heat it allows the climate to cool by absorbing that as sensible heat, leaving less heat radiation for the air tempreature.
 - Why do **dispersion forces** matter even in nonpolar liquids?
+	- idk
 
 ---
 # 📅 Homework
