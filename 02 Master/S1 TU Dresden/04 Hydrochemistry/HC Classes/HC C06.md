@@ -20,7 +20,7 @@ Finally, the lecture develops **gas–water partitioning** using **Henry’s law
 
 ### Law of Mass Action (LMA)
 
-The **Law of Mass Action (LMA)** defines how concentrations (or activities) of reactants and products relate at equilibrium.
+The **Law of Mass Action (LMA)** defines how concentrations (or activities) of reactants and products relate at equilibrium. It is the "accounting system" for chemistry, telling us the exact ratio of products to reactants when a system is at rest.
 
 For a general reaction
 $$\nu_A A + \nu_B B \rightleftharpoons \nu_C C + \nu_D D$$
@@ -31,39 +31,24 @@ K^* = \frac{(\gamma_c c_c)^{v_c} (\gamma_c c_D)^{v_D}}{(\gamma_c c_A)^{v_A}(\gam
 $$
 Where:
 
-- $a_i = \gamma_i c_i$ are **activities**
-- $\gamma_i$ are **activity coefficients**
-- $c_i$ are concentrations
+- $a_i = \gamma_i c_i$ are **activities** (effective concentrations).
+- $\gamma_i$ are **activity coefficients** (accounting for ion interactions).
+- $c_i$ are molar concentrations
 - $\nu_i$ are stoichiometric coefficients
 
 This $K$ is valid only for a **given ionic strength**; if the ionic strength changes, $\gamma_i$ change and $K$ changes.
 
-#### Limiting case: ideally dilute solution
-
-At very low concentrations, interactions between ions are weak:
-
-- $c_i \to 0 ;\Rightarrow; \gamma_i \to 1$
-- $a_i = \gamma_i c_i \approx c_i$
-
-Then
-$$K^* \to K$$
-so the thermodynamic and conditional constants coincide.
-
----
-
 #### Types of constants and coefficients
 
-- **Thermodynamic equilibrium constant $K^*$**  
-    Uses activities $a_i$; independent of concentration (only $T$ and chemical system). This is the “true” constant.
-- **Conditional equilibrium constant $K$**  
-    Uses concentrations $c_i$; depends on ionic strength and other conditions. Convenient for calculations in a fixed medium.
-- **Reverse equilibrium constant**  
-    For the reverse reaction, the constant is simply $1/K$ (or $1/K^*$).
-- **Reaction quotient $Q$**  
-    Same form as $K$ but evaluated with _current_ concentrations, not necessarily at equilibrium.
-    - If $Q<K$, the reaction shifts to the **products**.
-    - If $Q>K$, it shifts to the - - **reactants**.
-        
+- **Thermodynamic equilibrium constant $K^*$:** Uses activities $a_i$; independent of concentration (depends only on $T$ and the chemical system). This is the “true” constant.
+- **Conditional equilibrium constant $K$:** Uses concentrations $c_i$; valid only for a **given ionic strength**. If ionic strength changes, $\gamma_i$ changes and $K$ changes.
+- **Ideally dilute solution (Limiting case):** At very low concentrations ($c_i \to 0$), interactions vanish and $\gamma_i \to 1$. Thus, $a_i \approx c_i$ and $K^* \to K$.
+- **Reverse equilibrium constant:** For a reverse reaction, the constant is $1/K$ (or $1/K^*$).
+- **Reaction quotient $Q$:** Same form as $K$ but evaluated with _current_ concentrations. It acts like a "GPS" for the reaction:
+    - If **$Q < K$**: System moves to the **products** (Right).
+    - If **$Q > K$**: System moves to the **reactants** (Left).
+    - If **$Q = K$**: System is at equilibrium.
+
 
 ---
 
@@ -82,60 +67,102 @@ $$\lg K_1^* + \lg K_2^* = \lg K_3^*$$
 - If $K \ll 1$: denominator $\gg$ numerator → **reactants dominate** (equilibrium far to the left).
 - If $K \approx 1$: similar amounts of reactants and products.
 ---
-### Le Chatelier's principle (Equilibrium Law)
+### Le Chatelier's Principle (Equilibrium Law)
 
-**Le Chatelier’s principle:**  
-When a system at equilibrium is disturbed (by changing concentration, pressure or temperature), it shifts in the direction that **reduces** that disturbance.
+**Definition:** When a system at equilibrium is disturbed (by changing concentration, pressure, or temperature), it shifts in the direction that **reduces** or counteracts that disturbance. Think of it as a "seesaw" trying to return to balance.
 
 Typical disturbances:
-
 - **Concentration:**
-    - add reactant → system consumes reactant (shift to products)
-    - remove product → system forms more product
+    - **Add reactant:** The seesaw tilts left; system consumes reactant to move weight right (shift to **products**).
+	- **Remove product:** Seesaw tilts left (right side too light); system forms more product to compensate (shift to **products**).
 - **Pressure (gases):**
-    - increasing total pressure favours the side with fewer gas moles.
+    - **Increasing total pressure:** Favours the side with **fewer gas moles** (the system tries to "de-crowd" itself).
 - **Temperature:**
-    - for an **exothermic** reaction (releases heat), raising $T$ favours the reactants.
-	    - "increasing $T$ adds “heat” → equilibrium shifts to the side with less dissolved gas → solubility decreases"
-    - for an **endothermic** reaction, raising $T$ favours the products.
+    - **Exothermic reactions (Release heat):** Heat is a "Product" ($\text{Reactants} \rightleftharpoons \text{Products} + \text{Heat}$).
+		- **Increasing $T$ (Add Heat):** Seesaw tilts right. System moves left to balance. **Equilibrium shifts to reactants** and solubility decreases.
+    - **Endothermic reactions (Absorb heat):** Heat is a "Reactant" ($\text{Reactants} + \text{Heat} \rightleftharpoons \text{Products}$).
+		- **Increasing $T$ (Add Heat):** System consumes extra heat to make more stuff. **Equilibrium shifts to products**.
 
-> **What is Le Chatelier's principle?**  
-> It is the qualitative rule that predicts how the position of equilibrium shifts after a change in temperature, pressure, or concentration: the system responds in the direction that counteracts the imposed change.
+#### Application: The CO₂ System and Acidification
 
----
-#### Equilibria
+The equilibrium follows this path:
 
-##### 1. Gas–liquid equilibrium
-$$\mathrm{CO_2(g)} \rightleftharpoons \mathrm{CO_2(aq)}$$
-Henry’s law:
-$$c(\mathrm{CO_2(aq)}) = H(\mathrm{CO_2})\, p(\mathrm{CO_2})$$
-with $$H(\mathrm{CO_2}) = 0.033\ \mathrm{mol\,L^{-1}\,bar^{-1}}$$
-##### 2. Acid–base equilibrium in water
+$$\mathrm{CO_2(g)} \rightleftharpoons \mathrm{CO_2(aq)} + \mathrm{H_2O} \rightleftharpoons \mathrm{H^+} + \mathrm{HCO_3^-}$$
 
-$$\mathrm{CO_2(aq)} + \mathrm{H_2O} \rightleftharpoons \mathrm{H^+} + \mathrm{HCO_3^-}$$
-This is one step of the **carbonate system** (others involve $\mathrm{CO_3^{2-}}$).
+**If atmospheric $CO_2$ increases ($p(\mathrm{CO_2}) \uparrow$):**
 
----
+1. System adds "weight" to the far left.
+2. **Henry’s Law** forces more gas into water: $c(\mathrm{CO_2(aq)}) \uparrow$.
+3. To balance, the acid-base equilibrium shifts right (**Le Chatelier**).
+4. $[\mathrm{H^+}] \uparrow$, causing pH to decrease (**Ocean Acidification**).
 
-#### Applied to the CO₂ system: higher atmospheric CO₂
+**Temperature effect:** Dissolution of gas is **exothermic**.
 
-If the partial pressure of CO₂ in the atmosphere increases:
-
-1. $p(\mathrm{CO_2}) \uparrow$
-2. Henry’s law → $c(\mathrm{CO_2(aq)}) \uparrow$
-3. The acid–base equilibrium shifts to the right (Le Chatelier) → $[\mathrm{H^+}] \uparrow$
-4. pH decreases → **acidification**.
+- Increasing $T$ adds "heat" (a product), shifting equilibrium back to the gas phase.
+- This explains why **cold water holds more dissolved oxygen** than warm water.
 
 ---
-#### Temperature dependence
 
-Dissolution of gases in water is typically **exothermic** (releases heat).  
-According to Le Chatelier:
+### Henry's Law & Gas-Water Partitioning
 
-- increasing $T$ adds “heat” → equilibrium shifts to the side with **less dissolved gas** → **solubility decreases**.
-- decreasing $T$ favours dissolution → **higher solubility**.
+**Gas-Water Partitioning** describes the equilibrium where the **partial pressure** in gas and the **dissolved concentration** in water are linked. It is the "mathematical bridge" between air and water.
 
-> This explains why cold water can hold more dissolved oxygen than warm water.
+#### The Core Concept: Proportionality
+
+At a constant temperature, the dissolved concentration is **directly proportional** to its partial pressure.
+
+> **The "Push" Rule:** The more pressure a gas exerts from the air (higher $p$), the more gas is forced into the water ($c_{aq}$).
+
+#### Standard Equations and Forms
+
+**1. Standard Absorption:**
+
+$$c_{aq} = H \cdot p$$
+
+- $H(A)$ = Henry constant $[\mathrm{mol \cdot L^{-1} \cdot bar^{-1}}]$. Proportionality factor depends on gas type, solvent, and temperature.
+- **Trend:** Solubility decreases with increasing $T$ ($H$ decreases as $T$ rises).
+
+**2. Desorption (Inverse Henry):**
+$$p(A) = H_{\text{inv}}(A) \cdot c(A) \quad \text{where} \quad H_{\text{inv}}(A) = \frac{1}{H(A)}$$
+- The larger $H_{\text{inv}}$, the more **volatile** the compound (easier to "strip" or "desorb" from water).
+
+**3. Gas-phase Concentration ($K_C$):** 
+Using the ideal gas law ($p = c_g R T$):
+$$c_{aq} = K_C \cdot c_g \quad \text{where} \quad K_C = H(A) R T$$
+- **Mass-based version:** $K_C(A) = \frac{\beta_{aq}(A)}{\beta_g(A)}$ (Relates mass concentrations in mg/L).
+
+**4. Mole Fraction Form ($H_X$):**
+
+$$x(A) = H_X \cdot p(A) \quad \text{where} \quad H_X \approx \frac{H(A)}{55.56 \ \mathrm{mol \cdot L^{-1}}}$$
+#### Henry's Constants Tables:
+
+![[Pasted image 20251117160338.png]]
+
+![[Pasted image 20251117160649.png]]
+
+---
+
+#### Absorption vs. Desorption
+
+- **Absorption (Loading):** If the actual concentration in the water is _lower_ than what Henry’s Law predicts ($c_{actual} < H \cdot p$), gas will move **from the air into the water**.
+- **Desorption (Stripping):** If the concentration is _higher_ ($c_{actual} > H \cdot p$), gas will move **from the water into the air**.
+    - _Example:_ When you open a soda, the pressure ($p$) drops instantly. The water is now "over-saturated," and the $CO_2$ escapes as bubbles.
+#### Open vs. Closed Systems
+
+- **Open System (Atmosphere):** Gas volume is effectively infinite; $p$ is constant.
+    - $c_{aq} = H(A) \cdot p(A)$ gives **saturation concentration** at the surface.
+    - **Depth effect:** Saturation increases with depth due to hydrostatic pressure (approx. +1 bar per 10m).
+    - If a gas is not in the atmosphere, $p \approx 0$ and $c_{aq} \approx 0$.
+        
+        ![[Pasted image 20251117162752.png]]
+        
+        ![[Pasted image 20251117162742.png]]
+
+- **Closed System (Sealed Bottle/Reactor):** Finite volumes $V_g$ and $V_{aq}$. Any exchange changes both $c_{aq}$ and $p$. We must use a **Material Balance**:
+	- **Total Mass ($m_{\text{total}}$):** $m_{\text{total}} = m_g + m_{aq} = \beta_g V_g + \beta_{aq} V_{aq}$
+	- Final Formulas:
+	$$\beta_g = \frac{m_{\text{total}}}{V_g + K_C V_{aq}}$$$$\beta_{aq} = K_C \cdot \beta_g$$  
+- **Symbols:** $\beta$ = mass concentration [mg/L], $V$ = volume [L], $m$ = mass [mg].
 
 ---
 ### Gas-Water Partitioning Equilibria
@@ -145,115 +172,12 @@ Gas–water partitioning describes how a gas distributes between air and water a
 > **What is the Gas-Water Partitioning Equilibria?**  
 > It is the equilibrium between gas and aqueous phases where the **partial pressure** in the gas and the **dissolved concentration** in water are linked by Henry’s law (or its alternative forms).
 
-You should be able to:
-
-- compute solubility of $\mathrm{N_2}$, $\mathrm{O_2}$, $\mathrm{CO_2}$ at different temperatures using Henry’s law,
-- use alternative formulations (partial pressure, gas concentration, mole fraction),
-- calculate equilibrium concentrations in **open** and **closed** systems.
-
 **Relevance:**
 
 - Dissolved $\mathrm{O_2}$ controls redox intensity (oxic vs anoxic conditions).
 - Respiration and dissolution of $\mathrm{CO_2}$ affect pH and calco–carbonic equilibrium ($\mathrm{CaCO_3}$).
 - Anaerobic degradation releases $\mathrm{N_2}$, $\mathrm{H_2S}$, $\mathrm{CH_4}$.
 - Water treatment uses gas exchange: aeration, ozonation, chlorination, stripping.
-
----
-#### Absorption and Desorption
-
-Partitioning of a gas between gas phase and aqueous phase can be seen as two opposite processes:
-- **Absorption**  
-    Gas (or vapor) transfers **from the gas phase into the water phase**.  
-    The amount in water increases, the gas phase is depleted.
-- **Desorption**  
-    Gas transfers **from the water phase into the gas phase** (also called stripping).  
-    The water loses dissolved gas, the gas phase gains it.
-
-> **Better explanation:**  
-> In absorption the water “takes up” gas until equilibrium is reached.  
-> In desorption the water “releases” gas because the surrounding air cannot hold the higher equilibrium concentration (for example, when opening a pressurised bottle).
-
----
-### Henry's Law
-
-At equilibrium:
-$$A_{(g)} \rightleftharpoons A_{(aq)}$$
-Where:
-
-- **A** = arbitrary gas
-- **p(A)** = partial pressure of the gas in the air
-- **c(A)** = molar concentration of the dissolved gas in water
-
-#### Law of mass action form
-
-Henry’s law can be written as
-$$H(A) = \frac{c(A)}{p(A)}$$
-or equivalently
-$$c(A) = H(A)\, p(A)$$
-Where:
-
-- $H(A)$ = Henry constant $[\mathrm{mol,L^{-1},bar^{-1}}]$
-- $c_{aq}(A)$ = dissolved concentration in water
-- $p(A)$ = partial pressure of $A$ in the gas phase
-
-**Interpretation:**  
-The dissolved concentration is **proportional** to the gas partial pressure. The proportionality factor $H(A)$ depends on:
-
-- the nature of the gas,
-- the solvent (here water),
-- the temperature (strong dependence).
-
-**Trend:** for most gases, **solubility decreases with increasing temperature**, so $H(A)$ decreases as $T$ rises.
-
-Tables of $H$ for different compounds:
-![[Pasted image 20251117160338.png]]
-![[Pasted image 20251117160649.png]]
-#### Henry's law for desorption
-
-For the reverse process
-$$A_{(aq)} \rightleftharpoons A_{(g)}$$
-it is convenient to define the **inverse Henry constant**
-$$H_{\text{inv}}(A) = \frac{p(A)}{c(A)} \quad [\mathrm{L\,bar\,mol^{-1}}]$$
-which satisfies
-$$H_{\text{inv}}(A) = \frac{1}{H(A)}$$
-**Interpretation:**  
-The larger $H_{\text{inv}}(A)$, the **more volatile** the compound (easier to strip from water).
-
-Desorption form:
-$$p(A) = H_{\text{inv}}(A)\, c(A)$$
-
----
-
-#### Alternative formulation (2): gas-phase concentration
-
-Instead of partial pressure, use gas concentration $c_g$ via the ideal gas law:
-$$p = c_g R T$$
-Insert into the basic Henry form:
-
-$$c_{aq} = H(A)\, p = H(A)\, c_g R T$$
-
-Define a **dimensionless constant**
-$$K_C = H(A) R T$$
-Then
-$$c_{aq} = K_C\, c_g$$
-**Mass-based version:**
-
-Let $\beta$ be **mass concentration** [e.g. mg/L]. Then
-$$K_C(A) = \frac{c_{aq}(A) M(A)}{c_g(A) M(A)} = \frac{\beta_{aq}(A)}{\beta_g(A)}
-$$where $M(A)$ is molar mass. So $K_C$ also relates **mass concentrations** in water and air.
-
----
-
-### Alternative formulation (3): mole fraction
-
-Liquid phase expressed as **mole fraction** $x(A)$, gas phase as partial pressure $p(A)$:
-$$x(A) = H_X\, p(A)$$
-Approximate relationship between $x(A)$ and concentration:
-$$x(A) \approx \frac{c_{aq}(A)}{c(\mathrm{H_2O})}​$$
-with
-$$c(\mathrm{H_2O}) \approx 55.56\ \mathrm{mol\,L^{-1}}$$
-Thus
-$$H_X \approx \frac{H(A)}{55.56\ \mathrm{mol\,L^{-1}}}​$$
 
 ---
 
@@ -265,60 +189,14 @@ $$H_X \approx \frac{H(A)}{55.56\ \mathrm{mol\,L^{-1}}}​$$
 |**Desorption**|$c_{aq}$|$p$|$p = H_{\text{inv}} c$, $H_{\text{inv}} = 1/H$|
 |**Gas concentration form**|$c_{aq}$|$c_g$|$c_{aq} = K_C c_g$, $K_C = H R T$|
 |**Mole fraction form**|$x$|$p$|$x = H_X p$, $H_X = H/55.56$|
-### Open and Closed Systems
 
-#### Open system: $p$ approximately constant
-
-- Gas volume is huge → gas composition hardly changes.
-- Typical example: surface waters in equilibrium with the atmosphere (O₂, N₂, CO₂).
-
-Case 1: atmospheric gases
-
-- $p(\mathrm{O_2}) \approx 0.209$ bar
-- $p(\mathrm{N_2}) \approx 0.78$ bar
-- $p(\mathrm{CO_2}) \approx 4\times10^{-4}$ bar
-
-Then:
-
-$$c_{aq} = H(A)\, p(A)$$
-
-gives the **saturation concentration** near the surface.
-
-With depth, hydrostatic pressure increases, so the **total pressure** increases by about 1 bar per 10 m, slightly raising gas solubility.
-![[Pasted image 20251117162752.png]]
-
-Exercise 1:  What is the solubility (in mg/L) of atmospheric oxygen (M = 32 g/mol) at 25 °C?  The atmosphere contains 20.9 vol% oxygen, the total atmospheric pressure is  assumed to be 1 bar, and the Henry constant at 25 °C is 1.247 × 10−3 mol/(L ⋅ bar). 
 
 Equilibrium concentration (saturation concentration) only near the water  surface. The saturation concentration increases with depth due to the hydrostatic  pressure (about 1 bar per 10 m). 
 
 
-Case 2: gases not present in the atmosphere
 
-If a gas is not a natural component of air (or only in trace amounts), its partial pressure is essentially zero. Without artificial input, its equilibrium dissolved concentration is also essentially zero.
-![[Pasted image 20251117162742.png]]
-
-
-#### Closed system: limited gas volume
-
-Examples: bottles, reactors, test tubes.
-
-- Limited gas and water volumes $V_g$ and $V_{aq}$    
-- Any exchange (absorption or desorption) changes both $c_{aq}$ and $p$
-- Equilibrium still obeys Henry’s law, but we also need a **material balance**
 
 ##### Material balance
-
-Total mass:
-
-$$m_{\text{total}} = m_g + m_{aq} = \beta_g V_g + \beta_{aq} V_{aq}​$$
-
-Using the mass-based Henry relation $\beta_{aq} = K_C \beta_g$:
-
-$$m_{\text{total}} = \beta_g \left( V_g + K_C V_{aq} \right)$$
-
-So:
-$$\beta_g = \frac{m_{\text{total}}}{V_g + K_C V_{aq}}​​$$
-and
 $$\beta_{aq} = K_C\, \beta_g​$$
 (Alternative formulation (2) in mass-concentration form.)
 
@@ -341,27 +219,46 @@ $$\beta_{aq} = K_C\, \beta_g​$$
 
 # 💡 Key Takeaways
 
-- Reaction equilibria in water follow the **Law of Mass Action**; the correct constant is the **thermodynamic** $K^*$ based on activities.
-- The **magnitude** of $K$ indicates whether reactants or products dominate at equilibrium.
-- **Le Chatelier’s principle** predicts how equilibrium shifts after changes in concentration, pressure, or temperature.
-- Gas dissolution is **exothermic**: higher temperature → lower gas solubility.
-- **Henry’s law** links gas partial pressure with dissolved concentration and has several useful forms (partial pressure, gas concentration, mole fraction).
-- **Open systems**: gas pressure essentially constant → direct use of $c = Hp$.
-- **Closed systems**: need **Henry’s law + material balance** to find concentrations in both phases.
-- Symbols in closed-system calculations: $\beta$ = mass concentration, $V$ = volume, $m$ = mass, $K_C$ = dimensionless partition coefficient.
+- **LMA:** Thermodynamic $K^*$ uses activities; Conditional $K$ uses concentrations.
+- **Direction:** $Q$ vs $K$ determines which way a reaction shifts to reach equilibrium.
+- **Le Chatelier:** Systems shift to counteract disturbances in concentration, pressure, or $T$.
+- **Temperature:** Gas dissolution is **exothermic**; solubility decreases as water warms.
+- **Henry’s Law:** $c = Hp$. Dissolved concentration is proportional to partial pressure.
+- **Systems:** Open systems have constant $p$; Closed systems require material balances to track mass redistribution.
 
 ---
 
-# 💭 Questions
+# 💭 Questions and Excercises
 
-- What is Le Chatelier’s principle and how does it explain the effect of increasing $p(\mathrm{CO_2})$ on pH    
+- How to compute solubility the of $\mathrm{N_2}$, $\mathrm{O_2}$, $\mathrm{CO_2}$ at different temperatures using Henry’s law?
+	- By looking for the Henry constant at the determined temperature for each of the composites
+- How to calculate equilibrium concentrations in **open** and **closed** systems?
+	- In a open system by using the henry law, and in closed system by doing a material balance.
+- What is Le Chatelier’s principle and how does it explain the effect of increasing $p(\mathrm{CO_2})$ on pH 
+	- Le Chatelier's principle states that altering the dynamic equilibrium of a system shifts the equilibrium in the direction that counter that change
 - How does the value of $K$ indicate whether reactants or products dominate at equilibrium?
+	- Since the numerator is the products, in case is bigger than 1 the products dominate at equilibrium, if is lower the reactants
 - What is the difference between $K^*$, $K$, $1/K$ and the reaction quotient $Q$?
+	- K and K* have the difference on using concentrations and activities (concentrations * activity coeficients), $1/K$ (the constant for the **reverse** reaction) and $Q$ (the ratio at any time, used to predict which way the system will shift _toward_ equilibrium).
 - What is meant by gas–water partitioning equilibrium?
+	- It is the state where the **chemical potential** is equal in both phases. Molecules are still moving back and forth, but the net exchange is zero.
 - How do absorption and desorption differ conceptually and mathematically?
+	- Absorbtion is the phenomena where the liquid store gas, and is calculated by using the henry law, while desorption is how the liquid losses gas, and is calculated by using an analugous, but with the inverse of the henry constant
 - What happens to gas solubility when temperature increases? Why?
+	- Specifically, gas dissolution is **exothermic** (releases heat). Adding heat (increasing $T$) shifts the equilibrium toward the reactants (the gas phase) to consume that extra energy.
 - How much $\mathrm{O_2}$ (or $\mathrm{N_2}$, $\mathrm{CO_2}$) can be dissolved in water at given $T$ and $p$ using Henry’s law?
+	- First calculate the concentration by the partial pressure * henry constant (depending on the temperature), and then with that concentration compare with the current one to see how much more can be dissolved.
 - In a closed bottle, how do $V_g$, $V_{aq}$, $m_{\text{total}}$ and $K_C$ determine $\beta_g$ and $\beta_{aq}$?
+	- 1. $m_{total} = (\beta_g \cdot V_g) + (\beta_{aq} \cdot V_{aq})$
+	- 2. Substitute $\beta_{aq} = K_C \cdot \beta_g$
+	- 3. $m_{total} = \beta_g (V_g + K_C \cdot V_{aq})$
+	- 4. **$\beta_g = \frac{m_{total}}{V_g + K_C \cdot V_{aq}}$** and then $\beta_{aq} = K_C \cdot \beta_g$.
+- For a closed 1 L bottle (0.5 L water, 0.5 L gas) containing a volatile compound, compute $\beta_g$ and $\beta_{aq}$ using $m_{\text{total}}$ and $K_C$.
+	- I would need the Kc and the density of the gas, no?
+- Explain why warming a lake reduces dissolved oxygen using Le Chatelier’s principle.
+	- Because an increase of the temperature allows more oxygen to escape into atmospheric form, since $\text{O}_2(g) \rightleftharpoons \text{O}_2(aq) + \text{Heat}$, adding heat pushes the reaction to the left (Gas phase).
+- What is the solubility (in mg/L) of atmospheric oxygen (M = 32 g/mol) at 25 °C?  The atmosphere contains 20.9 vol% oxygen, the total atmospheric pressure is  assumed to be 1 bar, and the Henry constant at 25 °C is 1.247 × 10−3 mol/(L ⋅ bar). 
+	- Partial pressure 0.209 bar, if the constant is 1.247 x10-3 the molar concentration would be 0.00026 mol/L -> mass concentration = 32 g/mol * ans = 8.33 mg/mol
 
 ---
 # 🐢 Definitions

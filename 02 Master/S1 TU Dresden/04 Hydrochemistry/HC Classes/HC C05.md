@@ -56,7 +56,8 @@ $$
 
 ### 🔹 van’t Hoff Factor $(i)$
 
-When solutes **dissociate into ions**, each formula unit produces more particles.  
+When solutes dissociate into ions, each formula unit produces more particles. The van’t Hoff factor is the "multiplier." In hydrochemistry, we don't just look at the concentration of the salt; we look at the concentration of the resulting _mess_. For every 1 mol of NaCl, you get 2 moles of "troublemakers" ($Na^+$ and $Cl^-$) that get in the way of water molecules trying to freeze or evaporate.
+
 The **van’t Hoff factor $i$** accounts for this:
 
 $$
@@ -83,9 +84,9 @@ $$
 
 **Question:** What is the relative lowering of vapor pressure if 1 mol of CaCl₂ is added to 1 L of water? Given:
 
-- M_{H2O} = 18 \, \text{g/mol}
-- \rho = 1 \, \text{g/cm}^3
-- \alpha = 1
+- $M_{H2O} = 18 \, \text{g/mol}$
+- $\rho = 1 \, \text{g/cm}^3$
+- $\alpha = 1$
 
 $$\begin{gather}n_{H2O} = \frac{1000}{18} = 55.56 \text{ mol}, \quad i = 3 \\
 \frac{\Delta p}{p^0} = \frac{i n_2}{n_1 + i n_2} = \frac{3(1)}{55.56 + 3(1)} = 0.0513\end{gather}$$
@@ -106,6 +107,8 @@ In the phase diagram, adding a solute shifts the equilibrium lines:
 - The **boiling point** increases — the liquid needs more heat to reach a vapor pressure equal to the external pressure.
 
 Thus, the **liquid phase region broadens** between the freezing and boiling points.
+
+By lowering the vapor pressure, the solute "stretches" the liquid phase. It makes it harder for water to escape into a gas (raising the boiling point) and harder for water to organize into a crystal lattice (lowering the freezing point). Effectively, the solute acts as a chemical anchor, keeping the water in the liquid state over a wider temperature range.
 
 ![[Pasted image 20251103200542.png]]![[Pasted image 20251103200551.png]]
 
@@ -132,7 +135,7 @@ $$
 where:
 
 - $K_{Kr} = -1.86 \, \text{K·kg·mol}^{-1}$ (cryoscopic constant for water)
-- $b$: molal concentration
+- $b$: molal concentration (molality NO MOLE FRACTION)
 - $i$: van’t Hoff factor
 
 Hence, if 1 mol solute is added to 1 kg of water, the freezing point lowers by **1.86 K** (for ideal, non-dissociated solutes).
@@ -271,10 +274,14 @@ $\theta = 0.90$ (0 °C) – $0.91$ (30 °C)
 
 # 💭 Questions
 
-1. Sketch the changes in vapor pressure, boiling point, and freezing point in a phase diagram for an aqueous solution.
+1. How does the vapor pressure, boiling point, and freezing point changes in a phase diagram for an aqueous solution by the colligative properties?
+	1. It makes the curves on the diagram go down, decreasing the vapor pressure, boiling point and freezing point
 2. How to calculate the relative changes of vapor pressure, boiling point, freezing point, and osmotic pressure depending on molal concentration, both with and without dissociation?
+	1. Boiling point and freezing point are analogous
 3. Why does CaCl₂ cool more efficiently than NaCl when mixed with ice?
+	1. Because when the bond break there are more molecules available in the mix, being 3 in the case of CaCl2 and only two in NaCl
 4. Explain why $\pi = cRT$ is analogous to the ideal gas law.
+	1. idk
 
 ---
 

@@ -3,68 +3,145 @@ Class: "[[04 Hydrochemistry]]"
 Date: 2026-01-11
 Last Modified: Sunday 11th January 2026 23:17
 ---
-# 📅 Sunday 11th January 2026
+# 📅 Monday 12th January 2026
 
 # 📒Class Summary
 
+Today's session focused on **Reaction Equilibria in Aquatic Systems**, specifically the **Calco-Carbonic Equilibrium (CCE)**. We explored the chemical relationship between calcium carbonate, carbon dioxide, and water, and how these interactions determine whether water is calcite-dissolving (corrosive) or calcite-precipitating (scaling). The session covered the fundamental laws of mass action, the **Tillmans equation**, and the **Langelier Saturation Index** as tools for water quality assessment and technical treatment design.
 
 ---
 # 📝 Notes
 
-## Calco Carbonic Equilibrium
+## Reaction Equilibria in Aquatic Systems 
 
--> very likely to be in exam from where do you get activity coefficient
+### Calco-Carbonic Equilibrium (CCE)
 
-Dissolving caco is not good
+Numerous water constituents are simultaneously involved in different processes. Accordingly, a set of equations must be combined to describe the equilibrium position. The CCE (also referred to as lime/carbonic acid equilibrium) links the precipitation/dissolution equilibrium of calcium carbonate (**calcite**) with the dissociation steps of the carbonic acid system (more precisely: dissolved $CO_2$).
 
-### Elementary reactions and overal reaction
-
-Elementary:
+**Combined reaction equilibria:**
 
 $$
-\begin{gather}
-CO_{2(aq)}\\
-dsf
-\end{gather}
+CaCO_{3(s)}+CO_{2(aq)}+ H_20 \rightleftharpoons Ca^{2+} + 2 HCO_3^-
 $$
 
+**Relevance for natural and technical processes in water chemistry:**
 
-### Tillmans curve
+- **Hardness:** Dissolution of calcite by $CO_2$-containing water is an important source of $Ca^{2+}$ and $HCO_3^-$ in natural waters.
+- **Buffer Capacity:** Direct influence on the pH and the buffer capacity of natural waters.
+- **Corrosion:** Excess concentration of dissolved $CO_2$ causes corrosion in pipes and distribution networks.
+- **Technical Design:** Important basis for designing deacidification and softening processes
 
-**Tillmans' curve** (also known as the Tillmans diagram) is a graphical tool used in water chemistry to determine if water is in **calcium carbonate equilibrium**.
+---
 
-In simpler terms, it tells you whether water will **form scale** (clogging pipes with minerals) or be **corrosive** (eating away at metal pipes). It focuses on the relationship between **Free Carbon Dioxide ($CO_2$)** and **Bicarbonate ($HCO_3^-$)**.
+#### Elementary Reactions and Overall Reaction
 
-### Key Components of the Curve
+To describe the system, we break it down into elementary reactions. **Complex formation** (the association of ions into soluble clusters) must ideally be considered; if ignored, it results in pH deviations of **0.02 to 0.05 units**. Extensive sets of these equations usually require numerical software for exact solutions.
+
+**Elementary Reactions:**
+
+1. **$CO_2$ Dissolution:** $CO_{2(aq)} + H_2O \rightleftharpoons H^+ + HCO_3^-$ (Constant: $K_{a1}^*$)
+2. **Bicarbonate Dissociation:** $H^+ + CO_3^{2-} \rightleftharpoons HCO_3^-$ (Constant: $1/K_{a2}^*$)
+3. **Calcite Dissolution:** $CaCO_{3(s)} \rightleftharpoons Ca^{2+} + CO_3^{2-}$ (Constant: $K_{sp}^*$)
+
+**Overall Reaction:**
+
+$$CaCO_{3(s)} + CO_{2(aq)} + H_2O \rightleftharpoons Ca^{2+} + 2 HCO_3^-$$
+
+The overall equilibrium constant is: $K_{overall}^* = \frac{K_{a1}^* \cdot K_{sp}^*}{K_{a2}^*}$
+
+
+> **Definition:** A water is in the calco-carbonic equilibrium if calcium carbonate is neither precipitated nor dissolved.
+
+**Important influencing factors in the CCE:**
+
+- Introduction or consumption of $CO_2$.
+- Presence or absence of solid calcium carbonate in the subsurface.
+- Contact time between calcite and dissolved $CO_2$.
+- **Temperature:** Shifts the equilibrium constants significantly.
+
+Since precipitation/dissolution processes in this system take place slowly, an equilibrium state is not always expected. Whether a water is calcite-dissolving or calcite-precipitating is determined by comparing current conditions with the theoretical equilibrium state.
+
+---
+
+#### Basic Equations
+
+The equilibrium is defined by the following individual steps and their corresponding constants:
+
+- **Carbonic Acid Dissociation (Step 1):**$$CO_2 + H_2O \rightleftharpoons H^+ + HCO_3^-$$$$K_{a1}^* = \frac{a(\text{H}^+) a(\text{HCO}_3^-)}{a(\text{CO}_2)} \Rightarrow \frac{K_{a1}^*}{\gamma(\text{HCO}_3^-)} = \frac{K_{a1}^*}{f_{a1}} = \frac{a(\text{H}^+) c(\text{HCO}_3^-)}{c(\text{CO}_2)}$$
+- **Bicarbonate/Carbonate Equilibrium:**$$HCO_3^- \rightleftharpoons H^+ + CO_3^{2-}$$$$K_{a2}^* = \frac{a(\text{H}^+) a(\text{CO}_3^{2-})}{a(\text{HCO}_3^-)} \Rightarrow \frac{K_{a2}^* \gamma(\text{HCO}_3^-)}{\gamma(\text{CO}_3^{2-})} = \frac{K_{a2}^*}{f_{a2}} = \frac{a(\text{H}^+) c(\text{CO}_3^{2-})}{c(\text{HCO}_3^-)}$$
+- **Calcite Solubility Product:**
+$$CaCO_3 \rightleftharpoons Ca^{2+} + CO_3^{2-}$$
+$$K_{sp}^* = a(\text{Ca}^{2+}) a(\text{CO}_3^{2-}) \Rightarrow \frac{K_{sp}^*}{\gamma(\text{Ca}^{2+})\gamma(\text{CO}_3^{2-})} = \frac{K_{sp}^*}{f_{sp}} = c(\text{Ca}^{2+}) c(\text{CO}_3^{2-})$$
+---
+
+#### Tillmans Equation
+
+The **Tillmans Equation** combines the constants above into a single expression to calculate the equilibrium concentration of free carbon dioxide ($CO_2$) required to keep a specific concentration of calcium and bicarbonate in solution.
+$$c(CO_2)_{eq} = \frac{K_T}{f_T}c^2(HCO_3^-)c(Ca^{2+})$$
+
+**Where:**
+
+- $$K_T = \frac{K_{a2}^*}{K_{a1}^* K_{sp}^*}$$
+- $$f_T = \frac{f_{a1}f_{sp}}{f_{a2}}$$
+
+If $c(Ca^{2+})$ is set to a fixed ratio (where $c(HCO_3^-) = 2 \cdot c(Ca^{2+})$), the CCE can be represented in a two-dimensional diagram as a curve: $c(CO_2)_{eq} = f(c(HCO_3^-))$.
+
+![[Pasted image 20260129124702.png]]
+
+---
+#### Tillmans curve
+
+**Tillmans' curve** (or the Tillmans diagram) is a graphical tool used to determine if water is in **calcium carbonate equilibrium**. It determines whether water will **form scale** (clogging pipes) or be **corrosive** (eating away metal). It focuses on the relationship between **Free Carbon Dioxide ($CO_2$)** and **Bicarbonate ($HCO_3^-$)**.
+
+##### Key Components of the Curve
 
 The diagram is built on the chemical reaction:
 
 $$CaCO_3​+CO_2​+H_2​O⇌Ca(HCO_3​)_2​$$
 
-1. **Associated CO2​:** The amount of carbon dioxide required to keep the calcium and bicarbonate in solution.
-2. **Aggressive CO2​:** Any CO2​ present _beyond_ what is required for equilibrium. This is the portion that makes water corrosive.
-3. **Temperature Dependence:** The curve shifts with temperature. For example, when you heat water in a boiler, the curve shifts, and water that was previously in equilibrium may suddenly become "scaling."
+- **Associated $CO_2$:** The specific amount of carbon dioxide required to keep the calcium and bicarbonate currently in the water from precipitating.
+- **Aggressive $CO_2$:** Any $CO_2$ present _beyond_ the associated $CO_2$ required for equilibrium. This portion makes the water corrosive/calcite-dissolving.
+- **Temperature Dependence:** The curve shifts with temperature. For example, heating water in a boiler shifts the equilibrium, causing water that was balanced at room temperature to become "scaling."
 
-### Langelier Equation
+---
+#### Langelier Equation
+
+The Langelier approach calculates the **equilibrium pH** ($pH_{eq, La}$) for a given water composition:
 
 $$
 pH_{eq, La} = -lg\,K_{La}-lg\,f_{La} -lg\,c(HCO_3^-) - lg\,c(Ca^{2+})
 $$
 
-- **−lgKLa​:** This is the equilibrium constant for the specific reaction between calcium and carbonate. In simplified versions, this is often part of the "9.3 constant" or the temperature adjustment.
-- **−lgfLa​:** This is the **activity coefficient**. It accounts for the "ionic strength" of the water (Total Dissolved Solids). In the field version, this is often labeled as **Factor A**.
-- **−lgc(HCO3−​):** This represents the concentration of **bicarbonate** (Alkalinity). In simplified versions, you simply look up **Factor D** based on your ppm measurement.
-- **−lgc(Ca2+):** This is the concentration of **calcium ions** (Hardness). This corresponds to **Factor C** in the field version.
+- **$-lg K_{La}$:** The equilibrium constant for the reaction.
+- **$-lg f_{La}$:** The **activity coefficient**, accounting for the "ionic strength" of the water (Total Dissolved Solids). In field versions, this is often called **Factor A**.
+- **$-lg c(HCO_3^-)$:** The concentration of **bicarbonate** (Alkalinity).
+- **$-lg c(Ca^{2+})$:** The concentration of **calcium ions** (Hardness).
 
-Exercise 1:
+**Saturation Index (SI):**
+
+$$SI = pH_{meas} - pH_{eq, La}$$
+
+- **$SI < 0$:** Calcite-dissolving water (corrosive).
+- **$SI > 0$:** Calcite-precipitating water (scaling).
+- **$SI = 0$:** Calcite-saturated water (equilibrium).
+
+If the water is not in equilibrium ($SI \neq 0$), any treatment (like removing $CO_2$) will change the concentrations of $CO_2$, $HCO_3^-$, $CO_3^{2-}$, $Ca^{2+}$, and the $pH_{eq}$ itself. This requires an iterative calculation process to find the new equilibrium state.
+
+---
+
+#### **Exercises (Protocol)**
+
+##### Exercise 1: Saturation Index
 
 Is the water calcite-saturated or not?  The following data are known: 
 
-c(Ca2+) = 3.5 mmol/L, c(HCO3 -) = 5.3 mmol/L, k25 °C = 96 mS/m,  pHmeas = 6.9,  = 10 °C, lgKLa, 10 °C = -2.082 
+**Data:**
 
-get -lg f_La from the monovalent coef -lg f_La = 5 lg y_1
+- $c(Ca^{2+}) = 3.5 \text{ mmol/L}$, $c(HCO_3^-) = 5.3 \text{ mmol/L}$, $\kappa_{25 \text{ °C}} = 96 \text{ mS/m}$    
+- $pH_{meas} = 6.9$, $\vartheta = 10 \text{ °C}$, $lg K_{La, 10 \text{ °C}} = -2.082$
 
-and that is obtained from the Güntelberg equation
+
+**Step 1:** Calculate the activity coefficient ($lg f_{La}$) using the **Güntelberg Equation**:
 
 $$
 lg\,y_1 = -0.5 \frac{\sqrt{I}}{1+1.4\sqrt{I}}
@@ -80,9 +157,11 @@ SI = -0.2
 SI < 0 -> Calcite dissolving
 
 
-Exercise
+#### **Exercise 2: Tillmans Comparison**
 
-the same but with tilmans equations
+**Data ($\vartheta = 10 \text{ °C}$):** $K_{a1}^* = 3.428 \cdot 10^{-7}$, $K_{a2}^* = 3.251 \cdot 10^{-11}$, $K_{sp}^* = 3.926 \cdot 10^{-9}$, $pH_{meas} = 6.9$.
+
+Is the water calcite-saturated or not (same water as in exercise 1)?  Calculate the CO2 concentration that is related to the measured concentration of HCO3 (equilibrium)! Then, calculate the equilibrium concentration of CO2 (Tillmans equation) and  compare the values!  ( = 10 °C: Ka1* = 3.428·10-7 mol/L, Ka2* = 3.251·10-11 mol/L, Ksp* = 3.926·10-9 mol2/L2,            k25 °C = 96 mS/m, pHmeas = 6.9, c(HCO3 -) = 5.3 mmol/L) 
 
 c CO2 = KT /fT 
 
@@ -104,177 +183,61 @@ c CO2 eq = 0.0011
 
 aq >  eq -> calcite dissolving water
 
-
-
-
----
-## Redox Equilibria
-
-### Oxidation State or Oxidation Number (ON)
-
-Oxidation numbers are used by chemists to track the movement of electrons during chemical reactions. The following are ordered in order of priority.
-
-#### 1. Pure Elements = 0
-
-If an atom is by itself or bonded only to its own kind (like $Fe$, $O_2$, or $P_4$), its oxidation number is **0**. This is because no electrons are being "pulled" away by a different element.
-
-#### 2. Monatomic Ions = Their Charge
-
-For a single atom that has a charge, the $ON$ is simply that charge.
-
-- $Cl^-$ has an $ON$ of $-1$.
-- $Fe^{3+}$ has an $ON$ of $+3$.
-
-#### 3. The "Sum" Rule
-
-This is the math rule used to solve for unknown atoms in a molecule:
-
-- **Neutral molecules:** All $ON$s must add up to **0**.
-- **Polyatomic ions:** All $ON$s must add up to the **total charge** of the ion.
-
-#### 4. Fluorine = -1
-
-Fluorine is the most electronegative element; it almost always "wins" the electron. In a compound, it is always **-1**.
-
-#### 5. Metals = Positive
-
-Metals lose electrons, so their $ON$ is always positive ($>0$).
-
-- **Alkali metals** (Group 1: $Li, Na, K$, etc.) are always **+1**.
-- **Alkaline earth metals** (Group 2: $Be, Mg, Ca$, etc.) are always **+2**.
-
-#### 6. Hydrogen = +1
-
-In most compounds, Hydrogen is **+1**. However, if it is bonded to a metal (a metal hydride like $NaH$), rule #5 takes priority, forcing Hydrogen to be **-1**.
-
-#### 7. Oxygen = -2
-
-Oxygen is usually **-2**. The exception is in "peroxo" compounds (like hydrogen peroxide, $H_2O_2$), where it is **-1**.
-
-
-#### Exercise
-![[Pasted image 20260112001707.png]]
-Complete oxidation numbers
-
-- $O_2 / H_2O \rightarrow 0 / -2$
-- $Mn^{2+} / MnO_2 \rightarrow +1 / -2$ 
-
-### Redox Equilibria
-
-
-### Redox intensity ($pe$)
-
-In hydrochemistry, the **redox intensity ($pe$)** is a master variable used to describe the oxidizing or reducing power of a solution. It serves as a dimensionless measure of the activity of electrons in a system.
-
-$pe$ is defined as the negative common logarithm of the electron activity ($a_{e^-}$):
-
-$$pe = -\log a_{e^-}$$
-
-- **High $pe$:** Indicates an **oxidizing environment** where electron activity is low (electrons are "scarce" because they are being consumed by oxidants).
-
-- **Low $pe$:** Indicates a **reducing environment** where electron activity is high (electrons are "abundant").
- 
+The results of exercise 1 are confirmed:  The water is not calcite-saturated.         It is calcite-dissolving. 
 
 ---
+#### Regulatory and Advanced Considerations
 
-#### Analogy between $pe$ and $pH$
+**Complex Formation**
 
-There is a direct mathematical and conceptual analogy between $pe$ and $pH$, as both describe the intensity of a master particle in chemical equilibria.
+Complex formation must be considered for high-precision equilibria of the carbonic acid system. This requires solving extensive mass balance equations through numerical methods/software. Ignoring complex formation results in deviations of **0.02 to 0.05 pH units**.
 
-|**Feature**|**pH (Acid-Base)**|**pe (Redox)**|
-|---|---|---|
-|**Master Particle**|The proton ($H^+$)|The electron ($e^-$)|
-|**Logarithmic Definition**|$pH = -\log a_{H^+}$|$pe = -\log a_{e^-}$|
-|**Intensity Scale**|Measures the tendency of a solution to donate/accept protons.|Measures the tendency of a solution to donate/accept electrons.|
-|**High Value**|Low $H^+$ activity (Alkaline/Basic).|Low $e^-$ activity (Oxidizing).|
-|**Low Value**|High $H^+$ activity (Acidic).|High $e^-$ activity (Reducing).|
+**German Drinking Water Ordinance Requirements:**
 
-####  Relationship to Standard States
+- Water should not be corrosive.
+- $pH \geq 6.5$ and $\leq 9.5$.
+- **Calcite dissolution capacity** $\leq 5 \text{ mg/L}$ (usually fulfilled at $pH \geq 7.7$).
 
-Just as $pH$ can be related to the dissociation constant of an acid, $pe$ is related to the standard redox potential ($E^0$) or the standard free energy of a reaction. For a standard hydrogen electrode at $25^\circ\text{C}$, the relationship is given by:
+**Calcite Dissolution Capacity ($D$):**
 
-$$pe = \frac{E}{0.0591 \text{ V}}$$
+This is the amount of calcite (mass in mg) that 1 L of water can dissolve until equilibrium is reached. It is directly linked to the excess concentration of $CO_2(aq)$.
 
-Where $E$ is the electrode potential in Volts.
+- **$D > 0$:** Calcite dissolution capacity.
+- **$D < 0$:** Calcite precipitation capacity.
+- **Formula:** $D = c(Ca^{2+})_{\text{after}} - c(Ca^{2+})_{\text{before}}$
 
-#### Calculating redox intensity $pe$
+**Deacidification – Check scheme**
 
-To calculate the redox intensity ($pe$) for reactions, especially those that are pH-dependent, we use the **Nernst Equation** adapted for electron activity.
-
-#####  Basic Calculation of $pe$
-
-The $pe$ of a half-reaction is determined by the activities (or concentrations in dilute solutions) of the oxidized and reduced species:
-
-$$pe = pe^\circ + \frac{1}{n} \log \left( \frac{\prod [Ox]^{n_i}}{\prod [Red]^{n_j}} \right)$$
-
-- **$pe^\circ$**: The standard redox intensity, which relates to the standard free energy of the reaction.
-- **$n$**: The number of electrons transferred in the half-reaction.1
-- **$[Ox], [Red]$**: The molar concentrations of the reactants and products.
-
----
-
-##### Calculating $pe$ for pH-Dependent Reactions
-
-Many redox reactions in the hydrosphere involve protons ($H^+$). For these reactions, the $pe$ depends directly on the $pH$ of the solution.
-
-###### The General Formula
-
-Consider a reaction where protons are involved:
-
-$m Ox + n e^- + h H^+ \rightleftharpoons q Red$
-
-The formula for $pe$ then incorporates the $pH$ term:
-
-$$pe = pe^\circ - \frac{h}{n} pH + \frac{1}{n} \log \left( \frac{[Ox]^m}{[Red]^q} \right)$$
-
-- **Relationship**: The term $-\frac{h}{n} pH$ shows how the redox intensity shifts as the acidity changes.
-- **Slope**: On a $pe-pH$ diagram, the boundary between species is often a line with a slope of $-\frac{h}{n}$.
-
----
-
-### $pe - pH$ diagrams
-
-In a **pe-pH diagram**, species are assigned by identifying their stability regions based on the dominant oxidation state (vertical axis, $pe$) and the acid-base state (horizontal axis, $pH$).
-
-#### 1. Vertical Assignment (Redox States)
-
-Species are arranged vertically according to their **oxidation state**.
-
-- **Top (High $pe$):** Oxidized species (e.g., $Fe^{3+}$ or $O_2$) occupy the top of the diagram because high $pe$ represents a scarcity of electrons.
-- **Bottom (Low $pe$):** Reduced species (e.g., $Fe^{2+}$ or $H_2$) occupy the lower regions where electron activity is high.
-#### 2. Horizontal Assignment (Acid-Base States)
-
-Species are arranged horizontally based on their **protonation or hydration** state.
-
-- **Left (Low $pH$):** Soluble cations (like $Fe^{3+}$ or $Al^{3+}$) dominate in acidic conditions.
-- **Right (High $pH$):** Hydroxides, oxides, or oxyanions (like $Fe(OH)_3$ or $CO_3^{2-}$) dominate in basic conditions.
-#### 3. Interpreting the Boundary Types
-
-The lines between species indicate the type of chemical equilibrium occurring:
-
-- **Horizontal Boundaries:** Represent **pure electron transfer**. These reactions do not involve $H^+$, so the equilibrium is independent of $pH$.
-- **Vertical Boundaries:** Represent **pure proton transfer** or precipitation. These involve no change in oxidation state, making them independent of $pe$.
-- **Sloped Boundaries:** Represent **simultaneous electron and proton transfer**. Most environmental reactions (like the reduction of $MnO_2(s)$ to $Mn^{2+}$) follow this pattern.
-
-### 4. Stability Limits (The Water Frame)
-
-Two diagonal dashed lines define the "Stability Field of Water":
-
-- **Upper Line ($pe = 20.78 - pH$):** Above this line, water is oxidized to $O_2$ gas.
-- Lower Line ($pe = -pH$): Below this line, water is reduced to $H_2$ gas.
-    Representative environmental species must typically fall between these two lines to exist in the hydrosphere.
+![[Pasted image 20260129131513.png]]
 
 ---
 # 💡 Key Takeaways
 
+- **Equilibrium Definition:** Water is in CCE when it neither dissolves nor precipitates calcium carbonate.
+- **Corrosion vs. Scale:** Tillmans and Langelier indexes help distinguish between corrosive (aggressive $CO_2$) and scaling water.
+- **Activity Matters:** In real-world water (non-ideal), we must use activity coefficients (Guntelberg) to adjust for ionic strength.
+- **$CO_2$ Types:** "Associated" $CO_2$ maintains balance; "Aggressive" $CO_2$ causes corrosion.
 
 ---
 # 💭 Questions
 
+- What is the relevance of the CCE for natural (2 examples) and technical processes (2 examples) in water chemistry?
+- Formulate the elementary reactions and the overall reaction of the CCE and establish the equations (law of mass action) defining equilibrium constants.
+- Name the four primary variables that affect the Calco-Carbonic Equilibrium.
+- How is the **Tillmans Equation** applied to calculate equilibrium conditions?
+- How do you use the **Langelier Equation** to determine the equilibrium pH?
+- Define the **Saturation Index (SI)** and explain what positive, negative, and zero values indicate.
+- What is the difference between **calcite dissolution capacity** and **calcite precipitation capacity**?
+- Why must **complex formation** be considered for high-precision pH calculations?
 
 ---
 # 🐢 Definitions
 
+- **Calco-Carbonic Equilibrium (CCE):** The state where water is in equilibrium with calcium carbonate, meaning no net precipitation or dissolution occurs.
+- **Associated $CO_2$:** The concentration of dissolved $CO_2$ required to keep calcium and bicarbonate in solution.
+- **Aggressive $CO_2$:** The portion of free $CO_2$ that exceeds the equilibrium level and can dissolve calcite.
+- **Ionic Strength ($I$):** A measure of the total concentration of ions in solution, used to calculate activity coefficients.
+- **Deacidification:** The technical process of removing excess $CO_2$ to prevent corrosion and achieve CCE.
 
 ---
 # 📅 Homework

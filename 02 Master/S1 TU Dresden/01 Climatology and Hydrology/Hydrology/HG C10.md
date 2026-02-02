@@ -7,66 +7,130 @@ Last Modified: Monday 12th January 2026 11:11
 
 # 📒Class Summary
 
+Today's session focused on **Runoff and Discharge**, exploring the fundamental components of river flow and the methodologies for data collection. We covered site selection criteria, techniques for measuring water stage (gauges and sensors), and various methods for determining stream flow velocity (area-velocity, ADCP, and tracers). Finally, we analyzed the **stage-discharge relationship** and the complexities of establishing accurate flow rating curves in non-uniform river systems.
 
 ---
 # 📝 Notes
 
 ## 7. Runoff
 
-**Runoff** is the surface and sub surface flow from a catchment, typically measured at a river cross-section
+**Runoff** is defined as the surface and subsurface flow originating from a catchment, typically measured at a specific river cross-section. It is the most reliably determined component of the water balance equation:
 
-Relevant things:
+$$P = ETR + R$$
 
-- Discharge: flow measured in a stream at the catchment outlet
-- runoff hydrograph: time series of runoff
-- hydrograph analysis: allows to quantify fast and slow components, flow and drougths, flow duration curves and cumulative mass diagrams
-- Runoff is main component of water balance P = ETR + R (and it can be determined most reliably)
+_(where $P$ is precipitation, $ETR$ is actual evapotranspiration, and $R$ is runoff)_.
 
-### 7.1 Runoff measurements
+**Key Concepts:**
 
-Importance of accurate data collection
+- **Discharge ($Q$):** The volume of flow measured in a stream at the catchment outlet.
+- **Runoff Hydrograph:** A time-series representation of runoff.
+- **Hydrograph Analysis:** Used to quantify fast and slow flow components, droughts, flow duration curves, and cumulative mass diagrams.
 
-Consideration for measuring dicharge
+---
 
-- site selection
-- measurement type/frequency
+### 7.1 Runoff Measurements
 
-Methodology
-1) measuring stage
+#### Importance of Accurate Data
 
+- Quantification of water resource availability for sustainable management and Climate Change (CC) impact assessment.
+- Adequate system characterization.
+- Integration into decision support systems via hydrological modeling.
 
+#### Site Selection Criteria
 
-2) measuring (derive) stream flow / velocity
-- Discharge derived from flow velocity
-- Area-velocity-method
-for each section
-$A_i = w_i \cdot d \; $
+To establish a stable relationship between river stage ($h$) and flow ($Q$), a site must have:
 
+- A consistent point of reference.
+- A straight river section with a constant slope.
+- No obstructions, weeds, or backwater effects.
 
-3) deriving stage-discharege relationship
+#### Measurement Types
 
+- **Discrete Data:** Single values used for specific investigations like differential stream-loss gauging.
+- **Continuous Data:** Generates a full hydrograph for flood forecasting or reservoir operations.
 
-Stage discharge curve -> assumes unsteady uniform flow (variable in time with flow parameters constant in space)
+---
 
+#### Methodology
 
+##### 1. Measuring Stage ($h$)
 
-### 7.2 Runoff 
+The **stage** is the water level measured above a fixed reference point, known as the **gauge zero**.
 
+- **Staff Gauge:** A manual, non-recording graduated plate fixed in the stream or on a structure.
+- **Mechanical Float Gauge:** Provides continuous recording ($hydrograph$) via a float-driven transmission.
+- **Pneumatic Gauge / Pressure Sensor:** Measures hydraulic pressure based on:$$p = \rho \cdot g \cdot h$$
+    - Continuous recording; less susceptible to frost than floats.
+    - Reliable in rivers with low to medium sediment loads.
+- **Other Sensors:** Bubble gauges (gas-purge systems) and non-contact water-level sensors (radar/ultrasonic).
+
+##### 2. Measuring Stream Flow and Velocity ($v$)
+
+Discharge is typically derived from flow velocity measured at several depths and locations.
+
+- **Area-Velocity Method:**
+    The cross-section is divided into segments where:
+$$A_i = w_i \cdot d_i$$
+    _(where $w$ is width and $d$ is depth)_.
+- **Current Meters:** Rotational sensors (mechanical or electromagnetic) that count rotations over time to determine velocity.
+
+**Alternative Methods:**
+
+- **Weirs and Flumes:** Structures where stage measurement is directly converted to discharge.
+    - _Bernoulli-based formulas:_
+        - **Rectangular Weir:** $Q = \frac{2}{3} \cdot C_d \cdot b \cdot \sqrt{2g} \cdot h^{3/2}$
+        - **V-notch (Triangular) Weir:** $Q = \frac{8}{15} \cdot C_d \cdot \tan(\frac{\theta}{2}) \cdot \sqrt{2g} \cdot h^{5/2}$
+
+- **Tracer (Dilution) Methods:** Analyzing the breakthrough curve of a salt or fluorescent tracer.$$Q = \frac{V_1 \cdot C_1}{\int (C_2 - C_b) dt}$$
+- **ADCP (Acoustic Doppler Current Profiler):** Emits acoustic signals scattered by particulate matter. The frequency shift of reflected signals determines flow velocity.
+
+---
+
+##### 3. The Stage-Discharge Relationship
+
+The **flow rating curve** is used to determine $Q$ for a given $h$ based on the geometry and hydraulics of the cross-section.
+
+- **Theoretical Assumption:** Assumes **unsteady uniform flow** (variable in time but constant parameters in space).
+- **Reality:** River flow is often **unsteady and non-uniform**, leading to a **hysteresis loop** in the rating curve where the same stage may correspond to different discharges depending on whether the water level is rising or falling.
 
 ---
 # 💡 Key Takeaways
 
+- **Reliability:** Runoff ($R$) is the most reliably determined part of the water balance equation ($P = ETR + R$).
+- **Stability:** Accurate discharge measurement requires a stable cross-section and a straight river reach to ensure a consistent stage-discharge relationship.
+- **Velocity Integration:** The Area-Velocity method remains the standard for manual gauging, while ADCP provides high-resolution 3D velocity profiles.
+- **Hysteresis:** In non-uniform flows, the stage-discharge curve is not a simple line but often a loop (hysteresis), requiring frequent recalibration.
 
 ---
 # 💭 Questions
 
+- Name three reasons why it is important to have accurate runoff data collection.
+- What are the main criteria for selecting a site for technically reliable discharge measurements?
+- Name and describe the different types of gauges used for measuring water stage.
+- What is the difference between discrete and continuous runoff data, and when is each used?
+- How does a pressure sensor determine the water stage, and what is its advantage over a float gauge?
+- Describe the **Area-Velocity Method** for deriving discharge.
+- What are some alternative flow measurement methods besides the area-velocity method?
+- What does a stage-discharge curve (flow rating curve) represent, and what are its theoretical assumptions?
+- What is **hysteresis** in the context of a stage-discharge curve?
 
 ---
 # 🐢 Definitions
 
+- **Runoff ($R$):** The total surface and subsurface water flow leaving a catchment area.
+    
+- **Discharge ($Q$):** The volumetric flow rate of water, usually expressed in $m^3/s$ or $L/s$.
+    
+- **Stage ($h$):** The height of the water surface above a specified vertical datum (gauge zero).
+    
+- **Hysteresis:** The phenomenon where the stage-discharge relationship follows different paths during the rising and falling limbs of a flood.
+    
+- **Rating Curve:** An empirical curve showing the relation between the stage and the discharge of a stream at a given cross-section.
 
 ---
 # 📅 Homework
 
-
+- **Calculation:** Using the Bernoulli rectangular weir formula, calculate the discharge if the water head ($h$) is $0.5\text{ m}$, the width ($b$) is $2\text{ m}$, and $C_d$ is $0.62$.
+    
+- **Analysis:** Review your local catchment's hydrograph. Can you identify periods of baseflow versus quickflow (storm runoff)?
 

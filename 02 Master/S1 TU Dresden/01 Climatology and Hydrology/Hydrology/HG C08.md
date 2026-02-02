@@ -18,6 +18,8 @@ Depth (How much?) Duration (How long?) and Frequency (How likely?) -> Precaution
 
 e.g. Design target fromm client: max precipitation, T = 8hr, R = 10yr
 
+![[Pasted image 20260122215814.png]]
+
 ---
 # 💡 Key Takeaways
 

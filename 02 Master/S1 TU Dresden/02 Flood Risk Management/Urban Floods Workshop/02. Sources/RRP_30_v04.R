@@ -1,0 +1,126 @@
+## install and load packages ##
+
+install.packages("rdwd", dep=T) # package for access to  DWD (German Weather Service) open data portal
+require(rdwd)
+
+## stations ##
+
+#Stations_id  von_datum   bis_datum Stationshoehe     geoBreite geoLaenge Stationsname        Bundesland
+#01050        20050809    20250131            112     51.0221   13.8470   Dresden-Hosterwitz  Sachsen
+#04466        20060621    20250131             43     54.5275    9.5487   Schleswig           Schleswig-Holstein
+#00691        20081030    20250131              4     53.0451    8.7981   Bremen              Bremen
+#01757        20060830    20250131              2     54.0967   13.4056   Greifswald          Mecklenburg-Vorpommern
+#02023        20061108    20250131            501     48.7918   10.7062   Harburg             Bayern    
+#03126        20060406    20250131             79     52.1029   11.5827   Magdeburg           Sachsen-Anhalt
+#00400        20031231    20250131             60     52.6310   13.5021   Berlin-Buch         Berlin
+#00853        20060425    20250131            416     50.7913   12.8720   Chemnitz            Sachsen
+#01612        20060517    20250131            311     50.8812   12.1289   Gera-Leumnitz       Thüringen
+#04928        20061016    20250131            314     48.8281    9.2000   Stuttgart           Baden-Württemberg
+#05906        20060531    20250131             98     49.5063    8.5584   Mannheim            Baden-Württemberg
+
+
+## load data from DWD ##
+
+link <- selectDWD(id="02023", res="5_minutes", var="precipitation", per="historical") # select all files with the given station, variable and period params
+file<- dataDWD(link, dir="C:\\Users\\Juan\\Documents\\Obsidian Vault\\Apuntes\\02 Master\\S1 TU Dresden\\02 Flood Risk Management\\Urban Floods Workshop\\02. Sources\\DWDdata", read=F) # download data from DWD server
+prec<- readDWD(file, varnames=T, fread=F) # combine download files in data object
+data<-do.call(rbind,prec) # convert list of files into a data frame
+DS<-na.omit(data.frame("date"=data[,2], "P"=data[,5])) # omit NA values; select and rename variables
+# write.csv(DS, "D:/uni/lehre/vorlesungen/UrbanFloodWorkshop/RainfallExercise/prec5m01050_2.csv", row.names = F)
+
+## read precipitation data from file ##
+#setwd("D:/uni/lehre/vorlesungen/UrbanFloodWorkshop/RainfallExercise/")
+#DS<- read.csv("D:/uni/lehre/vorlesungen/UrbanFloodWorkshop/RainfallExercise/prec5m01050.csv",
+#              sep=",", dec=".", header = T)
+#DS$date<-as.POSIXct(DS$date,format= "%Y-%m-%d %H:%M:%S", tz = "UTC")
+
+## identify of storm events with a specific duration (number of consecutive time steps) ##
+
+D.min<-30 # event duaration in minutes
+t.res<-5 # time resolution of the time series in minutes
+
+P <- c() # sum of precipitation variable
+m <- c() # maximum event height variable
+D <- D.min/t.res # number of accumulated time steps
+dp <- max(D,4*60/t.res) # number of dry time steps for event separation (max(4 hours, event duration))
+ind=1 # event number index
+z=0 # zero precipitation counting index
+begin=1 # event start index
+end=1 # event end index
+
+for (i in 1:(length(DS$P)-D)){
+  P[i] <- sum(DS$P[i:(i+(D-1))]) # sum of precipitation i and subsequent D-1 time steps
+  if (DS$P[i] == 0){z = z+1} # count consecutive time steps with 0 precipitation in z
+  if (z == dp){
+    end = i-dp # rain event ends after 'dp' time steps 
+    m[ind] <- max(P[begin:end]) # assign maximum rainfall height to event index
+    ind=ind+1}
+  if (z >= dp & DS$P[i] != 0){begin=i} # reset event begin index of dry period >= dp
+  if (DS$P[i] != 0){z=0} #  for time steps with precipitation, z =0
+}
+  
+## select extreme events for return period estimation
+
+M <- as.integer((max(DS$date)-min(DS$date))/365.25) # observation duration in years 
+L <- as.integer(M*2.5) # number of events included, should be 2-3 times M
+
+hN_e <- sort(m, decreasing = TRUE); # ordered maximum height events 
+hN_e <- head(hN_e, n = L) # highest L events
+
+k <- c(1:length(hN_e)) # event index of hN_e
+T_k <- ((length(k) + 0.2)/(k - 0.4)) * (M/L) # plotting formula return periods
+
+plot(T_k, hN_e, xlab="return period [a]", ylab="precipitation [mm]") # first plot for inspection
+
+
+##fit exponential distribution
+
+# regression of rain height vs. log return period
+wp<-{ #  slope of regression (least squares fit)
+  sum((hN_e-mean(hN_e))*(log(T_k)-mean(log(T_k))))/ # scaled, weighted average of rain height
+  sum((log(T_k)-mean(log(T_k)))^2)} # scaled, weighted average of return period
+up<-mean(hN_e)-wp*mean(log(T_k)) # offset at 1 year return period
+
+lm(hN_e ~ log(T_k)) # Confirm fit R internal function ;o)
+
+plot(log(T_k), hN_e, xaxt="n", ylim=c(0,max(hN_e)), xlab="return period [a]", ylab="precipitation [mm]", cex=2) # first plot for inspection
+axis(1, at=log(c(0.5,1,2,5,10,20)), labels=c(0.5,1,2,5,10,20))
+abline(up, wp, lwd=2)
+
+# fitted rain heights at specific return periods:
+
+TN <- c(0.5,1,2,5,10, 20) 
+log(TN)*wp + up
+
+# define KOSTRA data
+# CHANGE IT FOR OUR RETURN PERIOD
+ko.duration <- c(5, 10, 15, 20, 30, 45, 60, 90, 120, 180, 240, 360) # event duration steps in KOSTRA data
+ko.height.1 <- c(6.6, 8.9, 10.4, 11.4, 13, 14.6, 15.9, 17.2, 19.2, 21.3, 23.0, 25.5) # rain heights in KOSTRA data
+
+ko.duration.d <- c(5, diff(ko.duration)) # time difference in KOSTRA duration steps
+ko.num.ts<-ko.duration.d/5 # number of 5 min time steps per KOSTRA duration step
+ko.height.1.d <- c(ko.height.1[1], diff(ko.height.1)) # height difference between KOSTRA duration steps
+ko.height.1.dts<-ko.height.1.d/ko.num.ts # mean rain intensity in KOSTRA duration steps [mm/5 min]
+ko.height.1.ts<- rep(ko.height.1.dts, ko.num.ts) # time series of rain intensities in 5 min time steps
+
+# define Euler rainfall
+eulerII.duration <- 240 # duration of Euler event in minutes
+
+eulerII.1<-head(ko.height.1.ts, n = eulerII.duration/5) # most intense number of time steps acoording to duration
+eulerII.1.ts<-cumsum(rep(5, times = eulerII.duration/5)) # cumulated time step [min]
+eulerII.1.sort<-eulerII.1 # create an object for re-ordering time steps
+eulerII.1.sort<-c(
+  rev(eulerII.1[which(eulerII.1 < max(eulerII.1) & eulerII.1 >= quantile(eulerII.1, 0.7, type=1))]), # 30% of most intense time steps in increasing order at the beginning
+  eulerII.1.sort[which(eulerII.1 == max(eulerII.1))], # time step with max intensity
+  eulerII.1.sort[which(eulerII.1 < quantile(eulerII.1, 0.7, type=1))]) # less intense one in decreasing order at the end
+
+barplot(eulerII.1.sort, names.arg=eulerII.1.ts, xlab="time [min]", ylab="rain intensity [mm/5min]") #time series bar plot
+
+# eulerII.swmm<-file("D:/uni/lehre/vorlesungen/UrbanFloodWorkshop/RainfallExercise/EulerII-D90RP1.dat") #create file object
+# writeLines(c(";Rainfall Data for Gage G1", # header line rain gauge
+#              "; time [decimal hours] rain [mm/5 min]", #header line time steps and unit
+#              "0 0", # first data line time | rain 
+#              paste(eulerII.1.ts/60, eulerII.1.sort)), # Euler II data: time | rain 
+#            eulerII.swmm)
+# close(eulerII.swmm)
+

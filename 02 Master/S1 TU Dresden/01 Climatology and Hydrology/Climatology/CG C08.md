@@ -93,11 +93,11 @@ Analyzing two August days (2003 and 2005) at the same site in Central Europe:
 # 💡 Key Takeaways
 
 - **The Bowen Ratio ($\beta$):** A fundamental tool to identify land-cover; $\beta < 1$ usually suggests moist vegetated surfaces or water, while $\beta > 1$ suggests dry or water-stressed environments.
-    
+
 - **Stomatal Control:** As seen in the 2003 vs 2005 case, plants actively "tune" the local climate by closing stomata during droughts, shifting energy from $Q_E$ to $Q_H$.
-    
+
 - **Aerodynamic Scaling:** Calculating wind above vegetation (Exercises 4 & 6) requires the use of the zero plane displacement height ($d$), shifting the logarithmic profile upward.
-    
+
 
 ---
 
@@ -132,8 +132,6 @@ Analyzing two August days (2003 and 2005) at the same site in Central Europe:
 # 📅 Homework
 
 - **Numerical Completion:** Perform the actual calculations for Exercises 1 through 6 using $k = 0.4$ (von Kármán constant).
-    
 - **Data Interpretation:** Re-examine the Graswang and Fendt graphs; list two specific reasons why Graswang is likely grassland and not a dense forest based on the $Q_G$ and $CO_2$ data.
-    
 - **Synthesis:** Draft a short paragraph explaining the relationship between soil moisture ($m_{soil}$) and the partitioning of sensible vs. latent heat flux.
 

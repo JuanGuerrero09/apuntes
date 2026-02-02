@@ -50,6 +50,8 @@ Hard water causes several practical and chemical challenges:
 
 Ionic solutions do not behave ideally because ions **interact electrostatically**. Oppositely charged ions tend to cluster, forming an **ion atmosphere**.
 
+Think of the ion atmosphere as a "cloud" of opposite charges that shields each ion. This shielding makes the ion feel "less concentrated" than it actually is because it is partially hidden by its neighbors. This is why we must use activity instead of concentration in real-world water.
+
 ![[Pasted image 20251110095758.png]]
 
 These interactions modify the “effective” concentration of ions, which is described using **activity**.
@@ -67,7 +69,7 @@ Limiting behavior:
 - $\gamma \to 1$ as $c \to 0$
 #### Ionic Strength
 
-Ionic strength is a measure of the total concentration of ions, weighted by charge:
+Ionic strength is a measure of the total concentration of ions, weighted by charge. **Ions with higher charges (like $Ca^{2+}$ or $SO_4^{2-}$) have much stronger electric fields. Because the charge $z$ is squared in the formula, one $Ca^{2+}$ ion ($z^2=4$) has the same effect on ionic strength as four $Na^+$ ions ($z^2=1$). This is why multivalent ions dominate the "electrical environment" of water.**
 
 *Estimation of ionic strength*:
 $$\text{Exact: } \quad I=0.5\sum c_iz_i^2$$
@@ -119,12 +121,15 @@ In practice:
 - Activities → correct equilibrium calculations
 
 Example given in class:
-![[Pasted image 20251110101010.png]]
-$I = 0.5 * (0.59 * 1^2 + 0.05 + 1.71*2^2 + 0.51*2^2 + 0.65 + 2.51 + 0.94 * 2^2$
-$I = 8.215\ \mathrm{mmol/L} = 0.008215\ \mathrm{mol/L}$  
-$\sqrt{I} = 0.091$
-$y_1=10^{-0.5* 0.091/1+1.4* 0.081} = 0.91$
-$y_2 = y_1^{z^2} = 0.69$
+
+Calculate the ionic strength of the following ions:  c(Na+)= 0.58 mmol/L, c(K+)= 0.05 mmol/L, c(Ca2+)= 1.71 mmol/L,  c(Mg2+)= 0.51 mmol/L, c(Cl-)= 0.65 mmol/L, c(HCO3 -)= 2.51 mmol/L  und c(SO4 2-)=  0.94 mmol/L. Calculate the activity coefficients for this water for univalent and bivalent  ions (Güntelberg-equation). 
+
+$$\begin{gather} I = 0.5 \sum c_i z_i^2 \\
+I = 0.5 * (0.59 * 1^2 + 0.05 + 1.71*2^2 + 0.51*2^2 + 0.65 + 2.51 + 0.94 * 2^2) \\ 
+I = 8.215\ \mathrm{mmol/L} = 0.008215\ \mathrm{mol/L} \\ 
+\sqrt{I} = 0.091\\
+\gamma_1=10^{-0.5* 0.091/1+1.4* 0.081} = 0.91 \\
+\gamma_2 = \gamma_1^{z^2} = 0.69 \end{gather}$$
 
 Activity coefficients can be approximated using Debye–Hückel and Güntelberg equations.
 
@@ -145,6 +150,8 @@ Where:
 - $\nu$ = stoichiometric coefficients
 - $K^*$ = thermodynamic equilibrium constant
 - $a$ = activities of species
+
+The LMA is the "accounting system" for chemistry. It tells us the exact ratio of products to reactants when a system is at rest. It is a thermodynamic law based on the energy of the molecules (Chemical Potential), which is why we MUST use activities ($a$) rather than concentrations ($c$) for it to be accurate in saline or hard water.
 
 A **large** $K^*$ indicates that products dominate at equilibrium.
 
@@ -194,17 +201,26 @@ Activities must always be used for thermodynamic consistency.
 
 ---
 # 💭 Questions
-
+- How to calculate activity coefficient for mono and multivalent ions of aqueous solutions with different ionic strengths or conductivities.
+	- Depending on the Ionic strength and the Debye-Hückel or Günterbergh equation is used, and in those if univalents or polivalents ions are used.
 - Why do multivalent ions contribute more strongly to ionic strength than univalent ions?
+	- Because they have the ability of form bonds with more than one ion
 - How does water hardness influence both scaling and corrosion processes?
+	- Scaling by precipitationg CaCo when water is heated, and also hard water protects the pipeline from corrosion by creating a barrier with the scale
 - Why does the activity coefficient approach 1 at infinite dilution?
+	- At infinite dilution, ions are so far apart that **electrostatic interactions (shielding) become zero**. When there is no interference, the "effective" concentration is exactly equal to the "actual" concentration ($\gamma = 1$).
 - What limitations does the Debye–Hückel equation have in natural waters?
+	- The ionic strength should be less than 0.005 mmol/L
 - Why are solids excluded from the law of mass action expressions?
+	- They are excluded because their **activity is constant (defined as 1)**. Their molar density does not change regardless of the amount of solid present.
 - How does ionic strength affect the solubility of sparingly soluble salts?
+	- This is the **"Salt Effect."** Higher ionic strength increases shielding, which **lowers** the activity coefficient ($\gamma$). To satisfy the constant $K^*$, more solid must dissolve to produce more ions to "fill the gap" created by the shielding. **Higher $I$ = Higher Solubility.**
 - What is the physical meaning of a large equilibrium constant?
+	- There are more products than reactants
 - Why do higher ionic strengths reduce electrostatic interactions?
-- How does CO₂ concentration influence the carbonate equilibrium system?
+	- Higher $I$ means more ions are present to form a dense **"Ion Atmosphere"** around any single ion. This cloud of opposite charges **shields** the ion, effectively "muffling" its electric field and reducing its interaction with other primary ions.
 - Why is conductivity a useful proxy for estimating ionic strength?
+	- Because the Ionic strength is the conductivity / 6200.It is a practical "rule of thumb" because both $I$ and conductivity $(\kappa)$ depend on the total concentration and charges of dissolved ions.
 
 ---
 # 🐢 Definitions
