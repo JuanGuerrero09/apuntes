@@ -69,7 +69,7 @@ Obtaining:
 
 > **Note:** Sonic temperature is very similar to virtual temperature.
 
-
+The core of EC is **Reynolds Decomposition**. We break every signal into its mean ($\bar{x}$) and its fluctuation ($x'$). By multiplying $w'$ (vertical wind speed) and $s'$ (scalar concentration), we capture the net transport. If more upward-moving air parcels ($w' > 0$) contain higher concentrations ($s' > 0$) than downward-moving ones, the result is a positive net flux toward the atmosphere.
 #### Correction and quality assurance
 
 Raw data must undergo corrections to account for real-world deviations from assumptions:
@@ -82,94 +82,8 @@ Raw data must undergo corrections to account for real-world deviations from assu
 | Spectral resolution up to 20 Hz                 | **Spectral correction** (Moore-correction).                                                      |
 | Averaging period 10-60 minutes                  | Quality test, ogive test if necessary                                                            |
 
-# 📅 Friday 16th January 2026
-
-# 📒 Class Summary
-
-Today's session focused on the **experimental determination of energy and mass exchange** between the Earth's surface and the atmosphere. The primary emphasis was on the **Eddy Covariance (EC)** method, its mathematical foundations (Navier-Stokes), instrumentation, and the extensive post-processing corrections required for accuracy. We also addressed the persistent "Energy Balance Gap" and explored alternative indirect measurement techniques like the Bowen-ratio and Profile methods.
-
----
-
-# 📝 Notes
-
-## 6. Experimental determination of energy and mass exchange
-
-### Eddy Covariance
-
-#### Definition
-
-Eddy covariance is the primary direct method for measuring turbulent fluxes of heat, water vapor, and gases. It calculates the **statistical correlation** between the vertical wind speed fluctuations ($w'$) and the fluctuations of a scalar ($c'$) originating from a large upwind area.
-
-**Control Volume Approach – Conservation of a passive scalar $c$:**
-
-$$NEE_c = F_0(x, y) = \int_{z_g}^{z_m}\overline{S}\,dz = \overline{(w'c')}_{z=z_m}$$
-
-- **Fundamental Assumptions:** For the mathematical model to be valid, the environment must exhibit:
-    
-    - **Steady state:** Removes storage change over time.
-        
-    - **Homogeneous flow:** Removes horizontal and vertical advection.
-        
-    - **Isotropic Turbulence:** Removes horizontal flux divergence.
-        
-- **Core Principle:** Turbulence consists of "eddies" (circular air movements). EC sensors measure the properties of every eddy passing through a fixed point in space.
-    
-- **Requirements:** To capture the smallest, fastest eddies, sensors must operate at high rates (**10–20 Hz**) with extreme precision.
-    
-
-|**Advantages**|**Disadvantages**|
-|---|---|
-|Direct measurement; no empirical constants required.|Highly sensitive to mathematical assumptions (homogeneity and steady-state).|
-|Atmospheric flux measurements at **ecosystem scale**.|High financial cost (10k–50k €).|
-|Non-invasive; does not disturb the ecosystem.|Requires high expertise for set-up and data processing.|
-
-#### Instrumentation
-
-- **Ultrasonic Anemometer ("Sonic"):**
-    
-    - Measures the **3D wind vector** and **virtual temperature** via ultrasonic pulse travel time.
-        
-    - Systems can be **orthogonal** or **non-orthogonal** regarding measurement direction.
-        
-- **Infrared Gas Analyzer (IRGA):**
-    
-    - Measures **$H_2O$** and **$CO_2$** concentrations.
-        
-    - **Open-path:** Sensors exposed to air; sensitive to precipitation.
-        
-    - **Closed-path:** Air pumped through a tube to an internal chamber.
-        
-
-**The Navier-Stokes Foundation:**
-
-The covariance between a scalar ($x$) and vertical wind speed ($w$) is calculated statistically:
-
-$$\overline{x'w'} = \frac{1}{N - 1} \sum_{i} (x_i - \bar{x}) \cdot (w_i - \bar{w}) = \frac{1}{N - 1} \left[ \sum_{i} x_i \cdot w_i - \frac{1}{N} \left( \sum_{i} x_i \right) \left( \sum_{i} w_i \right) \right]$$
-
-**Obtained Fluxes:**
-
-- **Friction velocity:** $u_* = \sqrt{-\overline{u'w'}}$
-    
-- **Sensible heat flux:** $H = \rho \cdot c_p \cdot \overline{w'T'}$
-    
-- **Buoyancy flux:** $H_S = \rho \cdot c_p \cdot \overline{w'T_S'}$
-    
-- **Latent heat flux:** $E = \rho \cdot \lambda \cdot \overline{w'q'}$
-    
 
 > **Note:** Sonic temperature ($T_s$) is very similar to virtual temperature ($T_v$).
-
-#### Correction and Quality Assurance
-
-Raw data must undergo corrections to account for real-world deviations from assumptions:
-
-|**Limitation**|**Correction/Measure**|
-|---|---|
-|**Steady state conditions**|Quality test, flagging/discarding data.|
-|**Advection / Homogeneity**|Coordinate rotation (Double Rotation or Planar Fit).|
-|**Density fluctuations**|**WPL correction** (Webb-Pearman-Leuning).|
-|**Spectral resolution (20 Hz)**|**Spectral correction** (Moore-correction).|
-|**Averaging period (10-60 min)**|Quality test, ogive test if necessary.|
 
 ##### Physical Corrections
 
@@ -298,6 +212,8 @@ Important when different  land-covers are nearby
 
 **Definition** The energy balance gap refers to the systematic failure of measured energy fluxes to account for all available net radiation. In an ideal system, the energy entering a surface must equal the energy leaving it.
 
+The closure gap isn't just an error; it's a sign that our towers are "blind" to large-scale structures. **Secondary circulations** and **dispersive fluxes** act like slow-moving, massive "conveyor belts" of energy that are too large to be caught by a 10–20 Hz sensor at a single point.
+
 **Surface energy balance**
 $$
 R_{net} - (G + S_a + S_b + S_g) = H + \lambda E
@@ -401,7 +317,7 @@ $$Q_H = \rho c_p(\overline{w'T'})_{c} = \rho c_p \frac{\left( \overline{w'T_S'} 
         
 - This method can be very accurate if applied carefully but requires significant micrometeorological and metrological expertise.
 
-**#### **Disjunct Eddy Covariance Method (DEC)**
+**Disjunct Eddy Covariance Method (DEC)**
 
 - This method involves a significant reduction of the sampling rate, typically sampling only every **$1 \text{ to } 10 \text{ seconds}$**.
     
@@ -423,18 +339,69 @@ $$Q_H = \rho c_p(\overline{w'T'})_{c} = \rho c_p \frac{\left( \overline{w'T_S'} 
 
 # 💭 Questions
 
-- Which conditions have to be true for the control volume approach for the Eddy covariance?
-- Name two advantages and disadvantages for the eddy covariance measurements.
-- Which instruments are used to measure eddy covariance and what do they measure?
-- Which limitations and corrections can be done to the measurements?
-- How to convert buoyancy flux to sensible heat flux, why do we need to do that in the first place?
-- **Exercise (Schotanus):** Using the coefficients for a CSAT3 anemometer, calculate the correction term for a buoyancy flux measurement where $\bar{u} = 5\text{ m/s}$ and $\bar{T} = 293\text{ K}$.
-- **Exercise (WPL):** Why does an open-path IRGA require WPL correction while a closed-path system (if temperature is stabilized) might not?
-- Explain why the Planar Fit coordinate rotation is considered superior to Double Rotation for long-term datasets.
-- Differentiate between TOS and TMC in terms of their triggering mechanisms.
-- What are the specific height and wind speed requirements for the Bowen-ratio method to be accurate?
-- How do biochemical energy storage and canopy heat storage influence the energy balance closure?
-- Compare **HREA** and **DEC**. Which method is better suited for substances where gas analyzers cannot react to very small concentration differences?
+- **Which conditions have to be true for the control volume approach for the Eddy covariance?**
+    - **Steady state:** Removes storage changes over time.
+    - **Homogeneous flow:** Removes horizontal and vertical advection.
+    - **Isotropic Turbulence:** Removes horizontal flux divergence.
+    
+- **Name two advantages and disadvantages for the eddy covariance measurements.**
+    - **Advantages:** It is a direct measurement (no empirical constants) and is non-invasive (does not disturb the ecosystem).
+    - **Disadvantages:** High financial cost (10k–50k €) and extreme sensitivity to mathematical assumptions (homogeneity/steady-state).
+    
+- **Which instruments are used to measure eddy covariance and what do they measure?**
+    - **Ultrasonic Anemometer (Sonic):** Measures the 3D wind vector ($u, v, w$) and virtual temperature ($T_v$).    
+    - **Infrared Gas Analyzer (IRGA):** Measures the concentration of scalars, specifically $H_2O$ and $CO_2$.
+    
+- **Which limitations and corrections can be done to the eddy covariance measurements?**
+    - **Limitations:** No density fluctuations, spectral resolution needs, and steady state requirements.
+    - **Corrections:** **WPL correction** (density), **Spectral/Moore correction** (frequency loss), and **Coordinate Rotation** (advection/non-homogeneous surfaces).
+    
+- **How to convert buoyancy flux to sensible heat flux, why do we need to do that in the first place?**
+    
+    - It is done using the **Schotanus Correction**. This is necessary because sonics measure temperature based on the speed of sound, which is influenced by humidity and wind velocity (buoyancy flux) rather than just air temperature (sensible heat flux).
+        
+- **Exercise (Schotanus): Using the coefficients for a CSAT3 anemometer, calculate the correction term for a buoyancy flux measurement where $\bar{u} = 5\text{ m/s}$ and $\bar{T} = 293\text{ K}$.**
+    
+    - To calculate the sensible heat $(\overline{w'T'})_{c}$, the cross-wind contamination terms (using $\bar{u}=5\text{ m/s}$) must be subtracted from the measured sonic buoyancy flux ($\overline{w'T_S'}$) using the A and B coefficients ($7/8$ for CSAT3).
+        
+- **Explain why the Planar Fit coordinate rotation is considered superior to Double Rotation for long-term datasets.**
+    
+    - Double Rotation processes 30-minute intervals individually, which can lead to over-rotation and loss of signal. **Planar Fit** uses a long-term (weeks-long) record to define a stable **mean streamline plane**, providing more consistent data quality.
+        
+- **What are the specific height and wind speed requirements for the Bowen-ratio method to be accurate?**
+    
+    - The measurement height ratio must be **$> 4$** (requiring a tall tower) and the horizontal wind speed must be **$> 1\text{ m s}^{-1}$**.
+        
+- **How do biochemical energy storage and canopy heat storage influence the energy balance closure?**
+    
+    - They represent "hidden" storage terms. Energy is consumed by photosynthesis or held within the vegetation volume; if these terms aren't added to the balance, the measured turbulent fluxes ($H + \lambda E$) will be smaller than the net radiation ($Q^*$), creating a closure gap.
+        
+- **Compare HREA and DEC. Which method is better suited for substances where gas analyzers cannot react to very small concentration differences?**
+    
+    - **Hyperbolic Relaxed Eddy Accumulation (HREA)** is better. By using a **vertical wind threshold**, it ignores small eddies and only samples air when the concentration signal is strong enough for the analyzer to detect. **DEC** is primarily for slow-response analyzers.
+- - **Define the "WPL Correction" (Webb-Pearman-Leuning) and explain the physical reason why it is necessary.**
+    
+    - It is a correction for air density fluctuations. It is necessary because gas analyzers measure concentration per unit volume; since volume changes with temperature and humidity, the WPL correction removes these "false" fluctuations to reveal the true molar flux of the gas.
+        
+- **Explain the "Control Volume Approach" in the context of NEE (Net Ecosystem Exchange).**
+    
+    - This approach treats the ecosystem as a box (control volume). Under the assumptions of steady-state (no storage change) and horizontal homogeneity (no advection), the vertical turbulent flux measured at the top of the box ($z_m$) is assumed to be equal to the net exchange at the surface.
+        
+- **Mention three alternatives to Eddy Covariance for measuring energy fluxes and specify the core theory behind each.**
+    
+    - **Bowen-ratio Method:** Uses the energy balance equation and the ratio of sensible to latent heat.
+        
+    - **HREA (Hyperbolic Relaxed Eddy Accumulation):** Uses flux-variance similarity to determine fluxes without high-frequency weighing of air parcels.
+        
+    - **Profile Methods:** Apply flux-gradient similarity theory (MOST) to atmospheric profiles of wind, temperature, or humidity.
+        
+- __Describe the "Energy Balance Gap" and list the four categories of reasons why $Q^* \neq H + \lambda E + G$.
+    
+    - The gap is the systematic failure of turbulent fluxes to account for all available net radiation. Reasons include: 1. Instrument error, 2. Data processing/averaging errors, 3. Additional energy storage (biomass/canopy), and 4. Sub-mesoscale transport (secondary circulations/advection).
+        
+- **What is the difference between "Turbulent Organized Structures" (TOS) and "Thermally-induced Mesoscale Circulations" (TMC)?**
+    
+    - **TOS** are large turbulent eddies that develop randomly and can occur even over homogeneous surfaces. **TMC** are organized circulations driven specifically by horizontal surface heterogeneity (e.g., land-use changes) and do not occur over homogeneous surfaces.
 
 ---
 

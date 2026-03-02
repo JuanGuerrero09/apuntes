@@ -112,6 +112,10 @@ Two tools:
 ---
 #### Depth–Duration–Frequency (DDF) Curves
 
+- **Definition:** These curves represent the relationship between **rainfall depth** (measured in mm), its **duration** (the time interval of the storm), and its **return period** (frequency of occurrence).
+- **Usage:** They are primarily used to determine the total volume of water expected from a storm of a specific length (e.g., a 24-hour storm) that occurs once every 10, 50, or 100 years.
+- **Key Property:** Rainfall depth increases with both duration and return period.
+
 ![[Pasted image 20251117114254.png]]
 
 
@@ -218,7 +222,8 @@ These tests indicate whether the theoretical distribution adequately represents 
 Given:
 
 - Empirical mean: $\mu_p = 14.1$    
-- Empirical standard deviation: $\sigma_p = 3.48$
+- Variance: $\sigma_p^2 = 34.8$
+- Empirical standard deviation: $\sigma_p = 5.9$
 
 From the method of moments:
 
@@ -251,6 +256,7 @@ Este es el procedimiento usado para generar tablas de lluvia extrema.
 
 ![[Pasted image 20251117121143.png]]  
 ![[Pasted image 20251117121157.png]]
+![[Pasted image 20260208163917.png]]
 
 These $P$ values populate the Depth–Duration–Frequency (DDF) tables used for design rainfall.
 
@@ -259,6 +265,10 @@ Fuente: Dingman: _Physical Hydrology_ (2nd Ed. 2014), Sec. 4.4.3, p. 185ff.
 ---
 
 ##### IDF (Intensity–Duration–Frequency Analysis)
+
+- **Definition:** These curves describe the relationship between **rainfall intensity** (measured in mm/h or mm/min), **duration**, and **return period**.
+- **Usage:** They are critical for urban stormwater engineering and small catchment modeling, where the peak flow (maximum intensity) is more important than the total volume.
+- **Key Property:** Rainfall intensity decreases as the duration of the storm increases.
 
 The IDF approach expresses rainfall in terms of **intensity**, not depth.
 

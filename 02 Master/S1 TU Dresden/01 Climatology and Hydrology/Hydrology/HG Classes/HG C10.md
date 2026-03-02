@@ -93,6 +93,11 @@ The **flow rating curve** is used to determine $Q$ for a given $h$ based on the 
 - **Theoretical Assumption:** Assumes **unsteady uniform flow** (variable in time but constant parameters in space).
 - **Reality:** River flow is often **unsteady and non-uniform**, leading to a **hysteresis loop** in the rating curve where the same stage may correspond to different discharges depending on whether the water level is rising or falling.
 
+**The Power Function:** Most rating curves follow a power-law relationship: $Q = a(h - h_0)^b$.
+
+- $h_0$ is the stage of "zero flow."
+- $b$ usually ranges between 1.5 and 2.5 depending on the cross-section shape (e.g., $b=1.5$ for rectangular, $b=2.5$ for triangular).
+
 ---
 # 💡 Key Takeaways
 
@@ -104,27 +109,53 @@ The **flow rating curve** is used to determine $Q$ for a given $h$ based on the 
 ---
 # 💭 Questions
 
-- Name three reasons why it is important to have accurate runoff data collection.
-- What are the main criteria for selecting a site for technically reliable discharge measurements?
-- Name and describe the different types of gauges used for measuring water stage.
-- What is the difference between discrete and continuous runoff data, and when is each used?
-- How does a pressure sensor determine the water stage, and what is its advantage over a float gauge?
-- Describe the **Area-Velocity Method** for deriving discharge.
-- What are some alternative flow measurement methods besides the area-velocity method?
-- What does a stage-discharge curve (flow rating curve) represent, and what are its theoretical assumptions?
-- What is **hysteresis** in the context of a stage-discharge curve?
+- **Which measurement methods are used for runoff?**
+    
+    - Runoff is determined by measuring water stage (Staff gauges, mechanical floats, or pressure sensors) and combining it with velocity measurements (Area-velocity method, ADCP, or tracers) or structural conversions (Weirs and Flumes).
+        
+- **Why is accurate runoff data collection vital for hydrological studies?**
+    
+    - It is essential for adequate system characterization, sustainable water resource management, flood and drought risk assessment, and evaluating the impacts of Climate Change (CC).
+        
+- **What are the main criteria for selecting a site for technically reliable discharge measurements?**
+    
+    - A straight river section with a constant slope, a stable cross-section (to ensure a consistent stage-discharge relationship), and the absence of obstructions, weeds, or backwater effects.
+        
+- **Name and describe the different types of gauges used for measuring water stage.**
+    
+    - **Staff Gauge:** A manual, non-recording graduated plate. **Mechanical Float:** Provides continuous recording via a float-driven transmission. **Pneumatic Gauge/Pressure Sensor:** Measures hydraulic pressure to calculate stage via $p = \rho g h$.
+        
+- **What is the difference between discrete and continuous runoff data, and when is each used?**
+    
+    - **Discrete data** consists of single-point values used for specific investigations (e.g., stream-loss gauging). **Continuous data** provides a full hydrograph, which is necessary for flood forecasting and reservoir operations.
+        
+- **How does a pressure sensor determine the water stage, and what is its advantage over a float gauge?**
+    
+    - It measures the hydrostatic pressure of the water column ($p = \rho g h$). Its main advantages are that it allows for continuous recording and is significantly less susceptible to frost than mechanical floats.
+        
+- **Describe the Area-Velocity Method for deriving discharge.**
+    
+    - The river cross-section is divided into segments. For each segment, the area ($A_i$) is calculated ($width \times depth$) and multiplied by the measured mean velocity ($v_i$). Total discharge ($Q$) is the sum of all segments.
+        
+- **What are some alternative flow measurement methods besides the area-velocity method?**
+    
+    - Hydraulic structures (Weirs and Flumes), Tracer (dilution) methods using salt or fluorescent dyes, and ADCP (Acoustic Doppler Current Profiler).
+        
+- **What does a stage-discharge curve represent, and what are its theoretical assumptions?**
+    
+    - It represents the empirical relationship between the water stage ($h$) and the discharge ($Q$). It theoretically assumes **steady uniform flow**, where the water surface is parallel to the riverbed.
+        
+- **What is hysteresis in the context of a stage-discharge curve?**
+    
+    - It is the phenomenon where the stage-discharge relationship follows different paths during the rising limb (steeper slope/higher $Q$) and the falling limb (shallower slope/lower $Q$) of a flood event.
 
 ---
 # 🐢 Definitions
 
 - **Runoff ($R$):** The total surface and subsurface water flow leaving a catchment area.
-    
 - **Discharge ($Q$):** The volumetric flow rate of water, usually expressed in $m^3/s$ or $L/s$.
-    
 - **Stage ($h$):** The height of the water surface above a specified vertical datum (gauge zero).
-    
 - **Hysteresis:** The phenomenon where the stage-discharge relationship follows different paths during the rising and falling limbs of a flood.
-    
 - **Rating Curve:** An empirical curve showing the relation between the stage and the discharge of a stream at a given cross-section.
 
 ---

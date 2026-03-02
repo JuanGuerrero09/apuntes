@@ -19,7 +19,7 @@ Today’s session focused on the mechanics of **Runoff**, specifically its compo
 Streamflow is a combination of three distinct components:
 
 - **Base flow:** Long-term groundwater contribution to the stream.
-- **Interflow:** Lateral flow in the unsaturated or perched saturated zone above the main groundwater table.
+- **Interflow:** Lateral flow of water in the **vadose zone** (unsaturated) or through **macropores** (root holes, cracks) above the main water table. It travels faster than groundwater but slower than surface flow.. 
 - **Overland flow:** Saturated flow that travels over the soil surface to the channel.
 
 _Note:_ It is important to normalize flow when comparing different catchments.
@@ -192,11 +192,8 @@ For numerical application, the convolution is expressed as:
 $$q_n = \sum_{m=1}^{n} p_m \cdot u_{n-m+1}$$
 
 - $n$: time step.
-    
 - $m$: time step.
-    
 - $p_m$: effective precipitation at time $m$.
-    
 - $u$: unit response ordinate.
 
 **Linear Storage Model**
@@ -204,11 +201,8 @@ $$q_n = \sum_{m=1}^{n} p_m \cdot u_{n-m+1}$$
 A conceptual model where the catchment is treated as a reservoir.
 
 - **Storage Equation:** $S = k \cdot Q$.
-    
 - **Continuity Equation:** $I - Q = \frac{dS}{dt}$.
-    
 - **Linear Differential Equation:** $I - Q = k \frac{dQ}{dt}$.
-    
 - **Analytical Solution (Impulse Response):** $h(t) = \frac{1}{k} e^{-t/k}$.
 
 ---
@@ -226,13 +220,8 @@ Determines wave propagation and retention as a water wave moves through a river 
 
 **Saint-Venant Equations:**
 
-1. **Continuity (Mass Balance):**
-    
-    $$\frac{\partial A}{\partial t} + \frac{\partial Q}{\partial x} = q_l$$
-    
-2. **Momentum (Energy Balance):**
-    
-    $$\frac{\partial Q}{\partial t} + \frac{\partial}{\partial x} \left( \frac{Q^2}{A} \right) + gA \left( \frac{\partial h}{\partial x} - S_0 + S_f \right) = 0$$
+1. **Continuity (Mass Balance):**$$\frac{\partial A}{\partial t} + \frac{\partial Q}{\partial x} = q_l$$
+2. **Momentum (Energy Balance):**$$\frac{\partial Q}{\partial t} + \frac{\partial}{\partial x} \left( \frac{Q^2}{A} \right) + gA \left( \frac{\partial h}{\partial x} - S_0 + S_f \right) = 0$$
 
 ---
 
@@ -257,37 +246,44 @@ RR models transform rainfall into runoff by simulating runoff formation, concent
 # 💡 Key Takeaways
 
 - **Runoff Logic:** Modeling is a three-stage sequence: Formation (how much?), Concentration (when?), and Routing (downstream movement).
-    
 - **CN Sensitivity:** Runoff estimates are highly sensitive to CN selection; errors of 15-20% in CN can double or halve the estimated runoff.
-    
 - **Modeling Purpose:** Conceptual models are used for flood forecasting, while physically based models are required for process identification and groundwater studies.
-    
 - **Hydrograph Components:** Streamflow consists of base flow (groundwater), interflow (lateral subsurface), and overland flow (surface).
 
 ---
 # 💭 Questions
 
-- What is the fundamental difference between base flow, interflow, and overland flow in terms of their physical path to the stream?
+- **What is the fundamental difference between base flow, interflow, and overland flow in terms of timing and physical path?**
     
-- Mention 5 catchment or atmospheric factors that significantly affect runoff formation.
+    - **Overland flow:** Water traveling over the surface; near-instantaneous response. **Interflow:** Lateral flow through the unsaturated zone/macropores; intermediate response time. **Base flow:** Groundwater contribution; long-term, slow response that maintains streamflow during dry periods.
+        
+- **Name 5 catchment or atmospheric factors that significantly affect runoff formation.**
     
-- Why is the "Superposition" assumption critical for the application of the Unit Hydrograph?
+    - **Catchment:** Topography/Slope, Land Use/Vegetation, Soil Type, Geology, and Antecedent Moisture. **Atmospheric:** Rainfall Intensity and Rainfall Duration.
+        
+- **In the SCS-CN method, how does the Antecedent Moisture Condition (AMC) change the Curve Number?**
     
-- In the SCS-CN method, how does the Antecedent Moisture Condition (AMC) change the Curve Number value?
+    - AMC shifts the CN to account for soil wetness before an event. Dry conditions (AMC I) lower the CN (less runoff), while wet conditions (AMC III) raise the CN (more runoff) relative to the average state (AMC II).
+        
+- **What are the three main conceptual assumptions of a Unit Hydrograph?**
     
-- What are the three main conceptual assumptions of a Unit Hydrograph?
-- What are the three core assumptions required to apply the Unit Hydrograph method?
+    - **Stationarity:** The catchment response is time-invariant. **Proportionality:** Runoff scales linearly with effective rainfall. **Superposition:** The total hydrograph is the sum of responses from individual rainfall increments.
+        
+- **Why is the SCS-CN method considered highly sensitive regarding its results?**
     
-- Why is the SCS-CN method considered highly sensitive regarding its results?
+    - Because the relationship is non-linear; a small percentage change (15-20%) in the CN value can result in a doubling or halving of the total estimated runoff volume.
+        
+- **What is the difference between Runoff Formation and Runoff Concentration?**
     
-- How does the Antecedent Moisture Condition (AMC) influence the Curve Number?
+    - **Formation** determines the volume of "effective precipitation" (how much water becomes runoff). **Concentration** determines the temporal distribution (the shape of the hydrograph) at the outlet.
+        
+- **Describe the components of the Saint-Venant equations for physically based routing.**
     
-- What is the difference between Runoff Formation and Runoff Concentration?
+    - 1. **Continuity Equation:** Represents the conservation of mass. 2. **Momentum Equation:** Represents the conservation of energy (balancing gravity, friction, and pressure forces).
+            
+- **In what scenarios are physically based (White Box) models preferred over conceptual (Grey Box) ones?**
     
-- Describe the components of the Saint-Venant equations for physically based routing.
-    
-- In what scenarios are physically based models preferred over conceptual ones?
-
+    - When simulating internal catchment processes like groundwater-surface water interactions, contaminant transport, or the impacts of specific local land-use changes where measured physical parameters are available.
 
 ---
 # 🐢 Definitions

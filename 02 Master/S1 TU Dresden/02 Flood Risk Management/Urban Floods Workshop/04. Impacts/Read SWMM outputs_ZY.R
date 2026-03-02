@@ -1,6 +1,5 @@
 ## 1. Env & Packages --------------------------------------------------------------
 if (!require("pacman", quietly = TRUE)) install.packages("pacman")
-
 pacman::p_load(data.table, xts, zoo, devtools, install = TRUE)
 
 if (!requireNamespace("SWMMR", quietly = TRUE)) {
@@ -9,16 +8,15 @@ if (!requireNamespace("SWMMR", quietly = TRUE)) {
 library(SWMMR)
 
 ## 2. Pathway --------------------------------------------------------------
-out_path <- r"(C:\Users\Juan\Documents\Obsidian Vault\Apuntes\02 Master\S1 TU Dresden\02 Flood Risk Management\Urban Floods Workshop\03. Infrastructure)"
-
-
+# Ruta donde Python guardó los 36 archivos .out
+out_path <- r"(C:\Users\Juan\Documents\dev-win\pyswmm-workshop\files\Outs)"
 result_path <- file.path(out_path, "floodseries_result")
 
 if (!dir.exists(result_path)) {
-  dir.create(result_path)
+  dir.create(result_path, recursive = TRUE)
 }
 
-## 3. get all .out-files ----------------------------------------------------
+## 3. Obtener los 36 archivos .out ------------------------------------------
 out_files <- list.files(
   path = out_path,
   pattern = "\\.out$",
@@ -26,81 +24,79 @@ out_files <- list.files(
   ignore.case = TRUE
 )
 
+message("Total de archivos encontrados: ", length(out_files))
 
-## 4. batch process --------------------------------------------------------------
+## 4. Batch Process --------------------------------------------------------------
 for (out_file in out_files) {
   
   message("Processing: ", basename(out_file))
   
-  ## 4.1 read SWMM out
+  ## 4.1 Abrir archivo .out
   resfile <- openSWMMOutput(out_file)
   
-  nodesres <- readNodes(
-    resfile,
-    names = NULL,
-    variable = "flow lost to flooding"
-  )
+  ## 4.2 Leer inundación
+  nodesres <- tryCatch({
+    readNodes(resfile, names = NULL, variable = "flow lost to flooding")
+  }, error = function(e) {
+    # Usar la función específica de SWMMR para cerrar en caso de error
+    if (exists("resfile")) closeSWMMOutput(resfile)
+    return(NULL)
+  })
+  
+  if (is.null(nodesres)) next
   
   flood_series <- nodesres[[1]]
   
-  ## 4.2 Corrected Time Index
+  ## 4.3 Corrección de Tiempo
   new_index <- as.POSIXct(
     sub("\\.\\d+$", "", as.character(index(flood_series)))
   )
   index(flood_series) <- new_index
   
-  ## 4.3 Filter nodes by cumulative flood volume
+  ## 4.4 Filtro de inundación significativa
   column_sums <- colSums(flood_series, na.rm = TRUE)
   selected_columns <- column_sums >= 0.05
   
   if (!any(selected_columns)) {
-    warning("No flooding found in: ", basename(out_file))
+    message("   (!) No flooding found in: ", basename(out_file))
+    closeSWMMOutput(resfile)
     next
   }
   
   floods_filtered <- flood_series[, selected_columns]
   
-  ## 4.4 The time period during which flooding occurred
+  ## 4.5 Recorte de ventana de tiempo (Crop)
   cumulative_sum <- apply(floods_filtered, 1, cumsum)
-  
   valid_rows  <- which(colSums(cumulative_sum > 0) > 0)
-  first_index <- min(valid_rows)
-  last_index  <- max(valid_rows)
   
-  floods_filtered <- floods_filtered[first_index:last_index, ]
+  if (length(valid_rows) > 0) {
+    first_index <- min(valid_rows)
+    last_index  <- max(valid_rows)
+    floods_filtered <- floods_filtered[first_index:last_index, ]
+  }
   
-  ## 4.5 Convert to data.table
+  ## 4.6 Convertir a data.table
   flood_dt <- as.data.table(floods_filtered)
-  
   flood_dt[, datetime := index(floods_filtered)]
   setcolorder(flood_dt, "datetime")
   
-  ## Remove duplicate index columns
-  flood_dt[, index := NULL]
+  if ("index" %in% names(flood_dt)) flood_dt[, index := NULL]
   
-  ## Round numerical series to 2 decimal places
-  flood_dt[, (names(flood_dt)[sapply(flood_dt, is.numeric)]) :=
-             lapply(.SD, round, 2),
-           .SDcols = is.numeric]
+  # Redondear numéricos
+  numeric_cols <- names(flood_dt)[sapply(flood_dt, is.numeric)]
+  flood_dt[, (numeric_cols) := lapply(.SD, round, 2), .SDcols = numeric_cols]
   
-  ## 4.6 Generate output
+  ## 4.7 Guardar CSV
   out_name <- tools::file_path_sans_ext(basename(out_file))
+  savename <- file.path(result_path, paste0("floodseries_", out_name, ".csv"))
   
-  savename <- file.path(
-    result_path,
-    paste0("floodseries_", out_name, ".csv")
-  )
+  write.csv(flood_dt, file = savename, row.names = FALSE, quote = FALSE)
   
-  ## 4.7 save CSV
-  write.csv(
-    flood_dt,
-    file = savename,
-    row.names = FALSE,
-    quote = FALSE
-  )
+  ## 4.8 LIMPIEZA CORRECTA DE CONEXIÓN
+  # Esta es la función correcta para objetos de clase SWMMfile
+  closeSWMMOutput(resfile)
   
+  message("   [OK] Saved: ", basename(savename))
 }
 
-message("All .out files processed. Results saved in 'floodseries_result'.")
-
-
+message("\n¡Listo! Todos los archivos procesados sin conexiones abiertas.")

@@ -326,23 +326,57 @@ Non-linear relationships between parameters and fluxes will lead to large errors
 ---
 # 💭 Questions
 
-- What is the fundamental difference between potential and actual evaporation regarding water availability?
+- **What is the fundamental difference between potential and actual evaporation regarding water availability?**
     
-- Which modeling approaches are considered the most precise for estimating potential $E(T)$ and actual $E(T)$ on a daily basis?
+    - Potential evaporation assumes an unlimited water supply and is limited only by atmospheric demand (energy), while actual evaporation is restricted by the real-world availability of water in the soil and the physiological resistance of the surface.
+        
+- **Which modeling approaches are considered the most precise for estimating potential $E(T)$ and actual $E(T)$ on a daily basis?**
     
-- Explain the role of the $\alpha_{PT}$ coefficient in the Priestley-Taylor approach and why it is typically set to 1.25.
+    - **Potential $E(T)$:** Penman and Priestley-Taylor are the most precise.
+        
+    - **Actual $E(T)$:** The Penman-Monteith approach is the gold standard as it incorporates surface resistance.
+        
+- **Explain the role of the $\alpha_{PT}$ coefficient in the Priestley-Taylor approach and why it is typically set to 1.25.**
     
-- How does the Penman-Monteith approach account for non-saturated surfaces compared to the original Penman approach?
+    - $\alpha_{PT}$ is an empirical coefficient that accounts for the "extra" evaporation caused by the entrainment of dry air from the upper boundary layer into the surface layer. For well-watered surfaces, it is typically set to **1.26** (or 1.25) to represent the 26% increase over purely radiation-driven equilibrium evaporation.
+        
+- **How does the Penman-Monteith approach account for non-saturated surfaces compared to the original Penman approach?**
     
-- In the context of resistance assumptions, what physical layers do $r_a$ and $r_{mt}$ represent?
+    - It introduces **Surface/Canopy Resistance ($r_s$ or $r_c$)** into the formula. Unlike the original Penman, which assumes a perfectly wet surface ($r_s = 0$), Penman-Monteith uses these resistance terms to model the plant's ability to restrict water loss through its stomata.
+        
+- **In the context of resistance assumptions, what physical layers do $r_a$ and $r_{mt}$ represent?**
     
-- Why is the parallel connection formula used when calculating total resistance for multiple adjacent landcovers?
+    - **$r_a$ (Turbulence resistance):** Represents the resistance to flux within the **turbulent layer**.
+        
+    - **$r_{mt}$ (Molecular turbulence resistance):** Represents the resistance within the **viscous and molecular sub-layers** closest to the surface.
+        
+- **Why is the parallel connection formula used when calculating total resistance for multiple adjacent landcovers?**
     
-- Describe the difference between the Tile approach and the Subgrid method regarding the treatment of advection.
+    - Because different land-use types (e.g., a forest next to a field) act as simultaneous, independent pathways for water vapor to enter the atmosphere. In physics, independent parallel pathways for a flux are modeled by adding their conductances ($1/r$).
+        
+- **Describe the difference between the Tile approach and the Subgrid method regarding the treatment of advection.**
     
-- What are the specific requirements for horizontal wind speed and measurement height ratio for the Bowen-ratio method?
+    - The **Tile (Mosaic) approach** calculates fluxes for each land-use type independently and averages them by area, ignoring horizontal interaction. The **Subgrid method** applies a multi-layer model that explicitly accounts for **advection**, calculating how the atmospheric properties of one tile influence the evaporation rates of neighboring tiles downwind.
+
+- **Define the "Big-Leaf Model" and explain its primary limitation when modeling a complex, multi-story forest.**
     
-- Under what specific environmental conditions (humidity and heat flux levels) is the WPL correction most significant?
+    - The **Big-Leaf Model** treats the entire vegetation canopy as a single, uniform leaf with one combined surface resistance ($r_c$). Its primary limitation is that it ignores the vertical gradients of light, wind, and humidity within a tall forest, failing to account for the different physiological behaviors of the shaded understory versus the sunlit overstory.
+        
+- **In the Penman-Monteith equation, what happens to the Latent Heat Flux ($Q_E$) if the Aerodynamic Resistance ($r_a$) decreases due to very high wind speeds?**
+    
+    - The Latent Heat Flux ($Q_E$) **increases**. Decreasing $r_a$ means the atmospheric resistance to vapor transport is lower; higher wind speeds effectively "strip" the humid air away from the surface faster, enhancing evaporation.
+        
+- **What is the "Haude-factor" used for in the Sponagel-Haude approach, and why is this method considered low-accuracy?**
+    
+    - The Haude-factor is a seasonal and land-cover-dependent empirical coefficient used to estimate monthly evaporation from vapor pressure at 2 p.m. It is considered low-accuracy (errors $> 60\%$) because it was developed specifically for German flatlands and lacks the physical rigor to adapt to different climatic regions.
+        
+- **Explain the difference between "Parameter Aggregation" and "Flux Aggregation" in the context of area averaging.**
+    
+    - **Parameter Aggregation** involves averaging physical surface properties (like roughness length $z_0$) to create an "effective" parameter for a whole grid cell. **Flux Aggregation** calculates the energy fluxes ($H, Q_E$) for each individual land-cover type (using the Mosaic or Tile approach) and then averages the resulting fluxes, which is more accurate due to the non-linear relationship between parameters and fluxes.
+        
+- **Which specific term in the Penman equation represents the "atmospheric pull" (drying power of the air) vs. the "energy push" (net radiation)?**
+    
+    - The term $(Q^* - Q_G)$ represents the **Energy Push** (radiation-driven evaporation). The ventilation term $E_a$ (which includes wind speed and vapor pressure deficit) represents the **Atmospheric Pull** (the drying power of the air).
 
 ---
 # 🐢 Definitions

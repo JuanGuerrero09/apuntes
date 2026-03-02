@@ -104,15 +104,19 @@ Analyzing two August days (2003 and 2005) at the same site in Central Europe:
 # 💭 Questions
 
 - Which types of special characteristic of different land-cover are?
-    
+	- Lland-cover types are distinguished by their **aerodynamic roughness length ($z_0$)**, **albedo ($\alpha$)**, and **surface resistance ($r_s$)**.
 - What effects do those characteristics have on local climate?
-    
+    - Turbulence (specifically friction velocity $u_*$) enhances the transport of water vapor from the surface. In urban or rougher areas, increased turbulence can dry out surfaces faster.
 - How to identify the land-cover based on measurements?
-    
+    - By observing the diurnal cycle of **Sensible Heat ($H$)** and **Latent Heat ($\lambda E$)**, we identify surfaces. A dominant $\lambda E$ indicates well-watered vegetation or water bodies.
 - **In Exercise 1, how would the emission change if the emissivity ($\epsilon$) was 0.95 instead of a perfect black body?**
-    
+    - Radiation emission is **directly proportional** to emissivity ($\epsilon$). If $\epsilon = 0.95$, the total radiation emitted would be 95% of that of a black body ($I = \epsilon \sigma T^4$).
 - **Why is the CO2 flux (NEE) considered "negative" during the daytime for healthy vegetation?**
-    
+    - **Photosynthesis** (CO2 uptake) exceeds **Respiration** (CO2 release). Because we measure the _net_ exchange from the atmosphere's perspective, uptake is shown as a **negative value**.
+- What is the "Oasis Effect," and how does it influence the Bowen Ratio?
+	- It is the cooling effect caused by the evaporation of a water source (or well-watered vegetation) in an otherwise dry environment. The energy is consumed as **Latent Heat**, leaving less for **Sensible Heat**, thus lowering the air temperature.
+- Explain the feedback loop between stomatal resistance ($r_c$) and the canopy temperature ($T_0$) during water stress.
+	- During water stress, plants close stomata to conserve water. This increases $r_c$, prevents transpiration, and causes the leaf/canopy temperature to rise as it can no longer "cool" itself through evaporation.
 
 ---
 

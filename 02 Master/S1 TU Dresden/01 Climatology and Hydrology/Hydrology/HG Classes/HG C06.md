@@ -129,9 +129,8 @@ Measure **drop size distribution**.
     - Height = 1 m
     - Area = 200 cm²
     - Daily measurement at 7am
-why we don't put gauges higher, the answer is that **wind speed increases with height**, which drastically increases the **systematic undercatch error**
-
-- WMO provides guidelines but not uniformly adopted
+- **Why we don't put gauges higher:** Wind speed increases with height, which drastically increases the **systematic undercatch error**.
+- WMO provides guidelines but not uniformly adopted.
 
 ---
 ### Measurement errors (~5–15% typical)
@@ -177,7 +176,7 @@ Outliers are not always “bad”; hydrology must keep genuine extremes.
 #### Detection Methods
 
 - **Extreme value analysis**, e.g.
-    $$z_i = \frac{x_i - \mu}{\sigma}$$
+$$z_i = \frac{x_i - \mu}{\sigma}$$
 - **Probabilistic models**
 - **Clustering techniques**
 - **Distance or density-based methods**
@@ -293,6 +292,10 @@ Choice depends on:
 
 ##### Arithmetic Mean
 
+- **Definition:** The simplest approach for calculating catchment precipitation, where the total rainfall depth is determined by taking the simple average of all measurements from stations located within or in the immediate vicinity of the catchment.
+- **Application:** It is most effective in areas with a dense, uniform network of gauges and flat topography where rainfall is relatively homogeneous.
+- **Limitation:** It fails to account for the spatial distribution of gauges or topographic influences, making it poor for capturing high-variability events like convective storms.
+
 Example:
 
 |Station|Rainfall (mm)|
@@ -307,15 +310,25 @@ Average = 35 mm
 ---
 
 ##### Thiessen Polygons
-
-$$P = \frac{1}{A}\sum a_i p_i$$
-- $a_i$: polygon area
-- $p_i$: rainfall at station $i$
+- **Definition:** A geometric method that assigns an "area of influence" to each rain gauge by creating polygons through the perpendicular bisectors of lines connecting adjacent stations.
+- **Mechanism:** Every point within a specific polygon is assigned the rainfall value of the nearest station.
+- **Equation:** The catchment average is calculated using an area-weighted sum:$$P = \frac{1}{A}\sum a_i p_i$$
+    
+    - $a_i$: The area of the polygon associated with station $i$.
+    - $p_i$: The rainfall depth recorded at station $i$.
+    - $A$: The total area of the catchment.
+- **Advantage:** It accounts for the non-uniform distribution of gauges.
 
 > CHECK EXERCISE 2 OPAL
 
 ---
 ##### Isohyetal Method
+
+- **Definition:** This method involves drawing lines of equal rainfall depth, known as **isohyets**, across the catchment area based on point measurements.
+    
+- **Mechanism:** The average rainfall is determined by calculating the area between successive isohyets and weighting it by the average rainfall of those two lines.
+    
+- **Precision:** It is considered one of the most accurate deterministic methods because it allows the hydrologist to manually incorporate topographic and orographic effects (such as mountain ranges) into the lines.
 
 ![[Pasted image 20251111115153.png]]
 
@@ -323,10 +336,19 @@ $$P = \frac{1}{A}\sum a_i p_i$$
 
 ##### Inverse Distance Weighting (IDW)
 
-General form:
-
-$$P_x = \frac{\sum p_i d_{xi}^{-1}}{\sum d_{xi}^{-1}}$$
-
+- **Definition:** A mathematical interpolation technique that estimates the rainfall at any unknown point $x$ by taking a weighted average of all nearby known stations.
+    
+- **Mechanism:** The influence of a station on the target point decreases as the distance between them increases. This is governed by the reciprocal of the distance ($d_{xi}^{-1}$).
+    
+- **Equation:**
+    
+    $$P_x = \frac{\sum p_i d_{xi}^{-1}}{\sum d_{xi}^{-1}}$$
+    
+    - $P_x$: The estimated rainfall at point $x$.
+        
+    - $d_{xi}$: The distance between the known station $i$ and the point $x$.
+        
+- **Key Feature:** IDW allows for a more continuous representation of the rainfall field compared to the "step-change" approach of Thiessen Polygons.
 ---
 
 #### Statistical methods

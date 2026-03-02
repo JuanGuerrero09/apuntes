@@ -164,28 +164,53 @@ Affection in other characteristics of air:
 ---
 # 💭 Questions
 
-- How does the "Clothesline Effect" differ from the "Oasis Effect" in terms of microclimatic energy exchange?
+- **How does the "Clothesline Effect" differ from the "Oasis Effect" in terms of microclimatic energy exchange?**
     
-- Explain why the land-sea breeze reverses between day and night based on pressure and temperature gradients.
+    - The **Oasis Effect** is a vertical process where evaporation from a wet surface cools the local air in a dry environment. The **Clothesline Effect** is a horizontal process (advection) where warm, dry air enters a canopy from the side, spiking the **Vapor Pressure Deficit (VPD)** and increasing water stress specifically at the stand borders.
+        
+- **Explain why the land-sea breeze reverses between day and night based on pressure and temperature gradients.**
     
-- How does the geometry control in agriculture (like asparagus cultivation) specifically reduce longwave radiative loss?
+    - During the **day**, the land heats faster than the sea ($T_{land} > T_{sea}$), creating lower pressure over land and drawing moist air inward (sea breeze). At **night**, the land cools faster than the sea ($T_{sea} > T_{land}$), reversing the gradient and pushing air seaward (land breeze).
+        
+- **How does the geometry control in agriculture (like asparagus cultivation) specifically reduce longwave radiative loss?**
     
-- Under what conditions would you expect a "footprint mismatch" to lead to a significant energy balance underclosure?
+    - It increases the trapping of radiation. By creating specific surface geometries, longwave radiation emitted from the soil is reflected multiple times within the canopy or trenches, reducing the amount that escapes to the open sky and keeping $T_{soil}$ higher.
+        
+- **Under what conditions would you expect a "footprint mismatch" to lead to a significant energy balance underclosure?**
     
-- What is the difference between **Analytic models** and **Lagrangian models** in the context of flux footprint estimation?
+    - This occurs when the **Ground Heat Flux ($Q_G$)** is measured in a small, localized soil patch that is not statistically representative of the much larger, heterogeneous upwind area where **Atmospheric Fluxes ($Q_H, Q_E$)** are generated.
+        
+- **What is the difference between Analytic models and Lagrangian models in the context of flux footprint estimation?**
     
-- How does **atmospheric stability** (stratification) specifically influence the area and extent of a flux footprint?
+    - **Analytic models** solve the diffusion equation mathematically to estimate the footprint. **Lagrangian models** use stochastic (random probability) calculations of particle distributions to simulate the source area of the measured fluxes.
+        
+- **How does atmospheric stability (stratification) specifically influence the area and extent of a flux footprint?**
     
-- Describe the three different **wind profile scenarios** that occur when air moves across a surface roughness change.
+    - Stability determines the ease of vertical mixing. In **Highly Unstable** conditions, rapid vertical transport creates a small footprint ($0.15\text{ km}^2$). In **Stable** conditions, vertical turbulence is suppressed, forcing the sensor to pull signals from much further upwind, expanding the footprint to $7.5\text{ km}^2$.
+        
+- **Describe the three different wind profile scenarios that occur when air moves across a surface roughness change.**
     
-- What are the **General Requirements** for a footprint model to be considered valid?
+    - 1. **Before change:** The profile is in equilibrium with the original upwind surface. 2. **Leading Edge:** Friction changes immediately; wind speed accelerates (rough to smooth) or decelerates (smooth to rough). 3. **Adaptation:** An **Internal Boundary Layer (IBL)** grows downwind as the air adapts to the new surface.
+            
+- **What are the General Requirements for a footprint model to be considered valid?**
     
-- Contrast the effects of **Shelter Effects** on air and soil temperature ($T_{air}, T_{soil}$) between daytime and nighttime.
+    - Height-constant fluxes (valid within the surface layer).
+        
+    - Horizontally homogeneous wind field and surface.
+        
+    - Applicability of a diffusion model.
+        
+- **Contrast the effects of Shelter Effects on air and soil temperature ($T_{air}, T_{soil}$) between daytime and nighttime.**
     
-- Explain how **Internal Boundary Layers (IBL)** develop as air move from one surface type to another.
+    - In the daytime, shelters reduce wind and mixing, leading to **increased** $T_{air}$ and $T_{soil}$ (heat trapping). At nighttime, they reduce longwave loss and mixing, keeping both temperatures **higher** than exposed areas, providing frost protection.
+        
+- **Explain how Internal Boundary Layers (IBL) develop as air moves from one surface type to another.**
     
-- What are **"Secondary Circulations"** and how do they differ from the mean circulation?
-
+    - Adaptation is not instantaneous. As air moves downwind of a roughness change, the atmosphere "re-equilibrates" through turbulent mixing. This process starts at the ground and propagates upward, forming a "wedge" (the IBL) where air carries the physical properties of the new surface.
+        
+- **What are "Secondary Circulations" and how do they differ from the mean circulation?**
+    
+    - Secondary circulations are organized flows, such as **roll vortices**, that are superimposed on the larger-scale mean wind. They typically have a width $2\text{--}3$ times the boundary layer depth and are driven by thermal heterogeneity or mechanical shear.
 
 ---
 # 🐢 Definitions
