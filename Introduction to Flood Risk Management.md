@@ -169,3 +169,7 @@ ej.
 Conservation tillage:
 River training: restoring meanders (upland):  
 Structural /**non-structural**?    **S**PRC? Pre/during/post flood?  Reduces hazard/ vulnerability?
+
+### Mitigation measures
+
+![[Pasted image 20260303153348.png]]

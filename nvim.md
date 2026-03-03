@@ -38,7 +38,7 @@ Code or program to add to the editor to extend the program
 
 - :s/search/replace/ #
 - :%s/search/replace: Search and replace global
-- :start_line, end_line s/<search>/<replace>
+- $:start_line, end_line s/<search>/<replace>$
 
 - / and ? : search and after enter move with n and S-n
 - #/\* + n/S-n: Search current word after and before

@@ -1,4 +1,62 @@
-Checklist
+
+# Planning and structuring an essay
+
+Steps:
+1. Study title and write first outline, look for and evaluate sources
+2. Read and make notes (keep record of all sources)
+3. Paraphrase and summarize
+4. Write draft of main body
+5. Write draft introduction and conclusion
+6. Rewrite introduction, main body and conclusion, checking for logical development of ideas and relevance
+7. Organice list of references, contents, figures and appendices, re check citation
+8. Proofread whole essay
+
+NOTE: Citations as in hidrogeolocical journal?
+
+Structure
+- Introduction
+	- general statement - to introduce subject
+	- definitions - to explain any technical terms
+	- thesis - to give opinion
+	- preview - tell what parts of topic will be included
+- Main body: present evidence to support thesis, numbered if possible and ideas order by importance
+- Conclusion: summary brief reminder of main ideas and recommendations
+
+Golden Rule of Unity
+- One paragraph = one main idea
+	- all sentences in the paragraph must be about the same main idea
+	- all sentences must be relevant
+
+Sections of paragraph
+- Topic sentence (top)
+- supporting sentences (middle)
+- (possibly) concluding sentence (bottom)
+
+Topic sentence:
+- tells what the paragraph is about
+- almost always first sentence
+- most important in whole paragraph
+- divided in
+	- **topic** - names the topic
+	- *controlling idea* - what the paragraph will say about topic
+	- example: **The IUWM approach** *is an important strategy in providing water services of adequate quality*
+
+
+different patterns for paragraph development
+- chronological description
+	- Time adverbs and phrases: in 1980 | last week | at 10.15 | first, second, finally | soon | after the project began; • Verb tense sequencing: originally we wanted to… | more recently we have attempted to… | now we are trying to… | in the future we shall try to…; • Grammatical parallelism: mount the grating near the end… | locate a rider on the scale… | adjust the grating… | read the distances on the scale… .
+- cause and effect analysis
+	- Connective words and phrases: therefore, thus, consequently, accordingly, as a result, so. • Subordinate clauses: since, because (of), due to. • Causative verbs: causes, results in, gives rise to, affects, requires, produces. • Conditional constructions: when, where, given, if, then.
+- comparison and contrast
+	- Connective words and phrases: however, on the other hand, conversely, similarly, likewise, in contrast to. • Comparative constructions: more than, -er, than, less than, as … as, rather than, is different from. • Verb tense differences: Program X will be easy to implement, whereas Program Y would entail a number of complications. • Subordinate clauses: while, whereas, but. • Parallelism: Model X is reliable and efficient, whereas Model Y is unreliable and relatively inefficient.
+- listing
+	- Connectives: and, also, in addition, furthermore. • Sequencing: first, second, next, etc. • Parallelism: Model X is reliable and efficient, whereas Model Y is unreliable and relatively inefficient.
+
+concluding sentence
+- • Ends paragraph (if long paragraph). • Tells reader that paragraph is finished. • Summarizes main points or links to following paragraph. • Does not introduce new ideas. • Starts with phrase to show end of paragraph, as follows. o In short, . . . o Therefore, . . . o In conclusion, . . .
+
+
+
 
 # Global Datasets in Flood Simulation
 
