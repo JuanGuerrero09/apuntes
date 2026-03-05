@@ -173,3 +173,14 @@ Structural /**non-structural**?    **S**PRC? Pre/during/post flood?  Reduces haz
 ### Mitigation measures
 
 ![[Pasted image 20260303153348.png]]
+
+## Residual risk
+
+Absolutely safety from flooding is impossible. Flood event management involves
+- Issuance of warning
+- Operation of flood control structures
+- evacuation
+- rescue
+- relief
+- recovery
+Responsible authorities issue warnings, 
