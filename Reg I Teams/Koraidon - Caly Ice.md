@@ -163,4 +163,77 @@ Grand handled the research, translation of foreign player notes, and the actual 
 
 ---
 
-I hope this provides the deep dive you were looking for! Would you like me to clarify any of the specific Speed or HP tiers mentioned?
+# Aperturas Principales
+
+
+- Koraidon + Smeargle & Lando + Rilla/Incin: CSR + Zama, ganar velocidad con Koraidon y Follow Me con smeargle, atacar y dormir en segundo turno.
+- Caly-Ice + Smeargle &  Incin/Rilla + Landorus: Equipo muy rápido que no pueda operar en modo lento, si hay Flutter o CSR Incin para tener resistencias. ej: CSR + Koraidon, Miraidon + Zama
+- Caly-Ice + Smeargle &  Incin/Rilla + Koraidon: Similares al equipo de arriba pero que no requiera STAB tierra
+- Koraidon + Rilla & Landorus + Incin + Smeargle :  Fake out smeargle + CSR, Rilla es más rápido que max speed smeargle, bloqueo de fake out y ataque con Koraidon
+- Koraidon + Smeargle/Incin & CIR + Rilla/Lando: 
+
+
+# Puntos a revisar
+
+- Quiero un Lead que pueda no tener autoloss contra los main restricted
+- ¿Como ir contra equipos de farigiraf + Miraidon sin que sea tan 50/50?
+- ¿Cómo ir contra Lunala + Miraidon/Koraidon?
+- ¿Debería cambiar leech seed por Triturar / High Horsepower? - No
+- Mantener tera Hada en CIR o ir por tera Fuego - Si, tera fire
+- ¿Como ir contra Chi Yu? - 
+- ¿Qué hago contra volcarona?
+
+
+# Equipos Principales
+
+## Miraidon + Lunala
+
+1. Rilla + CIR / Incin Lando
+If is choice item Miraidon go for double fake out.
+2. Koraidon + Rillaboom / Incin + Landorus
+
+Control terrain to decrease power in EQ of ursa and cycle Incin to weaken Facade
+
+Cubrir al rey - Caly
+
+Lunala - Caly Incin Lando Rilla
+
+Terapagos en lugar de lando contra koraidon
+
+Replays:
+
+---
+## Zamazenta + Calyrex Shadow Rider
+
+1. Smeargle + CIR / Landorus + Rillaboom
+2. Smeargle + Koraidon / Landorus + Incin (Tera Flame Charge + Spore)
+
+If it has Smeargle
+1. Rilla + CIR / Landorus + Koraidon
+
+Against Focus Sash CSR Rilla in the back also works to break the sash
+Against Tornadus a Smeargle FM + CIR TR is a good opening 
+
+Replays:
+
+---
+
+## Miraidon + Calyrex Ice Rider
+
+
+
+---
+
+## Koraidon + Calyrex Shadow Rider
+
+
+
+---
+## Shield Fish
+
+
+
+
+- [ ] Koraidon + CSR - Smeargle / Incin + CIR
+- [ ] Miraidon + CIR - Rilla + Koraidon?
+- [ ] Koraidon + Lunala - Smeargle + Koraidon?

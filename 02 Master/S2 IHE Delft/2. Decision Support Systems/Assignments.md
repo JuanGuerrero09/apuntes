@@ -1,0 +1,6 @@
+- Groupwork (25% )
+	- Upload group presentation: 9th April
+	- Presentation: 10th April (10-15 min presentation)
+- Assignment: Systems Analysis in Water Resources (45%)
+	- Deadline: Monday 20 of April 22:00
+- Assignment: Software technologies for  integration  30%
