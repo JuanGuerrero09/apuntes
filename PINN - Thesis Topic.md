@@ -1,7 +1,7 @@
 # Resources
 
 
-Physics-Informed Neural Networks: Python Codes for Solving ODEs, ODEs systems, PDEs, and St. Venant Equations (Beta version) - https://zenodo.org/records/17551753
+Physics-Informed Neural Networks: Python Codes for Solving ODEs, ODEs systems, PDEs, and St. Venant Equations (Beta version) - https://zenodo.org/records/17551753 Repo!
 
 A hands-on introduction to Physics-Informed Neural Networks for solving partial differential equations with benchmark tests taken from astrophysics and plasma physics - https://arxiv.org/html/2403.00599v1
 

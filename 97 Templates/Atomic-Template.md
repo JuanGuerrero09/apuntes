@@ -1,6 +1,6 @@
 # [[<% tp.file.title %>]]
 
-**Date:** <% tp.date.now() %>
+**Date:** <% tp.date.now("YYYY-MM-DD") %>
 
 **Tags:** #atomic #concept
 

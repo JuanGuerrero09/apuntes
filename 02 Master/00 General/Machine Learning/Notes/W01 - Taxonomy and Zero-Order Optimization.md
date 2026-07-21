@@ -1,6 +1,9 @@
-# W01 - Taxonomy and Zero-Order Optimization: Strategic Dashboard
 
-**Status:** #In-Progress **Primary Resources:** _Machine Learning Refined_ (MLR) and _Understanding Deep Learning_ (UDL)
+**Status:** #In-Progress 
+**Primary Resources:** 
+- **Resources:**
+    - MLR Chapter 1 (_Introduction_) & Chapter 2 (_Zero-Order Optimization_).
+    - HOML Chapter 1 (_The Machine Learning Landscape_).
 
 ## 📋 Weekly Objectives
 
