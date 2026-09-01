@@ -9,7 +9,7 @@ library(SWMMR)
 
 ## 2. Pathway --------------------------------------------------------------
 # Ruta donde Python guardó los 36 archivos .out
-out_path <- r"(C:\Users\Juan\Documents\dev-win\pyswmm-workshop\files\Outs)"
+out_path <- r"(C:\Users\Juan\Documents\dev-win\pyswmm-workshop\new_files)"
 result_path <- file.path(out_path, "floodseries_result")
 
 if (!dir.exists(result_path)) {

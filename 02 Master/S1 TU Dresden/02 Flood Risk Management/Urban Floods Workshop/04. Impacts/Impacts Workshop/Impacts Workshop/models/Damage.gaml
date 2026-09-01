@@ -28,8 +28,8 @@ global {
 	
 	
 	//The savename should NOT have a file extension!!!!!!
-	string floodmatrix<- "floodseries_MS5_model_LID_JGD_NOLID.csv";
-	string savename<- "OUT_floodseries_MS5_model_LID_JGD_NOLID";
+	string floodmatrix<- "floodseries_MS5_model_LID_JGD_NOLID_240_20.csv";
+	string savename<- "OUT_floodseries_MS5_model_LID_JGD_NOLID_240_20";
 	
 	file floodsurcharge <- csv_file("../includes/"+floodmatrix,false);
 	matrix floodvol <- matrix(floodsurcharge);

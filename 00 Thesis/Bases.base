@@ -1,0 +1,17 @@
+views:
+  - type: table
+    name: Tabla
+    filters:
+      and:
+        - file.folder == "Apuntes/00 Thesis/Sources"
+    order:
+      - Title
+      - file.name
+      - Author
+      - Journal
+    sort:
+      - property: file.name
+        direction: ASC
+    columnSize:
+      file.name: 216
+      note.Author: 156
