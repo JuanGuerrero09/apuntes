@@ -1,6 +1,11 @@
 > [!PDF|red] [[https://www.nature.com/nature-index/topics/l4/machine-learning-applications-in-hydrological-modeling|Nature: Machine Learning Applications in Hydrological Modeling]]
 > > A large pre-trained AI model that can be fine-tuned for specific downstream tasks such as meteorological or geospatial forecasting.
 
+
+> [!PDF|note] [[Prithvi WxC Foundation Model for Weather and Climate.pdf#page=2&selection=31,4,32,36&color=note|Prithvi WxC Foundation Model for Weather and Climate, p.2]]
+> > A Foundation Model is a large AI models pretrained in a task-agnostic manner that can be effectively fine-tuned to address a number of specific use cases.
+
+
 Whaat is the difference between foundtaion models and generative AI?
 
 [https://youtu.be/mJMvFyBvZEk?si=0oFVUvs-yovs8n8D](https://youtu.be/mJMvFyBvZEk?si=0oFVUvs-yovs8n8D)  

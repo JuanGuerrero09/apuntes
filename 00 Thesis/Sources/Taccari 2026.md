@@ -1,6 +1,6 @@
 ---
 Title: "AIFL: A Global Daily Streamflow Forecasting Model Using a Deterministic LSTM Pre-trained on ERA5-Land and Fine-tuned on IFS"
-Author:
+Authors:
   - Maria Luisa Taccari
   - Kenza Tazi
   - Oisín M. Morrison

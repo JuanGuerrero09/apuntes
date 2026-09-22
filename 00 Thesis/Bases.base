@@ -7,8 +7,12 @@ views:
     order:
       - Title
       - file.name
-      - Author
       - Journal
+      - Authors
+      - Date
+      - Year
+      - Status
+      - Source
     sort:
       - property: file.name
         direction: ASC
