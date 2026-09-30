@@ -83,4 +83,28 @@ PUB: Prediction in ungauged basins
 > [!PDF|red] [[Global prediction of extreme floods in ungauged watersheds.pdf#page=2&selection=42,0,46,54&color=red|Global prediction of extreme floods in ungauged watersheds, p.560]]
 > > This AI forecast model was trained and tested out-of-sample using random k-fold cross-validation across 5,680 streamflow gauges.
 
+> [!PDF|red] [[Global prediction of extreme floods in ungauged watersheds.pdf#page=2&selection=60,0,63,8&color=red|Global prediction of extreme floods in ungauged watersheds, p.560]]
+> > Our objective is to understand the reliability of forecasts of extreme events, so we report precision, recall and F1 scores (F1 scores are the harmonic mean of precision and recall) over different return period events. 
+
+> [!PDF|important] [[Global prediction of extreme floods in ungauged watersheds.pdf#page=2&selection=72,48,132,8&color=important|Global prediction of extreme floods in ungauged watersheds, p.560]]
+> > The AI model improved over (was at least equivalent to) GloFAS version 4 in 64% (65%), 70% (73%), 60% (73%) and 49% (76%) of gauges for return period events of 1 year (N = 3,638, P = 6 × 10 −87 , Cohen’s d = 0.22), 2 years (N = 3,673, P < 3 × 10 −181 , d = 0.41), 5 years (N = 3,360, P = 8 × 10 −130 , d = 0.42) and 10 years (N = 2,920, P < 1 × 10−66 , d = 0.33).
+
+> [!PDF|red] [[Global prediction of extreme floods in ungauged watersheds.pdf#page=2&selection=346,1,349,66&color=red|Global prediction of extreme floods in ungauged watersheds, p.560]]
+> >  The AI model is more reliable, on average, over all return periods. The AI model has precision over 5-year return period events that is not statistically different to GloFAS over 1-year return period events, and recall that is better than GloFAS over 1-year return period events
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

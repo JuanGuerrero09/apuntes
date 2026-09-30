@@ -60,3 +60,58 @@ dM/dx = gamma A (So-Sf)
 
 What are backwater courves and how to calculate them
 
+---
+
+# Practical sesion
+
+Geomorphology -> Morphologic indexes 
+-> Morphodynamics
+
+Most of the floods studies doesn't include morphodynamics, in spain only says that you should include sediment transport.
+
+Solid discharge equation? depends on shear stress
+
+Z = rho g h * sin(alpha)
+
+
+Steps for morpho dynamics:
+- Fix the return period
+- Go to the gauge stations
+	- Discharge measure and bathymetry
+- If not gauge then have the rainfall data
+	- Go to extreme event, calibrate rainfall runoff model and get the hydrological model
+- With previous information do the hydrodynamic model h(T), v(T), z(T)
+
+T (regulations)
+
+Gauging stations (public data)
+
+Statistical analysis (Python Excel, R, Matlab)
+
+R-R (HEC-HMS, MIKE-SHE, MGB)
+
+Hydrodynamic model (MIKE-11, SOBEK, HEC-RAS)
+
+---
+
+Steps in IBER
+
+1. Define gometry
+2. Assign boundary conditions
+3. Materials - Manning
+4. Meshing
+5. Run
+6. Results analysis
+
+
+Every time you have a superior layer the lower doesnt exist or somethingl ike that
+
+Link between the mesh and the time-step: Courant
+
+
+How to mesh? Change from geometry to mesh
+
+YOU CANNOT CHANGE BOUNDARY CONDITIONS AND THEN RUN, YO ALWAYS NEED TO REMESH
+
+
+

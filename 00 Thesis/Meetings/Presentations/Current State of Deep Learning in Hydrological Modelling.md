@@ -110,6 +110,19 @@ Prithvi: Divserse downstream tasks (downscalling, prediction, zero-shot forecast
 
 ![[Pasted image 20260916101616.png]]
 
+
+# Next steps and open fields
+
+- Ungauged catchments (aim to get better generalizations)
+- MF2LSTM
+- Differentiables 
+- Transformers in Rainfall-runoff
+- Surrogate models
+
+# Referencias usadas
+
+
+
 # Thesis questions
 
 If anything with downscalling wants to be done Prithivi could be a good choice since is already pre-finetuned for taht
@@ -142,7 +155,7 @@ Pirthvi showed that large transformed-based foundation model can learn mesoscale
 
 LSTM modelling with spatio-temporal forcings using a foundation model for ungauged basins. (Add ensemble?)
 
-Should we do anything about extreme events estimation?
+Should we do anything about extreme events estimation or keep the general estimations?
 
 - **"Evaluating Deep-Learning Foundation Weather Models vs. Traditional NWP for Streamflow Forecasting":** Compare runoff predictions in an LSTM driven by Aurora-forecasted precipitation against the same LSTM driven by numerical weather predictions (e.g., ECMWF HRES or GFS).
     

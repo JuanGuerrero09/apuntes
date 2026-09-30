@@ -55,3 +55,53 @@ conclusion
 - Once rheology is determined a back analysis have to be done to asses the different parameters
 
 To calculate debris flow you need to take into account the material
+
+# Initiation
+
+Very big problem in  debris flow
+
+**Stability of a debris mass**
+
+lambda: porosit, water density, rho_s sediment density, g gravity
+
+tau_a = tau_r (resistance)
+
+t_a = rho g sin (omega) (S_s(1-lambda)h + lambda h_o)
+
+bouyancy force
+
+Ss = rho_s / rho
+
+
+Fluency equation
+
+...
+
+Overflow (Takahashi)
+
+....
+
+Takahashi relationship
+
+---
+Shlastab equation (without cohesion)
+h/z = I/T a
+
+## Efecte teulada
+
+
+Mandatory to check if is a debris flow or not
+
+
+## Metodología GITS
+
+
+nomenclsture
+
+Risk hazard exposure
+
+vulnerability
+intensity
+probabiity
+
+THE MOST IMPORTANT ARE THE UNIS 

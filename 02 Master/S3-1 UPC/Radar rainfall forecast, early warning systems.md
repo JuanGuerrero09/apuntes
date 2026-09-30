@@ -66,4 +66,34 @@ marcberenguer@upc.edu
 	- Orographic lifting:
 
 
+Is very difficult to have droplets if theres no high humidity.
 
+Condensation
+
+wHAT DO WE NEED TO CONDENSANTION TO OCCUR
+
+- Water vapour
+- Enough CNN Cloud Condensation Nuclei
+- Enough uplift to cool to dew point
+
+### Physics of precipitation
+
+Collision and coalescence
+
+Clounds that have above-freezing temperatures: Factors governing the droplet generation.
+- Warm clouds
+- Liquid water content
+- Range of droplet sizes
+
+Ice crystal process
+
+Important in medium and high latitues
+- Mixed cliunds
+- Cloud droplets freeze spointaneously a t -36
+- Supercooled water
+
+Precipitation processess - Summary
+- Cloud droplets are very small
+- The smaller the could droplet the greater its curvature and more likely will evaporate
+- Clouds droplets form on cloud condensation nuclei, allow condensation when relative humidity is <100%
+- 
