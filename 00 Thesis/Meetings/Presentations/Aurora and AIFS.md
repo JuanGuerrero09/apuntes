@@ -1,3 +1,6 @@
+Aurora - 1hr
+AIFS - 6 horas
+
 ![[Pasted image 20260928171836.png]]
 
 Paso 1: Acceso a Microsoft Foundry y Créditos
@@ -81,6 +84,12 @@ az ml online-deployment create --file deployment.yml --resource-group rg-aurora-
 ![[Pasted image 20260929133613.png]]
 
 ![[Pasted image 20260930113325.png]]
+
+![[Pasted image 20260930131814.png]]
+
+![[Pasted image 20260930131758.png]]
+
+![[Pasted image 20261001152812.png]]
 
 ## Metodología
 
@@ -269,5 +278,7 @@ que
 # AIFS and Hugging Face
 
 
+
+# Vision transformer and self attention
 
 
